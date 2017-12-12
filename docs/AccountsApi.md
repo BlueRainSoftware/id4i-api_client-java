@@ -28,8 +28,8 @@ Find by username
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -77,8 +77,8 @@ Listing users and their roles in a paginated manner.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -128,8 +128,8 @@ Retrieve organizations of user
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -179,8 +179,8 @@ Get user roles by username
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -230,8 +230,8 @@ Finding users in the specified organization in a paginated manner.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -283,8 +283,8 @@ Listing of roles.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -336,8 +336,8 @@ ID4i API Login
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -380,8 +380,8 @@ Registering a new user.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -427,8 +427,8 @@ Remove role(s) from user
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -480,8 +480,8 @@ Requesting a reset for a new password.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -527,8 +527,8 @@ Add role(s) to user
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -580,8 +580,8 @@ Setting a new password and verifying the request to set the password.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();
@@ -629,8 +629,8 @@ Verifies a new user registration.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.AccountsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
 
 
 AccountsApi apiInstance = new AccountsApi();

@@ -1,8 +1,8 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "io.swagger",
-    name := "swagger-java-client",
-    version := "1.0.0",
+    organization := "de.id4i.api",
+    name := "id4i-api-client",
+    version := "0.1.0",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

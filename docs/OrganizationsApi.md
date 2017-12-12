@@ -35,8 +35,8 @@ Creating a new organization.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -82,8 +82,8 @@ Delete organization
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -129,8 +129,8 @@ Remove billing address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -176,8 +176,8 @@ Delete organization logo
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -225,8 +225,8 @@ Returns a single organization.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -272,8 +272,8 @@ Retrieve address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -319,8 +319,8 @@ Retrieve billing address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -368,8 +368,8 @@ Retrieving all collections of an organization in a paginated manner.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -425,8 +425,8 @@ Listing users and their roles in a paginated manner.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -476,8 +476,8 @@ Retrieve organizations of user
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -527,8 +527,8 @@ Get user roles by username
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -578,8 +578,8 @@ Finding users in the specified organization in a paginated manner.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -629,8 +629,8 @@ Remove role(s) from user
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -680,8 +680,8 @@ Update organization
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -729,8 +729,8 @@ Store address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -778,8 +778,8 @@ Store billing address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -829,8 +829,8 @@ Updating an organization logo using a multipart file upload.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -878,8 +878,8 @@ Add role(s) to user
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();

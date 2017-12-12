@@ -18,8 +18,8 @@ Retrieving version information about ID4i.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.MetaInformationApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.MetaInformationApi;
 
 
 MetaInformationApi apiInstance = new MetaInformationApi();

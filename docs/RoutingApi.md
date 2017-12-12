@@ -18,8 +18,8 @@ Retrieve current route of a GUID (or ID4N)
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.RoutingApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.RoutingApi;
 
 
 RoutingApi apiInstance = new RoutingApi();
@@ -67,8 +67,8 @@ Retrieve routing file
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.RoutingApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.RoutingApi;
 
 
 RoutingApi apiInstance = new RoutingApi();
@@ -116,8 +116,8 @@ Store routing file
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.RoutingApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.RoutingApi;
 
 
 RoutingApi apiInstance = new RoutingApi();

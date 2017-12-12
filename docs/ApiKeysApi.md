@@ -23,8 +23,8 @@ Creation of a new apiKey.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.ApiKeysApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.ApiKeysApi;
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
@@ -72,8 +72,8 @@ Deletion of an apiKey.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.ApiKeysApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.ApiKeysApi;
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
@@ -121,8 +121,8 @@ Showing the details of an apiKey.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.ApiKeysApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.ApiKeysApi;
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
@@ -170,8 +170,8 @@ Finding all apiKeys assigned to the specified organization in a paginated manner
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.ApiKeysApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.ApiKeysApi;
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
@@ -223,8 +223,8 @@ Listing api key privileges.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.ApiKeysApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.ApiKeysApi;
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
@@ -276,8 +276,8 @@ Setting the apiKey activation state.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.ApiKeysApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.ApiKeysApi;
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();

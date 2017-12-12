@@ -20,8 +20,8 @@ Forwarding to the designated route defined in the routing,
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.PublicServicesApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.PublicServicesApi;
 
 
 PublicServicesApi apiInstance = new PublicServicesApi();
@@ -67,8 +67,8 @@ Resolve image
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.PublicServicesApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.PublicServicesApi;
 
 
 PublicServicesApi apiInstance = new PublicServicesApi();
@@ -114,8 +114,8 @@ Resolve owner of id4n
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.PublicServicesApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.PublicServicesApi;
 
 
 PublicServicesApi apiInstance = new PublicServicesApi();

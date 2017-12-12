@@ -48,8 +48,8 @@ Add element to collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -97,8 +97,8 @@ Add element to labelled collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -146,8 +146,8 @@ Add element to logistic collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -195,8 +195,8 @@ Add element to routing collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -244,8 +244,8 @@ Add elements to collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -293,8 +293,8 @@ Add elements to labelled collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -342,8 +342,8 @@ Add elements to logistic collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -391,8 +391,8 @@ Add element to routing collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -440,8 +440,8 @@ Create labelled collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -487,8 +487,8 @@ Create logistic collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -534,8 +534,8 @@ Create routing collecton
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -581,8 +581,8 @@ Delete collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -628,8 +628,8 @@ Delete labelled collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -675,8 +675,8 @@ Delete logistic collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -722,8 +722,8 @@ Delete routing collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -769,8 +769,8 @@ Find collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -816,8 +816,8 @@ Find labelled collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -863,8 +863,8 @@ Find logistic collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -910,8 +910,8 @@ Find routing collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -959,8 +959,8 @@ Retrieving all collections of an organization in a paginated manner.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1014,8 +1014,8 @@ List contents of the collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1065,8 +1065,8 @@ Remove element from collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1114,8 +1114,8 @@ Remove element from labelled collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1163,8 +1163,8 @@ Remove element from logistic collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1212,8 +1212,8 @@ Remove element from routing collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1261,8 +1261,8 @@ Remove elements from collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1310,8 +1310,8 @@ Remove elements from labelled collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1359,8 +1359,8 @@ Remove elements from logistic collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1408,8 +1408,8 @@ Remove elements from routing collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1457,8 +1457,8 @@ Alter collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1506,8 +1506,8 @@ Rename labelled collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1555,8 +1555,8 @@ Update logistic collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();
@@ -1604,8 +1604,8 @@ Update routing collection
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.CollectionsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
 
 
 CollectionsApi apiInstance = new CollectionsApi();

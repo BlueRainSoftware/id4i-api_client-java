@@ -20,8 +20,8 @@ Creating one or more GUIDs with a specified length.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.GUIDsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.GUIDsApi;
 
 
 GUIDsApi apiInstance = new GUIDsApi();
@@ -67,8 +67,8 @@ Retrieve GUID information
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.GUIDsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.GUIDsApi;
 
 
 GUIDsApi apiInstance = new GUIDsApi();
@@ -116,8 +116,8 @@ Allows ownership transfer.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.GUIDsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.GUIDsApi;
 
 
 GUIDsApi apiInstance = new GUIDsApi();
