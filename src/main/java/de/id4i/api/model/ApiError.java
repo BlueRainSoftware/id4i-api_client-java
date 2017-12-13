@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-12T09:29:02.012Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-13T08:59:27.543Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -48,6 +48,8 @@ public class ApiError {
     
     AUTHENTICATION_EXPIRED_TOKEN("ERR_AUTHENTICATION_EXPIRED_TOKEN"),
     
+    AUTHENTICATION_FAILED("ERR_AUTHENTICATION_FAILED"),
+    
     INPUT_VALIDATION_FAILED("ERR_INPUT_VALIDATION_FAILED"),
     
     FIELD_INPUT_VALIDATION_FAILED("ERR_FIELD_INPUT_VALIDATION_FAILED"),
@@ -59,8 +61,6 @@ public class ApiError {
     ENTITY_NOT_FOUND("ERR_ENTITY_NOT_FOUND"),
     
     DUPLICATE("ERR_DUPLICATE"),
-    
-    HTTP("ERR_HTTP"),
     
     INTERNAL("ERR_INTERNAL"),
     
