@@ -121,7 +121,7 @@ No authorization required
 
 <a name="getOrganizationsOfUser"></a>
 # **getOrganizationsOfUser**
-> PaginatedResponseOrganization getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit)
+> PaginatedOrganizationResponse getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit)
 
 Retrieve organizations of user
 
@@ -139,7 +139,7 @@ String role = "role_example"; // String | role
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
 try {
-    PaginatedResponseOrganization result = apiInstance.getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit);
+    PaginatedOrganizationResponse result = apiInstance.getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getOrganizationsOfUser");
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseOrganization**](PaginatedResponseOrganization.md)
+[**PaginatedOrganizationResponse**](PaginatedOrganizationResponse.md)
 
 ### Authorization
 
@@ -172,7 +172,7 @@ No authorization required
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
-> UserRoles getUserRoles(organizationId, username, authorization, acceptLanguage)
+> PaginatedStringResponse getUserRoles(organizationId, username, authorization, acceptLanguage, offset, limit)
 
 Get user roles by username
 
@@ -188,8 +188,10 @@ Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+Integer offset = 56; // Integer | Start with the n-th element. 
+Integer limit = 56; // Integer | The maximum count of returned elements.
 try {
-    UserRoles result = apiInstance.getUserRoles(organizationId, username, authorization, acceptLanguage);
+    PaginatedStringResponse result = apiInstance.getUserRoles(organizationId, username, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getUserRoles");
@@ -205,10 +207,12 @@ Name | Type | Description  | Notes
  **username** | **String**| username |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
+ **offset** | **Integer**| Start with the n-th element.  | [optional]
+ **limit** | **Integer**| The maximum count of returned elements. | [optional]
 
 ### Return type
 
-[**UserRoles**](UserRoles.md)
+[**PaginatedStringResponse**](PaginatedStringResponse.md)
 
 ### Authorization
 

@@ -17,7 +17,8 @@ import de.id4i.ApiException;
 import de.id4i.api.model.AccountCredentials;
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.ChangeRoleRequest;
-import de.id4i.api.model.PaginatedResponseOrganization;
+import de.id4i.api.model.PaginatedOrganizationResponse;
+import de.id4i.api.model.PaginatedStringResponse;
 import de.id4i.api.model.PaginatedUserPresentationResponse;
 import de.id4i.api.model.PaginatedUserRolesResponse;
 import de.id4i.api.model.PasswordResetRequest;
@@ -28,7 +29,6 @@ import de.id4i.api.model.SimpleMessageResponse;
 import de.id4i.api.model.UserPresentation;
 import de.id4i.api.model.UserRegistrationRequest;
 import de.id4i.api.model.UserRegistrationResponse;
-import de.id4i.api.model.UserRoles;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -99,7 +99,7 @@ public class AccountsApiTest {
         String role = null;
         Integer offset = null;
         Integer limit = null;
-        PaginatedResponseOrganization response = api.getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit);
+        PaginatedOrganizationResponse response = api.getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit);
 
         // TODO: test validations
     }
@@ -118,7 +118,9 @@ public class AccountsApiTest {
         String username = null;
         String authorization = null;
         String acceptLanguage = null;
-        UserRoles response = api.getUserRoles(organizationId, username, authorization, acceptLanguage);
+        Integer offset = null;
+        Integer limit = null;
+        PaginatedStringResponse response = api.getUserRoles(organizationId, username, authorization, acceptLanguage, offset, limit);
 
         // TODO: test validations
     }

@@ -3071,6 +3071,456 @@ public class CollectionsApi {
         return call;
     }
     /**
+     * Build call for listElementsOfLabelledCollection
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listElementsOfLabelledCollectionCall(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/collections/labelled/{id4n}/elements"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listElementsOfLabelledCollectionValidateBeforeCall(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling listElementsOfLabelledCollection(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = listElementsOfLabelledCollectionCall(id4n, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * List contents of the collection
+     * 
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return PaginatedGuidResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaginatedGuidResponse listElementsOfLabelledCollection(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedGuidResponse> resp = listElementsOfLabelledCollectionWithHttpInfo(id4n, authorization, acceptLanguage, offset, limit);
+        return resp.getData();
+    }
+
+    /**
+     * List contents of the collection
+     * 
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return ApiResponse&lt;PaginatedGuidResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaginatedGuidResponse> listElementsOfLabelledCollectionWithHttpInfo(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = listElementsOfLabelledCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, offset, limit, null, null);
+        Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List contents of the collection (asynchronously)
+     * 
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listElementsOfLabelledCollectionAsync(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit, final ApiCallback<PaginatedGuidResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listElementsOfLabelledCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listElementsOfLogisticCollection
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listElementsOfLogisticCollectionCall(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/collections/logistic/{id4n}/elements"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listElementsOfLogisticCollectionValidateBeforeCall(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling listElementsOfLogisticCollection(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = listElementsOfLogisticCollectionCall(id4n, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * List contents of the collection
+     * 
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return PaginatedGuidResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaginatedGuidResponse listElementsOfLogisticCollection(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedGuidResponse> resp = listElementsOfLogisticCollectionWithHttpInfo(id4n, authorization, acceptLanguage, offset, limit);
+        return resp.getData();
+    }
+
+    /**
+     * List contents of the collection
+     * 
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return ApiResponse&lt;PaginatedGuidResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaginatedGuidResponse> listElementsOfLogisticCollectionWithHttpInfo(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = listElementsOfLogisticCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, offset, limit, null, null);
+        Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List contents of the collection (asynchronously)
+     * 
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listElementsOfLogisticCollectionAsync(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit, final ApiCallback<PaginatedGuidResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listElementsOfLogisticCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listElementsOfRoutingCollection
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listElementsOfRoutingCollectionCall(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/collections/routing/{id4n}/elements"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listElementsOfRoutingCollectionValidateBeforeCall(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling listElementsOfRoutingCollection(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = listElementsOfRoutingCollectionCall(id4n, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * List contents of the collection
+     * 
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return PaginatedGuidResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaginatedGuidResponse listElementsOfRoutingCollection(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedGuidResponse> resp = listElementsOfRoutingCollectionWithHttpInfo(id4n, authorization, acceptLanguage, offset, limit);
+        return resp.getData();
+    }
+
+    /**
+     * List contents of the collection
+     * 
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return ApiResponse&lt;PaginatedGuidResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaginatedGuidResponse> listElementsOfRoutingCollectionWithHttpInfo(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = listElementsOfRoutingCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, offset, limit, null, null);
+        Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List contents of the collection (asynchronously)
+     * 
+     * @param id4n id4n (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listElementsOfRoutingCollectionAsync(String id4n, String authorization, String acceptLanguage, Integer offset, Integer limit, final ApiCallback<PaginatedGuidResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listElementsOfRoutingCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for removeElementFromCollection
      * @param id4n id4n (required)
      * @param elementGuid elementGuid (required)

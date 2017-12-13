@@ -27,10 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PaginatedResponseOrganization
+ * PaginatedOrganizationResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-13T09:57:34.639Z")
-public class PaginatedResponseOrganization {
+public class PaginatedOrganizationResponse {
   @SerializedName("elements")
   private List<Organization> elements = null;
 
@@ -43,12 +43,12 @@ public class PaginatedResponseOrganization {
   @SerializedName("total")
   private Integer total = null;
 
-  public PaginatedResponseOrganization elements(List<Organization> elements) {
+  public PaginatedOrganizationResponse elements(List<Organization> elements) {
     this.elements = elements;
     return this;
   }
 
-  public PaginatedResponseOrganization addElementsItem(Organization elementsItem) {
+  public PaginatedOrganizationResponse addElementsItem(Organization elementsItem) {
     if (this.elements == null) {
       this.elements = new ArrayList<Organization>();
     }
@@ -69,7 +69,7 @@ public class PaginatedResponseOrganization {
     this.elements = elements;
   }
 
-  public PaginatedResponseOrganization limit(Integer limit) {
+  public PaginatedOrganizationResponse limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -87,7 +87,7 @@ public class PaginatedResponseOrganization {
     this.limit = limit;
   }
 
-  public PaginatedResponseOrganization offset(Integer offset) {
+  public PaginatedOrganizationResponse offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -105,7 +105,7 @@ public class PaginatedResponseOrganization {
     this.offset = offset;
   }
 
-  public PaginatedResponseOrganization total(Integer total) {
+  public PaginatedOrganizationResponse total(Integer total) {
     this.total = total;
     return this;
   }
@@ -132,11 +132,11 @@ public class PaginatedResponseOrganization {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedResponseOrganization paginatedResponseOrganization = (PaginatedResponseOrganization) o;
-    return Objects.equals(this.elements, paginatedResponseOrganization.elements) &&
-        Objects.equals(this.limit, paginatedResponseOrganization.limit) &&
-        Objects.equals(this.offset, paginatedResponseOrganization.offset) &&
-        Objects.equals(this.total, paginatedResponseOrganization.total);
+    PaginatedOrganizationResponse paginatedOrganizationResponse = (PaginatedOrganizationResponse) o;
+    return Objects.equals(this.elements, paginatedOrganizationResponse.elements) &&
+        Objects.equals(this.limit, paginatedOrganizationResponse.limit) &&
+        Objects.equals(this.offset, paginatedOrganizationResponse.offset) &&
+        Objects.equals(this.total, paginatedOrganizationResponse.total);
   }
 
   @Override
@@ -148,7 +148,7 @@ public class PaginatedResponseOrganization {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedResponseOrganization {\n");
+    sb.append("class PaginatedOrganizationResponse {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

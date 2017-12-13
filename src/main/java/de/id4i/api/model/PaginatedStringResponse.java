@@ -19,7 +19,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.Organization;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,12 +26,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PaginatedResponseOrganization
+ * PaginatedStringResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-13T09:57:34.639Z")
-public class PaginatedResponseOrganization {
+public class PaginatedStringResponse {
   @SerializedName("elements")
-  private List<Organization> elements = null;
+  private List<String> elements = null;
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -43,14 +42,14 @@ public class PaginatedResponseOrganization {
   @SerializedName("total")
   private Integer total = null;
 
-  public PaginatedResponseOrganization elements(List<Organization> elements) {
+  public PaginatedStringResponse elements(List<String> elements) {
     this.elements = elements;
     return this;
   }
 
-  public PaginatedResponseOrganization addElementsItem(Organization elementsItem) {
+  public PaginatedStringResponse addElementsItem(String elementsItem) {
     if (this.elements == null) {
-      this.elements = new ArrayList<Organization>();
+      this.elements = new ArrayList<String>();
     }
     this.elements.add(elementsItem);
     return this;
@@ -61,15 +60,15 @@ public class PaginatedResponseOrganization {
    * @return elements
   **/
   @ApiModelProperty(value = "")
-  public List<Organization> getElements() {
+  public List<String> getElements() {
     return elements;
   }
 
-  public void setElements(List<Organization> elements) {
+  public void setElements(List<String> elements) {
     this.elements = elements;
   }
 
-  public PaginatedResponseOrganization limit(Integer limit) {
+  public PaginatedStringResponse limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -87,7 +86,7 @@ public class PaginatedResponseOrganization {
     this.limit = limit;
   }
 
-  public PaginatedResponseOrganization offset(Integer offset) {
+  public PaginatedStringResponse offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -105,7 +104,7 @@ public class PaginatedResponseOrganization {
     this.offset = offset;
   }
 
-  public PaginatedResponseOrganization total(Integer total) {
+  public PaginatedStringResponse total(Integer total) {
     this.total = total;
     return this;
   }
@@ -132,11 +131,11 @@ public class PaginatedResponseOrganization {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedResponseOrganization paginatedResponseOrganization = (PaginatedResponseOrganization) o;
-    return Objects.equals(this.elements, paginatedResponseOrganization.elements) &&
-        Objects.equals(this.limit, paginatedResponseOrganization.limit) &&
-        Objects.equals(this.offset, paginatedResponseOrganization.offset) &&
-        Objects.equals(this.total, paginatedResponseOrganization.total);
+    PaginatedStringResponse paginatedStringResponse = (PaginatedStringResponse) o;
+    return Objects.equals(this.elements, paginatedStringResponse.elements) &&
+        Objects.equals(this.limit, paginatedStringResponse.limit) &&
+        Objects.equals(this.offset, paginatedStringResponse.offset) &&
+        Objects.equals(this.total, paginatedStringResponse.total);
   }
 
   @Override
@@ -148,7 +147,7 @@ public class PaginatedResponseOrganization {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedResponseOrganization {\n");
+    sb.append("class PaginatedStringResponse {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

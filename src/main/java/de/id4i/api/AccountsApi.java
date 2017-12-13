@@ -30,7 +30,8 @@ import java.io.IOException;
 import de.id4i.api.model.AccountCredentials;
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.ChangeRoleRequest;
-import de.id4i.api.model.PaginatedResponseOrganization;
+import de.id4i.api.model.PaginatedOrganizationResponse;
+import de.id4i.api.model.PaginatedStringResponse;
 import de.id4i.api.model.PaginatedUserPresentationResponse;
 import de.id4i.api.model.PaginatedUserRolesResponse;
 import de.id4i.api.model.PasswordResetRequest;
@@ -41,7 +42,6 @@ import de.id4i.api.model.SimpleMessageResponse;
 import de.id4i.api.model.UserPresentation;
 import de.id4i.api.model.UserRegistrationRequest;
 import de.id4i.api.model.UserRegistrationResponse;
-import de.id4i.api.model.UserRoles;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -439,11 +439,11 @@ public class AccountsApi {
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
-     * @return PaginatedResponseOrganization
+     * @return PaginatedOrganizationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedResponseOrganization getOrganizationsOfUser(String authorization, String acceptLanguage, String role, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedResponseOrganization> resp = getOrganizationsOfUserWithHttpInfo(authorization, acceptLanguage, role, offset, limit);
+    public PaginatedOrganizationResponse getOrganizationsOfUser(String authorization, String acceptLanguage, String role, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedOrganizationResponse> resp = getOrganizationsOfUserWithHttpInfo(authorization, acceptLanguage, role, offset, limit);
         return resp.getData();
     }
 
@@ -455,12 +455,12 @@ public class AccountsApi {
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
-     * @return ApiResponse&lt;PaginatedResponseOrganization&gt;
+     * @return ApiResponse&lt;PaginatedOrganizationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedResponseOrganization> getOrganizationsOfUserWithHttpInfo(String authorization, String acceptLanguage, String role, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedOrganizationResponse> getOrganizationsOfUserWithHttpInfo(String authorization, String acceptLanguage, String role, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getOrganizationsOfUserValidateBeforeCall(authorization, acceptLanguage, role, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedResponseOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedOrganizationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -476,7 +476,7 @@ public class AccountsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrganizationsOfUserAsync(String authorization, String acceptLanguage, String role, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOrganization> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrganizationsOfUserAsync(String authorization, String acceptLanguage, String role, Integer offset, Integer limit, final ApiCallback<PaginatedOrganizationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -498,7 +498,7 @@ public class AccountsApi {
         }
 
         com.squareup.okhttp.Call call = getOrganizationsOfUserValidateBeforeCall(authorization, acceptLanguage, role, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedResponseOrganization>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedOrganizationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -508,12 +508,14 @@ public class AccountsApi {
      * @param username username (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getUserRolesCall(Long organizationId, String username, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getUserRolesCall(Long organizationId, String username, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -522,6 +524,10 @@ public class AccountsApi {
             .replaceAll("\\{" + "username" + "\\}", apiClient.escapeString(username.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (authorization != null)
@@ -560,7 +566,7 @@ public class AccountsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUserRolesValidateBeforeCall(Long organizationId, String username, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getUserRolesValidateBeforeCall(Long organizationId, String username, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -573,7 +579,7 @@ public class AccountsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getUserRolesCall(organizationId, username, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUserRolesCall(organizationId, username, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
         return call;
 
         
@@ -589,11 +595,13 @@ public class AccountsApi {
      * @param username username (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return UserRoles
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return PaginatedStringResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public UserRoles getUserRoles(Long organizationId, String username, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<UserRoles> resp = getUserRolesWithHttpInfo(organizationId, username, authorization, acceptLanguage);
+    public PaginatedStringResponse getUserRoles(Long organizationId, String username, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedStringResponse> resp = getUserRolesWithHttpInfo(organizationId, username, authorization, acceptLanguage, offset, limit);
         return resp.getData();
     }
 
@@ -604,12 +612,14 @@ public class AccountsApi {
      * @param username username (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;UserRoles&gt;
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return ApiResponse&lt;PaginatedStringResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<UserRoles> getUserRolesWithHttpInfo(Long organizationId, String username, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<UserRoles>(){}.getType();
+    public ApiResponse<PaginatedStringResponse> getUserRolesWithHttpInfo(Long organizationId, String username, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, authorization, acceptLanguage, offset, limit, null, null);
+        Type localVarReturnType = new TypeToken<PaginatedStringResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -620,11 +630,13 @@ public class AccountsApi {
      * @param username username (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUserRolesAsync(Long organizationId, String username, String authorization, String acceptLanguage, final ApiCallback<UserRoles> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserRolesAsync(Long organizationId, String username, String authorization, String acceptLanguage, Integer offset, Integer limit, final ApiCallback<PaginatedStringResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -645,8 +657,8 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<UserRoles>(){}.getType();
+        com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaginatedStringResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

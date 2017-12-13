@@ -434,6 +434,66 @@ public class CollectionsApiTest {
     }
     
     /**
+     * List contents of the collection
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listElementsOfLabelledCollectionTest() throws ApiException {
+        String id4n = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Integer offset = null;
+        Integer limit = null;
+        PaginatedGuidResponse response = api.listElementsOfLabelledCollection(id4n, authorization, acceptLanguage, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List contents of the collection
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listElementsOfLogisticCollectionTest() throws ApiException {
+        String id4n = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Integer offset = null;
+        Integer limit = null;
+        PaginatedGuidResponse response = api.listElementsOfLogisticCollection(id4n, authorization, acceptLanguage, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List contents of the collection
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listElementsOfRoutingCollectionTest() throws ApiException {
+        String id4n = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Integer offset = null;
+        Integer limit = null;
+        PaginatedGuidResponse response = api.listElementsOfRoutingCollection(id4n, authorization, acceptLanguage, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Remove element from collection
      *
      * 
