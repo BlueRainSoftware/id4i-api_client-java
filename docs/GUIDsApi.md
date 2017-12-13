@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createGuid**](GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 [**getGuid**](GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+[**getGuidsWithoutCollection**](GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**updateGuid**](GUIDsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 
 
@@ -95,6 +96,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Guid**](Guid.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="getGuidsWithoutCollection"></a>
+# **getGuidsWithoutCollection**
+> PaginatedResponseGuid getGuidsWithoutCollection(organizationId, authorization, acceptLanguage, offset, limit)
+
+Retrieve GUIDs not in any collection
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.GUIDsApi;
+
+
+GUIDsApi apiInstance = new GUIDsApi();
+Long organizationId = 789L; // Long | Organization to search GUIDs for (required).
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+Integer offset = 56; // Integer | Start with the n-th element. 
+Integer limit = 56; // Integer | The maximum count of returned elements.
+try {
+    PaginatedResponseGuid result = apiInstance.getGuidsWithoutCollection(organizationId, authorization, acceptLanguage, offset, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GUIDsApi#getGuidsWithoutCollection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| Organization to search GUIDs for (required). |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+ **offset** | **Integer**| Start with the n-th element.  | [optional]
+ **limit** | **Integer**| The maximum count of returned elements. | [optional]
+
+### Return type
+
+[**PaginatedResponseGuid**](PaginatedResponseGuid.md)
 
 ### Authorization
 

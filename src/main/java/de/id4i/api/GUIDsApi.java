@@ -31,6 +31,7 @@ import de.id4i.api.model.ApiError;
 import de.id4i.api.model.CreateGuidRequest;
 import de.id4i.api.model.Guid;
 import de.id4i.api.model.ListOfId4ns;
+import de.id4i.api.model.PaginatedResponseGuid;
 import de.id4i.api.model.ResponseEntity;
 
 import java.lang.reflect.Type;
@@ -330,6 +331,157 @@ public class GUIDsApi {
 
         com.squareup.okhttp.Call call = getGuidValidateBeforeCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Guid>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getGuidsWithoutCollection
+     * @param organizationId Organization to search GUIDs for (required). (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getGuidsWithoutCollectionCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/guids/withoutCollection";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "organizationId", organizationId));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getGuidsWithoutCollectionValidateBeforeCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getGuidsWithoutCollection(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getGuidsWithoutCollectionCall(organizationId, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Retrieve GUIDs not in any collection
+     * 
+     * @param organizationId Organization to search GUIDs for (required). (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return PaginatedResponseGuid
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaginatedResponseGuid getGuidsWithoutCollection(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseGuid> resp = getGuidsWithoutCollectionWithHttpInfo(organizationId, authorization, acceptLanguage, offset, limit);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve GUIDs not in any collection
+     * 
+     * @param organizationId Organization to search GUIDs for (required). (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return ApiResponse&lt;PaginatedResponseGuid&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaginatedResponseGuid> getGuidsWithoutCollectionWithHttpInfo(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = getGuidsWithoutCollectionValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, null, null);
+        Type localVarReturnType = new TypeToken<PaginatedResponseGuid>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve GUIDs not in any collection (asynchronously)
+     * 
+     * @param organizationId Organization to search GUIDs for (required). (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getGuidsWithoutCollectionAsync(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, final ApiCallback<PaginatedResponseGuid> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getGuidsWithoutCollectionValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaginatedResponseGuid>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

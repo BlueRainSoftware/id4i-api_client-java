@@ -18,6 +18,7 @@ import de.id4i.api.model.ApiError;
 import de.id4i.api.model.CreateGuidRequest;
 import de.id4i.api.model.Guid;
 import de.id4i.api.model.ListOfId4ns;
+import de.id4i.api.model.PaginatedResponseGuid;
 import de.id4i.api.model.ResponseEntity;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -68,6 +69,26 @@ public class GUIDsApiTest {
         String authorization = null;
         String acceptLanguage = null;
         Guid response = api.getGuid(id4n, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Retrieve GUIDs not in any collection
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getGuidsWithoutCollectionTest() throws ApiException {
+        Long organizationId = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Integer offset = null;
+        Integer limit = null;
+        PaginatedResponseGuid response = api.getGuidsWithoutCollection(organizationId, authorization, acceptLanguage, offset, limit);
 
         // TODO: test validations
     }
