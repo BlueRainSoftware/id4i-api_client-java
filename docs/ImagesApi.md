@@ -1,6 +1,6 @@
 # ImagesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

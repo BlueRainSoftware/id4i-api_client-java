@@ -112,7 +112,7 @@ public class ApiClient {
      */
     public static final String LENIENT_DATETIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSSZ";
 
-    private String basePath = "https://localhost";
+    private String basePath = "https://backend.id4i.de";
     private boolean lenientOnJson = false;
     private boolean debugging = false;
     private Map<String, String> defaultHeaderMap = new HashMap<String, String>();
@@ -179,7 +179,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g https://localhost
+     * @param basePath Base path of the URL (e.g https://backend.id4i.de
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {
