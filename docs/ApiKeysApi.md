@@ -4,21 +4,21 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create apiKey
-[**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete apiKey
-[**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show apiKey
-[**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find apiKeys by organization
-[**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List ApiKey privileges
-[**setApiKeyActivationStatus**](ApiKeysApi.md#setApiKeyActivationStatus) | **PUT** /api/v1/apikeys/{key} | Set apiKey activation state
+[**createNewApiKey**](ApiKeysApi.md#createNewApiKey) | **POST** /api/v1/apikeys | Create API key
+[**deleteApiKey**](ApiKeysApi.md#deleteApiKey) | **DELETE** /api/v1/apikeys/{key} | Delete API key
+[**getApiKey**](ApiKeysApi.md#getApiKey) | **GET** /api/v1/apikeys/{key} | Show API key
+[**listAllApiKeysOfOrganization**](ApiKeysApi.md#listAllApiKeysOfOrganization) | **GET** /api/v1/apikeys | Find API key by organization
+[**listApiKeyPrivileges**](ApiKeysApi.md#listApiKeyPrivileges) | **GET** /api/v1/apikeys/privileges | List API key privileges
+[**updateApiKey**](ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
 
 
 <a name="createNewApiKey"></a>
 # **createNewApiKey**
 > ApiKeyPresentation createNewApiKey(creationRequest, authorization, acceptLanguage)
 
-Create apiKey
+Create API key
 
-Creation of a new apiKey.
+Creation of a new API key.
 
 ### Example
 ```java
@@ -28,7 +28,7 @@ Creation of a new apiKey.
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-ApiKeyCreationRequest creationRequest = new ApiKeyCreationRequest(); // ApiKeyCreationRequest | ApiKey to be created.
+ApiKeyCreationRequest creationRequest = new ApiKeyCreationRequest(); // ApiKeyCreationRequest | API key to be created.
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **creationRequest** | [**ApiKeyCreationRequest**](ApiKeyCreationRequest.md)| ApiKey to be created. |
+ **creationRequest** | [**ApiKeyCreationRequest**](ApiKeyCreationRequest.md)| API key to be created. |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
@@ -65,9 +65,9 @@ No authorization required
 # **deleteApiKey**
 > ApiError deleteApiKey(key, authorization, acceptLanguage)
 
-Delete apiKey
+Delete API key
 
-Deletion of an apiKey.
+Deletion of an API key.
 
 ### Example
 ```java
@@ -77,7 +77,7 @@ Deletion of an apiKey.
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-String key = "key_example"; // String | The apiKey to delete.
+String key = "key_example"; // String | The API key to delete.
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
@@ -93,7 +93,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The apiKey to delete. |
+ **key** | **String**| The API key to delete. |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
@@ -114,9 +114,9 @@ No authorization required
 # **getApiKey**
 > ApiKeyPresentation getApiKey(key, authorization, acceptLanguage)
 
-Show apiKey
+Show API key
 
-Showing the details of an apiKey.
+Showing the details of an API key.
 
 ### Example
 ```java
@@ -126,7 +126,7 @@ Showing the details of an apiKey.
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-String key = "key_example"; // String | The apiKey to show.
+String key = "key_example"; // String | The API key to show.
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
@@ -142,7 +142,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The apiKey to show. |
+ **key** | **String**| The API key to show. |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
@@ -163,9 +163,9 @@ No authorization required
 # **listAllApiKeysOfOrganization**
 > PaginatedApiKeyResponse listAllApiKeysOfOrganization(organizationId, authorization, acceptLanguage, offset, limit)
 
-Find apiKeys by organization
+Find API key by organization
 
-Finding all apiKeys assigned to the specified organization in a paginated manner.
+Finding all API key assigned to the specified organization in a paginated manner.
 
 ### Example
 ```java
@@ -216,9 +216,9 @@ No authorization required
 # **listApiKeyPrivileges**
 > ApiKeyPrivilegeResponse listApiKeyPrivileges(authorization, acceptLanguage, id4nConcerning, offset, limit)
 
-List ApiKey privileges
+List API key privileges
 
-Listing api key privileges.
+Listing API key privileges.
 
 ### Example
 ```java
@@ -265,13 +265,13 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="setApiKeyActivationStatus"></a>
-# **setApiKeyActivationStatus**
-> ApiError setApiKeyActivationStatus(key, apiKeyStatus, authorization, acceptLanguage)
+<a name="updateApiKey"></a>
+# **updateApiKey**
+> ApiError updateApiKey(key, apiKeyChange, authorization, acceptLanguage)
 
-Set apiKey activation state
+Update API keys
 
-Setting the apiKey activation state.
+API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
 
 ### Example
 ```java
@@ -281,15 +281,15 @@ Setting the apiKey activation state.
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-String key = "key_example"; // String | The apiKey to change the activation state.
-ApiKeyStatus apiKeyStatus = new ApiKeyStatus(); // ApiKeyStatus | Activation state to set.
+String key = "key_example"; // String | The API key to be updated.
+ApiKeyChangeRequest apiKeyChange = new ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.setApiKeyActivationStatus(key, apiKeyStatus, authorization, acceptLanguage);
+    ApiError result = apiInstance.updateApiKey(key, apiKeyChange, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling ApiKeysApi#setApiKeyActivationStatus");
+    System.err.println("Exception when calling ApiKeysApi#updateApiKey");
     e.printStackTrace();
 }
 ```
@@ -298,8 +298,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **key** | **String**| The apiKey to change the activation state. |
- **apiKeyStatus** | [**ApiKeyStatus**](ApiKeyStatus.md)| Activation state to set. |
+ **key** | **String**| The API key to be updated. |
+ **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 

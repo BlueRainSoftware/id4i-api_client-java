@@ -28,10 +28,10 @@ import java.io.IOException;
 
 
 import de.id4i.api.model.ApiError;
+import de.id4i.api.model.ApiKeyChangeRequest;
 import de.id4i.api.model.ApiKeyCreationRequest;
 import de.id4i.api.model.ApiKeyPresentation;
 import de.id4i.api.model.ApiKeyPrivilegeResponse;
-import de.id4i.api.model.ApiKeyStatus;
 import de.id4i.api.model.PaginatedApiKeyResponse;
 
 import java.lang.reflect.Type;
@@ -61,7 +61,7 @@ public class ApiKeysApi {
 
     /**
      * Build call for createNewApiKey
-     * @param creationRequest ApiKey to be created. (required)
+     * @param creationRequest API key to be created. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
@@ -132,9 +132,9 @@ public class ApiKeysApi {
     }
 
     /**
-     * Create apiKey
-     * Creation of a new apiKey.
-     * @param creationRequest ApiKey to be created. (required)
+     * Create API key
+     * Creation of a new API key.
+     * @param creationRequest API key to be created. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiKeyPresentation
@@ -146,9 +146,9 @@ public class ApiKeysApi {
     }
 
     /**
-     * Create apiKey
-     * Creation of a new apiKey.
-     * @param creationRequest ApiKey to be created. (required)
+     * Create API key
+     * Creation of a new API key.
+     * @param creationRequest API key to be created. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiKeyPresentation&gt;
@@ -161,9 +161,9 @@ public class ApiKeysApi {
     }
 
     /**
-     * Create apiKey (asynchronously)
-     * Creation of a new apiKey.
-     * @param creationRequest ApiKey to be created. (required)
+     * Create API key (asynchronously)
+     * Creation of a new API key.
+     * @param creationRequest API key to be created. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
@@ -198,7 +198,7 @@ public class ApiKeysApi {
     }
     /**
      * Build call for deleteApiKey
-     * @param key The apiKey to delete. (required)
+     * @param key The API key to delete. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
@@ -270,9 +270,9 @@ public class ApiKeysApi {
     }
 
     /**
-     * Delete apiKey
-     * Deletion of an apiKey.
-     * @param key The apiKey to delete. (required)
+     * Delete API key
+     * Deletion of an API key.
+     * @param key The API key to delete. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
@@ -284,9 +284,9 @@ public class ApiKeysApi {
     }
 
     /**
-     * Delete apiKey
-     * Deletion of an apiKey.
-     * @param key The apiKey to delete. (required)
+     * Delete API key
+     * Deletion of an API key.
+     * @param key The API key to delete. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
@@ -299,9 +299,9 @@ public class ApiKeysApi {
     }
 
     /**
-     * Delete apiKey (asynchronously)
-     * Deletion of an apiKey.
-     * @param key The apiKey to delete. (required)
+     * Delete API key (asynchronously)
+     * Deletion of an API key.
+     * @param key The API key to delete. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
@@ -336,7 +336,7 @@ public class ApiKeysApi {
     }
     /**
      * Build call for getApiKey
-     * @param key The apiKey to show. (required)
+     * @param key The API key to show. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
@@ -408,9 +408,9 @@ public class ApiKeysApi {
     }
 
     /**
-     * Show apiKey
-     * Showing the details of an apiKey.
-     * @param key The apiKey to show. (required)
+     * Show API key
+     * Showing the details of an API key.
+     * @param key The API key to show. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiKeyPresentation
@@ -422,9 +422,9 @@ public class ApiKeysApi {
     }
 
     /**
-     * Show apiKey
-     * Showing the details of an apiKey.
-     * @param key The apiKey to show. (required)
+     * Show API key
+     * Showing the details of an API key.
+     * @param key The API key to show. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiKeyPresentation&gt;
@@ -437,9 +437,9 @@ public class ApiKeysApi {
     }
 
     /**
-     * Show apiKey (asynchronously)
-     * Showing the details of an apiKey.
-     * @param key The apiKey to show. (required)
+     * Show API key (asynchronously)
+     * Showing the details of an API key.
+     * @param key The API key to show. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
@@ -553,8 +553,8 @@ public class ApiKeysApi {
     }
 
     /**
-     * Find apiKeys by organization
-     * Finding all apiKeys assigned to the specified organization in a paginated manner.
+     * Find API key by organization
+     * Finding all API key assigned to the specified organization in a paginated manner.
      * @param organizationId The id of the organization to search in. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
@@ -569,8 +569,8 @@ public class ApiKeysApi {
     }
 
     /**
-     * Find apiKeys by organization
-     * Finding all apiKeys assigned to the specified organization in a paginated manner.
+     * Find API key by organization
+     * Finding all API key assigned to the specified organization in a paginated manner.
      * @param organizationId The id of the organization to search in. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
@@ -586,8 +586,8 @@ public class ApiKeysApi {
     }
 
     /**
-     * Find apiKeys by organization (asynchronously)
-     * Finding all apiKeys assigned to the specified organization in a paginated manner.
+     * Find API key by organization (asynchronously)
+     * Finding all API key assigned to the specified organization in a paginated manner.
      * @param organizationId The id of the organization to search in. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
@@ -699,8 +699,8 @@ public class ApiKeysApi {
     }
 
     /**
-     * List ApiKey privileges
-     * Listing api key privileges.
+     * List API key privileges
+     * Listing API key privileges.
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
@@ -715,8 +715,8 @@ public class ApiKeysApi {
     }
 
     /**
-     * List ApiKey privileges
-     * Listing api key privileges.
+     * List API key privileges
+     * Listing API key privileges.
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
@@ -732,8 +732,8 @@ public class ApiKeysApi {
     }
 
     /**
-     * List ApiKey privileges (asynchronously)
-     * Listing api key privileges.
+     * List API key privileges (asynchronously)
+     * Listing API key privileges.
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
@@ -770,9 +770,9 @@ public class ApiKeysApi {
         return call;
     }
     /**
-     * Build call for setApiKeyActivationStatus
-     * @param key The apiKey to change the activation state. (required)
-     * @param apiKeyStatus Activation state to set. (required)
+     * Build call for updateApiKey
+     * @param key The API key to be updated. (required)
+     * @param apiKeyChange The new values to apply. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
@@ -780,8 +780,8 @@ public class ApiKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call setApiKeyActivationStatusCall(String key, ApiKeyStatus apiKeyStatus, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = apiKeyStatus;
+    public com.squareup.okhttp.Call updateApiKeyCall(String key, ApiKeyChangeRequest apiKeyChange, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = apiKeyChange;
         
         // create path and map variables
         String localVarPath = "/api/v1/apikeys/{key}"
@@ -826,20 +826,20 @@ public class ApiKeysApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call setApiKeyActivationStatusValidateBeforeCall(String key, ApiKeyStatus apiKeyStatus, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call updateApiKeyValidateBeforeCall(String key, ApiKeyChangeRequest apiKeyChange, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'key' is set
         if (key == null) {
-            throw new ApiException("Missing the required parameter 'key' when calling setApiKeyActivationStatus(Async)");
+            throw new ApiException("Missing the required parameter 'key' when calling updateApiKey(Async)");
         }
         
-        // verify the required parameter 'apiKeyStatus' is set
-        if (apiKeyStatus == null) {
-            throw new ApiException("Missing the required parameter 'apiKeyStatus' when calling setApiKeyActivationStatus(Async)");
+        // verify the required parameter 'apiKeyChange' is set
+        if (apiKeyChange == null) {
+            throw new ApiException("Missing the required parameter 'apiKeyChange' when calling updateApiKey(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = setApiKeyActivationStatusCall(key, apiKeyStatus, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateApiKeyCall(key, apiKeyChange, authorization, acceptLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -849,48 +849,48 @@ public class ApiKeysApi {
     }
 
     /**
-     * Set apiKey activation state
-     * Setting the apiKey activation state.
-     * @param key The apiKey to change the activation state. (required)
-     * @param apiKeyStatus Activation state to set. (required)
+     * Update API keys
+     * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
+     * @param key The API key to be updated. (required)
+     * @param apiKeyChange The new values to apply. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiError setApiKeyActivationStatus(String key, ApiKeyStatus apiKeyStatus, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = setApiKeyActivationStatusWithHttpInfo(key, apiKeyStatus, authorization, acceptLanguage);
+    public ApiError updateApiKey(String key, ApiKeyChangeRequest apiKeyChange, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ApiError> resp = updateApiKeyWithHttpInfo(key, apiKeyChange, authorization, acceptLanguage);
         return resp.getData();
     }
 
     /**
-     * Set apiKey activation state
-     * Setting the apiKey activation state.
-     * @param key The apiKey to change the activation state. (required)
-     * @param apiKeyStatus Activation state to set. (required)
+     * Update API keys
+     * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
+     * @param key The API key to be updated. (required)
+     * @param apiKeyChange The new values to apply. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiError> setApiKeyActivationStatusWithHttpInfo(String key, ApiKeyStatus apiKeyStatus, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = setApiKeyActivationStatusValidateBeforeCall(key, apiKeyStatus, authorization, acceptLanguage, null, null);
+    public ApiResponse<ApiError> updateApiKeyWithHttpInfo(String key, ApiKeyChangeRequest apiKeyChange, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = updateApiKeyValidateBeforeCall(key, apiKeyChange, authorization, acceptLanguage, null, null);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Set apiKey activation state (asynchronously)
-     * Setting the apiKey activation state.
-     * @param key The apiKey to change the activation state. (required)
-     * @param apiKeyStatus Activation state to set. (required)
+     * Update API keys (asynchronously)
+     * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
+     * @param key The API key to be updated. (required)
+     * @param apiKeyChange The new values to apply. (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call setApiKeyActivationStatusAsync(String key, ApiKeyStatus apiKeyStatus, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateApiKeyAsync(String key, ApiKeyChangeRequest apiKeyChange, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -911,7 +911,7 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = setApiKeyActivationStatusValidateBeforeCall(key, apiKeyStatus, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateApiKeyValidateBeforeCall(key, apiKeyChange, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

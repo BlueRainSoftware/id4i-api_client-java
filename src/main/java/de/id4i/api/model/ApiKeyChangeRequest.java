@@ -24,14 +24,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ApiKeyStatus
+ * ApiKeyChangeRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-14T20:39:28.041Z")
-public class ApiKeyStatus {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-15T08:52:08.101Z")
+public class ApiKeyChangeRequest {
   @SerializedName("active")
   private Boolean active = null;
 
-  public ApiKeyStatus active(Boolean active) {
+  @SerializedName("newLabel")
+  private String newLabel = null;
+
+  public ApiKeyChangeRequest active(Boolean active) {
     this.active = active;
     return this;
   }
@@ -49,6 +52,24 @@ public class ApiKeyStatus {
     this.active = active;
   }
 
+  public ApiKeyChangeRequest newLabel(String newLabel) {
+    this.newLabel = newLabel;
+    return this;
+  }
+
+   /**
+   * Get newLabel
+   * @return newLabel
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getNewLabel() {
+    return newLabel;
+  }
+
+  public void setNewLabel(String newLabel) {
+    this.newLabel = newLabel;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -58,22 +79,24 @@ public class ApiKeyStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiKeyStatus apiKeyStatus = (ApiKeyStatus) o;
-    return Objects.equals(this.active, apiKeyStatus.active);
+    ApiKeyChangeRequest apiKeyChangeRequest = (ApiKeyChangeRequest) o;
+    return Objects.equals(this.active, apiKeyChangeRequest.active) &&
+        Objects.equals(this.newLabel, apiKeyChangeRequest.newLabel);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active);
+    return Objects.hash(active, newLabel);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiKeyStatus {\n");
+    sb.append("class ApiKeyChangeRequest {\n");
     
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
+    sb.append("    newLabel: ").append(toIndentedString(newLabel)).append("\n");
     sb.append("}");
     return sb.toString();
   }

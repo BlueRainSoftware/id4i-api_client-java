@@ -15,10 +15,10 @@ package de.id4i.api;
 
 import de.id4i.ApiException;
 import de.id4i.api.model.ApiError;
+import de.id4i.api.model.ApiKeyChangeRequest;
 import de.id4i.api.model.ApiKeyCreationRequest;
 import de.id4i.api.model.ApiKeyPresentation;
 import de.id4i.api.model.ApiKeyPrivilegeResponse;
-import de.id4i.api.model.ApiKeyStatus;
 import de.id4i.api.model.PaginatedApiKeyResponse;
 import org.junit.Test;
 import org.junit.Ignore;
@@ -38,9 +38,9 @@ public class ApiKeysApiTest {
 
     
     /**
-     * Create apiKey
+     * Create API key
      *
-     * Creation of a new apiKey.
+     * Creation of a new API key.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -56,9 +56,9 @@ public class ApiKeysApiTest {
     }
     
     /**
-     * Delete apiKey
+     * Delete API key
      *
-     * Deletion of an apiKey.
+     * Deletion of an API key.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -74,9 +74,9 @@ public class ApiKeysApiTest {
     }
     
     /**
-     * Show apiKey
+     * Show API key
      *
-     * Showing the details of an apiKey.
+     * Showing the details of an API key.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -92,9 +92,9 @@ public class ApiKeysApiTest {
     }
     
     /**
-     * Find apiKeys by organization
+     * Find API key by organization
      *
-     * Finding all apiKeys assigned to the specified organization in a paginated manner.
+     * Finding all API key assigned to the specified organization in a paginated manner.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -112,9 +112,9 @@ public class ApiKeysApiTest {
     }
     
     /**
-     * List ApiKey privileges
+     * List API key privileges
      *
-     * Listing api key privileges.
+     * Listing API key privileges.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -132,20 +132,20 @@ public class ApiKeysApiTest {
     }
     
     /**
-     * Set apiKey activation state
+     * Update API keys
      *
-     * Setting the apiKey activation state.
+     * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void setApiKeyActivationStatusTest() throws ApiException {
+    public void updateApiKeyTest() throws ApiException {
         String key = null;
-        ApiKeyStatus apiKeyStatus = null;
+        ApiKeyChangeRequest apiKeyChange = null;
         String authorization = null;
         String acceptLanguage = null;
-        ApiError response = api.setApiKeyActivationStatus(key, apiKeyStatus, authorization, acceptLanguage);
+        ApiError response = api.updateApiKey(key, apiKeyChange, authorization, acceptLanguage);
 
         // TODO: test validations
     }
