@@ -1,6 +1,6 @@
 # OrganizationsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -35,8 +35,8 @@ Creating a new organization.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -82,8 +82,8 @@ Delete organization
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -129,8 +129,8 @@ Remove billing address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -176,8 +176,8 @@ Delete organization logo
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -225,8 +225,8 @@ Returns a single organization.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -272,8 +272,8 @@ Retrieve address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -319,8 +319,8 @@ Retrieve billing address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -368,8 +368,8 @@ Retrieving all collections of an organization in a paginated manner.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -425,8 +425,8 @@ Listing users and their roles in a paginated manner.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -469,15 +469,15 @@ No authorization required
 
 <a name="getOrganizationsOfUser"></a>
 # **getOrganizationsOfUser**
-> PaginatedResponseOrganization getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit)
+> PaginatedOrganizationResponse getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit)
 
 Retrieve organizations of user
 
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -487,7 +487,7 @@ String role = "role_example"; // String | role
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
 try {
-    PaginatedResponseOrganization result = apiInstance.getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit);
+    PaginatedOrganizationResponse result = apiInstance.getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getOrganizationsOfUser");
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseOrganization**](PaginatedResponseOrganization.md)
+[**PaginatedOrganizationResponse**](PaginatedOrganizationResponse.md)
 
 ### Authorization
 
@@ -520,15 +520,15 @@ No authorization required
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
-> UserRoles getUserRoles(organizationId, username, authorization, acceptLanguage)
+> PaginatedStringResponse getUserRoles(organizationId, username, authorization, acceptLanguage, offset, limit)
 
 Get user roles by username
 
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -536,8 +536,10 @@ Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+Integer offset = 56; // Integer | Start with the n-th element. 
+Integer limit = 56; // Integer | The maximum count of returned elements.
 try {
-    UserRoles result = apiInstance.getUserRoles(organizationId, username, authorization, acceptLanguage);
+    PaginatedStringResponse result = apiInstance.getUserRoles(organizationId, username, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getUserRoles");
@@ -553,10 +555,12 @@ Name | Type | Description  | Notes
  **username** | **String**| username |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
+ **offset** | **Integer**| Start with the n-th element.  | [optional]
+ **limit** | **Integer**| The maximum count of returned elements. | [optional]
 
 ### Return type
 
-[**UserRoles**](UserRoles.md)
+[**PaginatedStringResponse**](PaginatedStringResponse.md)
 
 ### Authorization
 
@@ -578,8 +582,8 @@ Finding users in the specified organization in a paginated manner.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -629,8 +633,8 @@ Remove role(s) from user
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -680,8 +684,8 @@ Update organization
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -729,8 +733,8 @@ Store address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -778,8 +782,8 @@ Store billing address
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -829,8 +833,8 @@ Updating an organization logo using a multipart file upload.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
@@ -878,8 +882,8 @@ Add role(s) to user
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.OrganizationsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();

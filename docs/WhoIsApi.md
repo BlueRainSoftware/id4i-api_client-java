@@ -1,6 +1,6 @@
 # WhoIsApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,8 +16,8 @@ Resolve owner of id4n
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.WhoIsApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.WhoIsApi;
 
 
 WhoIsApi apiInstance = new WhoIsApi();

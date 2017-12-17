@@ -1,6 +1,6 @@
 # MetaInformationApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,8 +18,8 @@ Retrieving version information about ID4i.
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.MetaInformationApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.MetaInformationApi;
 
 
 MetaInformationApi apiInstance = new MetaInformationApi();

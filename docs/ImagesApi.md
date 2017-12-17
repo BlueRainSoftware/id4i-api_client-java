@@ -1,6 +1,6 @@
 # ImagesApi
 
-All URIs are relative to *https://localhost*
+All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,8 +16,8 @@ Resolve image
 ### Example
 ```java
 // Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.ImagesApi;
+//import de.id4i.ApiException;
+//import de.id4i.api.ImagesApi;
 
 
 ImagesApi apiInstance = new ImagesApi();
