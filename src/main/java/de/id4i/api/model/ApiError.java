@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-18T09:51:21.758Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-18T11:08:40.833Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -77,6 +77,8 @@ public class ApiError {
     EMAIL_MISSING_TEMPLATE_PARAM("ERR_EMAIL_MISSING_TEMPLATE_PARAM"),
     
     EMAIL_TEMPLATE_NOT_AVAILABLE("ERR_EMAIL_TEMPLATE_NOT_AVAILABLE"),
+    
+    IMAGE_CONVERSION("ERR_IMAGE_CONVERSION"),
     
     EMAIL_PREPARATION_FAILED("ERR_EMAIL_PREPARATION_FAILED");
 
