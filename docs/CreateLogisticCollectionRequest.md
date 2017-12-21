@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **String** |  |  [optional]
-**length** | **Integer** |  | 
-**organizationId** | **Long** |  | 
+**length** | **Integer** |  |  [optional]
+**organizationId** | **Long** |  |  [optional]
 
 
 

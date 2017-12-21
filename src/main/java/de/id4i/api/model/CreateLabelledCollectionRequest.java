@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * CreateLabelledCollectionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-21T09:22:12.049Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-21T11:22:53.278Z")
 public class CreateLabelledCollectionRequest {
   @SerializedName("label")
   private String label = null;
@@ -46,7 +46,7 @@ public class CreateLabelledCollectionRequest {
    * Get label
    * @return label
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public String getLabel() {
     return label;
   }
@@ -62,11 +62,9 @@ public class CreateLabelledCollectionRequest {
 
    /**
    * Get length
-   * minimum: 6
-   * maximum: 255
    * @return length
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Integer getLength() {
     return length;
   }
@@ -84,7 +82,7 @@ public class CreateLabelledCollectionRequest {
    * Get organizationId
    * @return organizationId
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Long getOrganizationId() {
     return organizationId;
   }

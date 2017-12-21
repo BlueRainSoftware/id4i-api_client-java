@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * CreateLogisticCollectionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-21T09:22:12.049Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-21T11:22:53.278Z")
 public class CreateLogisticCollectionRequest {
   @SerializedName("label")
   private String label = null;
@@ -62,11 +62,9 @@ public class CreateLogisticCollectionRequest {
 
    /**
    * Get length
-   * minimum: 6
-   * maximum: 255
    * @return length
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Integer getLength() {
     return length;
   }
@@ -84,7 +82,7 @@ public class CreateLogisticCollectionRequest {
    * Get organizationId
    * @return organizationId
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public Long getOrganizationId() {
     return organizationId;
   }
