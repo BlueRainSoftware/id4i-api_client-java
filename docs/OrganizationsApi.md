@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**getOrganizationsOfUser**](OrganizationsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 [**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+[**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
@@ -614,6 +615,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="inviteUsers"></a>
+# **inviteUsers**
+> ApiError inviteUsers(organizationId, invitationList, authorization, acceptLanguage)
+
+Invite Users
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
+
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+Long organizationId = 789L; // Long | organizationId
+OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    ApiError result = apiInstance.inviteUsers(organizationId, invitationList, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#inviteUsers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| organizationId |
+ **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**ApiError**](ApiError.md)
 
 ### Authorization
 

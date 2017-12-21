@@ -24,20 +24,38 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * PasswordResetVerificationRequest
+ * CompleteUserRegistrationRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-21T15:41:00.449Z")
-public class PasswordResetVerificationRequest {
+public class CompleteUserRegistrationRequest {
+  @SerializedName("verificationToken")
+  private String verificationToken = null;
+
   @SerializedName("username")
   private String username = null;
 
   @SerializedName("password")
   private String password = null;
 
-  @SerializedName("token")
-  private String token = null;
+  public CompleteUserRegistrationRequest verificationToken(String verificationToken) {
+    this.verificationToken = verificationToken;
+    return this;
+  }
 
-  public PasswordResetVerificationRequest username(String username) {
+   /**
+   * Get verificationToken
+   * @return verificationToken
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getVerificationToken() {
+    return verificationToken;
+  }
+
+  public void setVerificationToken(String verificationToken) {
+    this.verificationToken = verificationToken;
+  }
+
+  public CompleteUserRegistrationRequest username(String username) {
     this.username = username;
     return this;
   }
@@ -46,7 +64,7 @@ public class PasswordResetVerificationRequest {
    * Get username
    * @return username
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public String getUsername() {
     return username;
   }
@@ -55,7 +73,7 @@ public class PasswordResetVerificationRequest {
     this.username = username;
   }
 
-  public PasswordResetVerificationRequest password(String password) {
+  public CompleteUserRegistrationRequest password(String password) {
     this.password = password;
     return this;
   }
@@ -64,31 +82,13 @@ public class PasswordResetVerificationRequest {
    * Get password
    * @return password
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public String getPassword() {
     return password;
   }
 
   public void setPassword(String password) {
     this.password = password;
-  }
-
-  public PasswordResetVerificationRequest token(String token) {
-    this.token = token;
-    return this;
-  }
-
-   /**
-   * Get token
-   * @return token
-  **/
-  @ApiModelProperty(value = "")
-  public String getToken() {
-    return token;
-  }
-
-  public void setToken(String token) {
-    this.token = token;
   }
 
 
@@ -100,26 +100,26 @@ public class PasswordResetVerificationRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PasswordResetVerificationRequest passwordResetVerificationRequest = (PasswordResetVerificationRequest) o;
-    return Objects.equals(this.username, passwordResetVerificationRequest.username) &&
-        Objects.equals(this.password, passwordResetVerificationRequest.password) &&
-        Objects.equals(this.token, passwordResetVerificationRequest.token);
+    CompleteUserRegistrationRequest completeUserRegistrationRequest = (CompleteUserRegistrationRequest) o;
+    return Objects.equals(this.verificationToken, completeUserRegistrationRequest.verificationToken) &&
+        Objects.equals(this.username, completeUserRegistrationRequest.username) &&
+        Objects.equals(this.password, completeUserRegistrationRequest.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(username, password, token);
+    return Objects.hash(verificationToken, username, password);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PasswordResetVerificationRequest {\n");
+    sb.append("class CompleteUserRegistrationRequest {\n");
     
+    sb.append("    verificationToken: ").append(toIndentedString(verificationToken)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");
     return sb.toString();
   }

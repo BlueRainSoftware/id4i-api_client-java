@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-21T11:22:53.278Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-21T15:41:00.449Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -79,6 +79,12 @@ public class ApiError {
     ORGANIZATION_ROLE_INCONSISTENCY("ERR_ORGANIZATION_ROLE_INCONSISTENCY"),
     
     ORGANIZATION_NOT_DELETABLE("ERR_ORGANIZATION_NOT_DELETABLE"),
+    
+    USER_ALREADY_IN_ORGANIZATION("ERR_USER_ALREADY_IN_ORGANIZATION"),
+    
+    USER_INVITATION_NEEDS_MINIMUM_ONE_ROLE("ERR_USER_INVITATION_NEEDS_MINIMUM_ONE_ROLE"),
+    
+    USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME("ERR_USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME"),
     
     LANGUAGE_NOT_SUPPORTED("ERR_LANGUAGE_NOT_SUPPORTED"),
     

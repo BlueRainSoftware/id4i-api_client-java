@@ -22,22 +22,24 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * UserRegistrationResponse
+ * OrganizationUserInvitation
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-21T15:41:00.449Z")
-public class UserRegistrationResponse {
+public class OrganizationUserInvitation {
   @SerializedName("email")
   private String email = null;
 
-  @SerializedName("message")
-  private String message = null;
+  @SerializedName("userName")
+  private String userName = null;
 
-  @SerializedName("username")
-  private String username = null;
+  @SerializedName("roles")
+  private List<String> roles = new ArrayList<String>();
 
-  public UserRegistrationResponse email(String email) {
+  public OrganizationUserInvitation email(String email) {
     this.email = email;
     return this;
   }
@@ -55,40 +57,45 @@ public class UserRegistrationResponse {
     this.email = email;
   }
 
-  public UserRegistrationResponse message(String message) {
-    this.message = message;
+  public OrganizationUserInvitation userName(String userName) {
+    this.userName = userName;
     return this;
   }
 
    /**
-   * Get message
-   * @return message
+   * Get userName
+   * @return userName
   **/
   @ApiModelProperty(value = "")
-  public String getMessage() {
-    return message;
+  public String getUserName() {
+    return userName;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setUserName(String userName) {
+    this.userName = userName;
   }
 
-  public UserRegistrationResponse username(String username) {
-    this.username = username;
+  public OrganizationUserInvitation roles(List<String> roles) {
+    this.roles = roles;
+    return this;
+  }
+
+  public OrganizationUserInvitation addRolesItem(String rolesItem) {
+    this.roles.add(rolesItem);
     return this;
   }
 
    /**
-   * Get username
-   * @return username
+   * Get roles
+   * @return roles
   **/
-  @ApiModelProperty(value = "")
-  public String getUsername() {
-    return username;
+  @ApiModelProperty(required = true, value = "")
+  public List<String> getRoles() {
+    return roles;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setRoles(List<String> roles) {
+    this.roles = roles;
   }
 
 
@@ -100,26 +107,26 @@ public class UserRegistrationResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UserRegistrationResponse userRegistrationResponse = (UserRegistrationResponse) o;
-    return Objects.equals(this.email, userRegistrationResponse.email) &&
-        Objects.equals(this.message, userRegistrationResponse.message) &&
-        Objects.equals(this.username, userRegistrationResponse.username);
+    OrganizationUserInvitation organizationUserInvitation = (OrganizationUserInvitation) o;
+    return Objects.equals(this.email, organizationUserInvitation.email) &&
+        Objects.equals(this.userName, organizationUserInvitation.userName) &&
+        Objects.equals(this.roles, organizationUserInvitation.roles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, message, username);
+    return Objects.hash(email, userName, roles);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UserRegistrationResponse {\n");
+    sb.append("class OrganizationUserInvitation {\n");
     
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
+    sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,8 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.Route;
-import de.id4i.api.model.RoutingOptions;
+import de.id4i.api.model.OrganizationUserInvitation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -28,55 +27,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * RoutingFile
+ * OrganizationUserInvitationListRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-21T15:41:00.449Z")
-public class RoutingFile {
-  @SerializedName("options")
-  private RoutingOptions options = null;
+public class OrganizationUserInvitationListRequest {
+  @SerializedName("invitations")
+  private List<OrganizationUserInvitation> invitations = new ArrayList<OrganizationUserInvitation>();
 
-  @SerializedName("routes")
-  private List<Route> routes = new ArrayList<Route>();
+  public OrganizationUserInvitationListRequest invitations(List<OrganizationUserInvitation> invitations) {
+    this.invitations = invitations;
+    return this;
+  }
 
-  public RoutingFile options(RoutingOptions options) {
-    this.options = options;
+  public OrganizationUserInvitationListRequest addInvitationsItem(OrganizationUserInvitation invitationsItem) {
+    this.invitations.add(invitationsItem);
     return this;
   }
 
    /**
-   * Get options
-   * @return options
-  **/
-  @ApiModelProperty(value = "")
-  public RoutingOptions getOptions() {
-    return options;
-  }
-
-  public void setOptions(RoutingOptions options) {
-    this.options = options;
-  }
-
-  public RoutingFile routes(List<Route> routes) {
-    this.routes = routes;
-    return this;
-  }
-
-  public RoutingFile addRoutesItem(Route routesItem) {
-    this.routes.add(routesItem);
-    return this;
-  }
-
-   /**
-   * Get routes
-   * @return routes
+   * Get invitations
+   * @return invitations
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<Route> getRoutes() {
-    return routes;
+  public List<OrganizationUserInvitation> getInvitations() {
+    return invitations;
   }
 
-  public void setRoutes(List<Route> routes) {
-    this.routes = routes;
+  public void setInvitations(List<OrganizationUserInvitation> invitations) {
+    this.invitations = invitations;
   }
 
 
@@ -88,24 +66,22 @@ public class RoutingFile {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RoutingFile routingFile = (RoutingFile) o;
-    return Objects.equals(this.options, routingFile.options) &&
-        Objects.equals(this.routes, routingFile.routes);
+    OrganizationUserInvitationListRequest organizationUserInvitationListRequest = (OrganizationUserInvitationListRequest) o;
+    return Objects.equals(this.invitations, organizationUserInvitationListRequest.invitations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(options, routes);
+    return Objects.hash(invitations);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RoutingFile {\n");
+    sb.append("class OrganizationUserInvitationListRequest {\n");
     
-    sb.append("    options: ").append(toIndentedString(options)).append("\n");
-    sb.append("    routes: ").append(toIndentedString(routes)).append("\n");
+    sb.append("    invitations: ").append(toIndentedString(invitations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

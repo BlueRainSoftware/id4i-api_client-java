@@ -19,6 +19,7 @@ import de.id4i.api.model.ChangeRoleRequest;
 import java.io.File;
 import de.id4i.api.model.Organization;
 import de.id4i.api.model.OrganizationAddress;
+import de.id4i.api.model.OrganizationUserInvitationListRequest;
 import de.id4i.api.model.PaginatedGuidCollection;
 import de.id4i.api.model.PaginatedOrganizationResponse;
 import de.id4i.api.model.PaginatedStringResponse;
@@ -266,6 +267,25 @@ public class OrganizationsApiTest {
         Integer offset = null;
         Integer limit = null;
         PaginatedUserPresentationResponse response = api.getUsersOfOrganization(organizationId, authorization, acceptLanguage, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Invite Users
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void inviteUsersTest() throws ApiException {
+        Long organizationId = null;
+        OrganizationUserInvitationListRequest invitationList = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.inviteUsers(organizationId, invitationList, authorization, acceptLanguage);
 
         // TODO: test validations
     }
