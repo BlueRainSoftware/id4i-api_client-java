@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ResponseEntity
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-22T07:49:59.066Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-22T11:51:37.479Z")
 public class ResponseEntity {
   @SerializedName("body")
   private Object body = null;
