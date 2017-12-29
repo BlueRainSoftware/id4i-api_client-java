@@ -24,50 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ApiKeyChangeRequest
+ * GuidAlias
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-29T10:11:56.771Z")
-public class ApiKeyChangeRequest {
-  @SerializedName("active")
-  private Boolean active = null;
+public class GuidAlias {
+  @SerializedName("alias")
+  private String alias = null;
 
-  @SerializedName("newLabel")
-  private String newLabel = null;
-
-  public ApiKeyChangeRequest active(Boolean active) {
-    this.active = active;
+  public GuidAlias alias(String alias) {
+    this.alias = alias;
     return this;
   }
 
    /**
-   * Get active
-   * @return active
+   * Get alias
+   * @return alias
   **/
   @ApiModelProperty(value = "")
-  public Boolean getActive() {
-    return active;
+  public String getAlias() {
+    return alias;
   }
 
-  public void setActive(Boolean active) {
-    this.active = active;
-  }
-
-  public ApiKeyChangeRequest newLabel(String newLabel) {
-    this.newLabel = newLabel;
-    return this;
-  }
-
-   /**
-   * Get newLabel
-   * @return newLabel
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getNewLabel() {
-    return newLabel;
-  }
-
-  public void setNewLabel(String newLabel) {
-    this.newLabel = newLabel;
+  public void setAlias(String alias) {
+    this.alias = alias;
   }
 
 
@@ -79,24 +58,22 @@ public class ApiKeyChangeRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiKeyChangeRequest apiKeyChangeRequest = (ApiKeyChangeRequest) o;
-    return Objects.equals(this.active, apiKeyChangeRequest.active) &&
-        Objects.equals(this.newLabel, apiKeyChangeRequest.newLabel);
+    GuidAlias guidAlias = (GuidAlias) o;
+    return Objects.equals(this.alias, guidAlias.alias);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, newLabel);
+    return Objects.hash(alias);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiKeyChangeRequest {\n");
+    sb.append("class GuidAlias {\n");
     
-    sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    newLabel: ").append(toIndentedString(newLabel)).append("\n");
+    sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
     sb.append("}");
     return sb.toString();
   }

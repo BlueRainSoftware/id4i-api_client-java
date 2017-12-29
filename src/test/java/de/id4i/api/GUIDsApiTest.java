@@ -17,6 +17,7 @@ import de.id4i.ApiException;
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.CreateGuidRequest;
 import de.id4i.api.model.Guid;
+import de.id4i.api.model.GuidAlias;
 import de.id4i.api.model.ListOfId4ns;
 import de.id4i.api.model.PaginatedResponseGuid;
 import de.id4i.api.model.ResponseEntity;
@@ -36,6 +37,45 @@ public class GUIDsApiTest {
 
     private final GUIDsApi api = new GUIDsApi();
 
+    
+    /**
+     * Add alias for GUIDs
+     *
+     * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addGuidAliasTest() throws ApiException {
+        String id4n = null;
+        String aliasType = null;
+        GuidAlias alias = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addGuidAlias(id4n, aliasType, alias, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Remove aliases from GUIDs
+     *
+     * Remove the alias of the given type
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addGuidAlias1Test() throws ApiException {
+        String id4n = null;
+        String aliasType = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addGuidAlias1(id4n, aliasType, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
     
     /**
      * Create GUID(s)

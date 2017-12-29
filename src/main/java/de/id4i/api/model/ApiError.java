@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-22T13:14:44.804Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-29T10:11:56.771Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -59,6 +59,8 @@ public class ApiError {
     FIELD_INPUT_VALIDATION_FAILED("ERR_FIELD_INPUT_VALIDATION_FAILED"),
     
     INPUT_NOT_READABLE("ERR_INPUT_NOT_READABLE"),
+    
+    INVALID_INPUT_PARAMETER("ERR_INVALID_INPUT_PARAMETER"),
     
     GUID_CREATION("ERR_GUID_CREATION"),
     
@@ -94,7 +96,9 @@ public class ApiError {
     
     EMAIL_PREPARATION_FAILED("ERR_EMAIL_PREPARATION_FAILED"),
     
-    IMAGE_CONVERSION("ERR_IMAGE_CONVERSION");
+    IMAGE_CONVERSION("ERR_IMAGE_CONVERSION"),
+    
+    INVALID_ALIAS_TYPE("ERR_INVALID_ALIAS_TYPE");
 
     private String value;
 
