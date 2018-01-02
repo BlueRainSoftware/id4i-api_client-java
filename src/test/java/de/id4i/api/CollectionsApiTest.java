@@ -23,7 +23,6 @@ import de.id4i.api.model.Id4n;
 import de.id4i.api.model.ListOfId4ns;
 import de.id4i.api.model.PaginatedGuidCollection;
 import de.id4i.api.model.PaginatedGuidResponse;
-import de.id4i.api.model.ResponseEntity;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -296,7 +295,7 @@ public class CollectionsApiTest {
         String id4n = null;
         String authorization = null;
         String acceptLanguage = null;
-        ResponseEntity response = api.deleteLogisticCollection(id4n, authorization, acceptLanguage);
+        Object response = api.deleteLogisticCollection(id4n, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -618,10 +617,10 @@ public class CollectionsApiTest {
     @Test
     public void removeElementsFromLogisticCollectionTest() throws ApiException {
         String collectionId4n = null;
-        ListOfId4ns listofGuids = null;
+        ListOfId4ns listOfGuids = null;
         String authorization = null;
         String acceptLanguage = null;
-        ApiError response = api.removeElementsFromLogisticCollection(collectionId4n, listofGuids, authorization, acceptLanguage);
+        ApiError response = api.removeElementsFromLogisticCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -659,7 +658,7 @@ public class CollectionsApiTest {
         GuidCollection request = null;
         String authorization = null;
         String acceptLanguage = null;
-        ResponseEntity response = api.updateCollection(id4n, request, authorization, acceptLanguage);
+        Object response = api.updateCollection(id4n, request, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -678,7 +677,7 @@ public class CollectionsApiTest {
         GuidCollection request = null;
         String authorization = null;
         String acceptLanguage = null;
-        ResponseEntity response = api.updateLabelledCollection(id4n, request, authorization, acceptLanguage);
+        Object response = api.updateLabelledCollection(id4n, request, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -697,7 +696,7 @@ public class CollectionsApiTest {
         GuidCollection request = null;
         String authorization = null;
         String acceptLanguage = null;
-        ResponseEntity response = api.updateLogisticCollection(id4n, request, authorization, acceptLanguage);
+        Object response = api.updateLogisticCollection(id4n, request, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -716,7 +715,7 @@ public class CollectionsApiTest {
         GuidCollection request = null;
         String authorization = null;
         String acceptLanguage = null;
-        ResponseEntity response = api.updateRoutingCollection(id4n, request, authorization, acceptLanguage);
+        Object response = api.updateRoutingCollection(id4n, request, authorization, acceptLanguage);
 
         // TODO: test validations
     }

@@ -233,7 +233,6 @@ Class | Method | HTTP request | Description
  - [PasswordResetRequest](docs/PasswordResetRequest.md)
  - [PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
  - [RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
- - [ResponseEntity](docs/ResponseEntity.md)
  - [Role](docs/Role.md)
  - [RoleResponse](docs/RoleResponse.md)
  - [Route](docs/Route.md)

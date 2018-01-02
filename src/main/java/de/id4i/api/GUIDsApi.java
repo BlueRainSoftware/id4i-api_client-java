@@ -33,7 +33,6 @@ import de.id4i.api.model.Guid;
 import de.id4i.api.model.GuidAlias;
 import de.id4i.api.model.ListOfId4ns;
 import de.id4i.api.model.PaginatedResponseGuid;
-import de.id4i.api.model.ResponseEntity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -877,11 +876,11 @@ public class GUIDsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ResponseEntity
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseEntity updateGuid(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ResponseEntity> resp = updateGuidWithHttpInfo(id4n, request, authorization, acceptLanguage);
+    public Object updateGuid(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Object> resp = updateGuidWithHttpInfo(id4n, request, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -892,12 +891,12 @@ public class GUIDsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ResponseEntity&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseEntity> updateGuidWithHttpInfo(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
+    public ApiResponse<Object> updateGuidWithHttpInfo(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
         com.squareup.okhttp.Call call = updateGuidValidateBeforeCall(id4n, request, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -912,7 +911,7 @@ public class GUIDsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateGuidAsync(String id4n, Guid request, String authorization, String acceptLanguage, final ApiCallback<ResponseEntity> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateGuidAsync(String id4n, Guid request, String authorization, String acceptLanguage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -934,7 +933,7 @@ public class GUIDsApi {
         }
 
         com.squareup.okhttp.Call call = updateGuidValidateBeforeCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

@@ -36,7 +36,6 @@ import de.id4i.api.model.Id4n;
 import de.id4i.api.model.ListOfId4ns;
 import de.id4i.api.model.PaginatedGuidCollection;
 import de.id4i.api.model.PaginatedGuidResponse;
-import de.id4i.api.model.ResponseEntity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -2009,11 +2008,11 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ResponseEntity
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseEntity deleteLogisticCollection(String id4n, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ResponseEntity> resp = deleteLogisticCollectionWithHttpInfo(id4n, authorization, acceptLanguage);
+    public Object deleteLogisticCollection(String id4n, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Object> resp = deleteLogisticCollectionWithHttpInfo(id4n, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -2023,12 +2022,12 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ResponseEntity&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseEntity> deleteLogisticCollectionWithHttpInfo(String id4n, String authorization, String acceptLanguage) throws ApiException {
+    public ApiResponse<Object> deleteLogisticCollectionWithHttpInfo(String id4n, String authorization, String acceptLanguage) throws ApiException {
         com.squareup.okhttp.Call call = deleteLogisticCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2042,7 +2041,7 @@ public class CollectionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteLogisticCollectionAsync(String id4n, String authorization, String acceptLanguage, final ApiCallback<ResponseEntity> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteLogisticCollectionAsync(String id4n, String authorization, String acceptLanguage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2064,7 +2063,7 @@ public class CollectionsApi {
         }
 
         com.squareup.okhttp.Call call = deleteLogisticCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -4409,7 +4408,7 @@ public class CollectionsApi {
     /**
      * Build call for removeElementsFromLogisticCollection
      * @param collectionId4n collectionId4n (required)
-     * @param listofGuids listofGuids (required)
+     * @param listOfGuids listOfGuids (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
@@ -4417,8 +4416,8 @@ public class CollectionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call removeElementsFromLogisticCollectionCall(String collectionId4n, ListOfId4ns listofGuids, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = listofGuids;
+    public com.squareup.okhttp.Call removeElementsFromLogisticCollectionCall(String collectionId4n, ListOfId4ns listOfGuids, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = listOfGuids;
         
         // create path and map variables
         String localVarPath = "/api/v1/collections/logistic/{collectionId4n}/elements"
@@ -4463,20 +4462,20 @@ public class CollectionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call removeElementsFromLogisticCollectionValidateBeforeCall(String collectionId4n, ListOfId4ns listofGuids, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call removeElementsFromLogisticCollectionValidateBeforeCall(String collectionId4n, ListOfId4ns listOfGuids, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'collectionId4n' is set
         if (collectionId4n == null) {
             throw new ApiException("Missing the required parameter 'collectionId4n' when calling removeElementsFromLogisticCollection(Async)");
         }
         
-        // verify the required parameter 'listofGuids' is set
-        if (listofGuids == null) {
-            throw new ApiException("Missing the required parameter 'listofGuids' when calling removeElementsFromLogisticCollection(Async)");
+        // verify the required parameter 'listOfGuids' is set
+        if (listOfGuids == null) {
+            throw new ApiException("Missing the required parameter 'listOfGuids' when calling removeElementsFromLogisticCollection(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = removeElementsFromLogisticCollectionCall(collectionId4n, listofGuids, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeElementsFromLogisticCollectionCall(collectionId4n, listOfGuids, authorization, acceptLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -4489,14 +4488,14 @@ public class CollectionsApi {
      * Remove elements from logistic collection
      * 
      * @param collectionId4n collectionId4n (required)
-     * @param listofGuids listofGuids (required)
+     * @param listOfGuids listOfGuids (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiError removeElementsFromLogisticCollection(String collectionId4n, ListOfId4ns listofGuids, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = removeElementsFromLogisticCollectionWithHttpInfo(collectionId4n, listofGuids, authorization, acceptLanguage);
+    public ApiError removeElementsFromLogisticCollection(String collectionId4n, ListOfId4ns listOfGuids, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ApiError> resp = removeElementsFromLogisticCollectionWithHttpInfo(collectionId4n, listOfGuids, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -4504,14 +4503,14 @@ public class CollectionsApi {
      * Remove elements from logistic collection
      * 
      * @param collectionId4n collectionId4n (required)
-     * @param listofGuids listofGuids (required)
+     * @param listOfGuids listOfGuids (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiError> removeElementsFromLogisticCollectionWithHttpInfo(String collectionId4n, ListOfId4ns listofGuids, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = removeElementsFromLogisticCollectionValidateBeforeCall(collectionId4n, listofGuids, authorization, acceptLanguage, null, null);
+    public ApiResponse<ApiError> removeElementsFromLogisticCollectionWithHttpInfo(String collectionId4n, ListOfId4ns listOfGuids, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = removeElementsFromLogisticCollectionValidateBeforeCall(collectionId4n, listOfGuids, authorization, acceptLanguage, null, null);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4520,14 +4519,14 @@ public class CollectionsApi {
      * Remove elements from logistic collection (asynchronously)
      * 
      * @param collectionId4n collectionId4n (required)
-     * @param listofGuids listofGuids (required)
+     * @param listOfGuids listOfGuids (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call removeElementsFromLogisticCollectionAsync(String collectionId4n, ListOfId4ns listofGuids, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeElementsFromLogisticCollectionAsync(String collectionId4n, ListOfId4ns listOfGuids, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4548,7 +4547,7 @@ public class CollectionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = removeElementsFromLogisticCollectionValidateBeforeCall(collectionId4n, listofGuids, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeElementsFromLogisticCollectionValidateBeforeCall(collectionId4n, listOfGuids, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -4786,11 +4785,11 @@ public class CollectionsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ResponseEntity
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseEntity updateCollection(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ResponseEntity> resp = updateCollectionWithHttpInfo(id4n, request, authorization, acceptLanguage);
+    public Object updateCollection(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Object> resp = updateCollectionWithHttpInfo(id4n, request, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -4801,12 +4800,12 @@ public class CollectionsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ResponseEntity&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseEntity> updateCollectionWithHttpInfo(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
+    public ApiResponse<Object> updateCollectionWithHttpInfo(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
         com.squareup.okhttp.Call call = updateCollectionValidateBeforeCall(id4n, request, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -4821,7 +4820,7 @@ public class CollectionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateCollectionAsync(String id4n, GuidCollection request, String authorization, String acceptLanguage, final ApiCallback<ResponseEntity> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateCollectionAsync(String id4n, GuidCollection request, String authorization, String acceptLanguage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4843,7 +4842,7 @@ public class CollectionsApi {
         }
 
         com.squareup.okhttp.Call call = updateCollectionValidateBeforeCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -4933,11 +4932,11 @@ public class CollectionsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ResponseEntity
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseEntity updateLabelledCollection(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ResponseEntity> resp = updateLabelledCollectionWithHttpInfo(id4n, request, authorization, acceptLanguage);
+    public Object updateLabelledCollection(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Object> resp = updateLabelledCollectionWithHttpInfo(id4n, request, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -4948,12 +4947,12 @@ public class CollectionsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ResponseEntity&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseEntity> updateLabelledCollectionWithHttpInfo(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
+    public ApiResponse<Object> updateLabelledCollectionWithHttpInfo(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
         com.squareup.okhttp.Call call = updateLabelledCollectionValidateBeforeCall(id4n, request, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -4968,7 +4967,7 @@ public class CollectionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateLabelledCollectionAsync(String id4n, GuidCollection request, String authorization, String acceptLanguage, final ApiCallback<ResponseEntity> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateLabelledCollectionAsync(String id4n, GuidCollection request, String authorization, String acceptLanguage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4990,7 +4989,7 @@ public class CollectionsApi {
         }
 
         com.squareup.okhttp.Call call = updateLabelledCollectionValidateBeforeCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -5080,11 +5079,11 @@ public class CollectionsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ResponseEntity
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseEntity updateLogisticCollection(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ResponseEntity> resp = updateLogisticCollectionWithHttpInfo(id4n, request, authorization, acceptLanguage);
+    public Object updateLogisticCollection(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Object> resp = updateLogisticCollectionWithHttpInfo(id4n, request, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -5095,12 +5094,12 @@ public class CollectionsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ResponseEntity&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseEntity> updateLogisticCollectionWithHttpInfo(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
+    public ApiResponse<Object> updateLogisticCollectionWithHttpInfo(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
         com.squareup.okhttp.Call call = updateLogisticCollectionValidateBeforeCall(id4n, request, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -5115,7 +5114,7 @@ public class CollectionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateLogisticCollectionAsync(String id4n, GuidCollection request, String authorization, String acceptLanguage, final ApiCallback<ResponseEntity> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateLogisticCollectionAsync(String id4n, GuidCollection request, String authorization, String acceptLanguage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5137,7 +5136,7 @@ public class CollectionsApi {
         }
 
         com.squareup.okhttp.Call call = updateLogisticCollectionValidateBeforeCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -5227,11 +5226,11 @@ public class CollectionsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ResponseEntity
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseEntity updateRoutingCollection(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ResponseEntity> resp = updateRoutingCollectionWithHttpInfo(id4n, request, authorization, acceptLanguage);
+    public Object updateRoutingCollection(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Object> resp = updateRoutingCollectionWithHttpInfo(id4n, request, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -5242,12 +5241,12 @@ public class CollectionsApi {
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ResponseEntity&gt;
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseEntity> updateRoutingCollectionWithHttpInfo(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
+    public ApiResponse<Object> updateRoutingCollectionWithHttpInfo(String id4n, GuidCollection request, String authorization, String acceptLanguage) throws ApiException {
         com.squareup.okhttp.Call call = updateRoutingCollectionValidateBeforeCall(id4n, request, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -5262,7 +5261,7 @@ public class CollectionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateRoutingCollectionAsync(String id4n, GuidCollection request, String authorization, String acceptLanguage, final ApiCallback<ResponseEntity> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateRoutingCollectionAsync(String id4n, GuidCollection request, String authorization, String acceptLanguage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5284,7 +5283,7 @@ public class CollectionsApi {
         }
 
         com.squareup.okhttp.Call call = updateRoutingCollectionValidateBeforeCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

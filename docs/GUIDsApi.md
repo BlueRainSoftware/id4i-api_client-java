@@ -265,7 +265,7 @@ No authorization required
 
 <a name="updateGuid"></a>
 # **updateGuid**
-> ResponseEntity updateGuid(id4n, request, authorization, acceptLanguage)
+> Object updateGuid(id4n, request, authorization, acceptLanguage)
 
 Change GUID information.
 
@@ -284,7 +284,7 @@ Guid request = new Guid(); // Guid | request
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ResponseEntity result = apiInstance.updateGuid(id4n, request, authorization, acceptLanguage);
+    Object result = apiInstance.updateGuid(id4n, request, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GUIDsApi#updateGuid");
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 

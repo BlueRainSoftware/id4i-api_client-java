@@ -20,7 +20,6 @@ import de.id4i.api.model.Guid;
 import de.id4i.api.model.GuidAlias;
 import de.id4i.api.model.ListOfId4ns;
 import de.id4i.api.model.PaginatedResponseGuid;
-import de.id4i.api.model.ResponseEntity;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -147,7 +146,7 @@ public class GUIDsApiTest {
         Guid request = null;
         String authorization = null;
         String acceptLanguage = null;
-        ResponseEntity response = api.updateGuid(id4n, request, authorization, acceptLanguage);
+        Object response = api.updateGuid(id4n, request, authorization, acceptLanguage);
 
         // TODO: test validations
     }

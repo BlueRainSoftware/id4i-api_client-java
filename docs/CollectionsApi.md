@@ -671,7 +671,7 @@ No authorization required
 
 <a name="deleteLogisticCollection"></a>
 # **deleteLogisticCollection**
-> ResponseEntity deleteLogisticCollection(id4n, authorization, acceptLanguage)
+> Object deleteLogisticCollection(id4n, authorization, acceptLanguage)
 
 Delete logistic collection
 
@@ -687,7 +687,7 @@ String id4n = "id4n_example"; // String | id4n
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ResponseEntity result = apiInstance.deleteLogisticCollection(id4n, authorization, acceptLanguage);
+    Object result = apiInstance.deleteLogisticCollection(id4n, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#deleteLogisticCollection");
@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1508,7 +1508,7 @@ No authorization required
 
 <a name="removeElementsFromLogisticCollection"></a>
 # **removeElementsFromLogisticCollection**
-> ApiError removeElementsFromLogisticCollection(collectionId4n, listofGuids, authorization, acceptLanguage)
+> ApiError removeElementsFromLogisticCollection(collectionId4n, listOfGuids, authorization, acceptLanguage)
 
 Remove elements from logistic collection
 
@@ -1521,11 +1521,11 @@ Remove elements from logistic collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
-ListOfId4ns listofGuids = new ListOfId4ns(); // ListOfId4ns | listofGuids
+ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.removeElementsFromLogisticCollection(collectionId4n, listofGuids, authorization, acceptLanguage);
+    ApiError result = apiInstance.removeElementsFromLogisticCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#removeElementsFromLogisticCollection");
@@ -1538,7 +1538,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
- **listofGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listofGuids |
+ **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
@@ -1606,7 +1606,7 @@ No authorization required
 
 <a name="updateCollection"></a>
 # **updateCollection**
-> ResponseEntity updateCollection(id4n, request, authorization, acceptLanguage)
+> Object updateCollection(id4n, request, authorization, acceptLanguage)
 
 Alter collection
 
@@ -1623,7 +1623,7 @@ GuidCollection request = new GuidCollection(); // GuidCollection | request
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ResponseEntity result = apiInstance.updateCollection(id4n, request, authorization, acceptLanguage);
+    Object result = apiInstance.updateCollection(id4n, request, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#updateCollection");
@@ -1642,7 +1642,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1655,7 +1655,7 @@ No authorization required
 
 <a name="updateLabelledCollection"></a>
 # **updateLabelledCollection**
-> ResponseEntity updateLabelledCollection(id4n, request, authorization, acceptLanguage)
+> Object updateLabelledCollection(id4n, request, authorization, acceptLanguage)
 
 Rename labelled collection
 
@@ -1672,7 +1672,7 @@ GuidCollection request = new GuidCollection(); // GuidCollection | request
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ResponseEntity result = apiInstance.updateLabelledCollection(id4n, request, authorization, acceptLanguage);
+    Object result = apiInstance.updateLabelledCollection(id4n, request, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#updateLabelledCollection");
@@ -1691,7 +1691,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1704,7 +1704,7 @@ No authorization required
 
 <a name="updateLogisticCollection"></a>
 # **updateLogisticCollection**
-> ResponseEntity updateLogisticCollection(id4n, request, authorization, acceptLanguage)
+> Object updateLogisticCollection(id4n, request, authorization, acceptLanguage)
 
 Update logistic collection
 
@@ -1721,7 +1721,7 @@ GuidCollection request = new GuidCollection(); // GuidCollection | request
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ResponseEntity result = apiInstance.updateLogisticCollection(id4n, request, authorization, acceptLanguage);
+    Object result = apiInstance.updateLogisticCollection(id4n, request, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#updateLogisticCollection");
@@ -1740,7 +1740,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
@@ -1753,7 +1753,7 @@ No authorization required
 
 <a name="updateRoutingCollection"></a>
 # **updateRoutingCollection**
-> ResponseEntity updateRoutingCollection(id4n, request, authorization, acceptLanguage)
+> Object updateRoutingCollection(id4n, request, authorization, acceptLanguage)
 
 Update routing collection
 
@@ -1770,7 +1770,7 @@ GuidCollection request = new GuidCollection(); // GuidCollection | request
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ResponseEntity result = apiInstance.updateRoutingCollection(id4n, request, authorization, acceptLanguage);
+    Object result = apiInstance.updateRoutingCollection(id4n, request, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#updateRoutingCollection");
@@ -1789,7 +1789,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 
