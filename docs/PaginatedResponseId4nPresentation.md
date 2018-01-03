@@ -1,10 +1,10 @@
 
-# ApiKeyPrivilegeResponse
+# PaginatedResponseId4nPresentation
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**List&lt;ApiKeyPrivilegeInfo&gt;**](ApiKeyPrivilegeInfo.md) |  |  [optional]
+**elements** | [**List&lt;Id4nPresentation&gt;**](Id4nPresentation.md) |  |  [optional]
 **limit** | **Integer** |  | 
 **offset** | **Integer** |  | 
 **total** | **Integer** |  |  [optional]

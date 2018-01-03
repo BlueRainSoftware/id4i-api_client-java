@@ -14,12 +14,17 @@
 package de.id4i.api;
 
 import de.id4i.ApiException;
+import de.id4i.api.model.AddApiKeyPrivilegeRequest;
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.ApiKeyChangeRequest;
 import de.id4i.api.model.ApiKeyCreationRequest;
 import de.id4i.api.model.ApiKeyPresentation;
-import de.id4i.api.model.ApiKeyPrivilegeResponse;
+import de.id4i.api.model.ApiKeyPrivilegeInfoResponse;
+import de.id4i.api.model.ApiKeyPrivilegePaginatedResponse;
+import de.id4i.api.model.Id4nPresentationPaginatedResponse;
+import de.id4i.api.model.ListOfId4ns;
 import de.id4i.api.model.PaginatedApiKeyResponse;
+import de.id4i.api.model.RemoveApiKeyPrivilegeRequest;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -36,6 +41,64 @@ public class ApiKeysApiTest {
 
     private final ApiKeysApi api = new ApiKeysApi();
 
+    
+    /**
+     * Add ID4ns of a privilege
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addApiKeyId4nPrivilegesTest() throws ApiException {
+        String key = null;
+        String privilege = null;
+        ListOfId4ns id4ns = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addApiKeyId4nPrivileges(key, privilege, id4ns, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Add privilege
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addApiKeyPrivilegeTest() throws ApiException {
+        String key = null;
+        AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Remove privilege
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addApiKeyPrivilegesTest() throws ApiException {
+        String key = null;
+        RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addApiKeyPrivileges(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
     
     /**
      * Create API key
@@ -92,6 +155,26 @@ public class ApiKeysApiTest {
     }
     
     /**
+     * List all privileges
+     *
+     * Listing all possible API key privileges.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listAllApiKeyPrivilegesTest() throws ApiException {
+        String authorization = null;
+        String acceptLanguage = null;
+        Boolean id4nConcerning = null;
+        Integer offset = null;
+        Integer limit = null;
+        ApiKeyPrivilegeInfoResponse response = api.listAllApiKeyPrivileges(authorization, acceptLanguage, id4nConcerning, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Find API key by organization
      *
      * Finding all API key assigned to the specified organization in a paginated manner.
@@ -112,21 +195,62 @@ public class ApiKeysApiTest {
     }
     
     /**
-     * List API key privileges
+     * List privileges
      *
-     * Listing API key privileges.
+     * 
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void listApiKeyPrivilegesTest() throws ApiException {
+        String key = null;
         String authorization = null;
         String acceptLanguage = null;
-        Boolean id4nConcerning = null;
         Integer offset = null;
         Integer limit = null;
-        ApiKeyPrivilegeResponse response = api.listApiKeyPrivileges(authorization, acceptLanguage, id4nConcerning, offset, limit);
+        ApiKeyPrivilegePaginatedResponse response = api.listApiKeyPrivileges(key, authorization, acceptLanguage, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * ID4ns of a privilege
+     *
+     * Listing ID4ns of a id4n concerning privilege
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listId4nsTest() throws ApiException {
+        String key = null;
+        String privilege = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Integer offset = null;
+        Integer limit = null;
+        Id4nPresentationPaginatedResponse response = api.listId4ns(key, privilege, authorization, acceptLanguage, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Remove id4ns of a privilege
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void removeApiKeyId4nPrivilegesTest() throws ApiException {
+        String key = null;
+        String privilege = null;
+        ListOfId4ns id4ns = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.removeApiKeyId4nPrivileges(key, privilege, id4ns, authorization, acceptLanguage);
 
         // TODO: test validations
     }

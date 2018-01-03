@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-02T13:01:10.095Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-03T09:57:40.890Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -57,6 +57,8 @@ public class ApiError {
     INPUT_VALIDATION_FAILED("ERR_INPUT_VALIDATION_FAILED"),
     
     FIELD_INPUT_VALIDATION_FAILED("ERR_FIELD_INPUT_VALIDATION_FAILED"),
+    
+    VALIDATION_CONSTRAINT_FAILED("ERR_VALIDATION_CONSTRAINT_FAILED"),
     
     INPUT_NOT_READABLE("ERR_INPUT_NOT_READABLE"),
     
