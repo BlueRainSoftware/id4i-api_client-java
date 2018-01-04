@@ -41,7 +41,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alias** | **String**| The alias to search for |
- **aliasType** | **String**| Alias type type to search for | [enum: ean, gtin, article, mapp, item]
+ **aliasType** | **String**| Alias type type to search for | [enum: ean, gtin, article, mapp, item, rfid]
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]

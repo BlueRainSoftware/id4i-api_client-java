@@ -47,7 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID for which to add the alias |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: ean, gtin, article, mapp, item]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: ean, gtin, article, mapp, item, rfid]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
@@ -99,7 +99,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID for which to add the alias |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: ean, gtin, article, mapp, item]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: ean, gtin, article, mapp, item, rfid]
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
