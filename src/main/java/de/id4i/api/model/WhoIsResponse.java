@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * WhoIsResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T13:06:56.579Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T14:12:49.594Z")
 public class WhoIsResponse {
   @SerializedName("organization")
   private Organization organization = null;
