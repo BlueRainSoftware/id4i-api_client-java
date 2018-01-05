@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getRoute"></a>
 # **getRoute**
-> Route getRoute(id4n, type, authorization, acceptLanguage)
+> Route getRoute(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -27,8 +27,10 @@ String id4n = "id4n_example"; // String | id4n
 String type = "type_example"; // String | The type of route you want to have
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+Boolean privateRoutes = true; // Boolean | privateRoutes
+Boolean publicRoutes = true; // Boolean | publicRoutes
 try {
-    Route result = apiInstance.getRoute(id4n, type, authorization, acceptLanguage);
+    Route result = apiInstance.getRoute(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoute");
@@ -44,6 +46,8 @@ Name | Type | Description  | Notes
  **type** | **String**| The type of route you want to have |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
+ **privateRoutes** | **Boolean**| privateRoutes | [optional]
+ **publicRoutes** | **Boolean**| publicRoutes | [optional]
 
 ### Return type
 

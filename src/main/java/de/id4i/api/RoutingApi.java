@@ -63,12 +63,14 @@ public class RoutingApi {
      * @param type The type of route you want to have (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
+     * @param privateRoutes privateRoutes (optional)
+     * @param publicRoutes publicRoutes (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getRouteCall(String id4n, String type, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getRouteCall(String id4n, String type, String authorization, String acceptLanguage, Boolean privateRoutes, Boolean publicRoutes, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -77,6 +79,10 @@ public class RoutingApi {
             .replaceAll("\\{" + "type" + "\\}", apiClient.escapeString(type.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (privateRoutes != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "privateRoutes", privateRoutes));
+        if (publicRoutes != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "publicRoutes", publicRoutes));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (authorization != null)
@@ -115,7 +121,7 @@ public class RoutingApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getRouteValidateBeforeCall(String id4n, String type, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getRouteValidateBeforeCall(String id4n, String type, String authorization, String acceptLanguage, Boolean privateRoutes, Boolean publicRoutes, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
@@ -128,7 +134,7 @@ public class RoutingApi {
         }
         
         
-        com.squareup.okhttp.Call call = getRouteCall(id4n, type, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getRouteCall(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes, progressListener, progressRequestListener);
         return call;
 
         
@@ -144,11 +150,13 @@ public class RoutingApi {
      * @param type The type of route you want to have (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
+     * @param privateRoutes privateRoutes (optional)
+     * @param publicRoutes publicRoutes (optional)
      * @return Route
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Route getRoute(String id4n, String type, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<Route> resp = getRouteWithHttpInfo(id4n, type, authorization, acceptLanguage);
+    public Route getRoute(String id4n, String type, String authorization, String acceptLanguage, Boolean privateRoutes, Boolean publicRoutes) throws ApiException {
+        ApiResponse<Route> resp = getRouteWithHttpInfo(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes);
         return resp.getData();
     }
 
@@ -159,11 +167,13 @@ public class RoutingApi {
      * @param type The type of route you want to have (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
+     * @param privateRoutes privateRoutes (optional)
+     * @param publicRoutes publicRoutes (optional)
      * @return ApiResponse&lt;Route&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Route> getRouteWithHttpInfo(String id4n, String type, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = getRouteValidateBeforeCall(id4n, type, authorization, acceptLanguage, null, null);
+    public ApiResponse<Route> getRouteWithHttpInfo(String id4n, String type, String authorization, String acceptLanguage, Boolean privateRoutes, Boolean publicRoutes) throws ApiException {
+        com.squareup.okhttp.Call call = getRouteValidateBeforeCall(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes, null, null);
         Type localVarReturnType = new TypeToken<Route>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -175,11 +185,13 @@ public class RoutingApi {
      * @param type The type of route you want to have (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
+     * @param privateRoutes privateRoutes (optional)
+     * @param publicRoutes publicRoutes (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getRouteAsync(String id4n, String type, String authorization, String acceptLanguage, final ApiCallback<Route> callback) throws ApiException {
+    public com.squareup.okhttp.Call getRouteAsync(String id4n, String type, String authorization, String acceptLanguage, Boolean privateRoutes, Boolean publicRoutes, final ApiCallback<Route> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -200,7 +212,7 @@ public class RoutingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getRouteValidateBeforeCall(id4n, type, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getRouteValidateBeforeCall(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Route>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
