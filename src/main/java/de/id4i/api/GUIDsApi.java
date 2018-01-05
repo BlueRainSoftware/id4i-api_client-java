@@ -61,7 +61,7 @@ public class GUIDsApi {
 
     /**
      * Build call for addGuidAlias
-     * @param id4n The GUID for which to add the alias (required)
+     * @param id4n The GUID to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -148,7 +148,7 @@ public class GUIDsApi {
     /**
      * Add alias for GUIDs
      * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
-     * @param id4n The GUID for which to add the alias (required)
+     * @param id4n The GUID to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -164,7 +164,7 @@ public class GUIDsApi {
     /**
      * Add alias for GUIDs
      * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
-     * @param id4n The GUID for which to add the alias (required)
+     * @param id4n The GUID to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -181,7 +181,7 @@ public class GUIDsApi {
     /**
      * Add alias for GUIDs (asynchronously)
      * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
-     * @param id4n The GUID for which to add the alias (required)
+     * @param id4n The GUID to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -218,7 +218,7 @@ public class GUIDsApi {
     }
     /**
      * Build call for addGuidAlias1
-     * @param id4n The GUID for which to add the alias (required)
+     * @param id4n The GUID to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
@@ -299,7 +299,7 @@ public class GUIDsApi {
     /**
      * Remove aliases from GUIDs
      * Remove the alias of the given type
-     * @param id4n The GUID for which to add the alias (required)
+     * @param id4n The GUID to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
@@ -314,7 +314,7 @@ public class GUIDsApi {
     /**
      * Remove aliases from GUIDs
      * Remove the alias of the given type
-     * @param id4n The GUID for which to add the alias (required)
+     * @param id4n The GUID to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
@@ -330,7 +330,7 @@ public class GUIDsApi {
     /**
      * Remove aliases from GUIDs (asynchronously)
      * Remove the alias of the given type
-     * @param id4n The GUID for which to add the alias (required)
+     * @param id4n The GUID to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
@@ -636,6 +636,144 @@ public class GUIDsApi {
 
         com.squareup.okhttp.Call call = getGuidValidateBeforeCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Guid>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getGuidAliases
+     * @param id4n The GUID to operate on (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getGuidAliasesCall(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/guids/{id4n}/alias"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getGuidAliasesValidateBeforeCall(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling getGuidAliases(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getGuidAliasesCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Get all aliases for the given GUID
+     * Looks up the alias for each alias type (group and single GUID) and returns all found ones
+     * @param id4n The GUID to operate on (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return Map&lt;String, String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Map<String, String> getGuidAliases(String id4n, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Map<String, String>> resp = getGuidAliasesWithHttpInfo(id4n, authorization, acceptLanguage);
+        return resp.getData();
+    }
+
+    /**
+     * Get all aliases for the given GUID
+     * Looks up the alias for each alias type (group and single GUID) and returns all found ones
+     * @param id4n The GUID to operate on (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Map<String, String>> getGuidAliasesWithHttpInfo(String id4n, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = getGuidAliasesValidateBeforeCall(id4n, authorization, acceptLanguage, null, null);
+        Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Get all aliases for the given GUID (asynchronously)
+     * Looks up the alias for each alias type (group and single GUID) and returns all found ones
+     * @param id4n The GUID to operate on (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getGuidAliasesAsync(String id4n, String authorization, String acceptLanguage, final ApiCallback<Map<String, String>> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getGuidAliasesValidateBeforeCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

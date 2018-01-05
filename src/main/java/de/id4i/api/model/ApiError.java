@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T10:06:46.630Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-05T12:03:42.355Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -101,6 +101,8 @@ public class ApiError {
     IMAGE_CONVERSION("ERR_IMAGE_CONVERSION"),
     
     INVALID_ALIAS_TYPE("ERR_INVALID_ALIAS_TYPE"),
+    
+    INVALID_URI_TEMPLATE("ERR_INVALID_URI_TEMPLATE"),
     
     INVALID_URI_TEMPLATE_VARIABLE("ERR_INVALID_URI_TEMPLATE_VARIABLE");
 

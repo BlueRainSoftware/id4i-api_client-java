@@ -16,6 +16,7 @@ package de.id4i.api;
 import de.id4i.ApiException;
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.GuidAlias;
+import de.id4i.api.model.PaginatedResponseGuid;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -68,6 +69,45 @@ public class AliasApiTest {
         String authorization = null;
         String acceptLanguage = null;
         ApiError response = api.addGuidAlias1(id4n, aliasType, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get all aliases for the given GUID
+     *
+     * Looks up the alias for each alias type (group and single GUID) and returns all found ones
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getGuidAliasesTest() throws ApiException {
+        String id4n = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Map<String, String> response = api.getGuidAliases(id4n, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Search for GUIDs by alias
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void searchByAliasTest() throws ApiException {
+        String alias = null;
+        String aliasType = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Integer offset = null;
+        Integer limit = null;
+        PaginatedResponseGuid response = api.searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit);
 
         // TODO: test validations
     }

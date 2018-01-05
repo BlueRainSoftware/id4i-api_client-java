@@ -113,6 +113,24 @@ public class GUIDsApiTest {
     }
     
     /**
+     * Get all aliases for the given GUID
+     *
+     * Looks up the alias for each alias type (group and single GUID) and returns all found ones
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getGuidAliasesTest() throws ApiException {
+        String id4n = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Map<String, String> response = api.getGuidAliases(id4n, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Retrieve GUIDs not in any collection
      *
      * 
