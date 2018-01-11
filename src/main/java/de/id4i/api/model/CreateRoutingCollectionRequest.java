@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * CreateRoutingCollectionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-11T12:43:28.614Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-11T13:24:52.790Z")
 public class CreateRoutingCollectionRequest {
   @SerializedName("label")
   private String label = null;
@@ -46,7 +46,7 @@ public class CreateRoutingCollectionRequest {
    * Get label
    * @return label
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public String getLabel() {
     return label;
   }
@@ -62,9 +62,11 @@ public class CreateRoutingCollectionRequest {
 
    /**
    * Get length
+   * minimum: 6
+   * maximum: 255
    * @return length
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Integer getLength() {
     return length;
   }
@@ -82,7 +84,7 @@ public class CreateRoutingCollectionRequest {
    * Get organizationId
    * @return organizationId
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Long getOrganizationId() {
     return organizationId;
   }
