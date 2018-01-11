@@ -20,6 +20,7 @@ import java.io.File;
 import de.id4i.api.model.Organization;
 import de.id4i.api.model.OrganizationAddress;
 import de.id4i.api.model.OrganizationUserInvitationListRequest;
+import de.id4i.api.model.PaginatedCountryResponse;
 import de.id4i.api.model.PaginatedGuidCollection;
 import de.id4i.api.model.PaginatedOrganizationResponse;
 import de.id4i.api.model.PaginatedStringResponse;
@@ -291,6 +292,25 @@ public class OrganizationsApiTest {
     }
     
     /**
+     * List countries
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listCountriesTest() throws ApiException {
+        String authorization = null;
+        String acceptLanguage = null;
+        Integer offset = null;
+        Integer limit = null;
+        PaginatedCountryResponse response = api.listCountries(authorization, acceptLanguage, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Remove role(s) from user
      *
      * 
@@ -343,7 +363,7 @@ public class OrganizationsApiTest {
         OrganizationAddress addressResource = null;
         String authorization = null;
         String acceptLanguage = null;
-        ApiError response = api.updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage);
+        OrganizationAddress response = api.updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -362,7 +382,7 @@ public class OrganizationsApiTest {
         OrganizationAddress addressResource = null;
         String authorization = null;
         String acceptLanguage = null;
-        ApiError response = api.updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage);
+        OrganizationAddress response = api.updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage);
 
         // TODO: test validations
     }

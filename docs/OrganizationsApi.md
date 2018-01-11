@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 [**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+[**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
@@ -674,6 +675,55 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
+<a name="listCountries"></a>
+# **listCountries**
+> PaginatedCountryResponse listCountries(authorization, acceptLanguage, offset, limit)
+
+List countries
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
+
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+Integer offset = 56; // Integer | Start with the n-th element. 
+Integer limit = 56; // Integer | The maximum count of returned elements.
+try {
+    PaginatedCountryResponse result = apiInstance.listCountries(authorization, acceptLanguage, offset, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#listCountries");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+ **offset** | **Integer**| Start with the n-th element.  | [optional]
+ **limit** | **Integer**| The maximum count of returned elements. | [optional]
+
+### Return type
+
+[**PaginatedCountryResponse**](PaginatedCountryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
 > ApiError removeUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
@@ -776,7 +826,7 @@ No authorization required
 
 <a name="updateOrganizationAddress"></a>
 # **updateOrganizationAddress**
-> ApiError updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage)
+> OrganizationAddress updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage)
 
 Store address
 
@@ -793,7 +843,7 @@ OrganizationAddress addressResource = new OrganizationAddress(); // Organization
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage);
+    OrganizationAddress result = apiInstance.updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#updateOrganizationAddress");
@@ -812,7 +862,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+[**OrganizationAddress**](OrganizationAddress.md)
 
 ### Authorization
 
@@ -825,7 +875,7 @@ No authorization required
 
 <a name="updateOrganizationBillingAddress"></a>
 # **updateOrganizationBillingAddress**
-> ApiError updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage)
+> OrganizationAddress updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage)
 
 Store billing address
 
@@ -842,7 +892,7 @@ OrganizationAddress addressResource = new OrganizationAddress(); // Organization
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage);
+    OrganizationAddress result = apiInstance.updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#updateOrganizationBillingAddress");
@@ -861,7 +911,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+[**OrganizationAddress**](OrganizationAddress.md)
 
 ### Authorization
 

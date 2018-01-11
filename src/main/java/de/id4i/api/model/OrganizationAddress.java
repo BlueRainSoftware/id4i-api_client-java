@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * OrganizationAddress
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-10T08:23:19.486Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-11T12:06:09.600Z")
 public class OrganizationAddress {
   @SerializedName("companyName")
   private String companyName = null;
@@ -45,6 +45,12 @@ public class OrganizationAddress {
 
   @SerializedName("city")
   private String city = null;
+
+  @SerializedName("countryCode")
+  private String countryCode = null;
+
+  @SerializedName("countryName")
+  private String countryName = null;
 
   @SerializedName("telephone")
   private String telephone = null;
@@ -157,6 +163,33 @@ public class OrganizationAddress {
     this.city = city;
   }
 
+  public OrganizationAddress countryCode(String countryCode) {
+    this.countryCode = countryCode;
+    return this;
+  }
+
+   /**
+   * The ISO 3166 two-letter country code
+   * @return countryCode
+  **/
+  @ApiModelProperty(example = "DE", required = true, value = "The ISO 3166 two-letter country code")
+  public String getCountryCode() {
+    return countryCode;
+  }
+
+  public void setCountryCode(String countryCode) {
+    this.countryCode = countryCode;
+  }
+
+   /**
+   * The country name
+   * @return countryName
+  **/
+  @ApiModelProperty(example = "Germany", value = "The country name")
+  public String getCountryName() {
+    return countryName;
+  }
+
   public OrganizationAddress telephone(String telephone) {
     this.telephone = telephone;
     return this;
@@ -191,12 +224,14 @@ public class OrganizationAddress {
         Objects.equals(this.street, organizationAddress.street) &&
         Objects.equals(this.postCode, organizationAddress.postCode) &&
         Objects.equals(this.city, organizationAddress.city) &&
+        Objects.equals(this.countryCode, organizationAddress.countryCode) &&
+        Objects.equals(this.countryName, organizationAddress.countryName) &&
         Objects.equals(this.telephone, organizationAddress.telephone);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(companyName, firstname, lastname, street, postCode, city, telephone);
+    return Objects.hash(companyName, firstname, lastname, street, postCode, city, countryCode, countryName, telephone);
   }
 
 
@@ -211,6 +246,8 @@ public class OrganizationAddress {
     sb.append("    street: ").append(toIndentedString(street)).append("\n");
     sb.append("    postCode: ").append(toIndentedString(postCode)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
+    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+    sb.append("    countryName: ").append(toIndentedString(countryName)).append("\n");
     sb.append("    telephone: ").append(toIndentedString(telephone)).append("\n");
     sb.append("}");
     return sb.toString();

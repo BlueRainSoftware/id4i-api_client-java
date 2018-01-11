@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.Organization;
+import de.id4i.api.model.Country;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,12 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PaginatedResponseOrganization
+ * PaginatedCountryResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-11T12:06:09.600Z")
-public class PaginatedResponseOrganization {
+public class PaginatedCountryResponse {
   @SerializedName("elements")
-  private List<Organization> elements = null;
+  private List<Country> elements = null;
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -43,14 +43,14 @@ public class PaginatedResponseOrganization {
   @SerializedName("total")
   private Integer total = null;
 
-  public PaginatedResponseOrganization elements(List<Organization> elements) {
+  public PaginatedCountryResponse elements(List<Country> elements) {
     this.elements = elements;
     return this;
   }
 
-  public PaginatedResponseOrganization addElementsItem(Organization elementsItem) {
+  public PaginatedCountryResponse addElementsItem(Country elementsItem) {
     if (this.elements == null) {
-      this.elements = new ArrayList<Organization>();
+      this.elements = new ArrayList<Country>();
     }
     this.elements.add(elementsItem);
     return this;
@@ -61,15 +61,15 @@ public class PaginatedResponseOrganization {
    * @return elements
   **/
   @ApiModelProperty(value = "")
-  public List<Organization> getElements() {
+  public List<Country> getElements() {
     return elements;
   }
 
-  public void setElements(List<Organization> elements) {
+  public void setElements(List<Country> elements) {
     this.elements = elements;
   }
 
-  public PaginatedResponseOrganization limit(Integer limit) {
+  public PaginatedCountryResponse limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -87,7 +87,7 @@ public class PaginatedResponseOrganization {
     this.limit = limit;
   }
 
-  public PaginatedResponseOrganization offset(Integer offset) {
+  public PaginatedCountryResponse offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -105,7 +105,7 @@ public class PaginatedResponseOrganization {
     this.offset = offset;
   }
 
-  public PaginatedResponseOrganization total(Integer total) {
+  public PaginatedCountryResponse total(Integer total) {
     this.total = total;
     return this;
   }
@@ -132,11 +132,11 @@ public class PaginatedResponseOrganization {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedResponseOrganization paginatedResponseOrganization = (PaginatedResponseOrganization) o;
-    return Objects.equals(this.elements, paginatedResponseOrganization.elements) &&
-        Objects.equals(this.limit, paginatedResponseOrganization.limit) &&
-        Objects.equals(this.offset, paginatedResponseOrganization.offset) &&
-        Objects.equals(this.total, paginatedResponseOrganization.total);
+    PaginatedCountryResponse paginatedCountryResponse = (PaginatedCountryResponse) o;
+    return Objects.equals(this.elements, paginatedCountryResponse.elements) &&
+        Objects.equals(this.limit, paginatedCountryResponse.limit) &&
+        Objects.equals(this.offset, paginatedCountryResponse.offset) &&
+        Objects.equals(this.total, paginatedCountryResponse.total);
   }
 
   @Override
@@ -148,7 +148,7 @@ public class PaginatedResponseOrganization {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedResponseOrganization {\n");
+    sb.append("class PaginatedCountryResponse {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
