@@ -65,163 +65,6 @@ public class ApiKeysApi {
     }
 
     /**
-     * Build call for addApiKeyId4nPrivileges
-     * @param key key (required)
-     * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call addApiKeyId4nPrivilegesCall(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = id4ns;
-        
-        // create path and map variables
-        String localVarPath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns"
-            .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()))
-            .replaceAll("\\{" + "privilege" + "\\}", apiClient.escapeString(privilege.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (authorization != null)
-        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
-        if (acceptLanguage != null)
-        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/xml", "application/json;charset=UTF-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/xml", "application/json;charset=UTF-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addApiKeyId4nPrivilegesValidateBeforeCall(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'key' is set
-        if (key == null) {
-            throw new ApiException("Missing the required parameter 'key' when calling addApiKeyId4nPrivileges(Async)");
-        }
-        
-        // verify the required parameter 'privilege' is set
-        if (privilege == null) {
-            throw new ApiException("Missing the required parameter 'privilege' when calling addApiKeyId4nPrivileges(Async)");
-        }
-        
-        // verify the required parameter 'id4ns' is set
-        if (id4ns == null) {
-            throw new ApiException("Missing the required parameter 'id4ns' when calling addApiKeyId4nPrivileges(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = addApiKeyId4nPrivilegesCall(key, privilege, id4ns, authorization, acceptLanguage, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Add ID4ns of a privilege
-     * 
-     * @param key key (required)
-     * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @return ApiError
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiError addApiKeyId4nPrivileges(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = addApiKeyId4nPrivilegesWithHttpInfo(key, privilege, id4ns, authorization, acceptLanguage);
-        return resp.getData();
-    }
-
-    /**
-     * Add ID4ns of a privilege
-     * 
-     * @param key key (required)
-     * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ApiError&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<ApiError> addApiKeyId4nPrivilegesWithHttpInfo(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = addApiKeyId4nPrivilegesValidateBeforeCall(key, privilege, id4ns, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Add ID4ns of a privilege (asynchronously)
-     * 
-     * @param key key (required)
-     * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call addApiKeyId4nPrivilegesAsync(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = addApiKeyId4nPrivilegesValidateBeforeCall(key, privilege, id4ns, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
      * Build call for addApiKeyPrivilege
      * @param key key (required)
      * @param addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest (required)
@@ -369,9 +212,10 @@ public class ApiKeysApi {
         return call;
     }
     /**
-     * Build call for addApiKeyPrivileges
+     * Build call for addApiKeyPrivilegeForId4ns
      * @param key key (required)
-     * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
+     * @param privilege privilege (required)
+     * @param id4ns id4ns (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
@@ -379,12 +223,13 @@ public class ApiKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addApiKeyPrivilegesCall(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = removeApiKeyPrivilegeRequest;
+    public com.squareup.okhttp.Call addApiKeyPrivilegeForId4nsCall(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = id4ns;
         
         // create path and map variables
-        String localVarPath = "/api/v1/apikeys/{key}/privileges"
-            .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
+        String localVarPath = "/api/v1/apikeys/{key}/privileges/{privilege}/id4ns"
+            .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()))
+            .replaceAll("\\{" + "privilege" + "\\}", apiClient.escapeString(privilege.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -421,24 +266,29 @@ public class ApiKeysApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addApiKeyPrivilegesValidateBeforeCall(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addApiKeyPrivilegeForId4nsValidateBeforeCall(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'key' is set
         if (key == null) {
-            throw new ApiException("Missing the required parameter 'key' when calling addApiKeyPrivileges(Async)");
+            throw new ApiException("Missing the required parameter 'key' when calling addApiKeyPrivilegeForId4ns(Async)");
         }
         
-        // verify the required parameter 'removeApiKeyPrivilegeRequest' is set
-        if (removeApiKeyPrivilegeRequest == null) {
-            throw new ApiException("Missing the required parameter 'removeApiKeyPrivilegeRequest' when calling addApiKeyPrivileges(Async)");
+        // verify the required parameter 'privilege' is set
+        if (privilege == null) {
+            throw new ApiException("Missing the required parameter 'privilege' when calling addApiKeyPrivilegeForId4ns(Async)");
+        }
+        
+        // verify the required parameter 'id4ns' is set
+        if (id4ns == null) {
+            throw new ApiException("Missing the required parameter 'id4ns' when calling addApiKeyPrivilegeForId4ns(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = addApiKeyPrivilegesCall(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addApiKeyPrivilegeForId4nsCall(key, privilege, id4ns, authorization, acceptLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -448,48 +298,51 @@ public class ApiKeysApi {
     }
 
     /**
-     * Remove privilege
+     * Add ID4ns of a privilege
      * 
      * @param key key (required)
-     * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
+     * @param privilege privilege (required)
+     * @param id4ns id4ns (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiError addApiKeyPrivileges(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = addApiKeyPrivilegesWithHttpInfo(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage);
+    public ApiError addApiKeyPrivilegeForId4ns(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ApiError> resp = addApiKeyPrivilegeForId4nsWithHttpInfo(key, privilege, id4ns, authorization, acceptLanguage);
         return resp.getData();
     }
 
     /**
-     * Remove privilege
+     * Add ID4ns of a privilege
      * 
      * @param key key (required)
-     * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
+     * @param privilege privilege (required)
+     * @param id4ns id4ns (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiError> addApiKeyPrivilegesWithHttpInfo(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = addApiKeyPrivilegesValidateBeforeCall(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage, null, null);
+    public ApiResponse<ApiError> addApiKeyPrivilegeForId4nsWithHttpInfo(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = addApiKeyPrivilegeForId4nsValidateBeforeCall(key, privilege, id4ns, authorization, acceptLanguage, null, null);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Remove privilege (asynchronously)
+     * Add ID4ns of a privilege (asynchronously)
      * 
      * @param key key (required)
-     * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
+     * @param privilege privilege (required)
+     * @param id4ns id4ns (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addApiKeyPrivilegesAsync(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+    public com.squareup.okhttp.Call addApiKeyPrivilegeForId4nsAsync(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -510,7 +363,7 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addApiKeyPrivilegesValidateBeforeCall(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addApiKeyPrivilegeForId4nsValidateBeforeCall(key, privilege, id4ns, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1536,7 +1389,154 @@ public class ApiKeysApi {
         return call;
     }
     /**
-     * Build call for removeApiKeyId4nPrivileges
+     * Build call for removeApiKeyPrivilege
+     * @param key key (required)
+     * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call removeApiKeyPrivilegeCall(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = removeApiKeyPrivilegeRequest;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/apikeys/{key}/privileges"
+            .replaceAll("\\{" + "key" + "\\}", apiClient.escapeString(key.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call removeApiKeyPrivilegeValidateBeforeCall(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'key' is set
+        if (key == null) {
+            throw new ApiException("Missing the required parameter 'key' when calling removeApiKeyPrivilege(Async)");
+        }
+        
+        // verify the required parameter 'removeApiKeyPrivilegeRequest' is set
+        if (removeApiKeyPrivilegeRequest == null) {
+            throw new ApiException("Missing the required parameter 'removeApiKeyPrivilegeRequest' when calling removeApiKeyPrivilege(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = removeApiKeyPrivilegeCall(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Remove privilege
+     * 
+     * @param key key (required)
+     * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiError
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiError removeApiKeyPrivilege(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ApiError> resp = removeApiKeyPrivilegeWithHttpInfo(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage);
+        return resp.getData();
+    }
+
+    /**
+     * Remove privilege
+     * 
+     * @param key key (required)
+     * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiResponse&lt;ApiError&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ApiError> removeApiKeyPrivilegeWithHttpInfo(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = removeApiKeyPrivilegeValidateBeforeCall(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage, null, null);
+        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Remove privilege (asynchronously)
+     * 
+     * @param key key (required)
+     * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call removeApiKeyPrivilegeAsync(String key, RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = removeApiKeyPrivilegeValidateBeforeCall(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for removeApiKeyPrivilegeForId4ns
      * @param key key (required)
      * @param privilege privilege (required)
      * @param id4ns id4ns (required)
@@ -1547,7 +1547,7 @@ public class ApiKeysApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call removeApiKeyId4nPrivilegesCall(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call removeApiKeyPrivilegeForId4nsCall(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = id4ns;
         
         // create path and map variables
@@ -1594,25 +1594,25 @@ public class ApiKeysApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call removeApiKeyId4nPrivilegesValidateBeforeCall(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call removeApiKeyPrivilegeForId4nsValidateBeforeCall(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'key' is set
         if (key == null) {
-            throw new ApiException("Missing the required parameter 'key' when calling removeApiKeyId4nPrivileges(Async)");
+            throw new ApiException("Missing the required parameter 'key' when calling removeApiKeyPrivilegeForId4ns(Async)");
         }
         
         // verify the required parameter 'privilege' is set
         if (privilege == null) {
-            throw new ApiException("Missing the required parameter 'privilege' when calling removeApiKeyId4nPrivileges(Async)");
+            throw new ApiException("Missing the required parameter 'privilege' when calling removeApiKeyPrivilegeForId4ns(Async)");
         }
         
         // verify the required parameter 'id4ns' is set
         if (id4ns == null) {
-            throw new ApiException("Missing the required parameter 'id4ns' when calling removeApiKeyId4nPrivileges(Async)");
+            throw new ApiException("Missing the required parameter 'id4ns' when calling removeApiKeyPrivilegeForId4ns(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = removeApiKeyId4nPrivilegesCall(key, privilege, id4ns, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeApiKeyPrivilegeForId4nsCall(key, privilege, id4ns, authorization, acceptLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1632,8 +1632,8 @@ public class ApiKeysApi {
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiError removeApiKeyId4nPrivileges(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = removeApiKeyId4nPrivilegesWithHttpInfo(key, privilege, id4ns, authorization, acceptLanguage);
+    public ApiError removeApiKeyPrivilegeForId4ns(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ApiError> resp = removeApiKeyPrivilegeForId4nsWithHttpInfo(key, privilege, id4ns, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -1648,8 +1648,8 @@ public class ApiKeysApi {
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiError> removeApiKeyId4nPrivilegesWithHttpInfo(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = removeApiKeyId4nPrivilegesValidateBeforeCall(key, privilege, id4ns, authorization, acceptLanguage, null, null);
+    public ApiResponse<ApiError> removeApiKeyPrivilegeForId4nsWithHttpInfo(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = removeApiKeyPrivilegeForId4nsValidateBeforeCall(key, privilege, id4ns, authorization, acceptLanguage, null, null);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1666,7 +1666,7 @@ public class ApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call removeApiKeyId4nPrivilegesAsync(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeApiKeyPrivilegeForId4nsAsync(String key, String privilege, ListOfId4ns id4ns, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1687,7 +1687,7 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = removeApiKeyId4nPrivilegesValidateBeforeCall(key, privilege, id4ns, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeApiKeyPrivilegeForId4nsValidateBeforeCall(key, privilege, id4ns, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

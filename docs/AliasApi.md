@@ -165,7 +165,7 @@ No authorization required
 
 <a name="searchByAlias"></a>
 # **searchByAlias**
-> PaginatedResponseGuid searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit)
+> PaginatedGuidResponse searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit)
 
 Search for GUIDs by alias
 
@@ -184,7 +184,7 @@ String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
 try {
-    PaginatedResponseGuid result = apiInstance.searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit);
+    PaginatedGuidResponse result = apiInstance.searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#searchByAlias");
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseGuid**](PaginatedResponseGuid.md)
+[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
 
 ### Authorization
 

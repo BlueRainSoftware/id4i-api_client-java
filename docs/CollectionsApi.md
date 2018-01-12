@@ -953,7 +953,7 @@ No authorization required
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label)
+> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix)
 
 Get collections of organization
 
@@ -974,8 +974,9 @@ Integer offset = 56; // Integer | Start with the n-th element.
 Integer limit = 56; // Integer | The maximum count of returned elements.
 String type = "type_example"; // String | Filter by this type
 String label = "label_example"; // String | Filter by this label
+String labelPrefix = "labelPrefix_example"; // String | Filter by this label prefix
 try {
-    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label);
+    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#getAllCollectionsOfOrganization");
@@ -994,6 +995,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
  **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]
  **label** | **String**| Filter by this label | [optional]
+ **labelPrefix** | **String**| Filter by this label prefix | [optional]
 
 ### Return type
 

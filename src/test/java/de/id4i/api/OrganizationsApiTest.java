@@ -186,7 +186,8 @@ public class OrganizationsApiTest {
         Integer limit = null;
         String type = null;
         String label = null;
-        PaginatedGuidCollection response = api.getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label);
+        String labelPrefix = null;
+        PaginatedGuidCollection response = api.getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix);
 
         // TODO: test validations
     }

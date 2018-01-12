@@ -43,26 +43,6 @@ public class ApiKeysApiTest {
 
     
     /**
-     * Add ID4ns of a privilege
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void addApiKeyId4nPrivilegesTest() throws ApiException {
-        String key = null;
-        String privilege = null;
-        ListOfId4ns id4ns = null;
-        String authorization = null;
-        String acceptLanguage = null;
-        ApiError response = api.addApiKeyId4nPrivileges(key, privilege, id4ns, authorization, acceptLanguage);
-
-        // TODO: test validations
-    }
-    
-    /**
      * Add privilege
      *
      * 
@@ -82,7 +62,7 @@ public class ApiKeysApiTest {
     }
     
     /**
-     * Remove privilege
+     * Add ID4ns of a privilege
      *
      * 
      *
@@ -90,12 +70,13 @@ public class ApiKeysApiTest {
      *          if the Api call fails
      */
     @Test
-    public void addApiKeyPrivilegesTest() throws ApiException {
+    public void addApiKeyPrivilegeForId4nsTest() throws ApiException {
         String key = null;
-        RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest = null;
+        String privilege = null;
+        ListOfId4ns id4ns = null;
         String authorization = null;
         String acceptLanguage = null;
-        ApiError response = api.addApiKeyPrivileges(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage);
+        ApiError response = api.addApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -236,6 +217,25 @@ public class ApiKeysApiTest {
     }
     
     /**
+     * Remove privilege
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void removeApiKeyPrivilegeTest() throws ApiException {
+        String key = null;
+        RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Remove id4ns of a privilege
      *
      * 
@@ -244,13 +244,13 @@ public class ApiKeysApiTest {
      *          if the Api call fails
      */
     @Test
-    public void removeApiKeyId4nPrivilegesTest() throws ApiException {
+    public void removeApiKeyPrivilegeForId4nsTest() throws ApiException {
         String key = null;
         String privilege = null;
         ListOfId4ns id4ns = null;
         String authorization = null;
         String acceptLanguage = null;
-        ApiError response = api.removeApiKeyId4nPrivileges(key, privilege, id4ns, authorization, acceptLanguage);
+        ApiError response = api.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage);
 
         // TODO: test validations
     }

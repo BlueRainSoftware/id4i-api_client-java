@@ -1039,12 +1039,13 @@ public class OrganizationsApi {
      * @param limit The maximum count of returned elements. (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
+     * @param labelPrefix Filter by this label prefix (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1060,6 +1061,8 @@ public class OrganizationsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "type", type));
         if (label != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "label", label));
+        if (labelPrefix != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "labelPrefix", labelPrefix));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (authorization != null)
@@ -1098,7 +1101,7 @@ public class OrganizationsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllCollectionsOfOrganizationValidateBeforeCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllCollectionsOfOrganizationValidateBeforeCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -1106,7 +1109,7 @@ public class OrganizationsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
         return call;
 
         
@@ -1125,11 +1128,12 @@ public class OrganizationsApi {
      * @param limit The maximum count of returned elements. (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
+     * @param labelPrefix Filter by this label prefix (optional)
      * @return PaginatedGuidCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedGuidCollection getAllCollectionsOfOrganization(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label) throws ApiException {
-        ApiResponse<PaginatedGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, authorization, acceptLanguage, offset, limit, type, label);
+    public PaginatedGuidCollection getAllCollectionsOfOrganization(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
+        ApiResponse<PaginatedGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix);
         return resp.getData();
     }
 
@@ -1143,11 +1147,12 @@ public class OrganizationsApi {
      * @param limit The maximum count of returned elements. (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
+     * @param labelPrefix Filter by this label prefix (optional)
      * @return ApiResponse&lt;PaginatedGuidCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label) throws ApiException {
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, null, null);
+    public ApiResponse<PaginatedGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix, null, null);
         Type localVarReturnType = new TypeToken<PaginatedGuidCollection>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1162,11 +1167,12 @@ public class OrganizationsApi {
      * @param limit The maximum count of returned elements. (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
+     * @param labelPrefix Filter by this label prefix (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, final ApiCallback<PaginatedGuidCollection> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix, final ApiCallback<PaginatedGuidCollection> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1187,7 +1193,7 @@ public class OrganizationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedGuidCollection>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

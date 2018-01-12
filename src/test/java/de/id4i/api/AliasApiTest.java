@@ -16,7 +16,7 @@ package de.id4i.api;
 import de.id4i.ApiException;
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.GuidAlias;
-import de.id4i.api.model.PaginatedResponseGuid;
+import de.id4i.api.model.PaginatedGuidResponse;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -107,7 +107,7 @@ public class AliasApiTest {
         String acceptLanguage = null;
         Integer offset = null;
         Integer limit = null;
-        PaginatedResponseGuid response = api.searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit);
+        PaginatedGuidResponse response = api.searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit);
 
         // TODO: test validations
     }

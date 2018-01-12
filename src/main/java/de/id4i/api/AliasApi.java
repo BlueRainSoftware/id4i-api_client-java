@@ -29,7 +29,7 @@ import java.io.IOException;
 
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.GuidAlias;
-import de.id4i.api.model.PaginatedResponseGuid;
+import de.id4i.api.model.PaginatedGuidResponse;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -596,11 +596,11 @@ public class AliasApi {
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
-     * @return PaginatedResponseGuid
+     * @return PaginatedGuidResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedResponseGuid searchByAlias(String alias, String aliasType, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedResponseGuid> resp = searchByAliasWithHttpInfo(alias, aliasType, authorization, acceptLanguage, offset, limit);
+    public PaginatedGuidResponse searchByAlias(String alias, String aliasType, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedGuidResponse> resp = searchByAliasWithHttpInfo(alias, aliasType, authorization, acceptLanguage, offset, limit);
         return resp.getData();
     }
 
@@ -613,12 +613,12 @@ public class AliasApi {
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
-     * @return ApiResponse&lt;PaginatedResponseGuid&gt;
+     * @return ApiResponse&lt;PaginatedGuidResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedResponseGuid> searchByAliasWithHttpInfo(String alias, String aliasType, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedGuidResponse> searchByAliasWithHttpInfo(String alias, String aliasType, String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = searchByAliasValidateBeforeCall(alias, aliasType, authorization, acceptLanguage, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedResponseGuid>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -635,7 +635,7 @@ public class AliasApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchByAliasAsync(String alias, String aliasType, String authorization, String acceptLanguage, Integer offset, Integer limit, final ApiCallback<PaginatedResponseGuid> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchByAliasAsync(String alias, String aliasType, String authorization, String acceptLanguage, Integer offset, Integer limit, final ApiCallback<PaginatedGuidResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -657,7 +657,7 @@ public class AliasApi {
         }
 
         com.squareup.okhttp.Call call = searchByAliasValidateBeforeCall(alias, aliasType, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedResponseGuid>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
