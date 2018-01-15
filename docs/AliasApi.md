@@ -45,7 +45,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: ean, gtin, article, mapp, item, rfid]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
@@ -97,7 +97,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: ean, gtin, article, mapp, item, rfid]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid]
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
@@ -197,7 +197,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alias** | **String**| The alias to search for |
- **aliasType** | **String**| Alias type type to search for | [enum: ean, gtin, article, mapp, item, rfid]
+ **aliasType** | **String**| Alias type type to search for | [enum: gtin, article, mapp, item, rfid]
  **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
