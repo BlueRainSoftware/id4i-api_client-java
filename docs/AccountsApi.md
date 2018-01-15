@@ -4,7 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**completeRegistration**](AccountsApi.md#completeRegistration) | **POST** /account/completeRegistration | Complete registration
+[**completeRegistration**](AccountsApi.md#completeRegistration) | **PUT** /account/registration | Complete registration
 [**findUserByUsername**](AccountsApi.md#findUserByUsername) | **GET** /api/v1/users/{username} | Find by username
 [**findUsers**](AccountsApi.md#findUsers) | **GET** /api/v1/users | Find users
 [**getAllOrganizationRoles**](AccountsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles

@@ -84,7 +84,7 @@ public class AccountsApi {
         Object localVarPostBody = completeRegistration;
         
         // create path and map variables
-        String localVarPath = "/account/completeRegistration";
+        String localVarPath = "/account/registration";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -121,7 +121,7 @@ public class AccountsApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
     
     @SuppressWarnings("rawtypes")
