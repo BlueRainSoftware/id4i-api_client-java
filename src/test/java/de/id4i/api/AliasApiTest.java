@@ -74,6 +74,23 @@ public class AliasApiTest {
     }
     
     /**
+     * List all supported alias types
+     *
+     * Retrieve this list to find out all alias types to use with alias search and change operations
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getGuidAliasTypesTest() throws ApiException {
+        String authorization = null;
+        String acceptLanguage = null;
+        List<String> response = api.getGuidAliasTypes(authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get all aliases for the given GUID
      *
      * Looks up the alias for each alias type (group and single GUID) and returns all found ones
