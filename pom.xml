@@ -195,7 +195,6 @@
             </goals>
             <configuration>
               <homedir>.gnupg</homedir>
-              <keyname>info@bluerain.de</keyname>
             </configuration>
           </execution>
         </executions>
