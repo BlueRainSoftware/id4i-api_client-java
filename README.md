@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.0.1-SNAPSHOT"
+compile "de.id4i.api:id4i-api-client:0.1.0"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/id4i-api-client-0.0.1-SNAPSHOT.jar
+* target/id4i-api-client-0.1.0.jar
 * target/lib/*.jar
 
 ## Getting Started

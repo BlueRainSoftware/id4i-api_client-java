@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * Route
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-17T17:03:47.347+01:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-17T17:40:45.013+01:00")
 public class Route {
   @SerializedName("params")
   private Map<String, String> params = new HashMap<String, String>();
