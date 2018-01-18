@@ -32,6 +32,8 @@ import de.id4i.api.model.ChangeRoleRequest;
 import java.io.File;
 import de.id4i.api.model.Organization;
 import de.id4i.api.model.OrganizationAddress;
+import de.id4i.api.model.OrganizationUserInvitationListRequest;
+import de.id4i.api.model.PaginatedCountryResponse;
 import de.id4i.api.model.PaginatedGuidCollection;
 import de.id4i.api.model.PaginatedOrganizationResponse;
 import de.id4i.api.model.PaginatedStringResponse;
@@ -63,6 +65,163 @@ public class OrganizationsApi {
         this.apiClient = apiClient;
     }
 
+    /**
+     * Build call for addUserRoles
+     * @param organizationId organizationId (required)
+     * @param username username (required)
+     * @param changeRoleRequest changeRoleRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call addUserRolesCall(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = changeRoleRequest;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles"
+            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
+            .replaceAll("\\{" + "username" + "\\}", apiClient.escapeString(username.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call addUserRolesValidateBeforeCall(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling addUserRoles(Async)");
+        }
+        
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new ApiException("Missing the required parameter 'username' when calling addUserRoles(Async)");
+        }
+        
+        // verify the required parameter 'changeRoleRequest' is set
+        if (changeRoleRequest == null) {
+            throw new ApiException("Missing the required parameter 'changeRoleRequest' when calling addUserRoles(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = addUserRolesCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Add role(s) to user
+     * 
+     * @param organizationId organizationId (required)
+     * @param username username (required)
+     * @param changeRoleRequest changeRoleRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiError
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiError addUserRoles(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ApiError> resp = addUserRolesWithHttpInfo(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+        return resp.getData();
+    }
+
+    /**
+     * Add role(s) to user
+     * 
+     * @param organizationId organizationId (required)
+     * @param username username (required)
+     * @param changeRoleRequest changeRoleRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiResponse&lt;ApiError&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ApiError> addUserRolesWithHttpInfo(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = addUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, null, null);
+        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Add role(s) to user (asynchronously)
+     * 
+     * @param organizationId organizationId (required)
+     * @param username username (required)
+     * @param changeRoleRequest changeRoleRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call addUserRolesAsync(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = addUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
     /**
      * Build call for createOrganization
      * @param organization Organization to be created (required)
@@ -1037,12 +1196,13 @@ public class OrganizationsApi {
      * @param limit The maximum count of returned elements. (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
+     * @param labelPrefix Filter by this label prefix (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -1058,6 +1218,8 @@ public class OrganizationsApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "type", type));
         if (label != null)
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "label", label));
+        if (labelPrefix != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "labelPrefix", labelPrefix));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         if (authorization != null)
@@ -1096,7 +1258,7 @@ public class OrganizationsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllCollectionsOfOrganizationValidateBeforeCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllCollectionsOfOrganizationValidateBeforeCall(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -1104,7 +1266,7 @@ public class OrganizationsApi {
         }
         
         
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
         return call;
 
         
@@ -1123,11 +1285,12 @@ public class OrganizationsApi {
      * @param limit The maximum count of returned elements. (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
+     * @param labelPrefix Filter by this label prefix (optional)
      * @return PaginatedGuidCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedGuidCollection getAllCollectionsOfOrganization(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label) throws ApiException {
-        ApiResponse<PaginatedGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, authorization, acceptLanguage, offset, limit, type, label);
+    public PaginatedGuidCollection getAllCollectionsOfOrganization(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
+        ApiResponse<PaginatedGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix);
         return resp.getData();
     }
 
@@ -1141,11 +1304,12 @@ public class OrganizationsApi {
      * @param limit The maximum count of returned elements. (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
+     * @param labelPrefix Filter by this label prefix (optional)
      * @return ApiResponse&lt;PaginatedGuidCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label) throws ApiException {
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, null, null);
+    public ApiResponse<PaginatedGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix, null, null);
         Type localVarReturnType = new TypeToken<PaginatedGuidCollection>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1160,11 +1324,12 @@ public class OrganizationsApi {
      * @param limit The maximum count of returned elements. (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
+     * @param labelPrefix Filter by this label prefix (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, final ApiCallback<PaginatedGuidCollection> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(Long organizationId, String authorization, String acceptLanguage, Integer offset, Integer limit, String type, String label, String labelPrefix, final ApiCallback<PaginatedGuidCollection> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1185,7 +1350,7 @@ public class OrganizationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedGuidCollection>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1797,6 +1962,293 @@ public class OrganizationsApi {
         return call;
     }
     /**
+     * Build call for inviteUsers
+     * @param organizationId organizationId (required)
+     * @param invitationList invitationList (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call inviteUsersCall(Long organizationId, OrganizationUserInvitationListRequest invitationList, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = invitationList;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/organizations/{organizationId}/users/invite"
+            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call inviteUsersValidateBeforeCall(Long organizationId, OrganizationUserInvitationListRequest invitationList, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling inviteUsers(Async)");
+        }
+        
+        // verify the required parameter 'invitationList' is set
+        if (invitationList == null) {
+            throw new ApiException("Missing the required parameter 'invitationList' when calling inviteUsers(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = inviteUsersCall(organizationId, invitationList, authorization, acceptLanguage, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Invite Users
+     * 
+     * @param organizationId organizationId (required)
+     * @param invitationList invitationList (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiError
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiError inviteUsers(Long organizationId, OrganizationUserInvitationListRequest invitationList, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ApiError> resp = inviteUsersWithHttpInfo(organizationId, invitationList, authorization, acceptLanguage);
+        return resp.getData();
+    }
+
+    /**
+     * Invite Users
+     * 
+     * @param organizationId organizationId (required)
+     * @param invitationList invitationList (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiResponse&lt;ApiError&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ApiError> inviteUsersWithHttpInfo(Long organizationId, OrganizationUserInvitationListRequest invitationList, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = inviteUsersValidateBeforeCall(organizationId, invitationList, authorization, acceptLanguage, null, null);
+        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Invite Users (asynchronously)
+     * 
+     * @param organizationId organizationId (required)
+     * @param invitationList invitationList (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call inviteUsersAsync(Long organizationId, OrganizationUserInvitationListRequest invitationList, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = inviteUsersValidateBeforeCall(organizationId, invitationList, authorization, acceptLanguage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for listCountries
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call listCountriesCall(String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/countries";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "limit", limit));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call listCountriesValidateBeforeCall(String authorization, String acceptLanguage, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        
+        com.squareup.okhttp.Call call = listCountriesCall(authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * List countries
+     * 
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return PaginatedCountryResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PaginatedCountryResponse listCountries(String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedCountryResponse> resp = listCountriesWithHttpInfo(authorization, acceptLanguage, offset, limit);
+        return resp.getData();
+    }
+
+    /**
+     * List countries
+     * 
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @return ApiResponse&lt;PaginatedCountryResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PaginatedCountryResponse> listCountriesWithHttpInfo(String authorization, String acceptLanguage, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = listCountriesValidateBeforeCall(authorization, acceptLanguage, offset, limit, null, null);
+        Type localVarReturnType = new TypeToken<PaginatedCountryResponse>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * List countries (asynchronously)
+     * 
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param offset Start with the n-th element.  (optional)
+     * @param limit The maximum count of returned elements. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call listCountriesAsync(String authorization, String acceptLanguage, Integer offset, Integer limit, final ApiCallback<PaginatedCountryResponse> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = listCountriesValidateBeforeCall(authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PaginatedCountryResponse>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for removeUserRoles
      * @param organizationId organizationId (required)
      * @param username username (required)
@@ -2186,11 +2638,11 @@ public class OrganizationsApi {
      * @param addressResource addressResource (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiError
+     * @return OrganizationAddress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiError updateOrganizationAddress(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = updateOrganizationAddressWithHttpInfo(organizationId, addressResource, authorization, acceptLanguage);
+    public OrganizationAddress updateOrganizationAddress(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<OrganizationAddress> resp = updateOrganizationAddressWithHttpInfo(organizationId, addressResource, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -2201,12 +2653,12 @@ public class OrganizationsApi {
      * @param addressResource addressResource (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ApiError&gt;
+     * @return ApiResponse&lt;OrganizationAddress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiError> updateOrganizationAddressWithHttpInfo(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage) throws ApiException {
+    public ApiResponse<OrganizationAddress> updateOrganizationAddressWithHttpInfo(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage) throws ApiException {
         com.squareup.okhttp.Call call = updateOrganizationAddressValidateBeforeCall(organizationId, addressResource, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        Type localVarReturnType = new TypeToken<OrganizationAddress>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2221,7 +2673,7 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateOrganizationAddressAsync(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateOrganizationAddressAsync(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage, final ApiCallback<OrganizationAddress> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2243,7 +2695,7 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = updateOrganizationAddressValidateBeforeCall(organizationId, addressResource, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        Type localVarReturnType = new TypeToken<OrganizationAddress>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2333,11 +2785,11 @@ public class OrganizationsApi {
      * @param addressResource addressResource (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiError
+     * @return OrganizationAddress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiError updateOrganizationBillingAddress(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = updateOrganizationBillingAddressWithHttpInfo(organizationId, addressResource, authorization, acceptLanguage);
+    public OrganizationAddress updateOrganizationBillingAddress(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<OrganizationAddress> resp = updateOrganizationBillingAddressWithHttpInfo(organizationId, addressResource, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -2348,12 +2800,12 @@ public class OrganizationsApi {
      * @param addressResource addressResource (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ApiError&gt;
+     * @return ApiResponse&lt;OrganizationAddress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiError> updateOrganizationBillingAddressWithHttpInfo(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage) throws ApiException {
+    public ApiResponse<OrganizationAddress> updateOrganizationBillingAddressWithHttpInfo(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage) throws ApiException {
         com.squareup.okhttp.Call call = updateOrganizationBillingAddressValidateBeforeCall(organizationId, addressResource, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        Type localVarReturnType = new TypeToken<OrganizationAddress>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2368,7 +2820,7 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateOrganizationBillingAddressAsync(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateOrganizationBillingAddressAsync(Long organizationId, OrganizationAddress addressResource, String authorization, String acceptLanguage, final ApiCallback<OrganizationAddress> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2390,7 +2842,7 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = updateOrganizationBillingAddressValidateBeforeCall(organizationId, addressResource, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        Type localVarReturnType = new TypeToken<OrganizationAddress>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2539,163 +2991,6 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = updateOrganizationLogoValidateBeforeCall(organizationId, file, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for updateUserRoles
-     * @param organizationId organizationId (required)
-     * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call updateUserRolesCall(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = changeRoleRequest;
-        
-        // create path and map variables
-        String localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles"
-            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
-            .replaceAll("\\{" + "username" + "\\}", apiClient.escapeString(username.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (authorization != null)
-        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
-        if (acceptLanguage != null)
-        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/xml", "application/json;charset=UTF-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/xml", "application/json;charset=UTF-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateUserRolesValidateBeforeCall(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'organizationId' is set
-        if (organizationId == null) {
-            throw new ApiException("Missing the required parameter 'organizationId' when calling updateUserRoles(Async)");
-        }
-        
-        // verify the required parameter 'username' is set
-        if (username == null) {
-            throw new ApiException("Missing the required parameter 'username' when calling updateUserRoles(Async)");
-        }
-        
-        // verify the required parameter 'changeRoleRequest' is set
-        if (changeRoleRequest == null) {
-            throw new ApiException("Missing the required parameter 'changeRoleRequest' when calling updateUserRoles(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = updateUserRolesCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Add role(s) to user
-     * 
-     * @param organizationId organizationId (required)
-     * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @return ApiError
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiError updateUserRoles(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = updateUserRolesWithHttpInfo(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
-        return resp.getData();
-    }
-
-    /**
-     * Add role(s) to user
-     * 
-     * @param organizationId organizationId (required)
-     * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ApiError&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<ApiError> updateUserRolesWithHttpInfo(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = updateUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Add role(s) to user (asynchronously)
-     * 
-     * @param organizationId organizationId (required)
-     * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call updateUserRolesAsync(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = updateUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

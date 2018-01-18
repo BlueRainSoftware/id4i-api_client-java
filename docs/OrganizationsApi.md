@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addUserRoles**](OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
 [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 [**deleteOrganizationBillingAddress**](OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
@@ -16,13 +17,65 @@ Method | HTTP request | Description
 [**getOrganizationsOfUser**](OrganizationsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 [**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+[**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
+[**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 [**updateOrganizationLogo**](OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
-[**updateUserRoles**](OrganizationsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 
+
+<a name="addUserRoles"></a>
+# **addUserRoles**
+> ApiError addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
+
+Add role(s) to user
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
+
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+Long organizationId = 789L; // Long | organizationId
+String username = "username_example"; // String | username
+ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#addUserRoles");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| organizationId |
+ **username** | **String**| username |
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="createOrganization"></a>
 # **createOrganization**
@@ -359,7 +412,7 @@ No authorization required
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label)
+> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix)
 
 Get collections of organization
 
@@ -380,8 +433,9 @@ Integer offset = 56; // Integer | Start with the n-th element.
 Integer limit = 56; // Integer | The maximum count of returned elements.
 String type = "type_example"; // String | Filter by this type
 String label = "label_example"; // String | Filter by this label
+String labelPrefix = "labelPrefix_example"; // String | Filter by this label prefix
 try {
-    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label);
+    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getAllCollectionsOfOrganization");
@@ -400,6 +454,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
  **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]
  **label** | **String**| Filter by this label | [optional]
+ **labelPrefix** | **String**| Filter by this label prefix | [optional]
 
 ### Return type
 
@@ -624,6 +679,104 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
+<a name="inviteUsers"></a>
+# **inviteUsers**
+> ApiError inviteUsers(organizationId, invitationList, authorization, acceptLanguage)
+
+Invite Users
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
+
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+Long organizationId = 789L; // Long | organizationId
+OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    ApiError result = apiInstance.inviteUsers(organizationId, invitationList, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#inviteUsers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| organizationId |
+ **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="listCountries"></a>
+# **listCountries**
+> PaginatedCountryResponse listCountries(authorization, acceptLanguage, offset, limit)
+
+List countries
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
+
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+Integer offset = 56; // Integer | Start with the n-th element. 
+Integer limit = 56; // Integer | The maximum count of returned elements.
+try {
+    PaginatedCountryResponse result = apiInstance.listCountries(authorization, acceptLanguage, offset, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#listCountries");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+ **offset** | **Integer**| Start with the n-th element.  | [optional]
+ **limit** | **Integer**| The maximum count of returned elements. | [optional]
+
+### Return type
+
+[**PaginatedCountryResponse**](PaginatedCountryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
 > ApiError removeUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
@@ -726,7 +879,7 @@ No authorization required
 
 <a name="updateOrganizationAddress"></a>
 # **updateOrganizationAddress**
-> ApiError updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage)
+> OrganizationAddress updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage)
 
 Store address
 
@@ -743,7 +896,7 @@ OrganizationAddress addressResource = new OrganizationAddress(); // Organization
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage);
+    OrganizationAddress result = apiInstance.updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#updateOrganizationAddress");
@@ -762,7 +915,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+[**OrganizationAddress**](OrganizationAddress.md)
 
 ### Authorization
 
@@ -775,7 +928,7 @@ No authorization required
 
 <a name="updateOrganizationBillingAddress"></a>
 # **updateOrganizationBillingAddress**
-> ApiError updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage)
+> OrganizationAddress updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage)
 
 Store billing address
 
@@ -792,7 +945,7 @@ OrganizationAddress addressResource = new OrganizationAddress(); // Organization
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage);
+    OrganizationAddress result = apiInstance.updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#updateOrganizationBillingAddress");
@@ -811,7 +964,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+[**OrganizationAddress**](OrganizationAddress.md)
 
 ### Authorization
 
@@ -871,56 +1024,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="updateUserRoles"></a>
-# **updateUserRoles**
-> ApiError updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
-
-Add role(s) to user
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.OrganizationsApi;
-
-
-OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
-String username = "username_example"; // String | username
-ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OrganizationsApi#updateUserRoles");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
- **username** | **String**| username |
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 

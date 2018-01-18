@@ -17,6 +17,8 @@ import de.id4i.ApiException;
 import de.id4i.api.model.AccountCredentials;
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.ChangeRoleRequest;
+import de.id4i.api.model.CompleteUserRegistrationRequest;
+import de.id4i.api.model.OrganizationUserInvitationListRequest;
 import de.id4i.api.model.PaginatedOrganizationResponse;
 import de.id4i.api.model.PaginatedStringResponse;
 import de.id4i.api.model.PaginatedUserPresentationResponse;
@@ -47,6 +49,44 @@ public class AccountsApiTest {
 
     
     /**
+     * Add role(s) to user
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addUserRolesTest() throws ApiException {
+        Long organizationId = null;
+        String username = null;
+        ChangeRoleRequest changeRoleRequest = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Complete registration
+     *
+     * Completing a registration e.g. for invited users. Finish registration with a username and a password.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void completeRegistrationTest() throws ApiException {
+        CompleteUserRegistrationRequest completeRegistration = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.completeRegistration(completeRegistration, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Find by username
      *
      * 
@@ -60,6 +100,26 @@ public class AccountsApiTest {
         String authorization = null;
         String acceptLanguage = null;
         UserPresentation response = api.findUserByUsername(username, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Find users
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void findUsersTest() throws ApiException {
+        String usernamePrefix = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Integer offset = null;
+        Integer limit = null;
+        PaginatedUserPresentationResponse response = api.findUsers(usernamePrefix, authorization, acceptLanguage, offset, limit);
 
         // TODO: test validations
     }
@@ -141,6 +201,25 @@ public class AccountsApiTest {
         Integer offset = null;
         Integer limit = null;
         PaginatedUserPresentationResponse response = api.getUsersOfOrganization(organizationId, authorization, acceptLanguage, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Invite Users
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void inviteUsersTest() throws ApiException {
+        Long organizationId = null;
+        OrganizationUserInvitationListRequest invitationList = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.inviteUsers(organizationId, invitationList, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -233,26 +312,6 @@ public class AccountsApiTest {
         String authorization = null;
         String acceptLanguage = null;
         SimpleMessageResponse response = api.requestPasswordReset(resetRequest, authorization, acceptLanguage);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Add role(s) to user
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updateUserRolesTest() throws ApiException {
-        Long organizationId = null;
-        String username = null;
-        ChangeRoleRequest changeRoleRequest = null;
-        String authorization = null;
-        String acceptLanguage = null;
-        ApiError response = api.updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
 
         // TODO: test validations
     }

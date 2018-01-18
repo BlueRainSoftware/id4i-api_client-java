@@ -26,16 +26,13 @@ import java.io.IOException;
 /**
  * UserPresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-20T09:40:53.978Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-18T11:06:43.528Z")
 public class UserPresentation {
   @SerializedName("id")
   private String id = null;
 
   @SerializedName("name")
   private String name = null;
-
-  @SerializedName("postcode")
-  private String postcode = null;
 
   public UserPresentation id(String id) {
     this.id = id;
@@ -73,24 +70,6 @@ public class UserPresentation {
     this.name = name;
   }
 
-  public UserPresentation postcode(String postcode) {
-    this.postcode = postcode;
-    return this;
-  }
-
-   /**
-   * Get postcode
-   * @return postcode
-  **/
-  @ApiModelProperty(value = "")
-  public String getPostcode() {
-    return postcode;
-  }
-
-  public void setPostcode(String postcode) {
-    this.postcode = postcode;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,13 +81,12 @@ public class UserPresentation {
     }
     UserPresentation userPresentation = (UserPresentation) o;
     return Objects.equals(this.id, userPresentation.id) &&
-        Objects.equals(this.name, userPresentation.name) &&
-        Objects.equals(this.postcode, userPresentation.postcode);
+        Objects.equals(this.name, userPresentation.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, postcode);
+    return Objects.hash(id, name);
   }
 
 
@@ -119,7 +97,6 @@ public class UserPresentation {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    postcode: ").append(toIndentedString(postcode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

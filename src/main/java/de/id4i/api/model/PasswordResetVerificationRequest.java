@@ -26,34 +26,13 @@ import java.io.IOException;
 /**
  * PasswordResetVerificationRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-20T09:40:53.978Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-18T11:06:43.528Z")
 public class PasswordResetVerificationRequest {
-  @SerializedName("username")
-  private String username = null;
-
   @SerializedName("password")
   private String password = null;
 
   @SerializedName("token")
   private String token = null;
-
-  public PasswordResetVerificationRequest username(String username) {
-    this.username = username;
-    return this;
-  }
-
-   /**
-   * Get username
-   * @return username
-  **/
-  @ApiModelProperty(value = "")
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
 
   public PasswordResetVerificationRequest password(String password) {
     this.password = password;
@@ -101,14 +80,13 @@ public class PasswordResetVerificationRequest {
       return false;
     }
     PasswordResetVerificationRequest passwordResetVerificationRequest = (PasswordResetVerificationRequest) o;
-    return Objects.equals(this.username, passwordResetVerificationRequest.username) &&
-        Objects.equals(this.password, passwordResetVerificationRequest.password) &&
+    return Objects.equals(this.password, passwordResetVerificationRequest.password) &&
         Objects.equals(this.token, passwordResetVerificationRequest.token);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(username, password, token);
+    return Objects.hash(password, token);
   }
 
 
@@ -117,7 +95,6 @@ public class PasswordResetVerificationRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class PasswordResetVerificationRequest {\n");
     
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
     sb.append("}");

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**roles** | **List&lt;String&gt;** |  |  [optional]
+**roles** | **List&lt;String&gt;** |  | 
 
 
 

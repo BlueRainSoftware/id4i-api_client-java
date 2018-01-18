@@ -24,17 +24,49 @@ import de.id4i.api.model.OrganizationAddress;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * WhoIsResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-20T09:40:53.978Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-18T11:06:43.528Z")
 public class WhoIsResponse {
+  @SerializedName("aliases")
+  private Map<String, String> aliases = null;
+
   @SerializedName("organization")
   private Organization organization = null;
 
   @SerializedName("organizationAddress")
   private OrganizationAddress organizationAddress = null;
+
+  public WhoIsResponse aliases(Map<String, String> aliases) {
+    this.aliases = aliases;
+    return this;
+  }
+
+  public WhoIsResponse putAliasesItem(String key, String aliasesItem) {
+    if (this.aliases == null) {
+      this.aliases = new HashMap<String, String>();
+    }
+    this.aliases.put(key, aliasesItem);
+    return this;
+  }
+
+   /**
+   * Get aliases
+   * @return aliases
+  **/
+  @ApiModelProperty(value = "")
+  public Map<String, String> getAliases() {
+    return aliases;
+  }
+
+  public void setAliases(Map<String, String> aliases) {
+    this.aliases = aliases;
+  }
 
   public WhoIsResponse organization(Organization organization) {
     this.organization = organization;
@@ -82,13 +114,14 @@ public class WhoIsResponse {
       return false;
     }
     WhoIsResponse whoIsResponse = (WhoIsResponse) o;
-    return Objects.equals(this.organization, whoIsResponse.organization) &&
+    return Objects.equals(this.aliases, whoIsResponse.aliases) &&
+        Objects.equals(this.organization, whoIsResponse.organization) &&
         Objects.equals(this.organizationAddress, whoIsResponse.organizationAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(organization, organizationAddress);
+    return Objects.hash(aliases, organization, organizationAddress);
   }
 
 
@@ -97,6 +130,7 @@ public class WhoIsResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class WhoIsResponse {\n");
     
+    sb.append("    aliases: ").append(toIndentedString(aliases)).append("\n");
     sb.append("    organization: ").append(toIndentedString(organization)).append("\n");
     sb.append("    organizationAddress: ").append(toIndentedString(organizationAddress)).append("\n");
     sb.append("}");

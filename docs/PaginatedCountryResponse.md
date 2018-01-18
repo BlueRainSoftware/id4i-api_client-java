@@ -1,10 +1,10 @@
 
-# ApiKeyPrivilegeResponse
+# PaginatedCountryResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**elements** | [**List&lt;ApiKeyPrivilegeInfo&gt;**](ApiKeyPrivilegeInfo.md) |  |  [optional]
+**elements** | [**List&lt;Country&gt;**](Country.md) |  |  [optional]
 **limit** | **Integer** |  | 
 **offset** | **Integer** |  | 
 **total** | **Integer** |  |  [optional]

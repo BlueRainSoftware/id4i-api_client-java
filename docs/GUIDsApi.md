@@ -4,11 +4,118 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addGuidAlias**](GUIDsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+[**addGuidAlias1**](GUIDsApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**createGuid**](GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 [**getGuid**](GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+[**getGuidAliases**](GUIDsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**getGuidsWithoutCollection**](GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**updateGuid**](GUIDsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 
+
+<a name="addGuidAlias"></a>
+# **addGuidAlias**
+> ApiError addGuidAlias(id4n, aliasType, alias, authorization, acceptLanguage)
+
+Add alias for GUIDs
+
+Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.GUIDsApi;
+
+
+GUIDsApi apiInstance = new GUIDsApi();
+String id4n = "id4n_example"; // String | The GUID to operate on
+String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
+GuidAlias alias = new GuidAlias(); // GuidAlias | The alias to add or update
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    ApiError result = apiInstance.addGuidAlias(id4n, aliasType, alias, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GUIDsApi#addGuidAlias");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID to operate on |
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid]
+ **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="addGuidAlias1"></a>
+# **addGuidAlias1**
+> ApiError addGuidAlias1(id4n, aliasType, authorization, acceptLanguage)
+
+Remove aliases from GUIDs
+
+Remove the alias of the given type
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.GUIDsApi;
+
+
+GUIDsApi apiInstance = new GUIDsApi();
+String id4n = "id4n_example"; // String | The GUID to operate on
+String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    ApiError result = apiInstance.addGuidAlias1(id4n, aliasType, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GUIDsApi#addGuidAlias1");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID to operate on |
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid]
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="createGuid"></a>
 # **createGuid**
@@ -106,6 +213,55 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
+<a name="getGuidAliases"></a>
+# **getGuidAliases**
+> Map&lt;String, String&gt; getGuidAliases(id4n, authorization, acceptLanguage)
+
+Get all aliases for the given GUID
+
+Looks up the alias for each alias type (group and single GUID) and returns all found ones
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.GUIDsApi;
+
+
+GUIDsApi apiInstance = new GUIDsApi();
+String id4n = "id4n_example"; // String | The GUID to operate on
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    Map<String, String> result = apiInstance.getGuidAliases(id4n, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GUIDsApi#getGuidAliases");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID to operate on |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**Map&lt;String, String&gt;**](Map.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
 <a name="getGuidsWithoutCollection"></a>
 # **getGuidsWithoutCollection**
 > PaginatedResponseGuid getGuidsWithoutCollection(organizationId, authorization, acceptLanguage, offset, limit)
@@ -159,7 +315,7 @@ No authorization required
 
 <a name="updateGuid"></a>
 # **updateGuid**
-> ResponseEntity updateGuid(id4n, request, authorization, acceptLanguage)
+> Object updateGuid(id4n, request, authorization, acceptLanguage)
 
 Change GUID information.
 
@@ -178,7 +334,7 @@ Guid request = new Guid(); // Guid | request
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ResponseEntity result = apiInstance.updateGuid(id4n, request, authorization, acceptLanguage);
+    Object result = apiInstance.updateGuid(id4n, request, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GUIDsApi#updateGuid");
@@ -197,7 +353,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseEntity**](ResponseEntity.md)
+**Object**
 
 ### Authorization
 

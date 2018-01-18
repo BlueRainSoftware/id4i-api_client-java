@@ -4,20 +4,123 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addUserRoles**](AccountsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
+[**completeRegistration**](AccountsApi.md#completeRegistration) | **PUT** /account/registration | Complete registration
 [**findUserByUsername**](AccountsApi.md#findUserByUsername) | **GET** /api/v1/users/{username} | Find by username
+[**findUsers**](AccountsApi.md#findUsers) | **GET** /api/v1/users | Find users
 [**getAllOrganizationRoles**](AccountsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
 [**getOrganizationsOfUser**](AccountsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 [**getUserRoles**](AccountsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](AccountsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
+[**inviteUsers**](AccountsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**listAllRoles**](AccountsApi.md#listAllRoles) | **GET** /api/v1/roles | List roles
 [**login**](AccountsApi.md#login) | **POST** /login | 
 [**registerUser**](AccountsApi.md#registerUser) | **POST** /account/registration | Register user
 [**removeUserRoles**](AccountsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**requestPasswordReset**](AccountsApi.md#requestPasswordReset) | **POST** /account/password | Request password reset
-[**updateUserRoles**](AccountsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**verifyPasswordReset**](AccountsApi.md#verifyPasswordReset) | **PUT** /account/password | Verify password reset
 [**verifyUserRegistration**](AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
 
+
+<a name="addUserRoles"></a>
+# **addUserRoles**
+> ApiError addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
+
+Add role(s) to user
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
+
+
+AccountsApi apiInstance = new AccountsApi();
+Long organizationId = 789L; // Long | organizationId
+String username = "username_example"; // String | username
+ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountsApi#addUserRoles");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| organizationId |
+ **username** | **String**| username |
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="completeRegistration"></a>
+# **completeRegistration**
+> ApiError completeRegistration(completeRegistration, authorization, acceptLanguage)
+
+Complete registration
+
+Completing a registration e.g. for invited users. Finish registration with a username and a password.
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
+
+
+AccountsApi apiInstance = new AccountsApi();
+CompleteUserRegistrationRequest completeRegistration = new CompleteUserRegistrationRequest(); // CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    ApiError result = apiInstance.completeRegistration(completeRegistration, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountsApi#completeRegistration");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **completeRegistration** | [**CompleteUserRegistrationRequest**](CompleteUserRegistrationRequest.md)| Contains the verification token, the username and the initial password. |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="findUserByUsername"></a>
 # **findUserByUsername**
@@ -56,6 +159,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**UserPresentation**](UserPresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="findUsers"></a>
+# **findUsers**
+> PaginatedUserPresentationResponse findUsers(usernamePrefix, authorization, acceptLanguage, offset, limit)
+
+Find users
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
+
+
+AccountsApi apiInstance = new AccountsApi();
+String usernamePrefix = "usernamePrefix_example"; // String | Find users starting with this prefix.
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+Integer offset = 56; // Integer | Start with the n-th element. 
+Integer limit = 56; // Integer | The maximum count of returned elements.
+try {
+    PaginatedUserPresentationResponse result = apiInstance.findUsers(usernamePrefix, authorization, acceptLanguage, offset, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountsApi#findUsers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **usernamePrefix** | **String**| Find users starting with this prefix. |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+ **offset** | **Integer**| Start with the n-th element.  | [optional]
+ **limit** | **Integer**| The maximum count of returned elements. | [optional]
+
+### Return type
+
+[**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
 
 ### Authorization
 
@@ -266,6 +420,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="inviteUsers"></a>
+# **inviteUsers**
+> ApiError inviteUsers(organizationId, invitationList, authorization, acceptLanguage)
+
+Invite Users
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
+
+
+AccountsApi apiInstance = new AccountsApi();
+Long organizationId = 789L; // Long | organizationId
+OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    ApiError result = apiInstance.inviteUsers(organizationId, invitationList, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountsApi#inviteUsers");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| organizationId |
+ **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -512,57 +715,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SimpleMessageResponse**](SimpleMessageResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="updateUserRoles"></a>
-# **updateUserRoles**
-> ApiError updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
-
-Add role(s) to user
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.AccountsApi;
-
-
-AccountsApi apiInstance = new AccountsApi();
-Long organizationId = 789L; // Long | organizationId
-String username = "username_example"; // String | username
-ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountsApi#updateUserRoles");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
- **username** | **String**| username |
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
 
 ### Authorization
 

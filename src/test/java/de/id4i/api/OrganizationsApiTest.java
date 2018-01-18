@@ -19,6 +19,8 @@ import de.id4i.api.model.ChangeRoleRequest;
 import java.io.File;
 import de.id4i.api.model.Organization;
 import de.id4i.api.model.OrganizationAddress;
+import de.id4i.api.model.OrganizationUserInvitationListRequest;
+import de.id4i.api.model.PaginatedCountryResponse;
 import de.id4i.api.model.PaginatedGuidCollection;
 import de.id4i.api.model.PaginatedOrganizationResponse;
 import de.id4i.api.model.PaginatedStringResponse;
@@ -40,6 +42,26 @@ public class OrganizationsApiTest {
 
     private final OrganizationsApi api = new OrganizationsApi();
 
+    
+    /**
+     * Add role(s) to user
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addUserRolesTest() throws ApiException {
+        Long organizationId = null;
+        String username = null;
+        ChangeRoleRequest changeRoleRequest = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
     
     /**
      * Create organization
@@ -184,7 +206,8 @@ public class OrganizationsApiTest {
         Integer limit = null;
         String type = null;
         String label = null;
-        PaginatedGuidCollection response = api.getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label);
+        String labelPrefix = null;
+        PaginatedGuidCollection response = api.getAllCollectionsOfOrganization(organizationId, authorization, acceptLanguage, offset, limit, type, label, labelPrefix);
 
         // TODO: test validations
     }
@@ -271,6 +294,44 @@ public class OrganizationsApiTest {
     }
     
     /**
+     * Invite Users
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void inviteUsersTest() throws ApiException {
+        Long organizationId = null;
+        OrganizationUserInvitationListRequest invitationList = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.inviteUsers(organizationId, invitationList, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List countries
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listCountriesTest() throws ApiException {
+        String authorization = null;
+        String acceptLanguage = null;
+        Integer offset = null;
+        Integer limit = null;
+        PaginatedCountryResponse response = api.listCountries(authorization, acceptLanguage, offset, limit);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Remove role(s) from user
      *
      * 
@@ -323,7 +384,7 @@ public class OrganizationsApiTest {
         OrganizationAddress addressResource = null;
         String authorization = null;
         String acceptLanguage = null;
-        ApiError response = api.updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage);
+        OrganizationAddress response = api.updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -342,7 +403,7 @@ public class OrganizationsApiTest {
         OrganizationAddress addressResource = null;
         String authorization = null;
         String acceptLanguage = null;
-        ApiError response = api.updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage);
+        OrganizationAddress response = api.updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage);
 
         // TODO: test validations
     }
@@ -362,26 +423,6 @@ public class OrganizationsApiTest {
         String authorization = null;
         String acceptLanguage = null;
         ApiError response = api.updateOrganizationLogo(organizationId, file, authorization, acceptLanguage);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Add role(s) to user
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updateUserRolesTest() throws ApiException {
-        Long organizationId = null;
-        String username = null;
-        ChangeRoleRequest changeRoleRequest = null;
-        String authorization = null;
-        String acceptLanguage = null;
-        ApiError response = api.updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
 
         // TODO: test validations
     }

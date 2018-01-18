@@ -26,13 +26,34 @@ import java.io.IOException;
 /**
  * ApiKeyPrivilegeInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-20T09:40:53.978Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-18T11:06:43.528Z")
 public class ApiKeyPrivilegeInfo {
+  @SerializedName("helpText")
+  private String helpText = null;
+
   @SerializedName("id4nAssociated")
   private Boolean id4nAssociated = null;
 
   @SerializedName("name")
   private String name = null;
+
+  public ApiKeyPrivilegeInfo helpText(String helpText) {
+    this.helpText = helpText;
+    return this;
+  }
+
+   /**
+   * Get helpText
+   * @return helpText
+  **/
+  @ApiModelProperty(value = "")
+  public String getHelpText() {
+    return helpText;
+  }
+
+  public void setHelpText(String helpText) {
+    this.helpText = helpText;
+  }
 
   public ApiKeyPrivilegeInfo id4nAssociated(Boolean id4nAssociated) {
     this.id4nAssociated = id4nAssociated;
@@ -80,13 +101,14 @@ public class ApiKeyPrivilegeInfo {
       return false;
     }
     ApiKeyPrivilegeInfo apiKeyPrivilegeInfo = (ApiKeyPrivilegeInfo) o;
-    return Objects.equals(this.id4nAssociated, apiKeyPrivilegeInfo.id4nAssociated) &&
+    return Objects.equals(this.helpText, apiKeyPrivilegeInfo.helpText) &&
+        Objects.equals(this.id4nAssociated, apiKeyPrivilegeInfo.id4nAssociated) &&
         Objects.equals(this.name, apiKeyPrivilegeInfo.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id4nAssociated, name);
+    return Objects.hash(helpText, id4nAssociated, name);
   }
 
 
@@ -95,6 +117,7 @@ public class ApiKeyPrivilegeInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiKeyPrivilegeInfo {\n");
     
+    sb.append("    helpText: ").append(toIndentedString(helpText)).append("\n");
     sb.append("    id4nAssociated: ").append(toIndentedString(id4nAssociated)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");

@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.ApiKeyPrivilegeInfo;
+import de.id4i.api.model.Id4nPresentation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,12 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ApiKeyPrivilegeResponse
+ * Id4nPresentationPaginatedResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-12-20T09:40:53.978Z")
-public class ApiKeyPrivilegeResponse {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-18T11:06:43.528Z")
+public class Id4nPresentationPaginatedResponse {
   @SerializedName("elements")
-  private List<ApiKeyPrivilegeInfo> elements = null;
+  private List<Id4nPresentation> elements = null;
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -43,14 +43,14 @@ public class ApiKeyPrivilegeResponse {
   @SerializedName("total")
   private Integer total = null;
 
-  public ApiKeyPrivilegeResponse elements(List<ApiKeyPrivilegeInfo> elements) {
+  public Id4nPresentationPaginatedResponse elements(List<Id4nPresentation> elements) {
     this.elements = elements;
     return this;
   }
 
-  public ApiKeyPrivilegeResponse addElementsItem(ApiKeyPrivilegeInfo elementsItem) {
+  public Id4nPresentationPaginatedResponse addElementsItem(Id4nPresentation elementsItem) {
     if (this.elements == null) {
-      this.elements = new ArrayList<ApiKeyPrivilegeInfo>();
+      this.elements = new ArrayList<Id4nPresentation>();
     }
     this.elements.add(elementsItem);
     return this;
@@ -61,15 +61,15 @@ public class ApiKeyPrivilegeResponse {
    * @return elements
   **/
   @ApiModelProperty(value = "")
-  public List<ApiKeyPrivilegeInfo> getElements() {
+  public List<Id4nPresentation> getElements() {
     return elements;
   }
 
-  public void setElements(List<ApiKeyPrivilegeInfo> elements) {
+  public void setElements(List<Id4nPresentation> elements) {
     this.elements = elements;
   }
 
-  public ApiKeyPrivilegeResponse limit(Integer limit) {
+  public Id4nPresentationPaginatedResponse limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -87,7 +87,7 @@ public class ApiKeyPrivilegeResponse {
     this.limit = limit;
   }
 
-  public ApiKeyPrivilegeResponse offset(Integer offset) {
+  public Id4nPresentationPaginatedResponse offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -105,7 +105,7 @@ public class ApiKeyPrivilegeResponse {
     this.offset = offset;
   }
 
-  public ApiKeyPrivilegeResponse total(Integer total) {
+  public Id4nPresentationPaginatedResponse total(Integer total) {
     this.total = total;
     return this;
   }
@@ -132,11 +132,11 @@ public class ApiKeyPrivilegeResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiKeyPrivilegeResponse apiKeyPrivilegeResponse = (ApiKeyPrivilegeResponse) o;
-    return Objects.equals(this.elements, apiKeyPrivilegeResponse.elements) &&
-        Objects.equals(this.limit, apiKeyPrivilegeResponse.limit) &&
-        Objects.equals(this.offset, apiKeyPrivilegeResponse.offset) &&
-        Objects.equals(this.total, apiKeyPrivilegeResponse.total);
+    Id4nPresentationPaginatedResponse id4nPresentationPaginatedResponse = (Id4nPresentationPaginatedResponse) o;
+    return Objects.equals(this.elements, id4nPresentationPaginatedResponse.elements) &&
+        Objects.equals(this.limit, id4nPresentationPaginatedResponse.limit) &&
+        Objects.equals(this.offset, id4nPresentationPaginatedResponse.offset) &&
+        Objects.equals(this.total, id4nPresentationPaginatedResponse.total);
   }
 
   @Override
@@ -148,7 +148,7 @@ public class ApiKeyPrivilegeResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiKeyPrivilegeResponse {\n");
+    sb.append("class Id4nPresentationPaginatedResponse {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

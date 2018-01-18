@@ -17,9 +17,9 @@ import de.id4i.ApiException;
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.CreateGuidRequest;
 import de.id4i.api.model.Guid;
+import de.id4i.api.model.GuidAlias;
 import de.id4i.api.model.ListOfId4ns;
 import de.id4i.api.model.PaginatedResponseGuid;
-import de.id4i.api.model.ResponseEntity;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -36,6 +36,45 @@ public class GUIDsApiTest {
 
     private final GUIDsApi api = new GUIDsApi();
 
+    
+    /**
+     * Add alias for GUIDs
+     *
+     * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addGuidAliasTest() throws ApiException {
+        String id4n = null;
+        String aliasType = null;
+        GuidAlias alias = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addGuidAlias(id4n, aliasType, alias, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Remove aliases from GUIDs
+     *
+     * Remove the alias of the given type
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addGuidAlias1Test() throws ApiException {
+        String id4n = null;
+        String aliasType = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addGuidAlias1(id4n, aliasType, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
     
     /**
      * Create GUID(s)
@@ -74,6 +113,24 @@ public class GUIDsApiTest {
     }
     
     /**
+     * Get all aliases for the given GUID
+     *
+     * Looks up the alias for each alias type (group and single GUID) and returns all found ones
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getGuidAliasesTest() throws ApiException {
+        String id4n = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        Map<String, String> response = api.getGuidAliases(id4n, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Retrieve GUIDs not in any collection
      *
      * 
@@ -107,7 +164,7 @@ public class GUIDsApiTest {
         Guid request = null;
         String authorization = null;
         String acceptLanguage = null;
-        ResponseEntity response = api.updateGuid(id4n, request, authorization, acceptLanguage);
+        Object response = api.updateGuid(id4n, request, authorization, acceptLanguage);
 
         // TODO: test validations
     }

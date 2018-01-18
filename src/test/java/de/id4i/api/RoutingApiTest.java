@@ -49,7 +49,9 @@ public class RoutingApiTest {
         String type = null;
         String authorization = null;
         String acceptLanguage = null;
-        Route response = api.getRoute(id4n, type, authorization, acceptLanguage);
+        Boolean privateRoutes = null;
+        Boolean publicRoutes = null;
+        Route response = api.getRoute(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes);
 
         // TODO: test validations
     }
