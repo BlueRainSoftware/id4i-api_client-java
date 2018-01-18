@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-18T12:01:36.685Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-18T18:57:18.095Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -71,6 +71,8 @@ public class ApiError {
     COLLECTION_UPDATE_DENIED("ERR_COLLECTION_UPDATE_DENIED"),
     
     ENTITY_NOT_FOUND("ERR_ENTITY_NOT_FOUND"),
+    
+    ENTITY_TOO_BIG("ERR_ENTITY_TOO_BIG"),
     
     DUPLICATE("ERR_DUPLICATE"),
     

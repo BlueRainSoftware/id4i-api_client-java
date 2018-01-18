@@ -14,41 +14,12 @@
 package de.id4i.api.model;
 
 import java.util.Objects;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
 
 /**
- * GuidAlias
+ * InputStream
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-18T18:57:18.095Z")
-public class GuidAlias {
-  @SerializedName("alias")
-  private String alias = null;
-
-  public GuidAlias alias(String alias) {
-    this.alias = alias;
-    return this;
-  }
-
-   /**
-   * Get alias
-   * @return alias
-  **/
-  @ApiModelProperty(value = "")
-  public String getAlias() {
-    return alias;
-  }
-
-  public void setAlias(String alias) {
-    this.alias = alias;
-  }
-
+public class InputStream {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -58,22 +29,20 @@ public class GuidAlias {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GuidAlias guidAlias = (GuidAlias) o;
-    return Objects.equals(this.alias, guidAlias.alias);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(alias);
+    return Objects.hash();
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GuidAlias {\n");
+    sb.append("class InputStream {\n");
     
-    sb.append("    alias: ").append(toIndentedString(alias)).append("\n");
     sb.append("}");
     return sb.toString();
   }
