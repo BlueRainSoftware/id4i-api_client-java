@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addUserRoles**](AccountsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**completeRegistration**](AccountsApi.md#completeRegistration) | **PUT** /account/registration | Complete registration
 [**findUserByUsername**](AccountsApi.md#findUserByUsername) | **GET** /api/v1/users/{username} | Find by username
 [**findUsers**](AccountsApi.md#findUsers) | **GET** /api/v1/users | Find users
@@ -17,10 +18,60 @@ Method | HTTP request | Description
 [**registerUser**](AccountsApi.md#registerUser) | **POST** /account/registration | Register user
 [**removeUserRoles**](AccountsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**requestPasswordReset**](AccountsApi.md#requestPasswordReset) | **POST** /account/password | Request password reset
-[**updateUserRoles**](AccountsApi.md#updateUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**verifyPasswordReset**](AccountsApi.md#verifyPasswordReset) | **PUT** /account/password | Verify password reset
 [**verifyUserRegistration**](AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
 
+
+<a name="addUserRoles"></a>
+# **addUserRoles**
+> ApiError addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
+
+Add role(s) to user
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.AccountsApi;
+
+
+AccountsApi apiInstance = new AccountsApi();
+Long organizationId = 789L; // Long | organizationId
+String username = "username_example"; // String | username
+ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AccountsApi#addUserRoles");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| organizationId |
+ **username** | **String**| username |
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
+ **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**ApiError**](ApiError.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="completeRegistration"></a>
 # **completeRegistration**
@@ -664,57 +715,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SimpleMessageResponse**](SimpleMessageResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="updateUserRoles"></a>
-# **updateUserRoles**
-> ApiError updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
-
-Add role(s) to user
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.AccountsApi;
-
-
-AccountsApi apiInstance = new AccountsApi();
-Long organizationId = 789L; // Long | organizationId
-String username = "username_example"; // String | username
-ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AccountsApi#updateUserRoles");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
- **username** | **String**| username |
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
 
 ### Authorization
 

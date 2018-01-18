@@ -44,6 +44,26 @@ public class OrganizationsApiTest {
 
     
     /**
+     * Add role(s) to user
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addUserRolesTest() throws ApiException {
+        Long organizationId = null;
+        String username = null;
+        ChangeRoleRequest changeRoleRequest = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Create organization
      *
      * Creating a new organization.
@@ -403,26 +423,6 @@ public class OrganizationsApiTest {
         String authorization = null;
         String acceptLanguage = null;
         ApiError response = api.updateOrganizationLogo(organizationId, file, authorization, acceptLanguage);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Add role(s) to user
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updateUserRolesTest() throws ApiException {
-        Long organizationId = null;
-        String username = null;
-        ChangeRoleRequest changeRoleRequest = null;
-        String authorization = null;
-        String acceptLanguage = null;
-        ApiError response = api.updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
 
         // TODO: test validations
     }

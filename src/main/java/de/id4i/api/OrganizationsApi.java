@@ -66,6 +66,163 @@ public class OrganizationsApi {
     }
 
     /**
+     * Build call for addUserRoles
+     * @param organizationId organizationId (required)
+     * @param username username (required)
+     * @param changeRoleRequest changeRoleRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call addUserRolesCall(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = changeRoleRequest;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles"
+            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
+            .replaceAll("\\{" + "username" + "\\}", apiClient.escapeString(username.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call addUserRolesValidateBeforeCall(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling addUserRoles(Async)");
+        }
+        
+        // verify the required parameter 'username' is set
+        if (username == null) {
+            throw new ApiException("Missing the required parameter 'username' when calling addUserRoles(Async)");
+        }
+        
+        // verify the required parameter 'changeRoleRequest' is set
+        if (changeRoleRequest == null) {
+            throw new ApiException("Missing the required parameter 'changeRoleRequest' when calling addUserRoles(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = addUserRolesCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Add role(s) to user
+     * 
+     * @param organizationId organizationId (required)
+     * @param username username (required)
+     * @param changeRoleRequest changeRoleRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiError
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiError addUserRoles(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ApiError> resp = addUserRolesWithHttpInfo(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+        return resp.getData();
+    }
+
+    /**
+     * Add role(s) to user
+     * 
+     * @param organizationId organizationId (required)
+     * @param username username (required)
+     * @param changeRoleRequest changeRoleRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiResponse&lt;ApiError&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<ApiError> addUserRolesWithHttpInfo(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = addUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, null, null);
+        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Add role(s) to user (asynchronously)
+     * 
+     * @param organizationId organizationId (required)
+     * @param username username (required)
+     * @param changeRoleRequest changeRoleRequest (required)
+     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call addUserRolesAsync(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = addUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for createOrganization
      * @param organization Organization to be created (required)
      * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
@@ -2834,163 +2991,6 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = updateOrganizationLogoValidateBeforeCall(organizationId, file, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for updateUserRoles
-     * @param organizationId organizationId (required)
-     * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call updateUserRolesCall(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = changeRoleRequest;
-        
-        // create path and map variables
-        String localVarPath = "/api/v1/organizations/{organizationId}/users/{username}/roles"
-            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
-            .replaceAll("\\{" + "username" + "\\}", apiClient.escapeString(username.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (authorization != null)
-        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
-        if (acceptLanguage != null)
-        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/xml", "application/json;charset=UTF-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/xml", "application/json;charset=UTF-8"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateUserRolesValidateBeforeCall(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'organizationId' is set
-        if (organizationId == null) {
-            throw new ApiException("Missing the required parameter 'organizationId' when calling updateUserRoles(Async)");
-        }
-        
-        // verify the required parameter 'username' is set
-        if (username == null) {
-            throw new ApiException("Missing the required parameter 'username' when calling updateUserRoles(Async)");
-        }
-        
-        // verify the required parameter 'changeRoleRequest' is set
-        if (changeRoleRequest == null) {
-            throw new ApiException("Missing the required parameter 'changeRoleRequest' when calling updateUserRoles(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = updateUserRolesCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Add role(s) to user
-     * 
-     * @param organizationId organizationId (required)
-     * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @return ApiError
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiError updateUserRoles(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = updateUserRolesWithHttpInfo(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
-        return resp.getData();
-    }
-
-    /**
-     * Add role(s) to user
-     * 
-     * @param organizationId organizationId (required)
-     * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ApiError&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<ApiError> updateUserRolesWithHttpInfo(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = updateUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Add role(s) to user (asynchronously)
-     * 
-     * @param organizationId organizationId (required)
-     * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call updateUserRolesAsync(Long organizationId, String username, ChangeRoleRequest changeRoleRequest, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = updateUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

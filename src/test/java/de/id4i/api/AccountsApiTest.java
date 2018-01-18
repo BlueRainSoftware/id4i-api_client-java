@@ -49,6 +49,26 @@ public class AccountsApiTest {
 
     
     /**
+     * Add role(s) to user
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addUserRolesTest() throws ApiException {
+        Long organizationId = null;
+        String username = null;
+        ChangeRoleRequest changeRoleRequest = null;
+        String authorization = null;
+        String acceptLanguage = null;
+        ApiError response = api.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Complete registration
      *
      * Completing a registration e.g. for invited users. Finish registration with a username and a password.
@@ -292,26 +312,6 @@ public class AccountsApiTest {
         String authorization = null;
         String acceptLanguage = null;
         SimpleMessageResponse response = api.requestPasswordReset(resetRequest, authorization, acceptLanguage);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Add role(s) to user
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void updateUserRolesTest() throws ApiException {
-        Long organizationId = null;
-        String username = null;
-        ChangeRoleRequest changeRoleRequest = null;
-        String authorization = null;
-        String acceptLanguage = null;
-        ApiError response = api.updateUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
 
         // TODO: test validations
     }
