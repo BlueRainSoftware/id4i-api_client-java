@@ -29,10 +29,10 @@ import java.util.List;
 /**
  * ApiKeyPrivilegePaginatedResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class ApiKeyPrivilegePaginatedResponse {
   @SerializedName("elements")
-  private List<ApiKeyPrivilege> elements = null;
+  private List<ApiKeyPrivilege> elements = new ArrayList<ApiKeyPrivilege>();
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -49,9 +49,6 @@ public class ApiKeyPrivilegePaginatedResponse {
   }
 
   public ApiKeyPrivilegePaginatedResponse addElementsItem(ApiKeyPrivilege elementsItem) {
-    if (this.elements == null) {
-      this.elements = new ArrayList<ApiKeyPrivilege>();
-    }
     this.elements.add(elementsItem);
     return this;
   }
@@ -60,7 +57,7 @@ public class ApiKeyPrivilegePaginatedResponse {
    * Get elements
    * @return elements
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public List<ApiKeyPrivilege> getElements() {
     return elements;
   }
@@ -168,6 +165,6 @@ public class ApiKeyPrivilegePaginatedResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

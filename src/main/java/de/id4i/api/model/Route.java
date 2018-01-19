@@ -29,7 +29,7 @@ import java.util.Map;
 /**
  * Route
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class Route {
   @SerializedName("params")
   private Map<String, String> params = new HashMap<String, String>();
@@ -96,7 +96,7 @@ public class Route {
    * Get _public
    * @return _public
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public Boolean getPublic() {
     return _public;
   }
@@ -188,6 +188,6 @@ public class Route {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

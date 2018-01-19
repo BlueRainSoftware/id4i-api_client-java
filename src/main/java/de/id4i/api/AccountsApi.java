@@ -75,7 +75,7 @@ public class AccountsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -162,7 +162,7 @@ public class AccountsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -178,7 +178,7 @@ public class AccountsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -195,7 +195,7 @@ public class AccountsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -230,7 +230,7 @@ public class AccountsApi {
     /**
      * Build call for completeRegistration
      * @param completeRegistration Contains the verification token, the username and the initial password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -303,7 +303,7 @@ public class AccountsApi {
      * Complete registration
      * Completing a registration e.g. for invited users. Finish registration with a username and a password.
      * @param completeRegistration Contains the verification token, the username and the initial password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -317,7 +317,7 @@ public class AccountsApi {
      * Complete registration
      * Completing a registration e.g. for invited users. Finish registration with a username and a password.
      * @param completeRegistration Contains the verification token, the username and the initial password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -332,7 +332,7 @@ public class AccountsApi {
      * Complete registration (asynchronously)
      * Completing a registration e.g. for invited users. Finish registration with a username and a password.
      * @param completeRegistration Contains the verification token, the username and the initial password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -367,7 +367,7 @@ public class AccountsApi {
     /**
      * Build call for findUserByUsername
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -441,7 +441,7 @@ public class AccountsApi {
      * Find by username
      * 
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return UserPresentation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -455,7 +455,7 @@ public class AccountsApi {
      * Find by username
      * 
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;UserPresentation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -470,7 +470,7 @@ public class AccountsApi {
      * Find by username (asynchronously)
      * 
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -505,7 +505,7 @@ public class AccountsApi {
     /**
      * Build call for findUsers
      * @param usernamePrefix Find users starting with this prefix. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -586,7 +586,7 @@ public class AccountsApi {
      * Find users
      * 
      * @param usernamePrefix Find users starting with this prefix. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -602,7 +602,7 @@ public class AccountsApi {
      * Find users
      * 
      * @param usernamePrefix Find users starting with this prefix. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -619,7 +619,7 @@ public class AccountsApi {
      * Find users (asynchronously)
      * 
      * @param usernamePrefix Find users starting with this prefix. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -656,7 +656,7 @@ public class AccountsApi {
     /**
      * Build call for getAllOrganizationRoles
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -736,7 +736,7 @@ public class AccountsApi {
      * List users and their roles
      * Listing users and their roles in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -752,7 +752,7 @@ public class AccountsApi {
      * List users and their roles
      * Listing users and their roles in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -769,7 +769,7 @@ public class AccountsApi {
      * List users and their roles (asynchronously)
      * Listing users and their roles in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -805,7 +805,7 @@ public class AccountsApi {
     }
     /**
      * Build call for getOrganizationsOfUser
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -881,7 +881,7 @@ public class AccountsApi {
     /**
      * Retrieve organizations of user
      * 
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -897,7 +897,7 @@ public class AccountsApi {
     /**
      * Retrieve organizations of user
      * 
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -914,7 +914,7 @@ public class AccountsApi {
     /**
      * Retrieve organizations of user (asynchronously)
      * 
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -953,7 +953,7 @@ public class AccountsApi {
      * Build call for getUserRoles
      * @param organizationId organizationId (required)
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1040,7 +1040,7 @@ public class AccountsApi {
      * 
      * @param organizationId organizationId (required)
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1057,7 +1057,7 @@ public class AccountsApi {
      * 
      * @param organizationId organizationId (required)
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1075,7 +1075,7 @@ public class AccountsApi {
      * 
      * @param organizationId organizationId (required)
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1112,7 +1112,7 @@ public class AccountsApi {
     /**
      * Build call for getUsersOfOrganization
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1192,7 +1192,7 @@ public class AccountsApi {
      * Find users in organization
      * Finding users in the specified organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1208,7 +1208,7 @@ public class AccountsApi {
      * Find users in organization
      * Finding users in the specified organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1225,7 +1225,7 @@ public class AccountsApi {
      * Find users in organization (asynchronously)
      * Finding users in the specified organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1263,7 +1263,7 @@ public class AccountsApi {
      * Build call for inviteUsers
      * @param organizationId organizationId (required)
      * @param invitationList invitationList (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1343,7 +1343,7 @@ public class AccountsApi {
      * 
      * @param organizationId organizationId (required)
      * @param invitationList invitationList (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1358,7 +1358,7 @@ public class AccountsApi {
      * 
      * @param organizationId organizationId (required)
      * @param invitationList invitationList (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1374,7 +1374,7 @@ public class AccountsApi {
      * 
      * @param organizationId organizationId (required)
      * @param invitationList invitationList (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1408,7 +1408,7 @@ public class AccountsApi {
     }
     /**
      * Build call for listAllRoles
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param privilege If specified the roles will be filtered containing that privilege. (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -1484,7 +1484,7 @@ public class AccountsApi {
     /**
      * List roles
      * Listing of roles.
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param privilege If specified the roles will be filtered containing that privilege. (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -1500,7 +1500,7 @@ public class AccountsApi {
     /**
      * List roles
      * Listing of roles.
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param privilege If specified the roles will be filtered containing that privilege. (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -1517,7 +1517,7 @@ public class AccountsApi {
     /**
      * List roles (asynchronously)
      * Listing of roles.
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param privilege If specified the roles will be filtered containing that privilege. (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -1676,7 +1676,7 @@ public class AccountsApi {
     /**
      * Build call for registerUser
      * @param userRegistration The user information about the new created user. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1749,7 +1749,7 @@ public class AccountsApi {
      * Register user
      * Registering a new user.
      * @param userRegistration The user information about the new created user. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return UserRegistrationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1763,7 +1763,7 @@ public class AccountsApi {
      * Register user
      * Registering a new user.
      * @param userRegistration The user information about the new created user. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;UserRegistrationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1778,7 +1778,7 @@ public class AccountsApi {
      * Register user (asynchronously)
      * Registering a new user.
      * @param userRegistration The user information about the new created user. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1815,7 +1815,7 @@ public class AccountsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1902,7 +1902,7 @@ public class AccountsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1918,7 +1918,7 @@ public class AccountsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1935,7 +1935,7 @@ public class AccountsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1970,7 +1970,7 @@ public class AccountsApi {
     /**
      * Build call for requestPasswordReset
      * @param resetRequest Contains the required information to request a new password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2043,7 +2043,7 @@ public class AccountsApi {
      * Request password reset
      * Requesting a reset for a new password. 
      * @param resetRequest Contains the required information to request a new password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return SimpleMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2057,7 +2057,7 @@ public class AccountsApi {
      * Request password reset
      * Requesting a reset for a new password. 
      * @param resetRequest Contains the required information to request a new password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;SimpleMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2072,7 +2072,7 @@ public class AccountsApi {
      * Request password reset (asynchronously)
      * Requesting a reset for a new password. 
      * @param resetRequest Contains the required information to request a new password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2107,7 +2107,7 @@ public class AccountsApi {
     /**
      * Build call for verifyPasswordReset
      * @param verificationRequest Contains the new password and the verification token to set the new password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2180,7 +2180,7 @@ public class AccountsApi {
      * Verify password reset
      * Setting a new password and verifying the request to set the password.
      * @param verificationRequest Contains the new password and the verification token to set the new password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return SimpleMessageResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2194,7 +2194,7 @@ public class AccountsApi {
      * Verify password reset
      * Setting a new password and verifying the request to set the password.
      * @param verificationRequest Contains the new password and the verification token to set the new password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;SimpleMessageResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2209,7 +2209,7 @@ public class AccountsApi {
      * Verify password reset (asynchronously)
      * Setting a new password and verifying the request to set the password.
      * @param verificationRequest Contains the new password and the verification token to set the new password. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2244,7 +2244,7 @@ public class AccountsApi {
     /**
      * Build call for verifyUserRegistration
      * @param token The token for user verification. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2317,7 +2317,7 @@ public class AccountsApi {
      * Verify registration
      * Verifies a new user registration.
      * @param token The token for user verification. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2331,7 +2331,7 @@ public class AccountsApi {
      * Verify registration
      * Verifies a new user registration.
      * @param token The token for user verification. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2346,7 +2346,7 @@ public class AccountsApi {
      * Verify registration (asynchronously)
      * Verifies a new user registration.
      * @param token The token for user verification. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

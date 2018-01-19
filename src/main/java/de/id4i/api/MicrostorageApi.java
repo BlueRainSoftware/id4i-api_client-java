@@ -59,7 +59,7 @@ public class MicrostorageApi {
      * Build call for read
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -140,7 +140,7 @@ public class MicrostorageApi {
      * 
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return InputStreamResource
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -155,7 +155,7 @@ public class MicrostorageApi {
      * 
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;InputStreamResource&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -171,7 +171,7 @@ public class MicrostorageApi {
      * 
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -207,7 +207,7 @@ public class MicrostorageApi {
      * Build call for write
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
@@ -245,7 +245,7 @@ public class MicrostorageApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            "application/xml", "*/*", "application/json;charset=UTF-8"
+            "*/*"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -294,7 +294,7 @@ public class MicrostorageApi {
      * 
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
@@ -311,7 +311,7 @@ public class MicrostorageApi {
      * 
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
@@ -329,7 +329,7 @@ public class MicrostorageApi {
      * 
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)

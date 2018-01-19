@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Id4nPresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class Id4nPresentation {
   @SerializedName("id4n")
   private String id4n = null;
@@ -111,6 +111,6 @@ public class Id4nPresentation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

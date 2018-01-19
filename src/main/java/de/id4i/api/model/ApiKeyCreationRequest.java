@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ApiKeyCreationRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class ApiKeyCreationRequest {
   @SerializedName("label")
   private String label = null;
@@ -134,6 +134,6 @@ public class ApiKeyCreationRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

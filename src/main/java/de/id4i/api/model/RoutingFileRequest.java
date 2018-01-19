@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * RoutingFileRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class RoutingFileRequest {
   @SerializedName("routing")
   private RoutingFile routing = null;
@@ -112,6 +112,6 @@ public class RoutingFileRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

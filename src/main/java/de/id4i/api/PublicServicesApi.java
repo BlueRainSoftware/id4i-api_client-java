@@ -58,7 +58,7 @@ public class PublicServicesApi {
     /**
      * Build call for go
      * @param guid guid (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -132,7 +132,7 @@ public class PublicServicesApi {
      * Forward
      * Forwarding to the designated route defined in the routing,
      * @param guid guid (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -146,7 +146,7 @@ public class PublicServicesApi {
      * Forward
      * Forwarding to the designated route defined in the routing,
      * @param guid guid (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -161,7 +161,7 @@ public class PublicServicesApi {
      * Forward (asynchronously)
      * Forwarding to the designated route defined in the routing,
      * @param guid guid (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -196,7 +196,7 @@ public class PublicServicesApi {
     /**
      * Build call for resolveImageUsingGET
      * @param imageID The id of the image to be resolved. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -270,7 +270,7 @@ public class PublicServicesApi {
      * Resolve image
      * 
      * @param imageID The id of the image to be resolved. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return byte[]
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -284,7 +284,7 @@ public class PublicServicesApi {
      * Resolve image
      * 
      * @param imageID The id of the image to be resolved. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;byte[]&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -299,7 +299,7 @@ public class PublicServicesApi {
      * Resolve image (asynchronously)
      * 
      * @param imageID The id of the image to be resolved. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -334,7 +334,7 @@ public class PublicServicesApi {
     /**
      * Build call for resolveWhoIsEntry
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -408,7 +408,7 @@ public class PublicServicesApi {
      * Resolve owner of id4n
      * 
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return WhoIsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -422,7 +422,7 @@ public class PublicServicesApi {
      * Resolve owner of id4n
      * 
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;WhoIsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -437,7 +437,7 @@ public class PublicServicesApi {
      * Resolve owner of id4n (asynchronously)
      * 
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

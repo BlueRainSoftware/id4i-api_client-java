@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Country
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class Country {
   @SerializedName("code")
   private String code = null;
@@ -43,7 +43,7 @@ public class Country {
    * Get code
    * @return code
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public String getCode() {
     return code;
   }
@@ -61,7 +61,7 @@ public class Country {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public String getName() {
     return name;
   }
@@ -111,6 +111,6 @@ public class Country {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

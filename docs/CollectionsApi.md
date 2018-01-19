@@ -58,7 +58,7 @@ Add element to collection
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 String elementGuid = "elementGuid_example"; // String | elementGuid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addElementToCollection(id4n, elementGuid, authorization, acceptLanguage);
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **elementGuid** | **String**| elementGuid |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -107,7 +107,7 @@ Add element to labelled collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 String elementGuid = "elementGuid_example"; // String | elementGuid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addElementToLabelledCollection(collectionId4n, elementGuid, authorization, acceptLanguage);
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **elementGuid** | **String**| elementGuid |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -156,7 +156,7 @@ Add element to logistic collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 String guid = "guid_example"; // String | guid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addElementToLogisticCollection(collectionId4n, guid, authorization, acceptLanguage);
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **guid** | **String**| guid |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -205,7 +205,7 @@ Add element to routing collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 String guid = "guid_example"; // String | guid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addElementToRoutingCollection(collectionId4n, guid, authorization, acceptLanguage);
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **guid** | **String**| guid |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -254,7 +254,7 @@ Add elements to collection
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addElementsToCollection(id4n, listOfGuids, authorization, acceptLanguage);
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -303,7 +303,7 @@ Add elements to labelled collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addElementsToLabelledCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -352,7 +352,7 @@ Add elements to logistic collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addElementsToLogisticCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -401,7 +401,7 @@ Add element to routing collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addElementsToRoutingCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -449,7 +449,7 @@ Create labelled collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 CreateLabelledCollectionRequest createInfo = new CreateLabelledCollectionRequest(); // CreateLabelledCollectionRequest | createInfo
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Id4n result = apiInstance.createLabelledCollection(createInfo, authorization, acceptLanguage);
@@ -465,7 +465,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLabelledCollectionRequest**](CreateLabelledCollectionRequest.md)| createInfo |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -496,7 +496,7 @@ Create logistic collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 CreateLogisticCollectionRequest createInfo = new CreateLogisticCollectionRequest(); // CreateLogisticCollectionRequest | createInfo
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Id4n result = apiInstance.createLogisticCollection(createInfo, authorization, acceptLanguage);
@@ -512,7 +512,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateLogisticCollectionRequest**](CreateLogisticCollectionRequest.md)| createInfo |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -543,7 +543,7 @@ Create routing collecton
 
 CollectionsApi apiInstance = new CollectionsApi();
 CreateRoutingCollectionRequest createInfo = new CreateRoutingCollectionRequest(); // CreateRoutingCollectionRequest | createInfo
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Id4n result = apiInstance.createRoutingCollection(createInfo, authorization, acceptLanguage);
@@ -559,7 +559,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createInfo** | [**CreateRoutingCollectionRequest**](CreateRoutingCollectionRequest.md)| createInfo |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -590,7 +590,7 @@ Delete collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.deleteCollection(id4n, authorization, acceptLanguage);
@@ -606,7 +606,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -637,7 +637,7 @@ Delete labelled collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.deleteLabelledCollection(id4n, authorization, acceptLanguage);
@@ -653,7 +653,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -684,7 +684,7 @@ Delete logistic collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Object result = apiInstance.deleteLogisticCollection(id4n, authorization, acceptLanguage);
@@ -700,7 +700,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -731,7 +731,7 @@ Delete routing collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.deleteRoutingCollection(id4n, authorization, acceptLanguage);
@@ -747,7 +747,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -778,7 +778,7 @@ Find collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     GuidCollection result = apiInstance.findCollection(id4n, authorization, acceptLanguage);
@@ -794,7 +794,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -825,7 +825,7 @@ Find labelled collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     GuidCollection result = apiInstance.findLabelledCollection(id4n, authorization, acceptLanguage);
@@ -841,7 +841,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -872,7 +872,7 @@ Find logistic collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     GuidCollection result = apiInstance.findLogisticCollection(id4n, authorization, acceptLanguage);
@@ -888,7 +888,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -919,7 +919,7 @@ Find routing collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     GuidCollection result = apiInstance.findRoutingCollection(id4n, authorization, acceptLanguage);
@@ -935,7 +935,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -968,7 +968,7 @@ Retrieving all collections of an organization in a paginated manner.
 
 CollectionsApi apiInstance = new CollectionsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -989,7 +989,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -1025,7 +1025,7 @@ List contents of the collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -1043,7 +1043,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -1076,7 +1076,7 @@ List contents of the collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -1094,7 +1094,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -1127,7 +1127,7 @@ List contents of the collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -1145,7 +1145,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -1178,7 +1178,7 @@ List contents of the collection
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -1196,7 +1196,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -1230,7 +1230,7 @@ Remove element from collection
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 String elementGuid = "elementGuid_example"; // String | elementGuid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeElementFromCollection(id4n, elementGuid, authorization, acceptLanguage);
@@ -1247,7 +1247,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **elementGuid** | **String**| elementGuid |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1279,7 +1279,7 @@ Remove element from labelled collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 String elementGuid = "elementGuid_example"; // String | elementGuid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeElementFromLabelledCollection(collectionId4n, elementGuid, authorization, acceptLanguage);
@@ -1296,7 +1296,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **elementGuid** | **String**| elementGuid |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1328,7 +1328,7 @@ Remove element from logistic collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 String guid = "guid_example"; // String | guid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeElementFromLogisticCollection(collectionId4n, guid, authorization, acceptLanguage);
@@ -1345,7 +1345,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **guid** | **String**| guid |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1377,7 +1377,7 @@ Remove element from routing collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 String guid = "guid_example"; // String | guid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeElementFromRoutingCollection(collectionId4n, guid, authorization, acceptLanguage);
@@ -1394,7 +1394,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **guid** | **String**| guid |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1426,7 +1426,7 @@ Remove elements from collection
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeElementsFromCollection(id4n, listOfGuids, authorization, acceptLanguage);
@@ -1443,7 +1443,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1475,7 +1475,7 @@ Remove elements from labelled collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeElementsFromLabelledCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
@@ -1492,7 +1492,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1524,7 +1524,7 @@ Remove elements from logistic collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeElementsFromLogisticCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
@@ -1541,7 +1541,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1573,7 +1573,7 @@ Remove elements from routing collection
 CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeElementsFromRoutingCollection(collectionId4n, listOfGuids, authorization, acceptLanguage);
@@ -1590,7 +1590,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **collectionId4n** | **String**| collectionId4n |
  **listOfGuids** | [**ListOfId4ns**](ListOfId4ns.md)| listOfGuids |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1622,7 +1622,7 @@ Alter collection
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 GuidCollection request = new GuidCollection(); // GuidCollection | request
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Object result = apiInstance.updateCollection(id4n, request, authorization, acceptLanguage);
@@ -1639,7 +1639,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **request** | [**GuidCollection**](GuidCollection.md)| request |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1671,7 +1671,7 @@ Rename labelled collection
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 GuidCollection request = new GuidCollection(); // GuidCollection | request
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Object result = apiInstance.updateLabelledCollection(id4n, request, authorization, acceptLanguage);
@@ -1688,7 +1688,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **request** | [**GuidCollection**](GuidCollection.md)| request |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1720,7 +1720,7 @@ Update logistic collection
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 GuidCollection request = new GuidCollection(); // GuidCollection | request
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Object result = apiInstance.updateLogisticCollection(id4n, request, authorization, acceptLanguage);
@@ -1737,7 +1737,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **request** | [**GuidCollection**](GuidCollection.md)| request |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -1769,7 +1769,7 @@ Update routing collection
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 GuidCollection request = new GuidCollection(); // GuidCollection | request
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Object result = apiInstance.updateRoutingCollection(id4n, request, authorization, acceptLanguage);
@@ -1786,7 +1786,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **request** | [**GuidCollection**](GuidCollection.md)| request |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type

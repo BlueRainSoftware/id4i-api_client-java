@@ -25,7 +25,7 @@ Retrieve current route of a GUID (or ID4N)
 RoutingApi apiInstance = new RoutingApi();
 String id4n = "id4n_example"; // String | id4n
 String type = "type_example"; // String | The type of route you want to have
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Boolean privateRoutes = true; // Boolean | privateRoutes
 Boolean publicRoutes = true; // Boolean | publicRoutes
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **type** | **String**| The type of route you want to have |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **privateRoutes** | **Boolean**| privateRoutes | [optional]
  **publicRoutes** | **Boolean**| publicRoutes | [optional]
@@ -77,7 +77,7 @@ Retrieve routing file
 
 RoutingApi apiInstance = new RoutingApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Long organizationId = 789L; // Long | organizationId
 try {
@@ -94,7 +94,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **organizationId** | **Long**| organizationId | [optional]
 
@@ -127,7 +127,7 @@ Store routing file
 RoutingApi apiInstance = new RoutingApi();
 RoutingFileRequest rfr = new RoutingFileRequest(); // RoutingFileRequest | rfr
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.updateRoutingFile(rfr, id4n, authorization, acceptLanguage);
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rfr** | [**RoutingFileRequest**](RoutingFileRequest.md)| rfr |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type

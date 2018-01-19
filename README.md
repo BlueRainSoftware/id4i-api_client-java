@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.1</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.1.0"
+compile "de.id4i.api:id4i-api-client:0.1.1"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/id4i-api-client-0.1.0.jar
+* target/id4i-api-client-0.1.1.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -74,7 +74,7 @@ public class AccountsApiExample {
         Long organizationId = 789L; // Long | organizationId
         String username = "username_example"; // String | username
         ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-        String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+        String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
         String acceptLanguage = "acceptLanguage_example"; // String | Requested language
         try {
             ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
@@ -278,8 +278,13 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
 Authentication schemes defined for the API:
+### Authorization
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
+
 
 ## Recommendation
 

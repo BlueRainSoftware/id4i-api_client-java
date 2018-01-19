@@ -24,7 +24,7 @@ Read data from microstorage
 MicrostorageApi apiInstance = new MicrostorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     InputStreamResource result = apiInstance.read(organization, id4n, authorization, acceptLanguage);
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Long**| organization |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -73,7 +73,7 @@ Write data to microstorage
 MicrostorageApi apiInstance = new MicrostorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Long**| organization |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **contentType** | **String**| Content-Type | [optional]
  **contentLength** | **Long**| Content-Length | [optional]
@@ -107,6 +107,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, */*, application/json;charset=UTF-8
+ - **Content-Type**: */*
  - **Accept**: application/xml, application/json;charset=UTF-8
 

@@ -29,10 +29,10 @@ import java.util.List;
 /**
  * PaginatedOrganizationResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class PaginatedOrganizationResponse {
   @SerializedName("elements")
-  private List<Organization> elements = null;
+  private List<Organization> elements = new ArrayList<Organization>();
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -49,9 +49,6 @@ public class PaginatedOrganizationResponse {
   }
 
   public PaginatedOrganizationResponse addElementsItem(Organization elementsItem) {
-    if (this.elements == null) {
-      this.elements = new ArrayList<Organization>();
-    }
     this.elements.add(elementsItem);
     return this;
   }
@@ -60,7 +57,7 @@ public class PaginatedOrganizationResponse {
    * Get elements
    * @return elements
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public List<Organization> getElements() {
     return elements;
   }
@@ -168,6 +165,6 @@ public class PaginatedOrganizationResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

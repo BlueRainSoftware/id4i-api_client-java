@@ -27,7 +27,7 @@ import java.io.IOException;
  * GUID creation information
  */
 @ApiModel(description = "GUID creation information")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class CreateGuidRequest {
   @SerializedName("count")
   private Integer count = null;
@@ -139,6 +139,6 @@ public class CreateGuidRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

@@ -58,7 +58,7 @@ public class WhoIsApi {
     /**
      * Build call for resolveWhoIsEntry
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -132,7 +132,7 @@ public class WhoIsApi {
      * Resolve owner of id4n
      * 
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return WhoIsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -146,7 +146,7 @@ public class WhoIsApi {
      * Resolve owner of id4n
      * 
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;WhoIsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -161,7 +161,7 @@ public class WhoIsApi {
      * Resolve owner of id4n (asynchronously)
      * 
      * @param id4n id4n (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

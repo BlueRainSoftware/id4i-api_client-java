@@ -29,10 +29,10 @@ import java.util.List;
 /**
  * ApiKeyPrivilegeInfoResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class ApiKeyPrivilegeInfoResponse {
   @SerializedName("elements")
-  private List<ApiKeyPrivilegeInfo> elements = null;
+  private List<ApiKeyPrivilegeInfo> elements = new ArrayList<ApiKeyPrivilegeInfo>();
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -49,9 +49,6 @@ public class ApiKeyPrivilegeInfoResponse {
   }
 
   public ApiKeyPrivilegeInfoResponse addElementsItem(ApiKeyPrivilegeInfo elementsItem) {
-    if (this.elements == null) {
-      this.elements = new ArrayList<ApiKeyPrivilegeInfo>();
-    }
     this.elements.add(elementsItem);
     return this;
   }
@@ -60,7 +57,7 @@ public class ApiKeyPrivilegeInfoResponse {
    * Get elements
    * @return elements
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public List<ApiKeyPrivilegeInfo> getElements() {
     return elements;
   }
@@ -168,6 +165,6 @@ public class ApiKeyPrivilegeInfoResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

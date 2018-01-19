@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T14:14:07.381Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-19T15:51:10.060Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -283,6 +283,6 @@ public class ApiError {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

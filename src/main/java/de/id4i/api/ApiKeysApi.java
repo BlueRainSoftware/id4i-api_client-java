@@ -68,7 +68,7 @@ public class ApiKeysApi {
      * Build call for addApiKeyPrivilege
      * @param key key (required)
      * @param addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -148,7 +148,7 @@ public class ApiKeysApi {
      * 
      * @param key key (required)
      * @param addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -163,7 +163,7 @@ public class ApiKeysApi {
      * 
      * @param key key (required)
      * @param addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -179,7 +179,7 @@ public class ApiKeysApi {
      * 
      * @param key key (required)
      * @param addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -216,7 +216,7 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param privilege privilege (required)
      * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -303,7 +303,7 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param privilege privilege (required)
      * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -319,7 +319,7 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param privilege privilege (required)
      * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -336,7 +336,7 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param privilege privilege (required)
      * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -371,7 +371,7 @@ public class ApiKeysApi {
     /**
      * Build call for createNewApiKey
      * @param creationRequest API key to be created. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -444,7 +444,7 @@ public class ApiKeysApi {
      * Create API key
      * Creation of a new API key.
      * @param creationRequest API key to be created. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiKeyPresentation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -458,7 +458,7 @@ public class ApiKeysApi {
      * Create API key
      * Creation of a new API key.
      * @param creationRequest API key to be created. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiKeyPresentation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -473,7 +473,7 @@ public class ApiKeysApi {
      * Create API key (asynchronously)
      * Creation of a new API key.
      * @param creationRequest API key to be created. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -508,7 +508,7 @@ public class ApiKeysApi {
     /**
      * Build call for deleteApiKey
      * @param key The API key to delete. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -582,7 +582,7 @@ public class ApiKeysApi {
      * Delete API key
      * Deletion of an API key.
      * @param key The API key to delete. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -596,7 +596,7 @@ public class ApiKeysApi {
      * Delete API key
      * Deletion of an API key.
      * @param key The API key to delete. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -611,7 +611,7 @@ public class ApiKeysApi {
      * Delete API key (asynchronously)
      * Deletion of an API key.
      * @param key The API key to delete. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -646,7 +646,7 @@ public class ApiKeysApi {
     /**
      * Build call for getApiKey
      * @param key The API key to show. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -720,7 +720,7 @@ public class ApiKeysApi {
      * Show API key
      * Showing the details of an API key.
      * @param key The API key to show. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiKeyPresentation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -734,7 +734,7 @@ public class ApiKeysApi {
      * Show API key
      * Showing the details of an API key.
      * @param key The API key to show. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiKeyPresentation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -749,7 +749,7 @@ public class ApiKeysApi {
      * Show API key (asynchronously)
      * Showing the details of an API key.
      * @param key The API key to show. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -783,7 +783,7 @@ public class ApiKeysApi {
     }
     /**
      * Build call for listAllApiKeyPrivileges
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -859,7 +859,7 @@ public class ApiKeysApi {
     /**
      * List all privileges
      * Listing all possible API key privileges.
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -875,7 +875,7 @@ public class ApiKeysApi {
     /**
      * List all privileges
      * Listing all possible API key privileges.
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -892,7 +892,7 @@ public class ApiKeysApi {
     /**
      * List all privileges (asynchronously)
      * Listing all possible API key privileges.
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -930,7 +930,7 @@ public class ApiKeysApi {
     /**
      * Build call for listAllApiKeysOfOrganization
      * @param organizationId The id of the organization to search in. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1011,7 +1011,7 @@ public class ApiKeysApi {
      * Find API key by organization
      * Finding all API key assigned to the specified organization in a paginated manner.
      * @param organizationId The id of the organization to search in. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1027,7 +1027,7 @@ public class ApiKeysApi {
      * Find API key by organization
      * Finding all API key assigned to the specified organization in a paginated manner.
      * @param organizationId The id of the organization to search in. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1044,7 +1044,7 @@ public class ApiKeysApi {
      * Find API key by organization (asynchronously)
      * Finding all API key assigned to the specified organization in a paginated manner.
      * @param organizationId The id of the organization to search in. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1081,7 +1081,7 @@ public class ApiKeysApi {
     /**
      * Build call for listApiKeyPrivileges
      * @param key key (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1161,7 +1161,7 @@ public class ApiKeysApi {
      * List privileges
      * 
      * @param key key (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1177,7 +1177,7 @@ public class ApiKeysApi {
      * List privileges
      * 
      * @param key key (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1194,7 +1194,7 @@ public class ApiKeysApi {
      * List privileges (asynchronously)
      * 
      * @param key key (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1232,7 +1232,7 @@ public class ApiKeysApi {
      * Build call for listId4ns
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1319,7 +1319,7 @@ public class ApiKeysApi {
      * Listing ID4ns of a id4n concerning privilege
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1336,7 +1336,7 @@ public class ApiKeysApi {
      * Listing ID4ns of a id4n concerning privilege
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1354,7 +1354,7 @@ public class ApiKeysApi {
      * Listing ID4ns of a id4n concerning privilege
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1392,7 +1392,7 @@ public class ApiKeysApi {
      * Build call for removeApiKeyPrivilege
      * @param key key (required)
      * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1472,7 +1472,7 @@ public class ApiKeysApi {
      * 
      * @param key key (required)
      * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1487,7 +1487,7 @@ public class ApiKeysApi {
      * 
      * @param key key (required)
      * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1503,7 +1503,7 @@ public class ApiKeysApi {
      * 
      * @param key key (required)
      * @param removeApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1540,7 +1540,7 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param privilege privilege (required)
      * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1627,7 +1627,7 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param privilege privilege (required)
      * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1643,7 +1643,7 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param privilege privilege (required)
      * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1660,7 +1660,7 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param privilege privilege (required)
      * @param id4ns id4ns (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1696,7 +1696,7 @@ public class ApiKeysApi {
      * Build call for updateApiKey
      * @param key The API key to be updated. (required)
      * @param apiKeyChange The new values to apply. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1776,7 +1776,7 @@ public class ApiKeysApi {
      * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
      * @param key The API key to be updated. (required)
      * @param apiKeyChange The new values to apply. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1791,7 +1791,7 @@ public class ApiKeysApi {
      * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
      * @param key The API key to be updated. (required)
      * @param apiKeyChange The new values to apply. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1807,7 +1807,7 @@ public class ApiKeysApi {
      * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
      * @param key The API key to be updated. (required)
      * @param apiKeyChange The new values to apply. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call

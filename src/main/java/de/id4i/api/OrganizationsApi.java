@@ -70,7 +70,7 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -157,7 +157,7 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -173,7 +173,7 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -190,7 +190,7 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -225,7 +225,7 @@ public class OrganizationsApi {
     /**
      * Build call for createOrganization
      * @param organization Organization to be created (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -298,7 +298,7 @@ public class OrganizationsApi {
      * Create organization
      * Creating a new organization.
      * @param organization Organization to be created (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return Organization
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -312,7 +312,7 @@ public class OrganizationsApi {
      * Create organization
      * Creating a new organization.
      * @param organization Organization to be created (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;Organization&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -327,7 +327,7 @@ public class OrganizationsApi {
      * Create organization (asynchronously)
      * Creating a new organization.
      * @param organization Organization to be created (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -362,7 +362,7 @@ public class OrganizationsApi {
     /**
      * Build call for deleteOrganization
      * @param organizationId The id of the organization to be deleted. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -436,7 +436,7 @@ public class OrganizationsApi {
      * Delete organization
      * 
      * @param organizationId The id of the organization to be deleted. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -450,7 +450,7 @@ public class OrganizationsApi {
      * Delete organization
      * 
      * @param organizationId The id of the organization to be deleted. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -465,7 +465,7 @@ public class OrganizationsApi {
      * Delete organization (asynchronously)
      * 
      * @param organizationId The id of the organization to be deleted. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -500,7 +500,7 @@ public class OrganizationsApi {
     /**
      * Build call for deleteOrganizationBillingAddress
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -574,7 +574,7 @@ public class OrganizationsApi {
      * Remove billing address
      * 
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -588,7 +588,7 @@ public class OrganizationsApi {
      * Remove billing address
      * 
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -603,7 +603,7 @@ public class OrganizationsApi {
      * Remove billing address (asynchronously)
      * 
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -638,7 +638,7 @@ public class OrganizationsApi {
     /**
      * Build call for deleteOrganizationLogo
      * @param organizationId The id of the organization where the logo should be deleted. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -712,7 +712,7 @@ public class OrganizationsApi {
      * Delete organization logo
      * 
      * @param organizationId The id of the organization where the logo should be deleted. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -726,7 +726,7 @@ public class OrganizationsApi {
      * Delete organization logo
      * 
      * @param organizationId The id of the organization where the logo should be deleted. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -741,7 +741,7 @@ public class OrganizationsApi {
      * Delete organization logo (asynchronously)
      * 
      * @param organizationId The id of the organization where the logo should be deleted. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -776,7 +776,7 @@ public class OrganizationsApi {
     /**
      * Build call for findOrganization
      * @param organizationId The id of the organization to be retrieved. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -850,7 +850,7 @@ public class OrganizationsApi {
      * Find organization by id
      * Returns a single organization.
      * @param organizationId The id of the organization to be retrieved. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return Organization
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -864,7 +864,7 @@ public class OrganizationsApi {
      * Find organization by id
      * Returns a single organization.
      * @param organizationId The id of the organization to be retrieved. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;Organization&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -879,7 +879,7 @@ public class OrganizationsApi {
      * Find organization by id (asynchronously)
      * Returns a single organization.
      * @param organizationId The id of the organization to be retrieved. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -914,7 +914,7 @@ public class OrganizationsApi {
     /**
      * Build call for findOrganizationAddress
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -988,7 +988,7 @@ public class OrganizationsApi {
      * Retrieve address
      * 
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return OrganizationAddress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1002,7 +1002,7 @@ public class OrganizationsApi {
      * Retrieve address
      * 
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;OrganizationAddress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1017,7 +1017,7 @@ public class OrganizationsApi {
      * Retrieve address (asynchronously)
      * 
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1052,7 +1052,7 @@ public class OrganizationsApi {
     /**
      * Build call for findOrganizationBillingAddress
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -1126,7 +1126,7 @@ public class OrganizationsApi {
      * Retrieve billing address
      * 
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return OrganizationAddress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1140,7 +1140,7 @@ public class OrganizationsApi {
      * Retrieve billing address
      * 
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;OrganizationAddress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1155,7 +1155,7 @@ public class OrganizationsApi {
      * Retrieve billing address (asynchronously)
      * 
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1190,7 +1190,7 @@ public class OrganizationsApi {
     /**
      * Build call for getAllCollectionsOfOrganization
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1279,7 +1279,7 @@ public class OrganizationsApi {
      * Get collections of organization
      * Retrieving all collections of an organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1298,7 +1298,7 @@ public class OrganizationsApi {
      * Get collections of organization
      * Retrieving all collections of an organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1318,7 +1318,7 @@ public class OrganizationsApi {
      * Get collections of organization (asynchronously)
      * Retrieving all collections of an organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1358,7 +1358,7 @@ public class OrganizationsApi {
     /**
      * Build call for getAllOrganizationRoles
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1438,7 +1438,7 @@ public class OrganizationsApi {
      * List users and their roles
      * Listing users and their roles in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1454,7 +1454,7 @@ public class OrganizationsApi {
      * List users and their roles
      * Listing users and their roles in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1471,7 +1471,7 @@ public class OrganizationsApi {
      * List users and their roles (asynchronously)
      * Listing users and their roles in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1507,7 +1507,7 @@ public class OrganizationsApi {
     }
     /**
      * Build call for getOrganizationsOfUser
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -1583,7 +1583,7 @@ public class OrganizationsApi {
     /**
      * Retrieve organizations of user
      * 
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -1599,7 +1599,7 @@ public class OrganizationsApi {
     /**
      * Retrieve organizations of user
      * 
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -1616,7 +1616,7 @@ public class OrganizationsApi {
     /**
      * Retrieve organizations of user (asynchronously)
      * 
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param role role (optional)
      * @param offset Start with the n-th element.  (optional)
@@ -1655,7 +1655,7 @@ public class OrganizationsApi {
      * Build call for getUserRoles
      * @param organizationId organizationId (required)
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1742,7 +1742,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1759,7 +1759,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1777,7 +1777,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param username username (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1814,7 +1814,7 @@ public class OrganizationsApi {
     /**
      * Build call for getUsersOfOrganization
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1894,7 +1894,7 @@ public class OrganizationsApi {
      * Find users in organization
      * Finding users in the specified organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1910,7 +1910,7 @@ public class OrganizationsApi {
      * Find users in organization
      * Finding users in the specified organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1927,7 +1927,7 @@ public class OrganizationsApi {
      * Find users in organization (asynchronously)
      * Finding users in the specified organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -1965,7 +1965,7 @@ public class OrganizationsApi {
      * Build call for inviteUsers
      * @param organizationId organizationId (required)
      * @param invitationList invitationList (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2045,7 +2045,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param invitationList invitationList (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2060,7 +2060,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param invitationList invitationList (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2076,7 +2076,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param invitationList invitationList (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2110,7 +2110,7 @@ public class OrganizationsApi {
     }
     /**
      * Build call for listCountries
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -2183,7 +2183,7 @@ public class OrganizationsApi {
     /**
      * List countries
      * 
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -2198,7 +2198,7 @@ public class OrganizationsApi {
     /**
      * List countries
      * 
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -2214,7 +2214,7 @@ public class OrganizationsApi {
     /**
      * List countries (asynchronously)
      * 
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param offset Start with the n-th element.  (optional)
      * @param limit The maximum count of returned elements. (optional)
@@ -2253,7 +2253,7 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2340,7 +2340,7 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2356,7 +2356,7 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2373,7 +2373,7 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param username username (required)
      * @param changeRoleRequest changeRoleRequest (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2409,7 +2409,7 @@ public class OrganizationsApi {
      * Build call for updateOrganization
      * @param organizationId The id of the organization to be updated. (required)
      * @param organization Updated organization object (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2489,7 +2489,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId The id of the organization to be updated. (required)
      * @param organization Updated organization object (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return Organization
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2504,7 +2504,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId The id of the organization to be updated. (required)
      * @param organization Updated organization object (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;Organization&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2520,7 +2520,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId The id of the organization to be updated. (required)
      * @param organization Updated organization object (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2556,7 +2556,7 @@ public class OrganizationsApi {
      * Build call for updateOrganizationAddress
      * @param organizationId organizationId (required)
      * @param addressResource addressResource (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2636,7 +2636,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param addressResource addressResource (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return OrganizationAddress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2651,7 +2651,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param addressResource addressResource (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;OrganizationAddress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2667,7 +2667,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param addressResource addressResource (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2703,7 +2703,7 @@ public class OrganizationsApi {
      * Build call for updateOrganizationBillingAddress
      * @param organizationId organizationId (required)
      * @param addressResource addressResource (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2783,7 +2783,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param addressResource addressResource (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return OrganizationAddress
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2798,7 +2798,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param addressResource addressResource (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;OrganizationAddress&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2814,7 +2814,7 @@ public class OrganizationsApi {
      * 
      * @param organizationId organizationId (required)
      * @param addressResource addressResource (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2850,7 +2850,7 @@ public class OrganizationsApi {
      * Build call for updateOrganizationLogo
      * @param organizationId The id of the organization where the logo should be updated. (required)
      * @param file An image containing the new logo. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -2932,7 +2932,7 @@ public class OrganizationsApi {
      * Updating an organization logo using a multipart file upload.
      * @param organizationId The id of the organization where the logo should be updated. (required)
      * @param file An image containing the new logo. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiError
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2947,7 +2947,7 @@ public class OrganizationsApi {
      * Updating an organization logo using a multipart file upload.
      * @param organizationId The id of the organization where the logo should be updated. (required)
      * @param file An image containing the new logo. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @return ApiResponse&lt;ApiError&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2963,7 +2963,7 @@ public class OrganizationsApi {
      * Updating an organization logo using a multipart file upload.
      * @param organizationId The id of the organization where the logo should be updated. (required)
      * @param file An image containing the new logo. (required)
-     * @param authorization Authorization JWT Bearer Token as returned from /login (optional)
+     * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
