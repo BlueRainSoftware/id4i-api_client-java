@@ -39,7 +39,7 @@ AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -90,7 +90,7 @@ Completing a registration e.g. for invited users. Finish registration with a use
 
 AccountsApi apiInstance = new AccountsApi();
 CompleteUserRegistrationRequest completeRegistration = new CompleteUserRegistrationRequest(); // CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.completeRegistration(completeRegistration, authorization, acceptLanguage);
@@ -106,7 +106,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **completeRegistration** | [**CompleteUserRegistrationRequest**](CompleteUserRegistrationRequest.md)| Contains the verification token, the username and the initial password. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -137,7 +137,7 @@ Find by username
 
 AccountsApi apiInstance = new AccountsApi();
 String username = "username_example"; // String | username
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     UserPresentation result = apiInstance.findUserByUsername(username, authorization, acceptLanguage);
@@ -153,7 +153,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| username |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -184,7 +184,7 @@ Find users
 
 AccountsApi apiInstance = new AccountsApi();
 String usernamePrefix = "usernamePrefix_example"; // String | Find users starting with this prefix.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -202,7 +202,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **usernamePrefix** | **String**| Find users starting with this prefix. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -237,7 +237,7 @@ Listing users and their roles in a paginated manner.
 
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -255,7 +255,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -287,7 +287,7 @@ Retrieve organizations of user
 
 
 AccountsApi apiInstance = new AccountsApi();
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String role = "role_example"; // String | role
 Integer offset = 56; // Integer | Start with the n-th element. 
@@ -305,7 +305,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **role** | **String**| role | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
@@ -340,7 +340,7 @@ Get user roles by username
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **username** | **String**| username |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -394,7 +394,7 @@ Finding users in the specified organization in a paginated manner.
 
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -412,7 +412,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -446,7 +446,7 @@ Invite Users
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
 OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.inviteUsers(organizationId, invitationList, authorization, acceptLanguage);
@@ -463,7 +463,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -495,7 +495,7 @@ Listing of roles.
 
 
 AccountsApi apiInstance = new AccountsApi();
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String privilege = "privilege_example"; // String | If specified the roles will be filtered containing that privilege.
 Integer offset = 56; // Integer | Start with the n-th element. 
@@ -513,7 +513,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **privilege** | **String**| If specified the roles will be filtered containing that privilege. | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
@@ -593,7 +593,7 @@ Registering a new user.
 
 AccountsApi apiInstance = new AccountsApi();
 UserRegistrationRequest userRegistration = new UserRegistrationRequest(); // UserRegistrationRequest | The user information about the new created user.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     UserRegistrationResponse result = apiInstance.registerUser(userRegistration, authorization, acceptLanguage);
@@ -609,7 +609,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userRegistration** | [**UserRegistrationRequest**](UserRegistrationRequest.md)| The user information about the new created user. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -642,7 +642,7 @@ AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
@@ -660,7 +660,7 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -693,7 +693,7 @@ Requesting a reset for a new password.
 
 AccountsApi apiInstance = new AccountsApi();
 PasswordResetRequest resetRequest = new PasswordResetRequest(); // PasswordResetRequest | Contains the required information to request a new password.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     SimpleMessageResponse result = apiInstance.requestPasswordReset(resetRequest, authorization, acceptLanguage);
@@ -709,7 +709,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resetRequest** | [**PasswordResetRequest**](PasswordResetRequest.md)| Contains the required information to request a new password. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -742,7 +742,7 @@ Setting a new password and verifying the request to set the password.
 
 AccountsApi apiInstance = new AccountsApi();
 PasswordResetVerificationRequest verificationRequest = new PasswordResetVerificationRequest(); // PasswordResetVerificationRequest | Contains the new password and the verification token to set the new password.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     SimpleMessageResponse result = apiInstance.verifyPasswordReset(verificationRequest, authorization, acceptLanguage);
@@ -758,7 +758,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **verificationRequest** | [**PasswordResetVerificationRequest**](PasswordResetVerificationRequest.md)| Contains the new password and the verification token to set the new password. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -791,7 +791,7 @@ Verifies a new user registration.
 
 AccountsApi apiInstance = new AccountsApi();
 RegistrationVerificationTokenPresentation token = new RegistrationVerificationTokenPresentation(); // RegistrationVerificationTokenPresentation | The token for user verification.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.verifyUserRegistration(token, authorization, acceptLanguage);
@@ -807,7 +807,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | [**RegistrationVerificationTokenPresentation**](RegistrationVerificationTokenPresentation.md)| The token for user verification. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type

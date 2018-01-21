@@ -34,7 +34,7 @@ Add privilege
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest = new AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, authorization, acceptLanguage);
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
  **addApiKeyPrivilegeRequest** | [**AddApiKeyPrivilegeRequest**](AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -84,7 +84,7 @@ ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
 ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage);
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
  **key** | **String**| key |
  **privilege** | **String**| privilege |
  **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -135,7 +135,7 @@ Creation of a new API key.
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 ApiKeyCreationRequest creationRequest = new ApiKeyCreationRequest(); // ApiKeyCreationRequest | API key to be created.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiKeyPresentation result = apiInstance.createNewApiKey(creationRequest, authorization, acceptLanguage);
@@ -151,7 +151,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **creationRequest** | [**ApiKeyCreationRequest**](ApiKeyCreationRequest.md)| API key to be created. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -184,7 +184,7 @@ Deletion of an API key.
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | The API key to delete.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.deleteApiKey(key, authorization, acceptLanguage);
@@ -200,7 +200,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| The API key to delete. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -233,7 +233,7 @@ Showing the details of an API key.
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | The API key to show.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiKeyPresentation result = apiInstance.getApiKey(key, authorization, acceptLanguage);
@@ -249,7 +249,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| The API key to show. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -281,7 +281,7 @@ Listing all possible API key privileges.
 
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Boolean id4nConcerning = true; // Boolean | id4nConcerning
 Integer offset = 56; // Integer | Start with the n-th element. 
@@ -299,7 +299,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **id4nConcerning** | **Boolean**| id4nConcerning | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
@@ -335,7 +335,7 @@ Finding all API key assigned to the specified organization in a paginated manner
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 Long organizationId = 789L; // Long | The id of the organization to search in.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -353,7 +353,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The id of the organization to search in. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -386,7 +386,7 @@ List privileges
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -404,7 +404,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -440,7 +440,7 @@ Listing ID4ns of a id4n concerning privilege
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -459,7 +459,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
  **privilege** | **String**| privilege |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -493,7 +493,7 @@ Remove privilege
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest = new RemoveApiKeyPrivilegeRequest(); // RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage);
@@ -510,7 +510,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
  **removeApiKeyPrivilegeRequest** | [**RemoveApiKeyPrivilegeRequest**](RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -543,7 +543,7 @@ ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
 ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage);
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
  **key** | **String**| key |
  **privilege** | **String**| privilege |
  **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -595,7 +595,7 @@ API keys can be updated with new labels, and be activated and deactivated. The s
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | The API key to be updated.
 ApiKeyChangeRequest apiKeyChange = new ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.updateApiKey(key, apiKeyChange, authorization, acceptLanguage);
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| The API key to be updated. |
  **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type

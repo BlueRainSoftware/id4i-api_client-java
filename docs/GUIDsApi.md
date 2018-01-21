@@ -32,7 +32,7 @@ GUIDsApi apiInstance = new GUIDsApi();
 String id4n = "id4n_example"; // String | The GUID to operate on
 String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 GuidAlias alias = new GuidAlias(); // GuidAlias | The alias to add or update
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addGuidAlias(id4n, aliasType, alias, authorization, acceptLanguage);
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
  **id4n** | **String**| The GUID to operate on |
  **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -84,7 +84,7 @@ Remove the alias of the given type
 GUIDsApi apiInstance = new GUIDsApi();
 String id4n = "id4n_example"; // String | The GUID to operate on
 String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addGuidAlias1(id4n, aliasType, authorization, acceptLanguage);
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
  **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid]
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -134,7 +134,7 @@ Creating one or more GUIDs with a specified length.
 
 GUIDsApi apiInstance = new GUIDsApi();
 CreateGuidRequest createGUIDInfo = new CreateGuidRequest(); // CreateGuidRequest | createGUIDInfo
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ListOfId4ns result = apiInstance.createGuid(createGUIDInfo, authorization, acceptLanguage);
@@ -150,7 +150,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| createGUIDInfo |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -181,7 +181,7 @@ Retrieve GUID information
 
 GUIDsApi apiInstance = new GUIDsApi();
 String id4n = "id4n_example"; // String | The GUID number
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Guid result = apiInstance.getGuid(id4n, authorization, acceptLanguage);
@@ -197,7 +197,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID number |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -230,7 +230,7 @@ Looks up the alias for each alias type (group and single GUID) and returns all f
 
 GUIDsApi apiInstance = new GUIDsApi();
 String id4n = "id4n_example"; // String | The GUID to operate on
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Map<String, String> result = apiInstance.getGuidAliases(id4n, authorization, acceptLanguage);
@@ -246,7 +246,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -277,7 +277,7 @@ Retrieve GUIDs not in any collection
 
 GUIDsApi apiInstance = new GUIDsApi();
 Long organizationId = 789L; // Long | Organization to search GUIDs for (required).
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -295,7 +295,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| Organization to search GUIDs for (required). |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -331,7 +331,7 @@ Allows ownership transfer.
 GUIDsApi apiInstance = new GUIDsApi();
 String id4n = "id4n_example"; // String | The GUID number
 Guid request = new Guid(); // Guid | request
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Object result = apiInstance.updateGuid(id4n, request, authorization, acceptLanguage);
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID number |
  **request** | [**Guid**](Guid.md)| request |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type

@@ -26,7 +26,7 @@ Forwarding to the designated route defined in the routing,
 
 PublicServicesApi apiInstance = new PublicServicesApi();
 String guid = "guid_example"; // String | guid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.go(guid, authorization, acceptLanguage);
@@ -42,7 +42,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **guid** | **String**| guid |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -73,7 +73,7 @@ Resolve image
 
 PublicServicesApi apiInstance = new PublicServicesApi();
 String imageID = "imageID_example"; // String | The id of the image to be resolved.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     byte[] result = apiInstance.resolveImageUsingGET(imageID, authorization, acceptLanguage);
@@ -89,7 +89,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageID** | **String**| The id of the image to be resolved. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -120,7 +120,7 @@ Resolve owner of id4n
 
 PublicServicesApi apiInstance = new PublicServicesApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     WhoIsResponse result = apiInstance.resolveWhoIsEntry(id4n, authorization, acceptLanguage);
@@ -136,7 +136,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type

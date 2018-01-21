@@ -28,7 +28,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.1.0</version>
+    <version>0.1.2</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +38,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.1.0"
+compile "de.id4i.api:id4i-api-client:0.1.2"
 ```
 
 ### Others
@@ -49,7 +49,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/id4i-api-client-0.1.0.jar
+* target/id4i-api-client-0.1.2.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -74,7 +74,7 @@ public class AccountsApiExample {
         Long organizationId = 789L; // Long | organizationId
         String username = "username_example"; // String | username
         ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-        String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+        String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
         String acceptLanguage = "acceptLanguage_example"; // String | Requested language
         try {
             ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
@@ -172,6 +172,8 @@ Class | Method | HTTP request | Description
 *GUIDsApi* | [**updateGuid**](docs/GUIDsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
+*MicrostorageApi* | [**read**](docs/MicrostorageApi.md#read) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
+*MicrostorageApi* | [**write**](docs/MicrostorageApi.md#write) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 *OrganizationsApi* | [**addUserRoles**](docs/OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 *OrganizationsApi* | [**createOrganization**](docs/OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
 *OrganizationsApi* | [**deleteOrganization**](docs/OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
@@ -227,6 +229,8 @@ Class | Method | HTTP request | Description
  - [Id4n](docs/Id4n.md)
  - [Id4nPresentation](docs/Id4nPresentation.md)
  - [Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
+ - [InputStream](docs/InputStream.md)
+ - [InputStreamResource](docs/InputStreamResource.md)
  - [ListOfId4ns](docs/ListOfId4ns.md)
  - [Organization](docs/Organization.md)
  - [OrganizationAddress](docs/OrganizationAddress.md)
@@ -263,6 +267,8 @@ Class | Method | HTTP request | Description
  - [RoutingFileRequest](docs/RoutingFileRequest.md)
  - [RoutingOptions](docs/RoutingOptions.md)
  - [SimpleMessageResponse](docs/SimpleMessageResponse.md)
+ - [URI](docs/URI.md)
+ - [URL](docs/URL.md)
  - [UserPresentation](docs/UserPresentation.md)
  - [UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [UserRegistrationResponse](docs/UserRegistrationResponse.md)
@@ -272,8 +278,13 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Authorization
 
-All endpoints do not require authorization.
 Authentication schemes defined for the API:
+### Authorization
+
+- **Type**: API key
+- **API key parameter name**: Authorization
+- **Location**: HTTP header
+
 
 ## Recommendation
 

@@ -43,7 +43,7 @@ OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -94,7 +94,7 @@ Creating a new organization.
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Organization organization = new Organization(); // Organization | Organization to be created
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Organization result = apiInstance.createOrganization(organization, authorization, acceptLanguage);
@@ -110,7 +110,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | [**Organization**](Organization.md)| Organization to be created |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -141,7 +141,7 @@ Delete organization
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | The id of the organization to be deleted.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.deleteOrganization(organizationId, authorization, acceptLanguage);
@@ -157,7 +157,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The id of the organization to be deleted. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -188,7 +188,7 @@ Remove billing address
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.deleteOrganizationBillingAddress(organizationId, authorization, acceptLanguage);
@@ -204,7 +204,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -235,7 +235,7 @@ Delete organization logo
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | The id of the organization where the logo should be deleted.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.deleteOrganizationLogo(organizationId, authorization, acceptLanguage);
@@ -251,7 +251,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The id of the organization where the logo should be deleted. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -284,7 +284,7 @@ Returns a single organization.
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | The id of the organization to be retrieved.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Organization result = apiInstance.findOrganization(organizationId, authorization, acceptLanguage);
@@ -300,7 +300,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The id of the organization to be retrieved. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -331,7 +331,7 @@ Retrieve address
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     OrganizationAddress result = apiInstance.findOrganizationAddress(organizationId, authorization, acceptLanguage);
@@ -347,7 +347,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -378,7 +378,7 @@ Retrieve billing address
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     OrganizationAddress result = apiInstance.findOrganizationBillingAddress(organizationId, authorization, acceptLanguage);
@@ -394,7 +394,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -427,7 +427,7 @@ Retrieving all collections of an organization in a paginated manner.
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -448,7 +448,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -486,7 +486,7 @@ Listing users and their roles in a paginated manner.
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -504,7 +504,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -536,7 +536,7 @@ Retrieve organizations of user
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String role = "role_example"; // String | role
 Integer offset = 56; // Integer | Start with the n-th element. 
@@ -554,7 +554,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **role** | **String**| role | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
@@ -589,7 +589,7 @@ Get user roles by username
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -608,7 +608,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **username** | **String**| username |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -643,7 +643,7 @@ Finding users in the specified organization in a paginated manner.
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -661,7 +661,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -695,7 +695,7 @@ Invite Users
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.inviteUsers(organizationId, invitationList, authorization, acceptLanguage);
@@ -712,7 +712,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -742,7 +742,7 @@ List countries
 
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element. 
 Integer limit = 56; // Integer | The maximum count of returned elements.
@@ -759,7 +759,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element.  | [optional]
  **limit** | **Integer**| The maximum count of returned elements. | [optional]
@@ -794,7 +794,7 @@ OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
@@ -812,7 +812,7 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -844,7 +844,7 @@ Update organization
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | The id of the organization to be updated.
 Organization organization = new Organization(); // Organization | Updated organization object
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     Organization result = apiInstance.updateOrganization(organizationId, organization, authorization, acceptLanguage);
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The id of the organization to be updated. |
  **organization** | [**Organization**](Organization.md)| Updated organization object |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -893,7 +893,7 @@ Store address
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 OrganizationAddress addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     OrganizationAddress result = apiInstance.updateOrganizationAddress(organizationId, addressResource, authorization, acceptLanguage);
@@ -910,7 +910,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -942,7 +942,7 @@ Store billing address
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 OrganizationAddress addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     OrganizationAddress result = apiInstance.updateOrganizationBillingAddress(organizationId, addressResource, authorization, acceptLanguage);
@@ -959,7 +959,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
@@ -993,7 +993,7 @@ Updating an organization logo using a multipart file upload.
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | The id of the organization where the logo should be updated.
 File file = new File("/path/to/file.txt"); // File | An image containing the new logo.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     ApiError result = apiInstance.updateOrganizationLogo(organizationId, file, authorization, acceptLanguage);
@@ -1010,7 +1010,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The id of the organization where the logo should be updated. |
  **file** | **File**| An image containing the new logo. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type

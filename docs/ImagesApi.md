@@ -22,7 +22,7 @@ Resolve image
 
 ImagesApi apiInstance = new ImagesApi();
 String imageID = "imageID_example"; // String | The id of the image to be resolved.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token as returned from /login
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
     byte[] result = apiInstance.resolveImageUsingGET(imageID, authorization, acceptLanguage);
@@ -38,7 +38,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **imageID** | **String**| The id of the image to be resolved. |
- **authorization** | **String**| Authorization JWT Bearer Token as returned from /login | [optional]
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
