@@ -4,12 +4,12 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findCollection**](BillingApi.md#findCollection) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
+[**getSumForOrganization**](BillingApi.md#getSumForOrganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 
 
-<a name="findCollection"></a>
-# **findCollection**
-> ServiceCosts findCollection(organizationId, authorization, acceptLanguage)
+<a name="getSumForOrganization"></a>
+# **getSumForOrganization**
+> ServiceCosts getSumForOrganization(organizationId, authorization, acceptLanguage)
 
 Get billing amount of services for a given organization
 
@@ -25,10 +25,10 @@ Long organizationId = 789L; // Long | The organization to compute the billing in
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ServiceCosts result = apiInstance.findCollection(organizationId, authorization, acceptLanguage);
+    ServiceCosts result = apiInstance.getSumForOrganization(organizationId, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling BillingApi#findCollection");
+    System.err.println("Exception when calling BillingApi#getSumForOrganization");
     e.printStackTrace();
 }
 ```

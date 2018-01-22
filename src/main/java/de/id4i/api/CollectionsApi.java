@@ -2206,7 +2206,7 @@ public class CollectionsApi {
         return call;
     }
     /**
-     * Build call for findCollection1
+     * Build call for findCollection
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
@@ -2215,7 +2215,7 @@ public class CollectionsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call findCollection1Call(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call findCollectionCall(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -2261,15 +2261,15 @@ public class CollectionsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call findCollection1ValidateBeforeCall(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call findCollectionValidateBeforeCall(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
-            throw new ApiException("Missing the required parameter 'id4n' when calling findCollection1(Async)");
+            throw new ApiException("Missing the required parameter 'id4n' when calling findCollection(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = findCollection1Call(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = findCollectionCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -2287,8 +2287,8 @@ public class CollectionsApi {
      * @return GuidCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public GuidCollection findCollection1(String id4n, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<GuidCollection> resp = findCollection1WithHttpInfo(id4n, authorization, acceptLanguage);
+    public GuidCollection findCollection(String id4n, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<GuidCollection> resp = findCollectionWithHttpInfo(id4n, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -2301,8 +2301,8 @@ public class CollectionsApi {
      * @return ApiResponse&lt;GuidCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<GuidCollection> findCollection1WithHttpInfo(String id4n, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = findCollection1ValidateBeforeCall(id4n, authorization, acceptLanguage, null, null);
+    public ApiResponse<GuidCollection> findCollectionWithHttpInfo(String id4n, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = findCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, null, null);
         Type localVarReturnType = new TypeToken<GuidCollection>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2317,7 +2317,7 @@ public class CollectionsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call findCollection1Async(String id4n, String authorization, String acceptLanguage, final ApiCallback<GuidCollection> callback) throws ApiException {
+    public com.squareup.okhttp.Call findCollectionAsync(String id4n, String authorization, String acceptLanguage, final ApiCallback<GuidCollection> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2338,7 +2338,7 @@ public class CollectionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = findCollection1ValidateBeforeCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = findCollectionValidateBeforeCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<GuidCollection>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

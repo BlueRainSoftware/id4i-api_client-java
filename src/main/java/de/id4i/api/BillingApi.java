@@ -56,7 +56,7 @@ public class BillingApi {
     }
 
     /**
-     * Build call for findCollection
+     * Build call for getSumForOrganization
      * @param organizationId The organization to compute the billing information for (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
@@ -65,7 +65,7 @@ public class BillingApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call findCollectionCall(Long organizationId, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSumForOrganizationCall(Long organizationId, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -111,15 +111,15 @@ public class BillingApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call findCollectionValidateBeforeCall(Long organizationId, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSumForOrganizationValidateBeforeCall(Long organizationId, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
-            throw new ApiException("Missing the required parameter 'organizationId' when calling findCollection(Async)");
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getSumForOrganization(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = findCollectionCall(organizationId, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSumForOrganizationCall(organizationId, authorization, acceptLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -137,8 +137,8 @@ public class BillingApi {
      * @return ServiceCosts
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ServiceCosts findCollection(Long organizationId, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ServiceCosts> resp = findCollectionWithHttpInfo(organizationId, authorization, acceptLanguage);
+    public ServiceCosts getSumForOrganization(Long organizationId, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ServiceCosts> resp = getSumForOrganizationWithHttpInfo(organizationId, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -151,8 +151,8 @@ public class BillingApi {
      * @return ApiResponse&lt;ServiceCosts&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ServiceCosts> findCollectionWithHttpInfo(Long organizationId, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = findCollectionValidateBeforeCall(organizationId, authorization, acceptLanguage, null, null);
+    public ApiResponse<ServiceCosts> getSumForOrganizationWithHttpInfo(Long organizationId, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = getSumForOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, null, null);
         Type localVarReturnType = new TypeToken<ServiceCosts>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -167,7 +167,7 @@ public class BillingApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call findCollectionAsync(Long organizationId, String authorization, String acceptLanguage, final ApiCallback<ServiceCosts> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSumForOrganizationAsync(Long organizationId, String authorization, String acceptLanguage, final ApiCallback<ServiceCosts> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -188,7 +188,7 @@ public class BillingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = findCollectionValidateBeforeCall(organizationId, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSumForOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ServiceCosts>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
