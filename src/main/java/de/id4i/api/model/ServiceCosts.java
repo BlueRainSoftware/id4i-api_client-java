@@ -19,56 +19,42 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.RoutingFile;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
- * RoutingFileRequest
+ * ServiceCosts
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-22T12:33:01.257Z")
-public class RoutingFileRequest {
-  @SerializedName("routing")
-  private RoutingFile routing = null;
+public class ServiceCosts {
+  @SerializedName("listing")
+  private Map<String, Float> listing = new HashMap<String, Float>();
 
-  @SerializedName("organizationId")
-  private Long organizationId = null;
+  public ServiceCosts listing(Map<String, Float> listing) {
+    this.listing = listing;
+    return this;
+  }
 
-  public RoutingFileRequest routing(RoutingFile routing) {
-    this.routing = routing;
+  public ServiceCosts putListingItem(String key, Float listingItem) {
+    this.listing.put(key, listingItem);
     return this;
   }
 
    /**
-   * Get routing
-   * @return routing
+   * Get listing
+   * @return listing
   **/
   @ApiModelProperty(required = true, value = "")
-  public RoutingFile getRouting() {
-    return routing;
+  public Map<String, Float> getListing() {
+    return listing;
   }
 
-  public void setRouting(RoutingFile routing) {
-    this.routing = routing;
-  }
-
-  public RoutingFileRequest organizationId(Long organizationId) {
-    this.organizationId = organizationId;
-    return this;
-  }
-
-   /**
-   * Get organizationId
-   * @return organizationId
-  **/
-  @ApiModelProperty(value = "")
-  public Long getOrganizationId() {
-    return organizationId;
-  }
-
-  public void setOrganizationId(Long organizationId) {
-    this.organizationId = organizationId;
+  public void setListing(Map<String, Float> listing) {
+    this.listing = listing;
   }
 
 
@@ -80,24 +66,22 @@ public class RoutingFileRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RoutingFileRequest routingFileRequest = (RoutingFileRequest) o;
-    return Objects.equals(this.routing, routingFileRequest.routing) &&
-        Objects.equals(this.organizationId, routingFileRequest.organizationId);
+    ServiceCosts serviceCosts = (ServiceCosts) o;
+    return Objects.equals(this.listing, serviceCosts.listing);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(routing, organizationId);
+    return Objects.hash(listing);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RoutingFileRequest {\n");
+    sb.append("class ServiceCosts {\n");
     
-    sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    listing: ").append(toIndentedString(listing)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,7 +19,7 @@ Method | HTTP request | Description
 [**deleteLabelledCollection**](CollectionsApi.md#deleteLabelledCollection) | **DELETE** /api/v1/collections/labelled/{id4n} | Delete labelled collection
 [**deleteLogisticCollection**](CollectionsApi.md#deleteLogisticCollection) | **DELETE** /api/v1/collections/logistic/{id4n} | Delete logistic collection
 [**deleteRoutingCollection**](CollectionsApi.md#deleteRoutingCollection) | **DELETE** /api/v1/collections/routing/{id4n} | Delete routing collection
-[**findCollection**](CollectionsApi.md#findCollection) | **GET** /api/v1/collections/{id4n} | Find collection
+[**findCollection1**](CollectionsApi.md#findCollection1) | **GET** /api/v1/collections/{id4n} | Find collection
 [**findLabelledCollection**](CollectionsApi.md#findLabelledCollection) | **GET** /api/v1/collections/labelled/{id4n} | Find labelled collection
 [**findLogisticCollection**](CollectionsApi.md#findLogisticCollection) | **GET** /api/v1/collections/logistic/{id4n} | Find logistic collection
 [**findRoutingCollection**](CollectionsApi.md#findRoutingCollection) | **GET** /api/v1/collections/routing/{id4n} | Find routing collection
@@ -763,9 +763,9 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="findCollection"></a>
-# **findCollection**
-> GuidCollection findCollection(id4n, authorization, acceptLanguage)
+<a name="findCollection1"></a>
+# **findCollection1**
+> GuidCollection findCollection1(id4n, authorization, acceptLanguage)
 
 Find collection
 
@@ -781,10 +781,10 @@ String id4n = "id4n_example"; // String | id4n
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    GuidCollection result = apiInstance.findCollection(id4n, authorization, acceptLanguage);
+    GuidCollection result = apiInstance.findCollection1(id4n, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling CollectionsApi#findCollection");
+    System.err.println("Exception when calling CollectionsApi#findCollection1");
     e.printStackTrace();
 }
 ```
