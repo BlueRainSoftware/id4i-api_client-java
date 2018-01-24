@@ -28,7 +28,7 @@ import java.io.IOException;
 
 
 import de.id4i.api.model.ApiError;
-import de.id4i.api.model.WhoIsResponse;
+import de.id4i.api.model.ServiceCosts;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -36,14 +36,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class WhoIsApi {
+public class BillingApi {
     private ApiClient apiClient;
 
-    public WhoIsApi() {
+    public BillingApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public WhoIsApi(ApiClient apiClient) {
+    public BillingApi(ApiClient apiClient) {
         this.apiClient = apiClient;
     }
 
@@ -56,8 +56,8 @@ public class WhoIsApi {
     }
 
     /**
-     * Build call for resolveWhoIsEntry
-     * @param id4n id4n (required)
+     * Build call for getSumForOrganization
+     * @param organizationId The organization to compute the billing information for (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param progressListener Progress listener
@@ -65,12 +65,12 @@ public class WhoIsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call resolveWhoIsEntryCall(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSumForOrganizationCall(Long organizationId, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/whois/{id4n}"
-            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+        String localVarPath = "/api/v1/billing/{organizationId}"
+            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -111,15 +111,15 @@ public class WhoIsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call resolveWhoIsEntryValidateBeforeCall(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSumForOrganizationValidateBeforeCall(Long organizationId, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'id4n' is set
-        if (id4n == null) {
-            throw new ApiException("Missing the required parameter 'id4n' when calling resolveWhoIsEntry(Async)");
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getSumForOrganization(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = resolveWhoIsEntryCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSumForOrganizationCall(organizationId, authorization, acceptLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -129,45 +129,45 @@ public class WhoIsApi {
     }
 
     /**
-     * Resolve owner of id4n
+     * Get billing amount of services for a given organization
      * 
-     * @param id4n id4n (required)
+     * @param organizationId The organization to compute the billing information for (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return WhoIsResponse
+     * @return ServiceCosts
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public WhoIsResponse resolveWhoIsEntry(String id4n, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<WhoIsResponse> resp = resolveWhoIsEntryWithHttpInfo(id4n, authorization, acceptLanguage);
+    public ServiceCosts getSumForOrganization(Long organizationId, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<ServiceCosts> resp = getSumForOrganizationWithHttpInfo(organizationId, authorization, acceptLanguage);
         return resp.getData();
     }
 
     /**
-     * Resolve owner of id4n
+     * Get billing amount of services for a given organization
      * 
-     * @param id4n id4n (required)
+     * @param organizationId The organization to compute the billing information for (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;WhoIsResponse&gt;
+     * @return ApiResponse&lt;ServiceCosts&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<WhoIsResponse> resolveWhoIsEntryWithHttpInfo(String id4n, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = resolveWhoIsEntryValidateBeforeCall(id4n, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<WhoIsResponse>(){}.getType();
+    public ApiResponse<ServiceCosts> getSumForOrganizationWithHttpInfo(Long organizationId, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = getSumForOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, null, null);
+        Type localVarReturnType = new TypeToken<ServiceCosts>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Resolve owner of id4n (asynchronously)
+     * Get billing amount of services for a given organization (asynchronously)
      * 
-     * @param id4n id4n (required)
+     * @param organizationId The organization to compute the billing information for (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call resolveWhoIsEntryAsync(String id4n, String authorization, String acceptLanguage, final ApiCallback<WhoIsResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSumForOrganizationAsync(Long organizationId, String authorization, String acceptLanguage, final ApiCallback<ServiceCosts> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -188,8 +188,8 @@ public class WhoIsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = resolveWhoIsEntryValidateBeforeCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<WhoIsResponse>(){}.getType();
+        com.squareup.okhttp.Call call = getSumForOrganizationValidateBeforeCall(organizationId, authorization, acceptLanguage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<ServiceCosts>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

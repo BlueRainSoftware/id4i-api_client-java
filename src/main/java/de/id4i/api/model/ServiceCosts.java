@@ -19,42 +19,42 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.OrganizationUserInvitation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * OrganizationUserInvitationListRequest
+ * ServiceCosts
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-24T16:38:20.339Z")
-public class OrganizationUserInvitationListRequest {
-  @SerializedName("invitations")
-  private List<OrganizationUserInvitation> invitations = new ArrayList<OrganizationUserInvitation>();
+public class ServiceCosts {
+  @SerializedName("listing")
+  private Map<String, Float> listing = new HashMap<String, Float>();
 
-  public OrganizationUserInvitationListRequest invitations(List<OrganizationUserInvitation> invitations) {
-    this.invitations = invitations;
+  public ServiceCosts listing(Map<String, Float> listing) {
+    this.listing = listing;
     return this;
   }
 
-  public OrganizationUserInvitationListRequest addInvitationsItem(OrganizationUserInvitation invitationsItem) {
-    this.invitations.add(invitationsItem);
+  public ServiceCosts putListingItem(String key, Float listingItem) {
+    this.listing.put(key, listingItem);
     return this;
   }
 
    /**
-   * Get invitations
-   * @return invitations
+   * Get listing
+   * @return listing
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<OrganizationUserInvitation> getInvitations() {
-    return invitations;
+  public Map<String, Float> getListing() {
+    return listing;
   }
 
-  public void setInvitations(List<OrganizationUserInvitation> invitations) {
-    this.invitations = invitations;
+  public void setListing(Map<String, Float> listing) {
+    this.listing = listing;
   }
 
 
@@ -66,22 +66,22 @@ public class OrganizationUserInvitationListRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationUserInvitationListRequest organizationUserInvitationListRequest = (OrganizationUserInvitationListRequest) o;
-    return Objects.equals(this.invitations, organizationUserInvitationListRequest.invitations);
+    ServiceCosts serviceCosts = (ServiceCosts) o;
+    return Objects.equals(this.listing, serviceCosts.listing);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(invitations);
+    return Objects.hash(listing);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrganizationUserInvitationListRequest {\n");
+    sb.append("class ServiceCosts {\n");
     
-    sb.append("    invitations: ").append(toIndentedString(invitations)).append("\n");
+    sb.append("    listing: ").append(toIndentedString(listing)).append("\n");
     sb.append("}");
     return sb.toString();
   }
