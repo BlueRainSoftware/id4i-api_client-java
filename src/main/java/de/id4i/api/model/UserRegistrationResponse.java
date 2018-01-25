@@ -26,13 +26,10 @@ import java.io.IOException;
 /**
  * UserRegistrationResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-25T16:02:49.600Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-25T16:03:42.732Z")
 public class UserRegistrationResponse {
   @SerializedName("email")
   private String email = null;
-
-  @SerializedName("id")
-  private Long id = null;
 
   @SerializedName("message")
   private String message = null;
@@ -56,24 +53,6 @@ public class UserRegistrationResponse {
 
   public void setEmail(String email) {
     this.email = email;
-  }
-
-  public UserRegistrationResponse id(Long id) {
-    this.id = id;
-    return this;
-  }
-
-   /**
-   * Get id
-   * @return id
-  **/
-  @ApiModelProperty(value = "")
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public UserRegistrationResponse message(String message) {
@@ -123,14 +102,13 @@ public class UserRegistrationResponse {
     }
     UserRegistrationResponse userRegistrationResponse = (UserRegistrationResponse) o;
     return Objects.equals(this.email, userRegistrationResponse.email) &&
-        Objects.equals(this.id, userRegistrationResponse.id) &&
         Objects.equals(this.message, userRegistrationResponse.message) &&
         Objects.equals(this.username, userRegistrationResponse.username);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, id, message, username);
+    return Objects.hash(email, message, username);
   }
 
 
@@ -140,7 +118,6 @@ public class UserRegistrationResponse {
     sb.append("class UserRegistrationResponse {\n");
     
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("}");
