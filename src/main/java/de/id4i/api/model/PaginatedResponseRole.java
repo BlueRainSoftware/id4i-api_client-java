@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PaginatedResponseRole
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-25T11:15:06.063Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-25T13:55:43.050Z")
 public class PaginatedResponseRole {
   @SerializedName("elements")
   private List<Role> elements = new ArrayList<Role>();
