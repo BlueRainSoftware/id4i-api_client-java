@@ -31,7 +31,7 @@ import java.util.Map;
 /**
  * WhoIsResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-26T10:14:03.433Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-26T13:01:38.560Z")
 public class WhoIsResponse {
   @SerializedName("aliases")
   private Map<String, String> aliases = null;

@@ -160,10 +160,14 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**removeElementsFromLabelledCollection**](docs/CollectionsApi.md#removeElementsFromLabelledCollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
 *CollectionsApi* | [**removeElementsFromLogisticCollection**](docs/CollectionsApi.md#removeElementsFromLogisticCollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
 *CollectionsApi* | [**removeElementsFromRoutingCollection**](docs/CollectionsApi.md#removeElementsFromRoutingCollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
-*CollectionsApi* | [**updateCollection**](docs/CollectionsApi.md#updateCollection) | **PUT** /api/v1/collections/{id4n} | Alter collection
-*CollectionsApi* | [**updateLabelledCollection**](docs/CollectionsApi.md#updateLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
-*CollectionsApi* | [**updateLogisticCollection**](docs/CollectionsApi.md#updateLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
-*CollectionsApi* | [**updateRoutingCollection**](docs/CollectionsApi.md#updateRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+*CollectionsApi* | [**setCollection**](docs/CollectionsApi.md#setCollection) | **PUT** /api/v1/collections/{id4n} | Set collection
+*CollectionsApi* | [**setLabelledCollection**](docs/CollectionsApi.md#setLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Set labelled collection values
+*CollectionsApi* | [**setLogisticCollection**](docs/CollectionsApi.md#setLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Replace logistic collection
+*CollectionsApi* | [**setRoutingCollection**](docs/CollectionsApi.md#setRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+*CollectionsApi* | [**updateCollection**](docs/CollectionsApi.md#updateCollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
+*CollectionsApi* | [**updateLabelledCollection**](docs/CollectionsApi.md#updateLabelledCollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
+*CollectionsApi* | [**updateLogisticCollection**](docs/CollectionsApi.md#updateLogisticCollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
+*CollectionsApi* | [**updateRoutingCollection**](docs/CollectionsApi.md#updateRoutingCollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 *GUIDsApi* | [**addGuidAlias**](docs/GUIDsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *GUIDsApi* | [**addGuidAlias1**](docs/GUIDsApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *GUIDsApi* | [**createGuid**](docs/GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
