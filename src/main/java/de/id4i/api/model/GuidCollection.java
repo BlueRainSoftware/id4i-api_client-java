@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GuidCollection
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-26T13:05:20.739Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-26T13:45:08.363Z")
 public class GuidCollection {
   @SerializedName("createdTimestamp")
   private Long createdTimestamp = null;
@@ -95,11 +95,6 @@ public class GuidCollection {
   @SerializedName("type")
   private TypeEnum type = null;
 
-  public GuidCollection createdTimestamp(Long createdTimestamp) {
-    this.createdTimestamp = createdTimestamp;
-    return this;
-  }
-
    /**
    * Get createdTimestamp
    * @return createdTimestamp
@@ -109,15 +104,6 @@ public class GuidCollection {
     return createdTimestamp;
   }
 
-  public void setCreatedTimestamp(Long createdTimestamp) {
-    this.createdTimestamp = createdTimestamp;
-  }
-
-  public GuidCollection id4n(String id4n) {
-    this.id4n = id4n;
-    return this;
-  }
-
    /**
    * Get id4n
    * @return id4n
@@ -125,10 +111,6 @@ public class GuidCollection {
   @ApiModelProperty(value = "")
   public String getId4n() {
     return id4n;
-  }
-
-  public void setId4n(String id4n) {
-    this.id4n = id4n;
   }
 
   public GuidCollection label(String label) {
@@ -185,11 +167,6 @@ public class GuidCollection {
     this.ownerOrganizationId = ownerOrganizationId;
   }
 
-  public GuidCollection type(TypeEnum type) {
-    this.type = type;
-    return this;
-  }
-
    /**
    * Get type
    * @return type
@@ -197,10 +174,6 @@ public class GuidCollection {
   @ApiModelProperty(value = "")
   public TypeEnum getType() {
     return type;
-  }
-
-  public void setType(TypeEnum type) {
-    this.type = type;
   }
 
 

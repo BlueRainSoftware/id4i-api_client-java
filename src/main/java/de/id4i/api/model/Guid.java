@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Guid
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-26T13:05:20.739Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-26T13:45:08.363Z")
 public class Guid {
   @SerializedName("createdTimestamp")
   private Long createdTimestamp = null;
@@ -40,11 +40,6 @@ public class Guid {
   @SerializedName("ownerOrganizationId")
   private Long ownerOrganizationId = null;
 
-  public Guid createdTimestamp(Long createdTimestamp) {
-    this.createdTimestamp = createdTimestamp;
-    return this;
-  }
-
    /**
    * Get createdTimestamp
    * @return createdTimestamp
@@ -54,26 +49,13 @@ public class Guid {
     return createdTimestamp;
   }
 
-  public void setCreatedTimestamp(Long createdTimestamp) {
-    this.createdTimestamp = createdTimestamp;
-  }
-
-  public Guid id4n(String id4n) {
-    this.id4n = id4n;
-    return this;
-  }
-
    /**
    * Get id4n
    * @return id4n
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public String getId4n() {
     return id4n;
-  }
-
-  public void setId4n(String id4n) {
-    this.id4n = id4n;
   }
 
   public Guid nextScanOwnership(Boolean nextScanOwnership) {
