@@ -31,6 +31,7 @@ import de.id4i.api.model.ApiError;
 import de.id4i.api.model.CreateGuidRequest;
 import de.id4i.api.model.Guid;
 import de.id4i.api.model.GuidAlias;
+import de.id4i.api.model.Id4nPresentation;
 import de.id4i.api.model.ListOfId4ns;
 import de.id4i.api.model.PaginatedResponseGuid;
 
@@ -925,6 +926,144 @@ public class GUIDsApi {
 
         com.squareup.okhttp.Call call = getGuidsWithoutCollectionValidateBeforeCall(organizationId, authorization, acceptLanguage, offset, limit, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedResponseGuid>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getId4n
+     * @param id4n The ID to resolve to (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getId4nCall(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/id4ns/{id4n}"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getId4nValidateBeforeCall(String id4n, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling getId4n(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = getId4nCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Retrieve ID4n information
+     * Retrieving basic information about an ID like the type and the creation time.
+     * @param id4n The ID to resolve to (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return Id4nPresentation
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Id4nPresentation getId4n(String id4n, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Id4nPresentation> resp = getId4nWithHttpInfo(id4n, authorization, acceptLanguage);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve ID4n information
+     * Retrieving basic information about an ID like the type and the creation time.
+     * @param id4n The ID to resolve to (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiResponse&lt;Id4nPresentation&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Id4nPresentation> getId4nWithHttpInfo(String id4n, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = getId4nValidateBeforeCall(id4n, authorization, acceptLanguage, null, null);
+        Type localVarReturnType = new TypeToken<Id4nPresentation>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve ID4n information (asynchronously)
+     * Retrieving basic information about an ID like the type and the creation time.
+     * @param id4n The ID to resolve to (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getId4nAsync(String id4n, String authorization, String acceptLanguage, final ApiCallback<Id4nPresentation> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getId4nValidateBeforeCall(id4n, authorization, acceptLanguage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Id4nPresentation>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
