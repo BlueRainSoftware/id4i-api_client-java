@@ -929,7 +929,7 @@ public class GUIDsApi {
         return call;
     }
     /**
-     * Build call for updateGuid
+     * Build call for setGuid
      * @param id4n The GUID number (required)
      * @param request request (required)
      * @param authorization Authorization JWT Bearer Token (optional)
@@ -939,7 +939,7 @@ public class GUIDsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateGuidCall(String id4n, Guid request, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call setGuidCall(String id4n, Guid request, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = request;
         
         // create path and map variables
@@ -985,20 +985,20 @@ public class GUIDsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateGuidValidateBeforeCall(String id4n, Guid request, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call setGuidValidateBeforeCall(String id4n, Guid request, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
-            throw new ApiException("Missing the required parameter 'id4n' when calling updateGuid(Async)");
+            throw new ApiException("Missing the required parameter 'id4n' when calling setGuid(Async)");
         }
         
         // verify the required parameter 'request' is set
         if (request == null) {
-            throw new ApiException("Missing the required parameter 'request' when calling updateGuid(Async)");
+            throw new ApiException("Missing the required parameter 'request' when calling setGuid(Async)");
         }
         
         
-        com.squareup.okhttp.Call call = updateGuidCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = setGuidCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -1017,8 +1017,8 @@ public class GUIDsApi {
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object updateGuid(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<Object> resp = updateGuidWithHttpInfo(id4n, request, authorization, acceptLanguage);
+    public Object setGuid(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Object> resp = setGuidWithHttpInfo(id4n, request, authorization, acceptLanguage);
         return resp.getData();
     }
 
@@ -1032,8 +1032,8 @@ public class GUIDsApi {
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> updateGuidWithHttpInfo(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = updateGuidValidateBeforeCall(id4n, request, authorization, acceptLanguage, null, null);
+    public ApiResponse<Object> setGuidWithHttpInfo(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = setGuidValidateBeforeCall(id4n, request, authorization, acceptLanguage, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1049,7 +1049,7 @@ public class GUIDsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateGuidAsync(String id4n, Guid request, String authorization, String acceptLanguage, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call setGuidAsync(String id4n, Guid request, String authorization, String acceptLanguage, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1070,7 +1070,154 @@ public class GUIDsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateGuidValidateBeforeCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = setGuidValidateBeforeCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for setGuid1
+     * @param id4n The GUID number (required)
+     * @param request request (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call setGuid1Call(String id4n, Guid request, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = request;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/guids/{id4n}"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call setGuid1ValidateBeforeCall(String id4n, Guid request, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling setGuid1(Async)");
+        }
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling setGuid1(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = setGuid1Call(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Change GUID information.
+     * Allows ownership transfer.
+     * @param id4n The GUID number (required)
+     * @param request request (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Object setGuid1(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<Object> resp = setGuid1WithHttpInfo(id4n, request, authorization, acceptLanguage);
+        return resp.getData();
+    }
+
+    /**
+     * Change GUID information.
+     * Allows ownership transfer.
+     * @param id4n The GUID number (required)
+     * @param request request (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Object> setGuid1WithHttpInfo(String id4n, Guid request, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = setGuid1ValidateBeforeCall(id4n, request, authorization, acceptLanguage, null, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Change GUID information. (asynchronously)
+     * Allows ownership transfer.
+     * @param id4n The GUID number (required)
+     * @param request request (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call setGuid1Async(String id4n, Guid request, String authorization, String acceptLanguage, final ApiCallback<Object> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = setGuid1ValidateBeforeCall(id4n, request, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
