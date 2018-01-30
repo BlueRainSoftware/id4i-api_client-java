@@ -786,8 +786,8 @@ public class ApiKeysApi {
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -862,8 +862,8 @@ public class ApiKeysApi {
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiKeyPrivilegeInfoResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -878,8 +878,8 @@ public class ApiKeysApi {
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;ApiKeyPrivilegeInfoResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -895,8 +895,8 @@ public class ApiKeysApi {
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
      * @param id4nConcerning id4nConcerning (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -932,8 +932,8 @@ public class ApiKeysApi {
      * @param organizationId The id of the organization to search in. (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1013,8 +1013,8 @@ public class ApiKeysApi {
      * @param organizationId The id of the organization to search in. (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedApiKeyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1029,8 +1029,8 @@ public class ApiKeysApi {
      * @param organizationId The id of the organization to search in. (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedApiKeyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1046,8 +1046,8 @@ public class ApiKeysApi {
      * @param organizationId The id of the organization to search in. (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1083,8 +1083,8 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1163,8 +1163,8 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiKeyPrivilegePaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1179,8 +1179,8 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;ApiKeyPrivilegePaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1196,8 +1196,8 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1234,8 +1234,8 @@ public class ApiKeysApi {
      * @param privilege privilege (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -1321,8 +1321,8 @@ public class ApiKeysApi {
      * @param privilege privilege (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return Id4nPresentationPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1338,8 +1338,8 @@ public class ApiKeysApi {
      * @param privilege privilege (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;Id4nPresentationPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -1356,8 +1356,8 @@ public class ApiKeysApi {
      * @param privilege privilege (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

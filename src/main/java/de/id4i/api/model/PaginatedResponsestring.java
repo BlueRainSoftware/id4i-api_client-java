@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * PaginatedResponsestring
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-30T11:08:41.642Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-30T15:34:35.497Z")
 public class PaginatedResponsestring {
   @SerializedName("elements")
   private List<String> elements = new ArrayList<String>();
@@ -71,10 +71,10 @@ public class PaginatedResponsestring {
   }
 
    /**
-   * Get limit
+   * The number of returned elements
    * @return limit
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "100", required = true, value = "The number of returned elements")
   public Integer getLimit() {
     return limit;
   }
@@ -89,10 +89,10 @@ public class PaginatedResponsestring {
   }
 
    /**
-   * Get offset
+   * Starting with the n-th element
    * @return offset
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(example = "0", required = true, value = "Starting with the n-th element")
   public Integer getOffset() {
     return offset;
   }
@@ -107,10 +107,10 @@ public class PaginatedResponsestring {
   }
 
    /**
-   * Get total
+   * The total number of elements
    * @return total
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "200", value = "The total number of elements")
   public Integer getTotal() {
     return total;
   }

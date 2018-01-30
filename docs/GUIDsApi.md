@@ -281,8 +281,8 @@ GUIDsApi apiInstance = new GUIDsApi();
 Long organizationId = 789L; // Long | Organization to search GUIDs for (required).
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedResponseGuid result = apiInstance.getGuidsWithoutCollection(organizationId, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -299,8 +299,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| Organization to search GUIDs for (required). |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 

@@ -783,8 +783,8 @@ public class GUIDsApi {
      * @param organizationId Organization to search GUIDs for (required). (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -864,8 +864,8 @@ public class GUIDsApi {
      * @param organizationId Organization to search GUIDs for (required). (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedResponseGuid
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -880,8 +880,8 @@ public class GUIDsApi {
      * @param organizationId Organization to search GUIDs for (required). (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedResponseGuid&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -897,8 +897,8 @@ public class GUIDsApi {
      * @param organizationId Organization to search GUIDs for (required). (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object

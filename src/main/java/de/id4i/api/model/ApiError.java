@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-30T11:08:41.642Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-30T15:34:35.497Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -106,7 +106,9 @@ public class ApiError {
     
     INVALID_URI_TEMPLATE("ERR_INVALID_URI_TEMPLATE"),
     
-    INVALID_URI_TEMPLATE_VARIABLE("ERR_INVALID_URI_TEMPLATE_VARIABLE");
+    INVALID_URI_TEMPLATE_VARIABLE("ERR_INVALID_URI_TEMPLATE_VARIABLE"),
+    
+    MODULE_NOT_ACTIVE("ERR_MODULE_NOT_ACTIVE");
 
     private String value;
 

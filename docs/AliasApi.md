@@ -229,8 +229,8 @@ String alias = "alias_example"; // String | The alias to search for
 String aliasType = "aliasType_example"; // String | Alias type type to search for
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedGuidResponse result = apiInstance.searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -248,8 +248,8 @@ Name | Type | Description  | Notes
  **aliasType** | **String**| Alias type type to search for | [enum: gtin, article, mapp, item, rfid]
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 

@@ -2170,8 +2170,8 @@ public class CollectionsApi {
      * @param organizationId organizationId (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
@@ -2259,8 +2259,8 @@ public class CollectionsApi {
      * @param organizationId organizationId (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
@@ -2278,8 +2278,8 @@ public class CollectionsApi {
      * @param organizationId organizationId (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
@@ -2298,8 +2298,8 @@ public class CollectionsApi {
      * @param organizationId organizationId (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
@@ -2338,8 +2338,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2418,8 +2418,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedGuidResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2434,8 +2434,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedGuidResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2451,8 +2451,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2488,8 +2488,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2568,8 +2568,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedGuidResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2584,8 +2584,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedGuidResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2601,8 +2601,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2638,8 +2638,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2718,8 +2718,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedGuidResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2734,8 +2734,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedGuidResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2751,8 +2751,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -2788,8 +2788,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -2868,8 +2868,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedGuidResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2884,8 +2884,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedGuidResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -2901,8 +2901,8 @@ public class CollectionsApi {
      * @param id4n id4n (required)
      * @param authorization Authorization JWT Bearer Token (optional)
      * @param acceptLanguage Requested language (optional)
-     * @param offset Start with the n-th element.  (optional)
-     * @param limit The maximum count of returned elements. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
