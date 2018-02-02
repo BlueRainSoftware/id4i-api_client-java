@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * DocumentUpdate
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-02T09:54:33.165Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-02T10:01:17.788Z")
 public class DocumentUpdate {
   @SerializedName("filename")
   private String filename = null;
@@ -36,8 +36,8 @@ public class DocumentUpdate {
   @SerializedName("publicVisibility")
   private Boolean publicVisibility = null;
 
-  @SerializedName("visibleByOrganizationIds")
-  private List<Long> visibleByOrganizationIds = null;
+  @SerializedName("sharedWithOrganizationIds")
+  private List<Long> sharedWithOrganizationIds = null;
 
   public DocumentUpdate filename(String filename) {
     this.filename = filename;
@@ -75,30 +75,30 @@ public class DocumentUpdate {
     this.publicVisibility = publicVisibility;
   }
 
-  public DocumentUpdate visibleByOrganizationIds(List<Long> visibleByOrganizationIds) {
-    this.visibleByOrganizationIds = visibleByOrganizationIds;
+  public DocumentUpdate sharedWithOrganizationIds(List<Long> sharedWithOrganizationIds) {
+    this.sharedWithOrganizationIds = sharedWithOrganizationIds;
     return this;
   }
 
-  public DocumentUpdate addVisibleByOrganizationIdsItem(Long visibleByOrganizationIdsItem) {
-    if (this.visibleByOrganizationIds == null) {
-      this.visibleByOrganizationIds = new ArrayList<Long>();
+  public DocumentUpdate addSharedWithOrganizationIdsItem(Long sharedWithOrganizationIdsItem) {
+    if (this.sharedWithOrganizationIds == null) {
+      this.sharedWithOrganizationIds = new ArrayList<Long>();
     }
-    this.visibleByOrganizationIds.add(visibleByOrganizationIdsItem);
+    this.sharedWithOrganizationIds.add(sharedWithOrganizationIdsItem);
     return this;
   }
 
    /**
    * Document is readable by these organizations
-   * @return visibleByOrganizationIds
+   * @return sharedWithOrganizationIds
   **/
   @ApiModelProperty(example = "[101,102,103]", value = "Document is readable by these organizations")
-  public List<Long> getVisibleByOrganizationIds() {
-    return visibleByOrganizationIds;
+  public List<Long> getSharedWithOrganizationIds() {
+    return sharedWithOrganizationIds;
   }
 
-  public void setVisibleByOrganizationIds(List<Long> visibleByOrganizationIds) {
-    this.visibleByOrganizationIds = visibleByOrganizationIds;
+  public void setSharedWithOrganizationIds(List<Long> sharedWithOrganizationIds) {
+    this.sharedWithOrganizationIds = sharedWithOrganizationIds;
   }
 
 
@@ -113,12 +113,12 @@ public class DocumentUpdate {
     DocumentUpdate documentUpdate = (DocumentUpdate) o;
     return Objects.equals(this.filename, documentUpdate.filename) &&
         Objects.equals(this.publicVisibility, documentUpdate.publicVisibility) &&
-        Objects.equals(this.visibleByOrganizationIds, documentUpdate.visibleByOrganizationIds);
+        Objects.equals(this.sharedWithOrganizationIds, documentUpdate.sharedWithOrganizationIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, publicVisibility, visibleByOrganizationIds);
+    return Objects.hash(filename, publicVisibility, sharedWithOrganizationIds);
   }
 
 
@@ -129,7 +129,7 @@ public class DocumentUpdate {
     
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
     sb.append("    publicVisibility: ").append(toIndentedString(publicVisibility)).append("\n");
-    sb.append("    visibleByOrganizationIds: ").append(toIndentedString(visibleByOrganizationIds)).append("\n");
+    sb.append("    sharedWithOrganizationIds: ").append(toIndentedString(sharedWithOrganizationIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
