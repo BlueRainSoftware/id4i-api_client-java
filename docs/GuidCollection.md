@@ -4,8 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdTimestamp** | **Long** |  |  [optional]
-**id4n** | **String** |  |  [optional]
+**createdTimestamp** | **Long** | The UTC unix timestamp of when this collection has been created |  [optional]
+**id4n** | **String** | The ID |  [optional]
 **label** | **String** |  |  [optional]
 **nextScanOwnership** | **Boolean** |  |  [optional]
 **ownerOrganizationId** | **Long** |  |  [optional]

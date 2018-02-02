@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ApiKeyPresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-02T08:40:22.258Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-02T09:54:33.165Z")
 public class ApiKeyPresentation {
   @SerializedName("active")
   private Boolean active = null;
@@ -52,10 +52,10 @@ public class ApiKeyPresentation {
   }
 
    /**
-   * Get active
+   * Whether this API key is active
    * @return active
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "true", required = true, value = "Whether this API key is active")
   public Boolean getActive() {
     return active;
   }
@@ -70,10 +70,10 @@ public class ApiKeyPresentation {
   }
 
    /**
-   * Get createdAt
+   * The UTC unix timestamp of when this api key has been created
    * @return createdAt
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "1517232722", required = true, value = "The UTC unix timestamp of when this api key has been created")
   public Long getCreatedAt() {
     return createdAt;
   }
@@ -91,7 +91,7 @@ public class ApiKeyPresentation {
    * Get createdBy
    * @return createdBy
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "user123", required = true, value = "")
   public String getCreatedBy() {
     return createdBy;
   }
@@ -106,10 +106,10 @@ public class ApiKeyPresentation {
   }
 
    /**
-   * Get key
+   * The api key identifier
    * @return key
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "39978f49-6ff1-4147-bf0f-9910185084b7", required = true, value = "The api key identifier")
   public String getKey() {
     return key;
   }
@@ -124,10 +124,10 @@ public class ApiKeyPresentation {
   }
 
    /**
-   * Get label
+   * The label / name of the api key
    * @return label
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "My Api Key", required = true, value = "The label / name of the api key")
   public String getLabel() {
     return label;
   }
@@ -142,10 +142,10 @@ public class ApiKeyPresentation {
   }
 
    /**
-   * Get organizationId
+   * The organization id this api key belongs to
    * @return organizationId
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "10", required = true, value = "The organization id this api key belongs to")
   public Long getOrganizationId() {
     return organizationId;
   }

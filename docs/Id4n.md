@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id4n** | **String** |  |  [optional]
+**id4n** | **String** | The ID |  [optional]
 
 
 

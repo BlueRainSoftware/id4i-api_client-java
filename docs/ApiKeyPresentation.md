@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**active** | **Boolean** |  |  [optional]
-**createdAt** | **Long** |  |  [optional]
-**createdBy** | **String** |  |  [optional]
-**key** | **String** |  |  [optional]
-**label** | **String** |  |  [optional]
-**organizationId** | **Long** |  |  [optional]
+**active** | **Boolean** | Whether this API key is active | 
+**createdAt** | **Long** | The UTC unix timestamp of when this api key has been created | 
+**createdBy** | **String** |  | 
+**key** | **String** | The api key identifier | 
+**label** | **String** | The label / name of the api key | 
+**organizationId** | **Long** | The organization id this api key belongs to | 
 
 
 

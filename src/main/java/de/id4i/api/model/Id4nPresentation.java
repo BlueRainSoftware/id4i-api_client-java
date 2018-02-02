@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Id4nPresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-02T08:40:22.258Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-02T09:54:33.165Z")
 public class Id4nPresentation {
   @SerializedName("createdTimestamp")
   private Long createdTimestamp = null;
@@ -95,10 +95,10 @@ public class Id4nPresentation {
   private TypeEnum type = null;
 
    /**
-   * A unix timestamp of when this ID has been created
+   * The UTC unix timestamp of when this ID has been created
    * @return createdTimestamp
   **/
-  @ApiModelProperty(example = "1517232722", required = true, value = "A unix timestamp of when this ID has been created")
+  @ApiModelProperty(example = "1517232722", required = true, value = "The UTC unix timestamp of when this ID has been created")
   public Long getCreatedTimestamp() {
     return createdTimestamp;
   }
@@ -107,7 +107,7 @@ public class Id4nPresentation {
    * The ID
    * @return id4n
   **/
-  @ApiModelProperty(example = "abcdef12345", required = true, value = "The ID")
+  @ApiModelProperty(example = "3THvgrWxqgTFC4", required = true, value = "The ID")
   public String getId4n() {
     return id4n;
   }

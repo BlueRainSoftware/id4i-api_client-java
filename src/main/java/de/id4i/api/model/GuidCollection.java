@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GuidCollection
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-02T08:40:22.258Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-02T09:54:33.165Z")
 public class GuidCollection {
   @SerializedName("createdTimestamp")
   private Long createdTimestamp = null;
@@ -96,19 +96,19 @@ public class GuidCollection {
   private TypeEnum type = null;
 
    /**
-   * Get createdTimestamp
+   * The UTC unix timestamp of when this collection has been created
    * @return createdTimestamp
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The UTC unix timestamp of when this collection has been created")
   public Long getCreatedTimestamp() {
     return createdTimestamp;
   }
 
    /**
-   * Get id4n
+   * The ID
    * @return id4n
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The ID")
   public String getId4n() {
     return id4n;
   }
