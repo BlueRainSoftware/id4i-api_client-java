@@ -19,16 +19,15 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import de.id4i.api.model.Visibility;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * OwnedDocument
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-05T11:55:37.894Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-05T13:05:13.597Z")
 public class OwnedDocument {
   @SerializedName("filename")
   private String filename = null;
@@ -36,11 +35,8 @@ public class OwnedDocument {
   @SerializedName("ownerOrganizationId")
   private Long ownerOrganizationId = null;
 
-  @SerializedName("publicVisibility")
-  private Boolean publicVisibility = null;
-
-  @SerializedName("sharedWithOrganizationIds")
-  private List<Long> sharedWithOrganizationIds = null;
+  @SerializedName("visibility")
+  private Visibility visibility = null;
 
   public OwnedDocument filename(String filename) {
     this.filename = filename;
@@ -69,48 +65,22 @@ public class OwnedDocument {
     return ownerOrganizationId;
   }
 
-  public OwnedDocument publicVisibility(Boolean publicVisibility) {
-    this.publicVisibility = publicVisibility;
+  public OwnedDocument visibility(Visibility visibility) {
+    this.visibility = visibility;
     return this;
   }
 
    /**
-   * Document is publicly readable
-   * @return publicVisibility
+   * Visibility configuration
+   * @return visibility
   **/
-  @ApiModelProperty(example = "true", value = "Document is publicly readable")
-  public Boolean getPublicVisibility() {
-    return publicVisibility;
+  @ApiModelProperty(value = "Visibility configuration")
+  public Visibility getVisibility() {
+    return visibility;
   }
 
-  public void setPublicVisibility(Boolean publicVisibility) {
-    this.publicVisibility = publicVisibility;
-  }
-
-  public OwnedDocument sharedWithOrganizationIds(List<Long> sharedWithOrganizationIds) {
-    this.sharedWithOrganizationIds = sharedWithOrganizationIds;
-    return this;
-  }
-
-  public OwnedDocument addSharedWithOrganizationIdsItem(Long sharedWithOrganizationIdsItem) {
-    if (this.sharedWithOrganizationIds == null) {
-      this.sharedWithOrganizationIds = new ArrayList<Long>();
-    }
-    this.sharedWithOrganizationIds.add(sharedWithOrganizationIdsItem);
-    return this;
-  }
-
-   /**
-   * Document is readable by these organizations
-   * @return sharedWithOrganizationIds
-  **/
-  @ApiModelProperty(example = "[101,102,103]", value = "Document is readable by these organizations")
-  public List<Long> getSharedWithOrganizationIds() {
-    return sharedWithOrganizationIds;
-  }
-
-  public void setSharedWithOrganizationIds(List<Long> sharedWithOrganizationIds) {
-    this.sharedWithOrganizationIds = sharedWithOrganizationIds;
+  public void setVisibility(Visibility visibility) {
+    this.visibility = visibility;
   }
 
 
@@ -125,13 +95,12 @@ public class OwnedDocument {
     OwnedDocument ownedDocument = (OwnedDocument) o;
     return Objects.equals(this.filename, ownedDocument.filename) &&
         Objects.equals(this.ownerOrganizationId, ownedDocument.ownerOrganizationId) &&
-        Objects.equals(this.publicVisibility, ownedDocument.publicVisibility) &&
-        Objects.equals(this.sharedWithOrganizationIds, ownedDocument.sharedWithOrganizationIds);
+        Objects.equals(this.visibility, ownedDocument.visibility);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, ownerOrganizationId, publicVisibility, sharedWithOrganizationIds);
+    return Objects.hash(filename, ownerOrganizationId, visibility);
   }
 
 
@@ -142,8 +111,7 @@ public class OwnedDocument {
     
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
     sb.append("    ownerOrganizationId: ").append(toIndentedString(ownerOrganizationId)).append("\n");
-    sb.append("    publicVisibility: ").append(toIndentedString(publicVisibility)).append("\n");
-    sb.append("    sharedWithOrganizationIds: ").append(toIndentedString(sharedWithOrganizationIds)).append("\n");
+    sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("}");
     return sb.toString();
   }

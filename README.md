@@ -315,6 +315,8 @@ Class | Method | HTTP request | Description
  - [UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [UserRegistrationResponse](docs/UserRegistrationResponse.md)
  - [UserRoles](docs/UserRoles.md)
+ - [Visibility](docs/Visibility.md)
+ - [VisibilityUpdate](docs/VisibilityUpdate.md)
  - [WhoIsResponse](docs/WhoIsResponse.md)
 
 

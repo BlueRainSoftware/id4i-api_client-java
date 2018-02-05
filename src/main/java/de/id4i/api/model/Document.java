@@ -19,25 +19,21 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import de.id4i.api.model.Visibility;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Document
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-05T11:55:37.894Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-05T13:05:13.597Z")
 public class Document {
   @SerializedName("filename")
   private String filename = null;
 
-  @SerializedName("publicVisibility")
-  private Boolean publicVisibility = null;
-
-  @SerializedName("sharedWithOrganizationIds")
-  private List<Long> sharedWithOrganizationIds = null;
+  @SerializedName("visibility")
+  private Visibility visibility = null;
 
   public Document filename(String filename) {
     this.filename = filename;
@@ -57,48 +53,22 @@ public class Document {
     this.filename = filename;
   }
 
-  public Document publicVisibility(Boolean publicVisibility) {
-    this.publicVisibility = publicVisibility;
+  public Document visibility(Visibility visibility) {
+    this.visibility = visibility;
     return this;
   }
 
    /**
-   * Document is publicly readable
-   * @return publicVisibility
+   * Visibility configuration
+   * @return visibility
   **/
-  @ApiModelProperty(example = "true", value = "Document is publicly readable")
-  public Boolean getPublicVisibility() {
-    return publicVisibility;
+  @ApiModelProperty(value = "Visibility configuration")
+  public Visibility getVisibility() {
+    return visibility;
   }
 
-  public void setPublicVisibility(Boolean publicVisibility) {
-    this.publicVisibility = publicVisibility;
-  }
-
-  public Document sharedWithOrganizationIds(List<Long> sharedWithOrganizationIds) {
-    this.sharedWithOrganizationIds = sharedWithOrganizationIds;
-    return this;
-  }
-
-  public Document addSharedWithOrganizationIdsItem(Long sharedWithOrganizationIdsItem) {
-    if (this.sharedWithOrganizationIds == null) {
-      this.sharedWithOrganizationIds = new ArrayList<Long>();
-    }
-    this.sharedWithOrganizationIds.add(sharedWithOrganizationIdsItem);
-    return this;
-  }
-
-   /**
-   * Document is readable by these organizations
-   * @return sharedWithOrganizationIds
-  **/
-  @ApiModelProperty(example = "[101,102,103]", value = "Document is readable by these organizations")
-  public List<Long> getSharedWithOrganizationIds() {
-    return sharedWithOrganizationIds;
-  }
-
-  public void setSharedWithOrganizationIds(List<Long> sharedWithOrganizationIds) {
-    this.sharedWithOrganizationIds = sharedWithOrganizationIds;
+  public void setVisibility(Visibility visibility) {
+    this.visibility = visibility;
   }
 
 
@@ -112,13 +82,12 @@ public class Document {
     }
     Document document = (Document) o;
     return Objects.equals(this.filename, document.filename) &&
-        Objects.equals(this.publicVisibility, document.publicVisibility) &&
-        Objects.equals(this.sharedWithOrganizationIds, document.sharedWithOrganizationIds);
+        Objects.equals(this.visibility, document.visibility);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, publicVisibility, sharedWithOrganizationIds);
+    return Objects.hash(filename, visibility);
   }
 
 
@@ -128,8 +97,7 @@ public class Document {
     sb.append("class Document {\n");
     
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
-    sb.append("    publicVisibility: ").append(toIndentedString(publicVisibility)).append("\n");
-    sb.append("    sharedWithOrganizationIds: ").append(toIndentedString(sharedWithOrganizationIds)).append("\n");
+    sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("}");
     return sb.toString();
   }
