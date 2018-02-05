@@ -19,56 +19,25 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.RoutingFile;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * RoutingFileRequest
+ * PublicImagePresentation
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-05T11:04:37.682Z")
-public class RoutingFileRequest {
-  @SerializedName("routing")
-  private RoutingFile routing = null;
-
-  @SerializedName("organizationId")
-  private Long organizationId = null;
-
-  public RoutingFileRequest routing(RoutingFile routing) {
-    this.routing = routing;
-    return this;
-  }
+public class PublicImagePresentation {
+  @SerializedName("uri")
+  private String uri = null;
 
    /**
-   * Get routing
-   * @return routing
+   * The uri/url of the image
+   * @return uri
   **/
-  @ApiModelProperty(required = true, value = "")
-  public RoutingFile getRouting() {
-    return routing;
-  }
-
-  public void setRouting(RoutingFile routing) {
-    this.routing = routing;
-  }
-
-  public RoutingFileRequest organizationId(Long organizationId) {
-    this.organizationId = organizationId;
-    return this;
-  }
-
-   /**
-   * Get organizationId
-   * @return organizationId
-  **/
-  @ApiModelProperty(value = "")
-  public Long getOrganizationId() {
-    return organizationId;
-  }
-
-  public void setOrganizationId(Long organizationId) {
-    this.organizationId = organizationId;
+  @ApiModelProperty(example = "/api/v1/public/image/bc671c63-4a9b-46e7-8c59-9bbe1917e6cc", required = true, value = "The uri/url of the image")
+  public String getUri() {
+    return uri;
   }
 
 
@@ -80,24 +49,22 @@ public class RoutingFileRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RoutingFileRequest routingFileRequest = (RoutingFileRequest) o;
-    return Objects.equals(this.routing, routingFileRequest.routing) &&
-        Objects.equals(this.organizationId, routingFileRequest.organizationId);
+    PublicImagePresentation publicImagePresentation = (PublicImagePresentation) o;
+    return Objects.equals(this.uri, publicImagePresentation.uri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(routing, organizationId);
+    return Objects.hash(uri);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RoutingFileRequest {\n");
+    sb.append("class PublicImagePresentation {\n");
     
-    sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

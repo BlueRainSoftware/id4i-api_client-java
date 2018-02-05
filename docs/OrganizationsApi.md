@@ -20,10 +20,10 @@ Method | HTTP request | Description
 [**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
+[**setOrganizationLogo**](OrganizationsApi.md#setOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
-[**updateOrganizationLogo**](OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 
 
 <a name="addUserRoles"></a>
@@ -828,6 +828,57 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
+<a name="setOrganizationLogo"></a>
+# **setOrganizationLogo**
+> PublicImagePresentation setOrganizationLogo(organizationId, file, authorization, acceptLanguage)
+
+Update organization logo
+
+Updating an organization logo using a multipart file upload.
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
+
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+Long organizationId = 789L; // Long | The id of the organization where the logo should be updated.
+File file = new File("/path/to/file.txt"); // File | An image containing the new logo.
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    PublicImagePresentation result = apiInstance.setOrganizationLogo(organizationId, file, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#setOrganizationLogo");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| The id of the organization where the logo should be updated. |
+ **file** | **File**| An image containing the new logo. |
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**PublicImagePresentation**](PublicImagePresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
 <a name="updateOrganization"></a>
 # **updateOrganization**
 > Organization updateOrganization(organizationId, organization, authorization, acceptLanguage)
@@ -973,56 +1024,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="updateOrganizationLogo"></a>
-# **updateOrganizationLogo**
-> ApiError updateOrganizationLogo(organizationId, file, authorization, acceptLanguage)
-
-Update organization logo
-
-Updating an organization logo using a multipart file upload.
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.OrganizationsApi;
-
-
-OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | The id of the organization where the logo should be updated.
-File file = new File("/path/to/file.txt"); // File | An image containing the new logo.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.updateOrganizationLogo(organizationId, file, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OrganizationsApi#updateOrganizationLogo");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The id of the organization where the logo should be updated. |
- **file** | **File**| An image containing the new logo. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 

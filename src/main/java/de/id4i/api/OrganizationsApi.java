@@ -39,6 +39,7 @@ import de.id4i.api.model.PaginatedOrganizationResponse;
 import de.id4i.api.model.PaginatedStringResponse;
 import de.id4i.api.model.PaginatedUserPresentationResponse;
 import de.id4i.api.model.PaginatedUserRolesResponse;
+import de.id4i.api.model.PublicImagePresentation;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -2406,6 +2407,155 @@ public class OrganizationsApi {
         return call;
     }
     /**
+     * Build call for setOrganizationLogo
+     * @param organizationId The id of the organization where the logo should be updated. (required)
+     * @param file An image containing the new logo. (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call setOrganizationLogoCall(Long organizationId, File file, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+        
+        // create path and map variables
+        String localVarPath = "/api/v1/organizations/{organizationId}/logo"
+            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        if (authorization != null)
+        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
+        if (acceptLanguage != null)
+        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        if (file != null)
+        localVarFormParams.put("file", file);
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json;charset=UTF-8"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call setOrganizationLogoValidateBeforeCall(Long organizationId, File file, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling setOrganizationLogo(Async)");
+        }
+        
+        // verify the required parameter 'file' is set
+        if (file == null) {
+            throw new ApiException("Missing the required parameter 'file' when calling setOrganizationLogo(Async)");
+        }
+        
+        
+        com.squareup.okhttp.Call call = setOrganizationLogoCall(organizationId, file, authorization, acceptLanguage, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * Update organization logo
+     * Updating an organization logo using a multipart file upload.
+     * @param organizationId The id of the organization where the logo should be updated. (required)
+     * @param file An image containing the new logo. (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return PublicImagePresentation
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PublicImagePresentation setOrganizationLogo(Long organizationId, File file, String authorization, String acceptLanguage) throws ApiException {
+        ApiResponse<PublicImagePresentation> resp = setOrganizationLogoWithHttpInfo(organizationId, file, authorization, acceptLanguage);
+        return resp.getData();
+    }
+
+    /**
+     * Update organization logo
+     * Updating an organization logo using a multipart file upload.
+     * @param organizationId The id of the organization where the logo should be updated. (required)
+     * @param file An image containing the new logo. (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @return ApiResponse&lt;PublicImagePresentation&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PublicImagePresentation> setOrganizationLogoWithHttpInfo(Long organizationId, File file, String authorization, String acceptLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = setOrganizationLogoValidateBeforeCall(organizationId, file, authorization, acceptLanguage, null, null);
+        Type localVarReturnType = new TypeToken<PublicImagePresentation>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Update organization logo (asynchronously)
+     * Updating an organization logo using a multipart file upload.
+     * @param organizationId The id of the organization where the logo should be updated. (required)
+     * @param file An image containing the new logo. (required)
+     * @param authorization Authorization JWT Bearer Token (optional)
+     * @param acceptLanguage Requested language (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call setOrganizationLogoAsync(Long organizationId, File file, String authorization, String acceptLanguage, final ApiCallback<PublicImagePresentation> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = setOrganizationLogoValidateBeforeCall(organizationId, file, authorization, acceptLanguage, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PublicImagePresentation>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for updateOrganization
      * @param organizationId The id of the organization to be updated. (required)
      * @param organization Updated organization object (required)
@@ -2843,155 +2993,6 @@ public class OrganizationsApi {
 
         com.squareup.okhttp.Call call = updateOrganizationBillingAddressValidateBeforeCall(organizationId, addressResource, authorization, acceptLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<OrganizationAddress>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /**
-     * Build call for updateOrganizationLogo
-     * @param organizationId The id of the organization where the logo should be updated. (required)
-     * @param file An image containing the new logo. (required)
-     * @param authorization Authorization JWT Bearer Token (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @param progressListener Progress listener
-     * @param progressRequestListener Progress request listener
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     */
-    public com.squareup.okhttp.Call updateOrganizationLogoCall(Long organizationId, File file, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = null;
-        
-        // create path and map variables
-        String localVarPath = "/api/v1/organizations/{organizationId}/logo"
-            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (authorization != null)
-        localVarHeaderParams.put("Authorization", apiClient.parameterToString(authorization));
-        if (acceptLanguage != null)
-        localVarHeaderParams.put("Accept-Language", apiClient.parameterToString(acceptLanguage));
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-        if (file != null)
-        localVarFormParams.put("file", file);
-
-        final String[] localVarAccepts = {
-            "application/xml", "application/json;charset=UTF-8"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "multipart/form-data"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateOrganizationLogoValidateBeforeCall(Long organizationId, File file, String authorization, String acceptLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'organizationId' is set
-        if (organizationId == null) {
-            throw new ApiException("Missing the required parameter 'organizationId' when calling updateOrganizationLogo(Async)");
-        }
-        
-        // verify the required parameter 'file' is set
-        if (file == null) {
-            throw new ApiException("Missing the required parameter 'file' when calling updateOrganizationLogo(Async)");
-        }
-        
-        
-        com.squareup.okhttp.Call call = updateOrganizationLogoCall(organizationId, file, authorization, acceptLanguage, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * Update organization logo
-     * Updating an organization logo using a multipart file upload.
-     * @param organizationId The id of the organization where the logo should be updated. (required)
-     * @param file An image containing the new logo. (required)
-     * @param authorization Authorization JWT Bearer Token (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @return ApiError
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiError updateOrganizationLogo(Long organizationId, File file, String authorization, String acceptLanguage) throws ApiException {
-        ApiResponse<ApiError> resp = updateOrganizationLogoWithHttpInfo(organizationId, file, authorization, acceptLanguage);
-        return resp.getData();
-    }
-
-    /**
-     * Update organization logo
-     * Updating an organization logo using a multipart file upload.
-     * @param organizationId The id of the organization where the logo should be updated. (required)
-     * @param file An image containing the new logo. (required)
-     * @param authorization Authorization JWT Bearer Token (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @return ApiResponse&lt;ApiError&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<ApiError> updateOrganizationLogoWithHttpInfo(Long organizationId, File file, String authorization, String acceptLanguage) throws ApiException {
-        com.squareup.okhttp.Call call = updateOrganizationLogoValidateBeforeCall(organizationId, file, authorization, acceptLanguage, null, null);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * Update organization logo (asynchronously)
-     * Updating an organization logo using a multipart file upload.
-     * @param organizationId The id of the organization where the logo should be updated. (required)
-     * @param file An image containing the new logo. (required)
-     * @param authorization Authorization JWT Bearer Token (optional)
-     * @param acceptLanguage Requested language (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call updateOrganizationLogoAsync(Long organizationId, File file, String authorization, String acceptLanguage, final ApiCallback<ApiError> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = updateOrganizationLogoValidateBeforeCall(organizationId, file, authorization, acceptLanguage, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ApiError>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
