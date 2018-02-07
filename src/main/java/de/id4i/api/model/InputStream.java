@@ -18,7 +18,7 @@ import java.util.Objects;
 /**
  * InputStream
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T12:15:52.033Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T12:17:36.832Z")
 public class InputStream {
 
   @Override
