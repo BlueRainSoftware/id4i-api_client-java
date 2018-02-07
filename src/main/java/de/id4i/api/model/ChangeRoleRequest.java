@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ChangeRoleRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T13:50:26.030Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T15:26:28.494Z")
 public class ChangeRoleRequest {
   @SerializedName("roles")
   private List<String> roles = new ArrayList<String>();
