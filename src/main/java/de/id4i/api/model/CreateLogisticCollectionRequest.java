@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * CreateLogisticCollectionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T10:14:00.286Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T10:20:14.278Z")
 public class CreateLogisticCollectionRequest {
   @SerializedName("label")
   private String label = null;
