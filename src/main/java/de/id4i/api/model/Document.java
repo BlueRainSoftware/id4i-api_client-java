@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Document
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T11:55:23.618Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T11:59:21.282Z")
 public class Document {
   @SerializedName("filename")
   private String filename = null;
