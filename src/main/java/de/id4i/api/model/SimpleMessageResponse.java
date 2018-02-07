@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * SimpleMessageResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T10:20:14.278Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-07T10:24:38.926Z")
 public class SimpleMessageResponse {
   @SerializedName("message")
   private String message = null;
