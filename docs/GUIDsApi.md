@@ -10,7 +10,9 @@ Method | HTTP request | Description
 [**getGuid**](GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**getGuidAliases**](GUIDsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**getGuidsWithoutCollection**](GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
-[**updateGuid**](GUIDsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**getId4n**](GUIDsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+[**setGuid**](GUIDsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**setGuid1**](GUIDsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 <a name="addGuidAlias"></a>
@@ -48,7 +50,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
@@ -100,7 +102,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking]
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
 
@@ -279,8 +281,8 @@ GUIDsApi apiInstance = new GUIDsApi();
 Long organizationId = 789L; // Long | Organization to search GUIDs for (required).
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedResponseGuid result = apiInstance.getGuidsWithoutCollection(organizationId, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -297,8 +299,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| Organization to search GUIDs for (required). |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -313,9 +315,58 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
-<a name="updateGuid"></a>
-# **updateGuid**
-> Object updateGuid(id4n, request, authorization, acceptLanguage)
+<a name="getId4n"></a>
+# **getId4n**
+> Id4nPresentation getId4n(id4n, authorization, acceptLanguage)
+
+Retrieve ID4n information
+
+Retrieving basic information about an ID like the type and the creation time.
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.GUIDsApi;
+
+
+GUIDsApi apiInstance = new GUIDsApi();
+String id4n = "id4n_example"; // String | The ID to resolve to
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    Id4nPresentation result = apiInstance.getId4n(id4n, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GUIDsApi#getId4n");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The ID to resolve to |
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**Id4nPresentation**](Id4nPresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setGuid"></a>
+# **setGuid**
+> Object setGuid(id4n, request, authorization, acceptLanguage)
 
 Change GUID information.
 
@@ -334,10 +385,61 @@ Guid request = new Guid(); // Guid | request
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Object result = apiInstance.updateGuid(id4n, request, authorization, acceptLanguage);
+    Object result = apiInstance.setGuid(id4n, request, authorization, acceptLanguage);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GUIDsApi#updateGuid");
+    System.err.println("Exception when calling GUIDsApi#setGuid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The GUID number |
+ **request** | [**Guid**](Guid.md)| request |
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setGuid1"></a>
+# **setGuid1**
+> Object setGuid1(id4n, request, authorization, acceptLanguage)
+
+Change GUID information.
+
+Allows ownership transfer.
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.GUIDsApi;
+
+
+GUIDsApi apiInstance = new GUIDsApi();
+String id4n = "id4n_example"; // String | The GUID number
+Guid request = new Guid(); // Guid | request
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    Object result = apiInstance.setGuid1(id4n, request, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GUIDsApi#setGuid1");
     e.printStackTrace();
 }
 ```

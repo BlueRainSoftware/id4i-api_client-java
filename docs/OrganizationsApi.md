@@ -20,10 +20,10 @@ Method | HTTP request | Description
 [**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
+[**setOrganizationLogo**](OrganizationsApi.md#setOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
-[**updateOrganizationLogo**](OrganizationsApi.md#updateOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 
 
 <a name="addUserRoles"></a>
@@ -429,8 +429,8 @@ OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 String type = "type_example"; // String | Filter by this type
 String label = "label_example"; // String | Filter by this label
 String labelPrefix = "labelPrefix_example"; // String | Filter by this label prefix
@@ -450,8 +450,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
  **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]
  **label** | **String**| Filter by this label | [optional]
  **labelPrefix** | **String**| Filter by this label prefix | [optional]
@@ -488,8 +488,8 @@ OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedUserRolesResponse result = apiInstance.getAllOrganizationRoles(organizationId, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -506,8 +506,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -539,8 +539,8 @@ OrganizationsApi apiInstance = new OrganizationsApi();
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String role = "role_example"; // String | role
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedOrganizationResponse result = apiInstance.getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit);
     System.out.println(result);
@@ -557,8 +557,8 @@ Name | Type | Description  | Notes
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **role** | **String**| role | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -591,8 +591,8 @@ Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedStringResponse result = apiInstance.getUserRoles(organizationId, username, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -610,8 +610,8 @@ Name | Type | Description  | Notes
  **username** | **String**| username |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -645,8 +645,8 @@ OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedUserPresentationResponse result = apiInstance.getUsersOfOrganization(organizationId, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -663,8 +663,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -744,8 +744,8 @@ List countries
 OrganizationsApi apiInstance = new OrganizationsApi();
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedCountryResponse result = apiInstance.listCountries(authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -761,8 +761,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -826,6 +826,57 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setOrganizationLogo"></a>
+# **setOrganizationLogo**
+> PublicImagePresentation setOrganizationLogo(organizationId, file, authorization, acceptLanguage)
+
+Update organization logo
+
+Updating an organization logo using a multipart file upload.
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.OrganizationsApi;
+
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+Long organizationId = 789L; // Long | The id of the organization where the logo should be updated.
+File file = new File("/path/to/file.txt"); // File | An image containing the new logo.
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    PublicImagePresentation result = apiInstance.setOrganizationLogo(organizationId, file, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#setOrganizationLogo");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| The id of the organization where the logo should be updated. |
+ **file** | **File**| An image containing the new logo. |
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+[**PublicImagePresentation**](PublicImagePresentation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="updateOrganization"></a>
@@ -973,56 +1024,5 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="updateOrganizationLogo"></a>
-# **updateOrganizationLogo**
-> ApiError updateOrganizationLogo(organizationId, file, authorization, acceptLanguage)
-
-Update organization logo
-
-Updating an organization logo using a multipart file upload.
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.OrganizationsApi;
-
-
-OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | The id of the organization where the logo should be updated.
-File file = new File("/path/to/file.txt"); // File | An image containing the new logo.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.updateOrganizationLogo(organizationId, file, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling OrganizationsApi#updateOrganizationLogo");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The id of the organization where the logo should be updated. |
- **file** | **File**| An image containing the new logo. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
  - **Accept**: application/xml, application/json;charset=UTF-8
 

@@ -4,14 +4,10 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addElementToCollection**](CollectionsApi.md#addElementToCollection) | **PUT** /api/v1/collections/{id4n}/elements/{elementGuid} | Add element to collection
-[**addElementToLabelledCollection**](CollectionsApi.md#addElementToLabelledCollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Add element to labelled collection
-[**addElementToLogisticCollection**](CollectionsApi.md#addElementToLogisticCollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements/{guid} | Add element to logistic collection
-[**addElementToRoutingCollection**](CollectionsApi.md#addElementToRoutingCollection) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Add element to routing collection
-[**addElementsToCollection**](CollectionsApi.md#addElementsToCollection) | **PUT** /api/v1/collections/{id4n}/elements | Add elements to collection
-[**addElementsToLabelledCollection**](CollectionsApi.md#addElementsToLabelledCollection) | **PUT** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
-[**addElementsToLogisticCollection**](CollectionsApi.md#addElementsToLogisticCollection) | **PUT** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
-[**addElementsToRoutingCollection**](CollectionsApi.md#addElementsToRoutingCollection) | **PUT** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
+[**addElementsToCollection**](CollectionsApi.md#addElementsToCollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
+[**addElementsToLabelledCollection**](CollectionsApi.md#addElementsToLabelledCollection) | **POST** /api/v1/collections/labelled/{collectionId4n}/elements | Add elements to labelled collection
+[**addElementsToLogisticCollection**](CollectionsApi.md#addElementsToLogisticCollection) | **POST** /api/v1/collections/logistic/{collectionId4n}/elements | Add elements to logistic collection
+[**addElementsToRoutingCollection**](CollectionsApi.md#addElementsToRoutingCollection) | **POST** /api/v1/collections/routing/{collectionId4n}/elements | Add element to routing collection
 [**createLabelledCollection**](CollectionsApi.md#createLabelledCollection) | **POST** /api/v1/collections/labelled | Create labelled collection
 [**createLogisticCollection**](CollectionsApi.md#createLogisticCollection) | **POST** /api/v1/collections/logistic | Create logistic collection
 [**createRoutingCollection**](CollectionsApi.md#createRoutingCollection) | **POST** /api/v1/collections/routing | Create routing collecton
@@ -28,215 +24,19 @@ Method | HTTP request | Description
 [**listElementsOfLabelledCollection**](CollectionsApi.md#listElementsOfLabelledCollection) | **GET** /api/v1/collections/labelled/{id4n}/elements | List contents of the collection
 [**listElementsOfLogisticCollection**](CollectionsApi.md#listElementsOfLogisticCollection) | **GET** /api/v1/collections/logistic/{id4n}/elements | List contents of the collection
 [**listElementsOfRoutingCollection**](CollectionsApi.md#listElementsOfRoutingCollection) | **GET** /api/v1/collections/routing/{id4n}/elements | List contents of the collection
-[**removeElementFromCollection**](CollectionsApi.md#removeElementFromCollection) | **DELETE** /api/v1/collections/{id4n}/elements/{elementGuid} | Remove element from collection
-[**removeElementFromLabelledCollection**](CollectionsApi.md#removeElementFromLabelledCollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements/{elementGuid} | Remove element from labelled collection
-[**removeElementFromLogisticCollection**](CollectionsApi.md#removeElementFromLogisticCollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements/{elementId4n} | Remove element from logistic collection
-[**removeElementFromRoutingCollection**](CollectionsApi.md#removeElementFromRoutingCollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements/{guid} | Remove element from routing collection
 [**removeElementsFromCollection**](CollectionsApi.md#removeElementsFromCollection) | **DELETE** /api/v1/collections/{id4n}/elements | Remove elements from collection
 [**removeElementsFromLabelledCollection**](CollectionsApi.md#removeElementsFromLabelledCollection) | **DELETE** /api/v1/collections/labelled/{collectionId4n}/elements | Remove elements from labelled collection
 [**removeElementsFromLogisticCollection**](CollectionsApi.md#removeElementsFromLogisticCollection) | **DELETE** /api/v1/collections/logistic/{collectionId4n}/elements | Remove elements from logistic collection
 [**removeElementsFromRoutingCollection**](CollectionsApi.md#removeElementsFromRoutingCollection) | **DELETE** /api/v1/collections/routing/{collectionId4n}/elements | Remove elements from routing collection
-[**updateCollection**](CollectionsApi.md#updateCollection) | **PUT** /api/v1/collections/{id4n} | Alter collection
-[**updateLabelledCollection**](CollectionsApi.md#updateLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Rename labelled collection
-[**updateLogisticCollection**](CollectionsApi.md#updateLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Update logistic collection
-[**updateRoutingCollection**](CollectionsApi.md#updateRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**setCollection**](CollectionsApi.md#setCollection) | **PUT** /api/v1/collections/{id4n} | Set collection
+[**setLabelledCollection**](CollectionsApi.md#setLabelledCollection) | **PUT** /api/v1/collections/labelled/{id4n} | Set labelled collection values
+[**setLogisticCollection**](CollectionsApi.md#setLogisticCollection) | **PUT** /api/v1/collections/logistic/{id4n} | Replace logistic collection
+[**setRoutingCollection**](CollectionsApi.md#setRoutingCollection) | **PUT** /api/v1/collections/routing/{id4n} | Update routing collection
+[**updateCollection**](CollectionsApi.md#updateCollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
+[**updateLabelledCollection**](CollectionsApi.md#updateLabelledCollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
+[**updateLogisticCollection**](CollectionsApi.md#updateLogisticCollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
+[**updateRoutingCollection**](CollectionsApi.md#updateRoutingCollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 
-
-<a name="addElementToCollection"></a>
-# **addElementToCollection**
-> ApiError addElementToCollection(id4n, elementGuid, authorization, acceptLanguage)
-
-Add element to collection
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.CollectionsApi;
-
-
-CollectionsApi apiInstance = new CollectionsApi();
-String id4n = "id4n_example"; // String | id4n
-String elementGuid = "elementGuid_example"; // String | elementGuid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.addElementToCollection(id4n, elementGuid, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CollectionsApi#addElementToCollection");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n |
- **elementGuid** | **String**| elementGuid |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="addElementToLabelledCollection"></a>
-# **addElementToLabelledCollection**
-> ApiError addElementToLabelledCollection(collectionId4n, elementGuid, authorization, acceptLanguage)
-
-Add element to labelled collection
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.CollectionsApi;
-
-
-CollectionsApi apiInstance = new CollectionsApi();
-String collectionId4n = "collectionId4n_example"; // String | collectionId4n
-String elementGuid = "elementGuid_example"; // String | elementGuid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.addElementToLabelledCollection(collectionId4n, elementGuid, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CollectionsApi#addElementToLabelledCollection");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n |
- **elementGuid** | **String**| elementGuid |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="addElementToLogisticCollection"></a>
-# **addElementToLogisticCollection**
-> ApiError addElementToLogisticCollection(collectionId4n, guid, authorization, acceptLanguage)
-
-Add element to logistic collection
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.CollectionsApi;
-
-
-CollectionsApi apiInstance = new CollectionsApi();
-String collectionId4n = "collectionId4n_example"; // String | collectionId4n
-String guid = "guid_example"; // String | guid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.addElementToLogisticCollection(collectionId4n, guid, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CollectionsApi#addElementToLogisticCollection");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n |
- **guid** | **String**| guid |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="addElementToRoutingCollection"></a>
-# **addElementToRoutingCollection**
-> ApiError addElementToRoutingCollection(collectionId4n, guid, authorization, acceptLanguage)
-
-Add element to routing collection
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.CollectionsApi;
-
-
-CollectionsApi apiInstance = new CollectionsApi();
-String collectionId4n = "collectionId4n_example"; // String | collectionId4n
-String guid = "guid_example"; // String | guid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.addElementToRoutingCollection(collectionId4n, guid, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CollectionsApi#addElementToRoutingCollection");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n |
- **guid** | **String**| guid |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="addElementsToCollection"></a>
 # **addElementsToCollection**
@@ -970,8 +770,8 @@ CollectionsApi apiInstance = new CollectionsApi();
 Long organizationId = 789L; // Long | organizationId
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 String type = "type_example"; // String | Filter by this type
 String label = "label_example"; // String | Filter by this label
 String labelPrefix = "labelPrefix_example"; // String | Filter by this label prefix
@@ -991,8 +791,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
  **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]
  **label** | **String**| Filter by this label | [optional]
  **labelPrefix** | **String**| Filter by this label prefix | [optional]
@@ -1027,8 +827,8 @@ CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedGuidResponse result = apiInstance.listElementsOfCollection(id4n, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -1045,8 +845,8 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -1078,8 +878,8 @@ CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedGuidResponse result = apiInstance.listElementsOfLabelledCollection(id4n, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -1096,8 +896,8 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -1129,8 +929,8 @@ CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedGuidResponse result = apiInstance.listElementsOfLogisticCollection(id4n, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -1147,8 +947,8 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -1180,8 +980,8 @@ CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedGuidResponse result = apiInstance.listElementsOfRoutingCollection(id4n, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -1198,208 +998,12 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
 [**PaginatedGuidResponse**](PaginatedGuidResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeElementFromCollection"></a>
-# **removeElementFromCollection**
-> ApiError removeElementFromCollection(id4n, elementGuid, authorization, acceptLanguage)
-
-Remove element from collection
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.CollectionsApi;
-
-
-CollectionsApi apiInstance = new CollectionsApi();
-String id4n = "id4n_example"; // String | id4n
-String elementGuid = "elementGuid_example"; // String | elementGuid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.removeElementFromCollection(id4n, elementGuid, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CollectionsApi#removeElementFromCollection");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n |
- **elementGuid** | **String**| elementGuid |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeElementFromLabelledCollection"></a>
-# **removeElementFromLabelledCollection**
-> ApiError removeElementFromLabelledCollection(collectionId4n, elementGuid, authorization, acceptLanguage)
-
-Remove element from labelled collection
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.CollectionsApi;
-
-
-CollectionsApi apiInstance = new CollectionsApi();
-String collectionId4n = "collectionId4n_example"; // String | collectionId4n
-String elementGuid = "elementGuid_example"; // String | elementGuid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.removeElementFromLabelledCollection(collectionId4n, elementGuid, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CollectionsApi#removeElementFromLabelledCollection");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n |
- **elementGuid** | **String**| elementGuid |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeElementFromLogisticCollection"></a>
-# **removeElementFromLogisticCollection**
-> ApiError removeElementFromLogisticCollection(collectionId4n, guid, authorization, acceptLanguage)
-
-Remove element from logistic collection
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.CollectionsApi;
-
-
-CollectionsApi apiInstance = new CollectionsApi();
-String collectionId4n = "collectionId4n_example"; // String | collectionId4n
-String guid = "guid_example"; // String | guid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.removeElementFromLogisticCollection(collectionId4n, guid, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CollectionsApi#removeElementFromLogisticCollection");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n |
- **guid** | **String**| guid |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="removeElementFromRoutingCollection"></a>
-# **removeElementFromRoutingCollection**
-> ApiError removeElementFromRoutingCollection(collectionId4n, guid, authorization, acceptLanguage)
-
-Remove element from routing collection
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiException;
-//import de.id4i.api.CollectionsApi;
-
-
-CollectionsApi apiInstance = new CollectionsApi();
-String collectionId4n = "collectionId4n_example"; // String | collectionId4n
-String guid = "guid_example"; // String | guid
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-try {
-    ApiError result = apiInstance.removeElementFromRoutingCollection(collectionId4n, guid, authorization, acceptLanguage);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling CollectionsApi#removeElementFromRoutingCollection");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **collectionId4n** | **String**| collectionId4n |
- **guid** | **String**| guid |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
-
-### Return type
-
-[**ApiError**](ApiError.md)
 
 ### Authorization
 
@@ -1606,11 +1210,215 @@ No authorization required
  - **Content-Type**: application/xml, application/json;charset=UTF-8
  - **Accept**: application/xml, application/json;charset=UTF-8
 
+<a name="setCollection"></a>
+# **setCollection**
+> Object setCollection(id4n, request, authorization, acceptLanguage)
+
+Set collection
+
+Update collection replacing all values but the ID
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
+
+
+CollectionsApi apiInstance = new CollectionsApi();
+String id4n = "id4n_example"; // String | id4n
+GuidCollection request = new GuidCollection(); // GuidCollection | request
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    Object result = apiInstance.setCollection(id4n, request, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CollectionsApi#setCollection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n |
+ **request** | [**GuidCollection**](GuidCollection.md)| request |
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setLabelledCollection"></a>
+# **setLabelledCollection**
+> Object setLabelledCollection(id4n, request, authorization, acceptLanguage)
+
+Set labelled collection values
+
+Update labelled collection replacing all values but the ID
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
+
+
+CollectionsApi apiInstance = new CollectionsApi();
+String id4n = "id4n_example"; // String | id4n
+GuidCollection request = new GuidCollection(); // GuidCollection | request
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    Object result = apiInstance.setLabelledCollection(id4n, request, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CollectionsApi#setLabelledCollection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n |
+ **request** | [**GuidCollection**](GuidCollection.md)| request |
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setLogisticCollection"></a>
+# **setLogisticCollection**
+> Object setLogisticCollection(id4n, request, authorization, acceptLanguage)
+
+Replace logistic collection
+
+Update logistic collection replacing all values but the ID
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
+
+
+CollectionsApi apiInstance = new CollectionsApi();
+String id4n = "id4n_example"; // String | id4n
+GuidCollection request = new GuidCollection(); // GuidCollection | request
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    Object result = apiInstance.setLogisticCollection(id4n, request, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CollectionsApi#setLogisticCollection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n |
+ **request** | [**GuidCollection**](GuidCollection.md)| request |
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
+<a name="setRoutingCollection"></a>
+# **setRoutingCollection**
+> Object setRoutingCollection(id4n, request, authorization, acceptLanguage)
+
+Update routing collection
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiException;
+//import de.id4i.api.CollectionsApi;
+
+
+CollectionsApi apiInstance = new CollectionsApi();
+String id4n = "id4n_example"; // String | id4n
+GuidCollection request = new GuidCollection(); // GuidCollection | request
+String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
+String acceptLanguage = "acceptLanguage_example"; // String | Requested language
+try {
+    Object result = apiInstance.setRoutingCollection(id4n, request, authorization, acceptLanguage);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CollectionsApi#setRoutingCollection");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n |
+ **request** | [**GuidCollection**](GuidCollection.md)| request |
+ **authorization** | **String**| Authorization JWT Bearer Token | [optional]
+ **acceptLanguage** | **String**| Requested language | [optional]
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json;charset=UTF-8
+
 <a name="updateCollection"></a>
 # **updateCollection**
 > Object updateCollection(id4n, request, authorization, acceptLanguage)
 
-Alter collection
+Update collection
+
+Update collection changing only the given values
 
 ### Example
 ```java
@@ -1659,7 +1467,9 @@ No authorization required
 # **updateLabelledCollection**
 > Object updateLabelledCollection(id4n, request, authorization, acceptLanguage)
 
-Rename labelled collection
+Update labelled collection
+
+Update labelled collection updating only the given values
 
 ### Example
 ```java
@@ -1710,6 +1520,8 @@ No authorization required
 
 Update logistic collection
 
+Update logistic collection updating only the given values
+
 ### Example
 ```java
 // Import classes:
@@ -1758,6 +1570,8 @@ No authorization required
 > Object updateRoutingCollection(id4n, request, authorization, acceptLanguage)
 
 Update routing collection
+
+Update routing collection updating only the given values
 
 ### Example
 ```java

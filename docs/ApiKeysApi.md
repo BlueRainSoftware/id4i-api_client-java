@@ -284,8 +284,8 @@ ApiKeysApi apiInstance = new ApiKeysApi();
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Boolean id4nConcerning = true; // Boolean | id4nConcerning
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     ApiKeyPrivilegeInfoResponse result = apiInstance.listAllApiKeyPrivileges(authorization, acceptLanguage, id4nConcerning, offset, limit);
     System.out.println(result);
@@ -302,8 +302,8 @@ Name | Type | Description  | Notes
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
  **id4nConcerning** | **Boolean**| id4nConcerning | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -337,8 +337,8 @@ ApiKeysApi apiInstance = new ApiKeysApi();
 Long organizationId = 789L; // Long | The id of the organization to search in.
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     PaginatedApiKeyResponse result = apiInstance.listAllApiKeysOfOrganization(organizationId, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -355,8 +355,8 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| The id of the organization to search in. |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -388,8 +388,8 @@ ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     ApiKeyPrivilegePaginatedResponse result = apiInstance.listApiKeyPrivileges(key, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -406,8 +406,8 @@ Name | Type | Description  | Notes
  **key** | **String**| key |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -442,8 +442,8 @@ String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
 String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
 String acceptLanguage = "acceptLanguage_example"; // String | Requested language
-Integer offset = 56; // Integer | Start with the n-th element. 
-Integer limit = 56; // Integer | The maximum count of returned elements.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
     Id4nPresentationPaginatedResponse result = apiInstance.listId4ns(key, privilege, authorization, acceptLanguage, offset, limit);
     System.out.println(result);
@@ -461,8 +461,8 @@ Name | Type | Description  | Notes
  **privilege** | **String**| privilege |
  **authorization** | **String**| Authorization JWT Bearer Token | [optional]
  **acceptLanguage** | **String**| Requested language | [optional]
- **offset** | **Integer**| Start with the n-th element.  | [optional]
- **limit** | **Integer**| The maximum count of returned elements. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
