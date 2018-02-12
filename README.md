@@ -1,12 +1,50 @@
-# id4i-api-client
+# ID4i API Client Library - Java (de.id4i.api.id4i-api-client)
 
-## Requirements
+This library allows developers to interact with the http://id4i.de HTTP API.
+Typically you won't to build it yourselves, you can just pull in the dependency from maven central using Maven, Gradle
+or the like.
 
-Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
+Feel free to look at the sources and the documentation contained in this repository.
+
+For additional information, please refer to
+
+* http://id4i.de for high level information about the ID4i platform
+* https://backend.id4i.de/docs/reference/en/reference.html for information about implementing your own solutions on top of ID4i
+* https://backend.id4i.de/docs/reference/en/reference.html#_java for more about this library
+* https://backend.id4i.de/docs/redoc/index.html for API documentation
+
 
 ## Installation
 
-To install the API client library to your local Maven repository, simply execute:
+### Maven users
+
+Add this dependency to your project's POM:
+
+```xml
+<dependency>
+    <groupId>de.id4i.api</groupId>
+    <artifactId>id4i-api-client</artifactId>
+    <version>0.1.4</version>
+    <scope>compile</scope>
+</dependency>
+```
+
+### Gradle users
+
+Add this dependency to your project's build file:
+
+```groovy
+compile "de.id4i.api:id4i-api-client:0.1.4"
+```
+
+### Others
+
+Download the correct version of the library from Maven Central: http://search.maven.org/#search%7Cga%7C1%7Cde.id4i.
+Put the Jar file into a library folder and make sure to configure the classpath to pick it up.
+
+## Building the library for yourself
+
+To build and install the API client library to your local Maven repository, simply execute:
 
 ```shell
 mvn install
@@ -19,38 +57,6 @@ mvn deploy
 ```
 
 Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
-
-### Maven users
-
-Add this dependency to your project's POM:
-
-```xml
-<dependency>
-    <groupId>de.id4i.api</groupId>
-    <artifactId>id4i-api-client</artifactId>
-    <version>0.1.4-SNAPSHOT</version>
-    <scope>compile</scope>
-</dependency>
-```
-
-### Gradle users
-
-Add this dependency to your project's build file:
-
-```groovy
-compile "de.id4i.api:id4i-api-client:0.1.4-SNAPSHOT"
-```
-
-### Others
-
-At first generate the JAR by executing:
-
-    mvn package
-
-Then manually install the following JARs:
-
-* target/id4i-api-client-0.1.4-SNAPSHOT.jar
-* target/lib/*.jar
 
 ## Getting Started
 
