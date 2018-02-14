@@ -36,7 +36,7 @@ Method | HTTP request | Description
 
 <a name="createDocument"></a>
 # **createDocument**
-> Object createDocument(id4n, organizationId, document, authorization, acceptLanguage, mimeType)
+> Object createDocument(id4n, organizationId, document, mimeType)
 
 Create an empty document for an id4n
 
@@ -45,19 +45,27 @@ The document is created empty, mime-type defaults to text/plain
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 String id4n = "id4n_example"; // String | id4n
 Long organizationId = 789L; // Long | organizationId
 Document document = new Document(); // Document | document
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String mimeType = "mimeType_example"; // String | mimeType
 try {
-    Object result = apiInstance.createDocument(id4n, organizationId, document, authorization, acceptLanguage, mimeType);
+    Object result = apiInstance.createDocument(id4n, organizationId, document, mimeType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#createDocument");
@@ -72,8 +80,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n |
  **organizationId** | **Long**| organizationId |
  **document** | [**Document**](Document.md)| document |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **mimeType** | **String**| mimeType | [optional]
 
 ### Return type
@@ -82,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -91,7 +97,7 @@ No authorization required
 
 <a name="createDocument1"></a>
 # **createDocument1**
-> Object createDocument1(id4n, organizationId, document, authorization, acceptLanguage, mimeType)
+> Object createDocument1(id4n, organizationId, document, mimeType)
 
 Create an empty document for an id4n
 
@@ -100,19 +106,27 @@ The document is created empty, mime-type defaults to text/plain
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 String id4n = "id4n_example"; // String | id4n
 Long organizationId = 789L; // Long | organizationId
 Document document = new Document(); // Document | document
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String mimeType = "mimeType_example"; // String | mimeType
 try {
-    Object result = apiInstance.createDocument1(id4n, organizationId, document, authorization, acceptLanguage, mimeType);
+    Object result = apiInstance.createDocument1(id4n, organizationId, document, mimeType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#createDocument1");
@@ -127,8 +141,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n |
  **organizationId** | **Long**| organizationId |
  **document** | [**Document**](Document.md)| document |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **mimeType** | **String**| mimeType | [optional]
 
 ### Return type
@@ -137,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -146,25 +158,33 @@ No authorization required
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> Object deleteDocument(organizationId, id4n, fileName, authorization, acceptLanguage)
+> Object deleteDocument(organizationId, id4n, fileName)
 
 Delete a document
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Object result = apiInstance.deleteDocument(organizationId, id4n, fileName, authorization, acceptLanguage);
+    Object result = apiInstance.deleteDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#deleteDocument");
@@ -179,8 +199,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -188,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -197,25 +215,33 @@ No authorization required
 
 <a name="deleteDocument1"></a>
 # **deleteDocument1**
-> Object deleteDocument1(organizationId, id4n, fileName, authorization, acceptLanguage)
+> Object deleteDocument1(organizationId, id4n, fileName)
 
 Delete a document
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Object result = apiInstance.deleteDocument1(organizationId, id4n, fileName, authorization, acceptLanguage);
+    Object result = apiInstance.deleteDocument1(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#deleteDocument1");
@@ -230,8 +256,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -239,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -248,25 +272,33 @@ No authorization required
 
 <a name="getDocument"></a>
 # **getDocument**
-> Document getDocument(organizationId, id4n, fileName, authorization, acceptLanguage)
+> Document getDocument(organizationId, id4n, fileName)
 
 Retrieve a document (meta-data only, no content)
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Document result = apiInstance.getDocument(organizationId, id4n, fileName, authorization, acceptLanguage);
+    Document result = apiInstance.getDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#getDocument");
@@ -281,8 +313,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -290,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -299,25 +329,33 @@ No authorization required
 
 <a name="getDocument1"></a>
 # **getDocument1**
-> Document getDocument1(organizationId, id4n, fileName, authorization, acceptLanguage)
+> Document getDocument1(organizationId, id4n, fileName)
 
 Retrieve a document (meta-data only, no content)
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Document result = apiInstance.getDocument1(organizationId, id4n, fileName, authorization, acceptLanguage);
+    Document result = apiInstance.getDocument1(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#getDocument1");
@@ -332,8 +370,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -341,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -350,25 +386,33 @@ No authorization required
 
 <a name="getPublicDocument"></a>
 # **getPublicDocument**
-> Document getPublicDocument(organizationId, id4n, fileName, authorization, acceptLanguage)
+> Document getPublicDocument(organizationId, id4n, fileName)
 
 Retrieve a document (meta-data only, no content)
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Document result = apiInstance.getPublicDocument(organizationId, id4n, fileName, authorization, acceptLanguage);
+    Document result = apiInstance.getPublicDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#getPublicDocument");
@@ -383,8 +427,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -392,7 +434,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -401,25 +443,33 @@ No authorization required
 
 <a name="getPublicDocument1"></a>
 # **getPublicDocument1**
-> Document getPublicDocument1(organizationId, id4n, fileName, authorization, acceptLanguage)
+> Document getPublicDocument1(organizationId, id4n, fileName)
 
 Retrieve a document (meta-data only, no content)
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Document result = apiInstance.getPublicDocument1(organizationId, id4n, fileName, authorization, acceptLanguage);
+    Document result = apiInstance.getPublicDocument1(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#getPublicDocument1");
@@ -434,8 +484,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -443,7 +491,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -452,7 +500,7 @@ No authorization required
 
 <a name="listAllDocuments"></a>
 # **listAllDocuments**
-> PaginatedOwnedDocumentResponse listAllDocuments(id4n, authorization, acceptLanguage, offset, limit)
+> PaginatedOwnedDocumentResponse listAllDocuments(id4n, offset, limit)
 
 List documents
 
@@ -461,18 +509,26 @@ Listing all documents of an id4n
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedOwnedDocumentResponse result = apiInstance.listAllDocuments(id4n, authorization, acceptLanguage, offset, limit);
+    PaginatedOwnedDocumentResponse result = apiInstance.listAllDocuments(id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listAllDocuments");
@@ -485,8 +541,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -496,7 +550,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -505,7 +559,7 @@ No authorization required
 
 <a name="listAllDocuments1"></a>
 # **listAllDocuments1**
-> PaginatedOwnedDocumentResponse listAllDocuments1(id4n, authorization, acceptLanguage, offset, limit)
+> PaginatedOwnedDocumentResponse listAllDocuments1(id4n, offset, limit)
 
 List documents
 
@@ -514,18 +568,26 @@ Listing all documents of an id4n
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedOwnedDocumentResponse result = apiInstance.listAllDocuments1(id4n, authorization, acceptLanguage, offset, limit);
+    PaginatedOwnedDocumentResponse result = apiInstance.listAllDocuments1(id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listAllDocuments1");
@@ -538,8 +600,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -549,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -558,7 +618,7 @@ No authorization required
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
-> PaginatedOwnedDocumentResponse listAllPublicDocuments(id4n, authorization, acceptLanguage, organizationId, offset, limit)
+> PaginatedOwnedDocumentResponse listAllPublicDocuments(id4n, organizationId, offset, limit)
 
 List organization specific documents
 
@@ -567,19 +627,27 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Long organizationId = 789L; // Long | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedOwnedDocumentResponse result = apiInstance.listAllPublicDocuments(id4n, authorization, acceptLanguage, organizationId, offset, limit);
+    PaginatedOwnedDocumentResponse result = apiInstance.listAllPublicDocuments(id4n, organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listAllPublicDocuments");
@@ -592,8 +660,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **organizationId** | **Long**| organizationId | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -604,7 +670,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -613,7 +679,7 @@ No authorization required
 
 <a name="listAllPublicDocuments1"></a>
 # **listAllPublicDocuments1**
-> PaginatedOwnedDocumentResponse listAllPublicDocuments1(id4n, authorization, acceptLanguage, organizationId, offset, limit)
+> PaginatedOwnedDocumentResponse listAllPublicDocuments1(id4n, organizationId, offset, limit)
 
 List organization specific documents
 
@@ -622,19 +688,27 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Long organizationId = 789L; // Long | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedOwnedDocumentResponse result = apiInstance.listAllPublicDocuments1(id4n, authorization, acceptLanguage, organizationId, offset, limit);
+    PaginatedOwnedDocumentResponse result = apiInstance.listAllPublicDocuments1(id4n, organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listAllPublicDocuments1");
@@ -647,8 +721,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **organizationId** | **Long**| organizationId | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -659,7 +731,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -668,7 +740,7 @@ No authorization required
 
 <a name="listDocuments"></a>
 # **listDocuments**
-> PaginatedDocumentResponse listDocuments(organizationId, id4n, authorization, acceptLanguage, offset, limit)
+> PaginatedDocumentResponse listDocuments(organizationId, id4n, offset, limit)
 
 List organization specific documents
 
@@ -677,19 +749,27 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listDocuments(organizationId, id4n, authorization, acceptLanguage, offset, limit);
+    PaginatedDocumentResponse result = apiInstance.listDocuments(organizationId, id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listDocuments");
@@ -703,8 +783,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -714,7 +792,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -723,7 +801,7 @@ No authorization required
 
 <a name="listDocuments1"></a>
 # **listDocuments1**
-> PaginatedDocumentResponse listDocuments1(organizationId, id4n, authorization, acceptLanguage, offset, limit)
+> PaginatedDocumentResponse listDocuments1(organizationId, id4n, offset, limit)
 
 List organization specific documents
 
@@ -732,19 +810,27 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listDocuments1(organizationId, id4n, authorization, acceptLanguage, offset, limit);
+    PaginatedDocumentResponse result = apiInstance.listDocuments1(organizationId, id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listDocuments1");
@@ -758,8 +844,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -769,7 +853,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -778,7 +862,7 @@ No authorization required
 
 <a name="listPublicDocuments"></a>
 # **listPublicDocuments**
-> PaginatedDocumentResponse listPublicDocuments(organizationId, id4n, authorization, acceptLanguage, offset, limit)
+> PaginatedDocumentResponse listPublicDocuments(organizationId, id4n, offset, limit)
 
 List organization specific documents
 
@@ -787,19 +871,27 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listPublicDocuments(organizationId, id4n, authorization, acceptLanguage, offset, limit);
+    PaginatedDocumentResponse result = apiInstance.listPublicDocuments(organizationId, id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listPublicDocuments");
@@ -813,8 +905,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -824,7 +914,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -833,7 +923,7 @@ No authorization required
 
 <a name="listPublicDocuments1"></a>
 # **listPublicDocuments1**
-> PaginatedDocumentResponse listPublicDocuments1(organizationId, id4n, authorization, acceptLanguage, offset, limit)
+> PaginatedDocumentResponse listPublicDocuments1(organizationId, id4n, offset, limit)
 
 List organization specific documents
 
@@ -842,19 +932,27 @@ Listing documents of an id4n owned by a specified organization
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listPublicDocuments1(organizationId, id4n, authorization, acceptLanguage, offset, limit);
+    PaginatedDocumentResponse result = apiInstance.listPublicDocuments1(organizationId, id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listPublicDocuments1");
@@ -868,8 +966,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -879,7 +975,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -888,24 +984,32 @@ No authorization required
 
 <a name="read"></a>
 # **read**
-> InputStreamResource read(organization, id4n, authorization, acceptLanguage)
+> InputStreamResource read(organization, id4n)
 
 Read data from microstorage
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    InputStreamResource result = apiInstance.read(organization, id4n, authorization, acceptLanguage);
+    InputStreamResource result = apiInstance.read(organization, id4n);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#read");
@@ -919,8 +1023,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Long**| organization |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -928,7 +1030,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -937,24 +1039,32 @@ No authorization required
 
 <a name="read1"></a>
 # **read1**
-> InputStreamResource read1(organization, id4n, authorization, acceptLanguage)
+> InputStreamResource read1(organization, id4n)
 
 Read data from microstorage
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    InputStreamResource result = apiInstance.read1(organization, id4n, authorization, acceptLanguage);
+    InputStreamResource result = apiInstance.read1(organization, id4n);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#read1");
@@ -968,8 +1078,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Long**| organization |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -977,7 +1085,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -986,25 +1094,33 @@ No authorization required
 
 <a name="readDocument"></a>
 # **readDocument**
-> InputStreamResource readDocument(organizationId, id4n, fileName, authorization, acceptLanguage)
+> InputStreamResource readDocument(organizationId, id4n, fileName)
 
 Read document contents
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    InputStreamResource result = apiInstance.readDocument(organizationId, id4n, fileName, authorization, acceptLanguage);
+    InputStreamResource result = apiInstance.readDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#readDocument");
@@ -1019,8 +1135,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -1028,7 +1142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1037,25 +1151,33 @@ No authorization required
 
 <a name="readDocument1"></a>
 # **readDocument1**
-> InputStreamResource readDocument1(organizationId, id4n, fileName, authorization, acceptLanguage)
+> InputStreamResource readDocument1(organizationId, id4n, fileName)
 
 Read document contents
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    InputStreamResource result = apiInstance.readDocument1(organizationId, id4n, fileName, authorization, acceptLanguage);
+    InputStreamResource result = apiInstance.readDocument1(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#readDocument1");
@@ -1070,8 +1192,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -1079,7 +1199,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1088,25 +1208,33 @@ No authorization required
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
-> InputStreamResource readPublicDocument(organizationId, id4n, fileName, authorization, acceptLanguage)
+> InputStreamResource readPublicDocument(organizationId, id4n, fileName)
 
 Read document contents
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    InputStreamResource result = apiInstance.readPublicDocument(organizationId, id4n, fileName, authorization, acceptLanguage);
+    InputStreamResource result = apiInstance.readPublicDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#readPublicDocument");
@@ -1121,8 +1249,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -1130,7 +1256,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1139,25 +1265,33 @@ No authorization required
 
 <a name="readPublicDocument1"></a>
 # **readPublicDocument1**
-> InputStreamResource readPublicDocument1(organizationId, id4n, fileName, authorization, acceptLanguage)
+> InputStreamResource readPublicDocument1(organizationId, id4n, fileName)
 
 Read document contents
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    InputStreamResource result = apiInstance.readPublicDocument1(organizationId, id4n, fileName, authorization, acceptLanguage);
+    InputStreamResource result = apiInstance.readPublicDocument1(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#readPublicDocument1");
@@ -1172,8 +1306,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -1181,7 +1313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1190,26 +1322,34 @@ No authorization required
 
 <a name="updateDocument"></a>
 # **updateDocument**
-> Document updateDocument(organizationId, id4n, fileName, document, authorization, acceptLanguage)
+> Document updateDocument(organizationId, id4n, fileName, document)
 
 Update a document
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 DocumentUpdate document = new DocumentUpdate(); // DocumentUpdate | document
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Document result = apiInstance.updateDocument(organizationId, id4n, fileName, document, authorization, acceptLanguage);
+    Document result = apiInstance.updateDocument(organizationId, id4n, fileName, document);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#updateDocument");
@@ -1225,8 +1365,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
  **document** | [**DocumentUpdate**](DocumentUpdate.md)| document |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -1234,7 +1372,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1243,26 +1381,34 @@ No authorization required
 
 <a name="updateDocument1"></a>
 # **updateDocument1**
-> Document updateDocument1(organizationId, id4n, fileName, document, authorization, acceptLanguage)
+> Document updateDocument1(organizationId, id4n, fileName, document)
 
 Update a document
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 DocumentUpdate document = new DocumentUpdate(); // DocumentUpdate | document
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Document result = apiInstance.updateDocument1(organizationId, id4n, fileName, document, authorization, acceptLanguage);
+    Document result = apiInstance.updateDocument1(organizationId, id4n, fileName, document);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#updateDocument1");
@@ -1278,8 +1424,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
  **document** | [**DocumentUpdate**](DocumentUpdate.md)| document |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -1287,7 +1431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1296,26 +1440,34 @@ No authorization required
 
 <a name="write"></a>
 # **write**
-> Object write(organization, id4n, authorization, acceptLanguage, contentType, contentLength)
+> Object write(organization, id4n, contentType, contentLength)
 
 Write data to microstorage
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
 try {
-    Object result = apiInstance.write(organization, id4n, authorization, acceptLanguage, contentType, contentLength);
+    Object result = apiInstance.write(organization, id4n, contentType, contentLength);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#write");
@@ -1329,8 +1481,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Long**| organization |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **contentType** | **String**| Content-Type | [optional]
  **contentLength** | **Long**| Content-Length | [optional]
 
@@ -1340,7 +1490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1349,26 +1499,34 @@ No authorization required
 
 <a name="write1"></a>
 # **write1**
-> Object write1(organization, id4n, authorization, acceptLanguage, contentType, contentLength)
+> Object write1(organization, id4n, contentType, contentLength)
 
 Write data to microstorage
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
 try {
-    Object result = apiInstance.write1(organization, id4n, authorization, acceptLanguage, contentType, contentLength);
+    Object result = apiInstance.write1(organization, id4n, contentType, contentLength);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#write1");
@@ -1382,8 +1540,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Long**| organization |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **contentType** | **String**| Content-Type | [optional]
  **contentLength** | **Long**| Content-Length | [optional]
 
@@ -1393,7 +1549,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1402,27 +1558,35 @@ No authorization required
 
 <a name="writeDocument"></a>
 # **writeDocument**
-> Object writeDocument(organizationId, id4n, fileName, authorization, acceptLanguage, contentType, contentLength)
+> Object writeDocument(organizationId, id4n, fileName, contentType, contentLength)
 
 Write document contents
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
 try {
-    Object result = apiInstance.writeDocument(organizationId, id4n, fileName, authorization, acceptLanguage, contentType, contentLength);
+    Object result = apiInstance.writeDocument(organizationId, id4n, fileName, contentType, contentLength);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#writeDocument");
@@ -1437,8 +1601,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **contentType** | **String**| Content-Type | [optional]
  **contentLength** | **Long**| Content-Length | [optional]
 
@@ -1448,7 +1610,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -1457,27 +1619,35 @@ No authorization required
 
 <a name="writeDocument1"></a>
 # **writeDocument1**
-> Object writeDocument1(organizationId, id4n, fileName, authorization, acceptLanguage, contentType, contentLength)
+> Object writeDocument1(organizationId, id4n, fileName, contentType, contentLength)
 
 Write document contents
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.StorageApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
 Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
 try {
-    Object result = apiInstance.writeDocument1(organizationId, id4n, fileName, authorization, acceptLanguage, contentType, contentLength);
+    Object result = apiInstance.writeDocument1(organizationId, id4n, fileName, contentType, contentLength);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#writeDocument1");
@@ -1492,8 +1662,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **contentType** | **String**| Content-Type | [optional]
  **contentLength** | **Long**| Content-Length | [optional]
 
@@ -1503,7 +1671,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

@@ -24,25 +24,33 @@ Method | HTTP request | Description
 
 <a name="addUserRoles"></a>
 # **addUserRoles**
-> ApiError addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
+> ApiError addUserRoles(organizationId, username, changeRoleRequest)
 
 Add role(s) to user
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+    ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#addUserRoles");
@@ -57,8 +65,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -66,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -75,7 +81,7 @@ No authorization required
 
 <a name="completeRegistration"></a>
 # **completeRegistration**
-> ApiError completeRegistration(completeRegistration, authorization, acceptLanguage)
+> ApiError completeRegistration(completeRegistration)
 
 Complete registration
 
@@ -90,10 +96,8 @@ Completing a registration e.g. for invited users. Finish registration with a use
 
 AccountsApi apiInstance = new AccountsApi();
 CompleteUserRegistrationRequest completeRegistration = new CompleteUserRegistrationRequest(); // CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.completeRegistration(completeRegistration, authorization, acceptLanguage);
+    ApiError result = apiInstance.completeRegistration(completeRegistration);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#completeRegistration");
@@ -106,8 +110,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **completeRegistration** | [**CompleteUserRegistrationRequest**](CompleteUserRegistrationRequest.md)| Contains the verification token, the username and the initial password. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -124,23 +126,31 @@ No authorization required
 
 <a name="findUserByUsername"></a>
 # **findUserByUsername**
-> UserPresentation findUserByUsername(username, authorization, acceptLanguage)
+> UserPresentation findUserByUsername(username)
 
 Find by username
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
 String username = "username_example"; // String | username
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    UserPresentation result = apiInstance.findUserByUsername(username, authorization, acceptLanguage);
+    UserPresentation result = apiInstance.findUserByUsername(username);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#findUserByUsername");
@@ -153,8 +163,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **username** | **String**| username |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -162,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -171,25 +179,33 @@ No authorization required
 
 <a name="findUsers"></a>
 # **findUsers**
-> PaginatedUserPresentationResponse findUsers(usernamePrefix, authorization, acceptLanguage, offset, limit)
+> PaginatedUserPresentationResponse findUsers(usernamePrefix, offset, limit)
 
 Find users
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
 String usernamePrefix = "usernamePrefix_example"; // String | Find users starting with this prefix.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedUserPresentationResponse result = apiInstance.findUsers(usernamePrefix, authorization, acceptLanguage, offset, limit);
+    PaginatedUserPresentationResponse result = apiInstance.findUsers(usernamePrefix, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#findUsers");
@@ -202,8 +218,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **usernamePrefix** | **String**| Find users starting with this prefix. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -213,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -222,7 +236,7 @@ No authorization required
 
 <a name="getAllOrganizationRoles"></a>
 # **getAllOrganizationRoles**
-> PaginatedUserRolesResponse getAllOrganizationRoles(organizationId, authorization, acceptLanguage, offset, limit)
+> PaginatedUserRolesResponse getAllOrganizationRoles(organizationId, offset, limit)
 
 List users and their roles
 
@@ -231,18 +245,26 @@ Listing users and their roles in a paginated manner.
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedUserRolesResponse result = apiInstance.getAllOrganizationRoles(organizationId, authorization, acceptLanguage, offset, limit);
+    PaginatedUserRolesResponse result = apiInstance.getAllOrganizationRoles(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getAllOrganizationRoles");
@@ -255,8 +277,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -266,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -275,25 +295,33 @@ No authorization required
 
 <a name="getOrganizationsOfUser"></a>
 # **getOrganizationsOfUser**
-> PaginatedOrganizationResponse getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit)
+> PaginatedOrganizationResponse getOrganizationsOfUser(role, offset, limit)
 
 Retrieve organizations of user
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String role = "role_example"; // String | role
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedOrganizationResponse result = apiInstance.getOrganizationsOfUser(authorization, acceptLanguage, role, offset, limit);
+    PaginatedOrganizationResponse result = apiInstance.getOrganizationsOfUser(role, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getOrganizationsOfUser");
@@ -305,8 +333,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **role** | **String**| role | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -317,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -326,26 +352,34 @@ No authorization required
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
-> PaginatedStringResponse getUserRoles(organizationId, username, authorization, acceptLanguage, offset, limit)
+> PaginatedStringResponse getUserRoles(organizationId, username, offset, limit)
 
 Get user roles by username
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedStringResponse result = apiInstance.getUserRoles(organizationId, username, authorization, acceptLanguage, offset, limit);
+    PaginatedStringResponse result = apiInstance.getUserRoles(organizationId, username, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getUserRoles");
@@ -359,8 +393,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **username** | **String**| username |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -370,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -379,7 +411,7 @@ No authorization required
 
 <a name="getUsersOfOrganization"></a>
 # **getUsersOfOrganization**
-> PaginatedUserPresentationResponse getUsersOfOrganization(organizationId, authorization, acceptLanguage, offset, limit)
+> PaginatedUserPresentationResponse getUsersOfOrganization(organizationId, offset, limit)
 
 Find users in organization
 
@@ -388,18 +420,26 @@ Finding users in the specified organization in a paginated manner.
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedUserPresentationResponse result = apiInstance.getUsersOfOrganization(organizationId, authorization, acceptLanguage, offset, limit);
+    PaginatedUserPresentationResponse result = apiInstance.getUsersOfOrganization(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getUsersOfOrganization");
@@ -412,8 +452,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -423,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -432,24 +470,32 @@ No authorization required
 
 <a name="inviteUsers"></a>
 # **inviteUsers**
-> ApiError inviteUsers(organizationId, invitationList, authorization, acceptLanguage)
+> ApiError inviteUsers(organizationId, invitationList)
 
 Invite Users
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
 OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.inviteUsers(organizationId, invitationList, authorization, acceptLanguage);
+    ApiError result = apiInstance.inviteUsers(organizationId, invitationList);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#inviteUsers");
@@ -463,8 +509,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| organizationId |
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -472,7 +516,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -481,7 +525,7 @@ No authorization required
 
 <a name="listAllRoles"></a>
 # **listAllRoles**
-> RoleResponse listAllRoles(authorization, acceptLanguage, privilege, offset, limit)
+> RoleResponse listAllRoles(privilege, offset, limit)
 
 List roles
 
@@ -490,18 +534,26 @@ Listing of roles.
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 String privilege = "privilege_example"; // String | If specified the roles will be filtered containing that privilege.
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    RoleResponse result = apiInstance.listAllRoles(authorization, acceptLanguage, privilege, offset, limit);
+    RoleResponse result = apiInstance.listAllRoles(privilege, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#listAllRoles");
@@ -513,8 +565,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **privilege** | **String**| If specified the roles will be filtered containing that privilege. | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -525,7 +575,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -578,7 +628,7 @@ No authorization required
 
 <a name="registerUser"></a>
 # **registerUser**
-> UserRegistrationResponse registerUser(userRegistration, authorization, acceptLanguage)
+> UserRegistrationResponse registerUser(userRegistration)
 
 Register user
 
@@ -593,10 +643,8 @@ Registering a new user.
 
 AccountsApi apiInstance = new AccountsApi();
 UserRegistrationRequest userRegistration = new UserRegistrationRequest(); // UserRegistrationRequest | The user information about the new created user.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    UserRegistrationResponse result = apiInstance.registerUser(userRegistration, authorization, acceptLanguage);
+    UserRegistrationResponse result = apiInstance.registerUser(userRegistration);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#registerUser");
@@ -609,8 +657,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userRegistration** | [**UserRegistrationRequest**](UserRegistrationRequest.md)| The user information about the new created user. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -627,25 +673,33 @@ No authorization required
 
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
-> ApiError removeUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage)
+> ApiError removeUserRoles(organizationId, username, changeRoleRequest)
 
 Remove role(s) from user
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AccountsApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.removeUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+    ApiError result = apiInstance.removeUserRoles(organizationId, username, changeRoleRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#removeUserRoles");
@@ -660,8 +714,6 @@ Name | Type | Description  | Notes
  **organizationId** | **Long**| organizationId |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -669,7 +721,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -678,7 +730,7 @@ No authorization required
 
 <a name="requestPasswordReset"></a>
 # **requestPasswordReset**
-> SimpleMessageResponse requestPasswordReset(resetRequest, authorization, acceptLanguage)
+> SimpleMessageResponse requestPasswordReset(resetRequest)
 
 Request password reset
 
@@ -693,10 +745,8 @@ Requesting a reset for a new password.
 
 AccountsApi apiInstance = new AccountsApi();
 PasswordResetRequest resetRequest = new PasswordResetRequest(); // PasswordResetRequest | Contains the required information to request a new password.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    SimpleMessageResponse result = apiInstance.requestPasswordReset(resetRequest, authorization, acceptLanguage);
+    SimpleMessageResponse result = apiInstance.requestPasswordReset(resetRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#requestPasswordReset");
@@ -709,8 +759,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resetRequest** | [**PasswordResetRequest**](PasswordResetRequest.md)| Contains the required information to request a new password. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -727,7 +775,7 @@ No authorization required
 
 <a name="verifyPasswordReset"></a>
 # **verifyPasswordReset**
-> SimpleMessageResponse verifyPasswordReset(verificationRequest, authorization, acceptLanguage)
+> SimpleMessageResponse verifyPasswordReset(verificationRequest)
 
 Verify password reset
 
@@ -742,10 +790,8 @@ Setting a new password and verifying the request to set the password.
 
 AccountsApi apiInstance = new AccountsApi();
 PasswordResetVerificationRequest verificationRequest = new PasswordResetVerificationRequest(); // PasswordResetVerificationRequest | Contains the new password and the verification token to set the new password.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    SimpleMessageResponse result = apiInstance.verifyPasswordReset(verificationRequest, authorization, acceptLanguage);
+    SimpleMessageResponse result = apiInstance.verifyPasswordReset(verificationRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#verifyPasswordReset");
@@ -758,8 +804,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **verificationRequest** | [**PasswordResetVerificationRequest**](PasswordResetVerificationRequest.md)| Contains the new password and the verification token to set the new password. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -776,7 +820,7 @@ No authorization required
 
 <a name="verifyUserRegistration"></a>
 # **verifyUserRegistration**
-> ApiError verifyUserRegistration(token, authorization, acceptLanguage)
+> ApiError verifyUserRegistration(token)
 
 Verify registration
 
@@ -791,10 +835,8 @@ Verifies a new user registration.
 
 AccountsApi apiInstance = new AccountsApi();
 RegistrationVerificationTokenPresentation token = new RegistrationVerificationTokenPresentation(); // RegistrationVerificationTokenPresentation | The token for user verification.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.verifyUserRegistration(token, authorization, acceptLanguage);
+    ApiError result = apiInstance.verifyUserRegistration(token);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#verifyUserRegistration");
@@ -807,8 +849,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | [**RegistrationVerificationTokenPresentation**](RegistrationVerificationTokenPresentation.md)| The token for user verification. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 

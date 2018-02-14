@@ -24,7 +24,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.1.5-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -34,7 +34,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.1.5-SNAPSHOT"
+compile "de.id4i.api:id4i-api-client:0.2.0-SNAPSHOT"
 ```
 
 ### Others
@@ -75,15 +75,20 @@ import java.util.*;
 public class AccountsApiExample {
 
     public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
         
+        // Configure API key authorization: Authorization
+        ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+        Authorization.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //Authorization.setApiKeyPrefix("Token");
+
         AccountsApi apiInstance = new AccountsApi();
         Long organizationId = 789L; // Long | organizationId
         String username = "username_example"; // String | username
         ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-        String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-        String acceptLanguage = "acceptLanguage_example"; // String | Requested language
         try {
-            ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest, authorization, acceptLanguage);
+            ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AccountsApi#addUserRoles");

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="addGuidAlias"></a>
 # **addGuidAlias**
-> ApiError addGuidAlias(id4n, aliasType, alias, authorization, acceptLanguage)
+> ApiError addGuidAlias(id4n, aliasType, alias)
 
 Add alias for GUIDs
 
@@ -22,18 +22,26 @@ Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups o
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AliasApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AliasApi apiInstance = new AliasApi();
 String id4n = "id4n_example"; // String | The GUID to operate on
 String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 GuidAlias alias = new GuidAlias(); // GuidAlias | The alias to add or update
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.addGuidAlias(id4n, aliasType, alias, authorization, acceptLanguage);
+    ApiError result = apiInstance.addGuidAlias(id4n, aliasType, alias);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#addGuidAlias");
@@ -48,8 +56,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| The GUID to operate on |
  **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -57,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -66,7 +72,7 @@ No authorization required
 
 <a name="addGuidAlias1"></a>
 # **addGuidAlias1**
-> ApiError addGuidAlias1(id4n, aliasType, authorization, acceptLanguage)
+> ApiError addGuidAlias1(id4n, aliasType)
 
 Remove aliases from GUIDs
 
@@ -75,17 +81,25 @@ Remove the alias of the given type
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AliasApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AliasApi apiInstance = new AliasApi();
 String id4n = "id4n_example"; // String | The GUID to operate on
 String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.addGuidAlias1(id4n, aliasType, authorization, acceptLanguage);
+    ApiError result = apiInstance.addGuidAlias1(id4n, aliasType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#addGuidAlias1");
@@ -99,8 +113,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
  **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking]
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -108,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -117,7 +129,7 @@ No authorization required
 
 <a name="getGuidAliasTypes"></a>
 # **getGuidAliasTypes**
-> List&lt;String&gt; getGuidAliasTypes(authorization, acceptLanguage)
+> List&lt;String&gt; getGuidAliasTypes()
 
 List all supported alias types
 
@@ -126,15 +138,23 @@ Retrieve this list to find out all alias types to use with alias search and chan
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AliasApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AliasApi apiInstance = new AliasApi();
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    List<String> result = apiInstance.getGuidAliasTypes(authorization, acceptLanguage);
+    List<String> result = apiInstance.getGuidAliasTypes();
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#getGuidAliasTypes");
@@ -143,11 +163,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -155,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -164,7 +180,7 @@ No authorization required
 
 <a name="getGuidAliases"></a>
 # **getGuidAliases**
-> Map&lt;String, String&gt; getGuidAliases(id4n, authorization, acceptLanguage)
+> Map&lt;String, String&gt; getGuidAliases(id4n)
 
 Get all aliases for the given GUID
 
@@ -173,16 +189,24 @@ Looks up the alias for each alias type (group and single GUID) and returns all f
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AliasApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AliasApi apiInstance = new AliasApi();
 String id4n = "id4n_example"; // String | The GUID to operate on
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    Map<String, String> result = apiInstance.getGuidAliases(id4n, authorization, acceptLanguage);
+    Map<String, String> result = apiInstance.getGuidAliases(id4n);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#getGuidAliases");
@@ -195,8 +219,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -204,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -213,26 +235,34 @@ No authorization required
 
 <a name="searchByAlias"></a>
 # **searchByAlias**
-> PaginatedGuidResponse searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit)
+> PaginatedGuidResponse searchByAlias(alias, aliasType, offset, limit)
 
 Search for GUIDs by alias
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.AliasApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 AliasApi apiInstance = new AliasApi();
 String alias = "alias_example"; // String | The alias to search for
 String aliasType = "aliasType_example"; // String | Alias type type to search for
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedGuidResponse result = apiInstance.searchByAlias(alias, aliasType, authorization, acceptLanguage, offset, limit);
+    PaginatedGuidResponse result = apiInstance.searchByAlias(alias, aliasType, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#searchByAlias");
@@ -246,8 +276,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alias** | **String**| The alias to search for |
  **aliasType** | **String**| Alias type type to search for | [enum: gtin, article, mapp, item, rfid, tracking]
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -257,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
