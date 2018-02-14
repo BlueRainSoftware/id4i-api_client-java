@@ -36,7 +36,7 @@ Method | HTTP request | Description
 
 <a name="createDocument"></a>
 # **createDocument**
-> Object createDocument(id4n, organizationId, document, mimeType)
+> Document createDocument(id4n, organizationId, document, mimeType)
 
 Create an empty document for an id4n
 
@@ -65,7 +65,7 @@ Long organizationId = 789L; // Long | organizationId
 Document document = new Document(); // Document | document
 String mimeType = "mimeType_example"; // String | mimeType
 try {
-    Object result = apiInstance.createDocument(id4n, organizationId, document, mimeType);
+    Document result = apiInstance.createDocument(id4n, organizationId, document, mimeType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#createDocument");
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 <a name="createDocument1"></a>
 # **createDocument1**
-> Object createDocument1(id4n, organizationId, document, mimeType)
+> Document createDocument1(id4n, organizationId, document, mimeType)
 
 Create an empty document for an id4n
 
@@ -126,7 +126,7 @@ Long organizationId = 789L; // Long | organizationId
 Document document = new Document(); // Document | document
 String mimeType = "mimeType_example"; // String | mimeType
 try {
-    Object result = apiInstance.createDocument1(id4n, organizationId, document, mimeType);
+    Document result = apiInstance.createDocument1(id4n, organizationId, document, mimeType);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#createDocument1");
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Document**](Document.md)
 
 ### Authorization
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> Object deleteDocument(organizationId, id4n, fileName)
+> ResponseEntity deleteDocument(organizationId, id4n, fileName)
 
 Delete a document
 
@@ -184,7 +184,7 @@ Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
-    Object result = apiInstance.deleteDocument(organizationId, id4n, fileName);
+    ResponseEntity result = apiInstance.deleteDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#deleteDocument");
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteDocument1"></a>
 # **deleteDocument1**
-> Object deleteDocument1(organizationId, id4n, fileName)
+> ResponseEntity deleteDocument1(organizationId, id4n, fileName)
 
 Delete a document
 
@@ -241,7 +241,7 @@ Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
-    Object result = apiInstance.deleteDocument1(organizationId, id4n, fileName);
+    ResponseEntity result = apiInstance.deleteDocument1(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#deleteDocument1");
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -1558,7 +1558,7 @@ Name | Type | Description  | Notes
 
 <a name="writeDocument"></a>
 # **writeDocument**
-> Object writeDocument(organizationId, id4n, fileName, contentType, contentLength)
+> ResponseEntity writeDocument(organizationId, id4n, fileName, contentType, contentLength)
 
 Write document contents
 
@@ -1586,7 +1586,7 @@ String fileName = "fileName_example"; // String | fileName
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
 try {
-    Object result = apiInstance.writeDocument(organizationId, id4n, fileName, contentType, contentLength);
+    ResponseEntity result = apiInstance.writeDocument(organizationId, id4n, fileName, contentType, contentLength);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#writeDocument");
@@ -1606,7 +1606,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 
@@ -1619,7 +1619,7 @@ Name | Type | Description  | Notes
 
 <a name="writeDocument1"></a>
 # **writeDocument1**
-> Object writeDocument1(organizationId, id4n, fileName, contentType, contentLength)
+> ResponseEntity writeDocument1(organizationId, id4n, fileName, contentType, contentLength)
 
 Write document contents
 
@@ -1647,7 +1647,7 @@ String fileName = "fileName_example"; // String | fileName
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
 try {
-    Object result = apiInstance.writeDocument1(organizationId, id4n, fileName, contentType, contentLength);
+    ResponseEntity result = apiInstance.writeDocument1(organizationId, id4n, fileName, contentType, contentLength);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#writeDocument1");
@@ -1667,7 +1667,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 

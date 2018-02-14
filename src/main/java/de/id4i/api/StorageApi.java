@@ -33,6 +33,7 @@ import de.id4i.api.model.DocumentUpdate;
 import de.id4i.api.model.InputStreamResource;
 import de.id4i.api.model.PaginatedDocumentResponse;
 import de.id4i.api.model.PaginatedOwnedDocumentResponse;
+import de.id4i.api.model.ResponseEntity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -149,11 +150,11 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param document document (required)
      * @param mimeType mimeType (optional)
-     * @return Object
+     * @return Document
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object createDocument(String id4n, Long organizationId, Document document, String mimeType) throws ApiException {
-        ApiResponse<Object> resp = createDocumentWithHttpInfo(id4n, organizationId, document, mimeType);
+    public Document createDocument(String id4n, Long organizationId, Document document, String mimeType) throws ApiException {
+        ApiResponse<Document> resp = createDocumentWithHttpInfo(id4n, organizationId, document, mimeType);
         return resp.getData();
     }
 
@@ -164,12 +165,12 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param document document (required)
      * @param mimeType mimeType (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;Document&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> createDocumentWithHttpInfo(String id4n, Long organizationId, Document document, String mimeType) throws ApiException {
+    public ApiResponse<Document> createDocumentWithHttpInfo(String id4n, Long organizationId, Document document, String mimeType) throws ApiException {
         com.squareup.okhttp.Call call = createDocumentValidateBeforeCall(id4n, organizationId, document, mimeType, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -184,7 +185,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createDocumentAsync(String id4n, Long organizationId, Document document, String mimeType, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call createDocumentAsync(String id4n, Long organizationId, Document document, String mimeType, final ApiCallback<Document> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -206,7 +207,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = createDocumentValidateBeforeCall(id4n, organizationId, document, mimeType, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<Document>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -300,11 +301,11 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param document document (required)
      * @param mimeType mimeType (optional)
-     * @return Object
+     * @return Document
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object createDocument1(String id4n, Long organizationId, Document document, String mimeType) throws ApiException {
-        ApiResponse<Object> resp = createDocument1WithHttpInfo(id4n, organizationId, document, mimeType);
+    public Document createDocument1(String id4n, Long organizationId, Document document, String mimeType) throws ApiException {
+        ApiResponse<Document> resp = createDocument1WithHttpInfo(id4n, organizationId, document, mimeType);
         return resp.getData();
     }
 
@@ -315,12 +316,12 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param document document (required)
      * @param mimeType mimeType (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;Document&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> createDocument1WithHttpInfo(String id4n, Long organizationId, Document document, String mimeType) throws ApiException {
+    public ApiResponse<Document> createDocument1WithHttpInfo(String id4n, Long organizationId, Document document, String mimeType) throws ApiException {
         com.squareup.okhttp.Call call = createDocument1ValidateBeforeCall(id4n, organizationId, document, mimeType, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -335,7 +336,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createDocument1Async(String id4n, Long organizationId, Document document, String mimeType, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call createDocument1Async(String id4n, Long organizationId, Document document, String mimeType, final ApiCallback<Document> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -357,7 +358,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = createDocument1ValidateBeforeCall(id4n, organizationId, document, mimeType, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<Document>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -448,11 +449,11 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param id4n id4n (required)
      * @param fileName fileName (required)
-     * @return Object
+     * @return ResponseEntity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object deleteDocument(Long organizationId, String id4n, String fileName) throws ApiException {
-        ApiResponse<Object> resp = deleteDocumentWithHttpInfo(organizationId, id4n, fileName);
+    public ResponseEntity deleteDocument(Long organizationId, String id4n, String fileName) throws ApiException {
+        ApiResponse<ResponseEntity> resp = deleteDocumentWithHttpInfo(organizationId, id4n, fileName);
         return resp.getData();
     }
 
@@ -462,12 +463,12 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param id4n id4n (required)
      * @param fileName fileName (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;ResponseEntity&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> deleteDocumentWithHttpInfo(Long organizationId, String id4n, String fileName) throws ApiException {
+    public ApiResponse<ResponseEntity> deleteDocumentWithHttpInfo(Long organizationId, String id4n, String fileName) throws ApiException {
         com.squareup.okhttp.Call call = deleteDocumentValidateBeforeCall(organizationId, id4n, fileName, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -481,7 +482,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteDocumentAsync(Long organizationId, String id4n, String fileName, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteDocumentAsync(Long organizationId, String id4n, String fileName, final ApiCallback<ResponseEntity> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -503,7 +504,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = deleteDocumentValidateBeforeCall(organizationId, id4n, fileName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -594,11 +595,11 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param id4n id4n (required)
      * @param fileName fileName (required)
-     * @return Object
+     * @return ResponseEntity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object deleteDocument1(Long organizationId, String id4n, String fileName) throws ApiException {
-        ApiResponse<Object> resp = deleteDocument1WithHttpInfo(organizationId, id4n, fileName);
+    public ResponseEntity deleteDocument1(Long organizationId, String id4n, String fileName) throws ApiException {
+        ApiResponse<ResponseEntity> resp = deleteDocument1WithHttpInfo(organizationId, id4n, fileName);
         return resp.getData();
     }
 
@@ -608,12 +609,12 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param id4n id4n (required)
      * @param fileName fileName (required)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;ResponseEntity&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> deleteDocument1WithHttpInfo(Long organizationId, String id4n, String fileName) throws ApiException {
+    public ApiResponse<ResponseEntity> deleteDocument1WithHttpInfo(Long organizationId, String id4n, String fileName) throws ApiException {
         com.squareup.okhttp.Call call = deleteDocument1ValidateBeforeCall(organizationId, id4n, fileName, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -627,7 +628,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteDocument1Async(Long organizationId, String id4n, String fileName, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteDocument1Async(Long organizationId, String id4n, String fileName, final ApiCallback<ResponseEntity> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -649,7 +650,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = deleteDocument1ValidateBeforeCall(organizationId, id4n, fileName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -3950,11 +3951,11 @@ public class StorageApi {
      * @param fileName fileName (required)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
-     * @return Object
+     * @return ResponseEntity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object writeDocument(Long organizationId, String id4n, String fileName, String contentType, Long contentLength) throws ApiException {
-        ApiResponse<Object> resp = writeDocumentWithHttpInfo(organizationId, id4n, fileName, contentType, contentLength);
+    public ResponseEntity writeDocument(Long organizationId, String id4n, String fileName, String contentType, Long contentLength) throws ApiException {
+        ApiResponse<ResponseEntity> resp = writeDocumentWithHttpInfo(organizationId, id4n, fileName, contentType, contentLength);
         return resp.getData();
     }
 
@@ -3966,12 +3967,12 @@ public class StorageApi {
      * @param fileName fileName (required)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;ResponseEntity&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> writeDocumentWithHttpInfo(Long organizationId, String id4n, String fileName, String contentType, Long contentLength) throws ApiException {
+    public ApiResponse<ResponseEntity> writeDocumentWithHttpInfo(Long organizationId, String id4n, String fileName, String contentType, Long contentLength) throws ApiException {
         com.squareup.okhttp.Call call = writeDocumentValidateBeforeCall(organizationId, id4n, fileName, contentType, contentLength, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -3987,7 +3988,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call writeDocumentAsync(Long organizationId, String id4n, String fileName, String contentType, Long contentLength, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call writeDocumentAsync(Long organizationId, String id4n, String fileName, String contentType, Long contentLength, final ApiCallback<ResponseEntity> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4009,7 +4010,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = writeDocumentValidateBeforeCall(organizationId, id4n, fileName, contentType, contentLength, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -4108,11 +4109,11 @@ public class StorageApi {
      * @param fileName fileName (required)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
-     * @return Object
+     * @return ResponseEntity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object writeDocument1(Long organizationId, String id4n, String fileName, String contentType, Long contentLength) throws ApiException {
-        ApiResponse<Object> resp = writeDocument1WithHttpInfo(organizationId, id4n, fileName, contentType, contentLength);
+    public ResponseEntity writeDocument1(Long organizationId, String id4n, String fileName, String contentType, Long contentLength) throws ApiException {
+        ApiResponse<ResponseEntity> resp = writeDocument1WithHttpInfo(organizationId, id4n, fileName, contentType, contentLength);
         return resp.getData();
     }
 
@@ -4124,12 +4125,12 @@ public class StorageApi {
      * @param fileName fileName (required)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
-     * @return ApiResponse&lt;Object&gt;
+     * @return ApiResponse&lt;ResponseEntity&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> writeDocument1WithHttpInfo(Long organizationId, String id4n, String fileName, String contentType, Long contentLength) throws ApiException {
+    public ApiResponse<ResponseEntity> writeDocument1WithHttpInfo(Long organizationId, String id4n, String fileName, String contentType, Long contentLength) throws ApiException {
         com.squareup.okhttp.Call call = writeDocument1ValidateBeforeCall(organizationId, id4n, fileName, contentType, contentLength, null, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -4145,7 +4146,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call writeDocument1Async(Long organizationId, String id4n, String fileName, String contentType, Long contentLength, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call writeDocument1Async(Long organizationId, String id4n, String fileName, String contentType, Long contentLength, final ApiCallback<ResponseEntity> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4167,7 +4168,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = writeDocument1ValidateBeforeCall(organizationId, id4n, fileName, contentType, contentLength, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
