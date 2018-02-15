@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * CreateRoutingCollectionRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-15T12:16:47.490Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-15T12:46:37.096Z")
 public class CreateRoutingCollectionRequest {
   @SerializedName("label")
   private String label = null;
