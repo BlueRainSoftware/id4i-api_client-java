@@ -4,7 +4,7 @@
   
   <groupId>de.id4i.api</groupId>
   <artifactId>id4i-api-client</artifactId>
-  <version>0.2.0</version>
+  <version>0.2.1</version>
   <packaging>jar</packaging>
   
   <name>id4i-api-client</name>
