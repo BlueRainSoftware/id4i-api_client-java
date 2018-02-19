@@ -11,26 +11,34 @@ Method | HTTP request | Description
 
 <a name="getRoute"></a>
 # **getRoute**
-> Route getRoute(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes)
+> Route getRoute(id4n, type, privateRoutes, publicRoutes)
 
 Retrieve current route of a GUID (or ID4N)
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.RoutingApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 RoutingApi apiInstance = new RoutingApi();
 String id4n = "id4n_example"; // String | id4n
 String type = "type_example"; // String | The type of route you want to have
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Boolean privateRoutes = true; // Boolean | privateRoutes
 Boolean publicRoutes = true; // Boolean | publicRoutes
 try {
-    Route result = apiInstance.getRoute(id4n, type, authorization, acceptLanguage, privateRoutes, publicRoutes);
+    Route result = apiInstance.getRoute(id4n, type, privateRoutes, publicRoutes);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoute");
@@ -44,8 +52,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **type** | **String**| The type of route you want to have |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **privateRoutes** | **Boolean**| privateRoutes | [optional]
  **publicRoutes** | **Boolean**| publicRoutes | [optional]
 
@@ -55,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -64,24 +70,32 @@ No authorization required
 
 <a name="getRoutingFile"></a>
 # **getRoutingFile**
-> RoutingFile getRoutingFile(id4n, authorization, acceptLanguage, organizationId)
+> RoutingFile getRoutingFile(id4n, organizationId)
 
 Retrieve routing file
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.RoutingApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 RoutingApi apiInstance = new RoutingApi();
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Long organizationId = 789L; // Long | organizationId
 try {
-    RoutingFile result = apiInstance.getRoutingFile(id4n, authorization, acceptLanguage, organizationId);
+    RoutingFile result = apiInstance.getRoutingFile(id4n, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingFile");
@@ -94,8 +108,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **organizationId** | **Long**| organizationId | [optional]
 
 ### Return type
@@ -104,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -113,24 +125,32 @@ No authorization required
 
 <a name="updateRoutingFile"></a>
 # **updateRoutingFile**
-> ApiError updateRoutingFile(rfr, id4n, authorization, acceptLanguage)
+> ApiError updateRoutingFile(rfr, id4n)
 
 Store routing file
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.RoutingApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 RoutingApi apiInstance = new RoutingApi();
 RoutingFileRequest rfr = new RoutingFileRequest(); // RoutingFileRequest | rfr
 String id4n = "id4n_example"; // String | id4n
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.updateRoutingFile(rfr, id4n, authorization, acceptLanguage);
+    ApiError result = apiInstance.updateRoutingFile(rfr, id4n);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#updateRoutingFile");
@@ -144,8 +164,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rfr** | [**RoutingFileRequest**](RoutingFileRequest.md)| rfr |
  **id4n** | **String**| id4n |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -153,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 

@@ -20,24 +20,32 @@ Method | HTTP request | Description
 
 <a name="addApiKeyPrivilege"></a>
 # **addApiKeyPrivilege**
-> ApiError addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, authorization, acceptLanguage)
+> ApiError addApiKeyPrivilege(key, addApiKeyPrivilegeRequest)
 
 Add privilege
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest = new AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest, authorization, acceptLanguage);
+    ApiError result = apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#addApiKeyPrivilege");
@@ -51,8 +59,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
  **addApiKeyPrivilegeRequest** | [**AddApiKeyPrivilegeRequest**](AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -60,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -69,25 +75,33 @@ No authorization required
 
 <a name="addApiKeyPrivilegeForId4ns"></a>
 # **addApiKeyPrivilegeForId4ns**
-> ApiError addApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage)
+> ApiError addApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Add ID4ns of a privilege
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
 ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage);
+    ApiError result = apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#addApiKeyPrivilegeForId4ns");
@@ -102,8 +116,6 @@ Name | Type | Description  | Notes
  **key** | **String**| key |
  **privilege** | **String**| privilege |
  **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -111,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -120,7 +132,7 @@ No authorization required
 
 <a name="createNewApiKey"></a>
 # **createNewApiKey**
-> ApiKeyPresentation createNewApiKey(creationRequest, authorization, acceptLanguage)
+> ApiKeyPresentation createNewApiKey(creationRequest)
 
 Create API key
 
@@ -129,16 +141,24 @@ Creation of a new API key.
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 ApiKeyCreationRequest creationRequest = new ApiKeyCreationRequest(); // ApiKeyCreationRequest | API key to be created.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiKeyPresentation result = apiInstance.createNewApiKey(creationRequest, authorization, acceptLanguage);
+    ApiKeyPresentation result = apiInstance.createNewApiKey(creationRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#createNewApiKey");
@@ -151,8 +171,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **creationRequest** | [**ApiKeyCreationRequest**](ApiKeyCreationRequest.md)| API key to be created. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -160,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -169,7 +187,7 @@ No authorization required
 
 <a name="deleteApiKey"></a>
 # **deleteApiKey**
-> ApiError deleteApiKey(key, authorization, acceptLanguage)
+> ApiError deleteApiKey(key)
 
 Delete API key
 
@@ -178,16 +196,24 @@ Deletion of an API key.
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | The API key to delete.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.deleteApiKey(key, authorization, acceptLanguage);
+    ApiError result = apiInstance.deleteApiKey(key);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#deleteApiKey");
@@ -200,8 +226,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| The API key to delete. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -209,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -218,7 +242,7 @@ No authorization required
 
 <a name="getApiKey"></a>
 # **getApiKey**
-> ApiKeyPresentation getApiKey(key, authorization, acceptLanguage)
+> ApiKeyPresentation getApiKey(key)
 
 Show API key
 
@@ -227,16 +251,24 @@ Showing the details of an API key.
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | The API key to show.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiKeyPresentation result = apiInstance.getApiKey(key, authorization, acceptLanguage);
+    ApiKeyPresentation result = apiInstance.getApiKey(key);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#getApiKey");
@@ -249,8 +281,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| The API key to show. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -258,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -267,7 +297,7 @@ No authorization required
 
 <a name="listAllApiKeyPrivileges"></a>
 # **listAllApiKeyPrivileges**
-> ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(authorization, acceptLanguage, id4nConcerning, offset, limit)
+> ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(id4nConcerning, offset, limit)
 
 List all privileges
 
@@ -276,18 +306,26 @@ Listing all possible API key privileges.
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Boolean id4nConcerning = true; // Boolean | id4nConcerning
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    ApiKeyPrivilegeInfoResponse result = apiInstance.listAllApiKeyPrivileges(authorization, acceptLanguage, id4nConcerning, offset, limit);
+    ApiKeyPrivilegeInfoResponse result = apiInstance.listAllApiKeyPrivileges(id4nConcerning, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listAllApiKeyPrivileges");
@@ -299,8 +337,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **id4nConcerning** | **Boolean**| id4nConcerning | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -311,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -320,7 +356,7 @@ No authorization required
 
 <a name="listAllApiKeysOfOrganization"></a>
 # **listAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse listAllApiKeysOfOrganization(organizationId, authorization, acceptLanguage, offset, limit)
+> PaginatedApiKeyResponse listAllApiKeysOfOrganization(organizationId, offset, limit)
 
 Find API key by organization
 
@@ -329,18 +365,26 @@ Finding all API key assigned to the specified organization in a paginated manner
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 Long organizationId = 789L; // Long | The id of the organization to search in.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedApiKeyResponse result = apiInstance.listAllApiKeysOfOrganization(organizationId, authorization, acceptLanguage, offset, limit);
+    PaginatedApiKeyResponse result = apiInstance.listAllApiKeysOfOrganization(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listAllApiKeysOfOrganization");
@@ -353,8 +397,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The id of the organization to search in. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -364,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -373,25 +415,33 @@ No authorization required
 
 <a name="listApiKeyPrivileges"></a>
 # **listApiKeyPrivileges**
-> ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(key, authorization, acceptLanguage, offset, limit)
+> ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(key, offset, limit)
 
 List privileges
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    ApiKeyPrivilegePaginatedResponse result = apiInstance.listApiKeyPrivileges(key, authorization, acceptLanguage, offset, limit);
+    ApiKeyPrivilegePaginatedResponse result = apiInstance.listApiKeyPrivileges(key, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listApiKeyPrivileges");
@@ -404,8 +454,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -415,7 +463,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -424,7 +472,7 @@ No authorization required
 
 <a name="listId4ns"></a>
 # **listId4ns**
-> Id4nPresentationPaginatedResponse listId4ns(key, privilege, authorization, acceptLanguage, offset, limit)
+> Id4nPresentationPaginatedResponse listId4ns(key, privilege, offset, limit)
 
 ID4ns of a privilege
 
@@ -433,19 +481,27 @@ Listing ID4ns of a id4n concerning privilege
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    Id4nPresentationPaginatedResponse result = apiInstance.listId4ns(key, privilege, authorization, acceptLanguage, offset, limit);
+    Id4nPresentationPaginatedResponse result = apiInstance.listId4ns(key, privilege, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listId4ns");
@@ -459,8 +515,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
  **privilege** | **String**| privilege |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -470,7 +524,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -479,24 +533,32 @@ No authorization required
 
 <a name="removeApiKeyPrivilege"></a>
 # **removeApiKeyPrivilege**
-> ApiError removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage)
+> ApiError removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest)
 
 Remove privilege
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest = new RemoveApiKeyPrivilegeRequest(); // RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest, authorization, acceptLanguage);
+    ApiError result = apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#removeApiKeyPrivilege");
@@ -510,8 +572,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
  **removeApiKeyPrivilegeRequest** | [**RemoveApiKeyPrivilegeRequest**](RemoveApiKeyPrivilegeRequest.md)| removeApiKeyPrivilegeRequest |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -519,7 +579,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -528,25 +588,33 @@ No authorization required
 
 <a name="removeApiKeyPrivilegeForId4ns"></a>
 # **removeApiKeyPrivilegeForId4ns**
-> ApiError removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage)
+> ApiError removeApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Remove id4ns of a privilege
 
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
 ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns, authorization, acceptLanguage);
+    ApiError result = apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#removeApiKeyPrivilegeForId4ns");
@@ -561,8 +629,6 @@ Name | Type | Description  | Notes
  **key** | **String**| key |
  **privilege** | **String**| privilege |
  **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -570,7 +636,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
@@ -579,7 +645,7 @@ No authorization required
 
 <a name="updateApiKey"></a>
 # **updateApiKey**
-> ApiError updateApiKey(key, apiKeyChange, authorization, acceptLanguage)
+> ApiError updateApiKey(key, apiKeyChange)
 
 Update API keys
 
@@ -588,17 +654,25 @@ API keys can be updated with new labels, and be activated and deactivated. The s
 ### Example
 ```java
 // Import classes:
+//import de.id4i.ApiClient;
 //import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
 //import de.id4i.api.ApiKeysApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | The API key to be updated.
 ApiKeyChangeRequest apiKeyChange = new ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
-String authorization = "authorization_example"; // String | Authorization JWT Bearer Token
-String acceptLanguage = "acceptLanguage_example"; // String | Requested language
 try {
-    ApiError result = apiInstance.updateApiKey(key, apiKeyChange, authorization, acceptLanguage);
+    ApiError result = apiInstance.updateApiKey(key, apiKeyChange);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#updateApiKey");
@@ -612,8 +686,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| The API key to be updated. |
  **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. |
- **authorization** | **String**| Authorization JWT Bearer Token | [optional]
- **acceptLanguage** | **String**| Requested language | [optional]
 
 ### Return type
 
@@ -621,7 +693,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Authorization](../README.md#Authorization)
 
 ### HTTP request headers
 
