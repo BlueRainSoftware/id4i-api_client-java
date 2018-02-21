@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiKeyPrivilegePaginatedResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-21T09:05:32.552Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-21T22:01:31.855Z")
 public class ApiKeyPrivilegePaginatedResponse {
   @SerializedName("elements")
   private List<ApiKeyPrivilege> elements = new ArrayList<ApiKeyPrivilege>();
