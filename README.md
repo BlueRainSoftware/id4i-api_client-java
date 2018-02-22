@@ -1,7 +1,7 @@
 # ID4i API Client Library - Java (de.id4i.api.id4i-api-client)
 
 This library allows developers to interact with the http://id4i.de HTTP API.
-Typically you won't to build it yourselves, you can just pull in the dependency from maven central using Maven, Gradle
+Typically you won't have to build it yourselves, you can just pull in the dependency from maven central using Maven, Gradle
 or the like.
 
 Feel free to look at the sources and the documentation contained in this repository.
