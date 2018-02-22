@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-22T13:12:13.510Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-22T13:15:53.725Z")
 public class ApiError {
   /**
    * Gets or Sets code
