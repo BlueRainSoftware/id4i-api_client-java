@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-22T09:14:05.702Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-22T10:05:50.157Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -101,6 +101,8 @@ public class ApiError {
     EMAIL_PREPARATION_FAILED("ERR_EMAIL_PREPARATION_FAILED"),
     
     IMAGE_CONVERSION("ERR_IMAGE_CONVERSION"),
+    
+    UPLOAD_TOO_LARGE("ERR_UPLOAD_TOO_LARGE"),
     
     INVALID_ALIAS_TYPE("ERR_INVALID_ALIAS_TYPE"),
     
