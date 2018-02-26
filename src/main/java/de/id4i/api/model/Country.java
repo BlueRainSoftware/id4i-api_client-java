@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Country
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-25T22:01:47.051Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-02-26T08:59:19.688Z")
 public class Country {
   @SerializedName("code")
   private String code = null;
