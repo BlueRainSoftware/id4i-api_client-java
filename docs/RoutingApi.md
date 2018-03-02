@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getRoute"></a>
 # **getRoute**
-> Route getRoute(id4n, type, privateRoutes, publicRoutes)
+> Route getRoute(id4n, type, privateRoutes, publicRoutes, interpolate)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -37,8 +37,9 @@ String id4n = "id4n_example"; // String | id4n
 String type = "type_example"; // String | The type of route you want to have
 Boolean privateRoutes = true; // Boolean | privateRoutes
 Boolean publicRoutes = true; // Boolean | publicRoutes
+Boolean interpolate = true; // Boolean | interpolate
 try {
-    Route result = apiInstance.getRoute(id4n, type, privateRoutes, publicRoutes);
+    Route result = apiInstance.getRoute(id4n, type, privateRoutes, publicRoutes, interpolate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoute");
@@ -54,6 +55,7 @@ Name | Type | Description  | Notes
  **type** | **String**| The type of route you want to have |
  **privateRoutes** | **Boolean**| privateRoutes | [optional]
  **publicRoutes** | **Boolean**| publicRoutes | [optional]
+ **interpolate** | **Boolean**| interpolate | [optional]
 
 ### Return type
 
