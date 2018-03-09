@@ -27,10 +27,13 @@ import java.io.IOException;
 /**
  * OwnedDocument
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-09T16:12:44.702Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-09T18:12:01.194Z")
 public class OwnedDocument {
   @SerializedName("filename")
   private String filename = null;
+
+  @SerializedName("mimeType")
+  private String mimeType = null;
 
   @SerializedName("ownerOrganizationId")
   private Long ownerOrganizationId = null;
@@ -44,16 +47,34 @@ public class OwnedDocument {
   }
 
    /**
-   * Get filename
+   * File Name
    * @return filename
   **/
-  @ApiModelProperty(example = "publicInfo.pdf", value = "")
+  @ApiModelProperty(example = "publicInfo.pdf", value = "File Name")
   public String getFilename() {
     return filename;
   }
 
   public void setFilename(String filename) {
     this.filename = filename;
+  }
+
+  public OwnedDocument mimeType(String mimeType) {
+    this.mimeType = mimeType;
+    return this;
+  }
+
+   /**
+   * Mime Type
+   * @return mimeType
+  **/
+  @ApiModelProperty(example = "text/plain", value = "Mime Type")
+  public String getMimeType() {
+    return mimeType;
+  }
+
+  public void setMimeType(String mimeType) {
+    this.mimeType = mimeType;
   }
 
    /**
@@ -94,13 +115,14 @@ public class OwnedDocument {
     }
     OwnedDocument ownedDocument = (OwnedDocument) o;
     return Objects.equals(this.filename, ownedDocument.filename) &&
+        Objects.equals(this.mimeType, ownedDocument.mimeType) &&
         Objects.equals(this.ownerOrganizationId, ownedDocument.ownerOrganizationId) &&
         Objects.equals(this.visibility, ownedDocument.visibility);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, ownerOrganizationId, visibility);
+    return Objects.hash(filename, mimeType, ownerOrganizationId, visibility);
   }
 
 
@@ -110,6 +132,7 @@ public class OwnedDocument {
     sb.append("class OwnedDocument {\n");
     
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
+    sb.append("    mimeType: ").append(toIndentedString(mimeType)).append("\n");
     sb.append("    ownerOrganizationId: ").append(toIndentedString(ownerOrganizationId)).append("\n");
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("}");
