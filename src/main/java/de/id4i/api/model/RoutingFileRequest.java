@@ -27,31 +27,13 @@ import java.io.IOException;
 /**
  * RoutingFileRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-09T14:10:52.654Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-09T15:25:36.548Z")
 public class RoutingFileRequest {
-  @SerializedName("routing")
-  private RoutingFile routing = null;
-
   @SerializedName("organizationId")
   private Long organizationId = null;
 
-  public RoutingFileRequest routing(RoutingFile routing) {
-    this.routing = routing;
-    return this;
-  }
-
-   /**
-   * Get routing
-   * @return routing
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public RoutingFile getRouting() {
-    return routing;
-  }
-
-  public void setRouting(RoutingFile routing) {
-    this.routing = routing;
-  }
+  @SerializedName("routing")
+  private RoutingFile routing = null;
 
   public RoutingFileRequest organizationId(Long organizationId) {
     this.organizationId = organizationId;
@@ -71,6 +53,24 @@ public class RoutingFileRequest {
     this.organizationId = organizationId;
   }
 
+  public RoutingFileRequest routing(RoutingFile routing) {
+    this.routing = routing;
+    return this;
+  }
+
+   /**
+   * Get routing
+   * @return routing
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public RoutingFile getRouting() {
+    return routing;
+  }
+
+  public void setRouting(RoutingFile routing) {
+    this.routing = routing;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,13 +81,13 @@ public class RoutingFileRequest {
       return false;
     }
     RoutingFileRequest routingFileRequest = (RoutingFileRequest) o;
-    return Objects.equals(this.routing, routingFileRequest.routing) &&
-        Objects.equals(this.organizationId, routingFileRequest.organizationId);
+    return Objects.equals(this.organizationId, routingFileRequest.organizationId) &&
+        Objects.equals(this.routing, routingFileRequest.routing);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(routing, organizationId);
+    return Objects.hash(organizationId, routing);
   }
 
 
@@ -96,8 +96,8 @@ public class RoutingFileRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class RoutingFileRequest {\n");
     
-    sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    routing: ").append(toIndentedString(routing)).append("\n");
     sb.append("}");
     return sb.toString();
   }

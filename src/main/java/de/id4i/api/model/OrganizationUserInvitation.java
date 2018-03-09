@@ -28,16 +28,16 @@ import java.util.List;
 /**
  * OrganizationUserInvitation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-09T14:10:52.654Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-09T15:25:36.548Z")
 public class OrganizationUserInvitation {
   @SerializedName("email")
   private String email = null;
 
-  @SerializedName("userName")
-  private String userName = null;
-
   @SerializedName("roles")
   private List<String> roles = new ArrayList<String>();
+
+  @SerializedName("userName")
+  private String userName = null;
 
   public OrganizationUserInvitation email(String email) {
     this.email = email;
@@ -55,24 +55,6 @@ public class OrganizationUserInvitation {
 
   public void setEmail(String email) {
     this.email = email;
-  }
-
-  public OrganizationUserInvitation userName(String userName) {
-    this.userName = userName;
-    return this;
-  }
-
-   /**
-   * Get userName
-   * @return userName
-  **/
-  @ApiModelProperty(value = "")
-  public String getUserName() {
-    return userName;
-  }
-
-  public void setUserName(String userName) {
-    this.userName = userName;
   }
 
   public OrganizationUserInvitation roles(List<String> roles) {
@@ -98,6 +80,24 @@ public class OrganizationUserInvitation {
     this.roles = roles;
   }
 
+  public OrganizationUserInvitation userName(String userName) {
+    this.userName = userName;
+    return this;
+  }
+
+   /**
+   * Get userName
+   * @return userName
+  **/
+  @ApiModelProperty(value = "")
+  public String getUserName() {
+    return userName;
+  }
+
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,13 +109,13 @@ public class OrganizationUserInvitation {
     }
     OrganizationUserInvitation organizationUserInvitation = (OrganizationUserInvitation) o;
     return Objects.equals(this.email, organizationUserInvitation.email) &&
-        Objects.equals(this.userName, organizationUserInvitation.userName) &&
-        Objects.equals(this.roles, organizationUserInvitation.roles);
+        Objects.equals(this.roles, organizationUserInvitation.roles) &&
+        Objects.equals(this.userName, organizationUserInvitation.userName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(email, userName, roles);
+    return Objects.hash(email, roles, userName);
   }
 
 
@@ -125,8 +125,8 @@ public class OrganizationUserInvitation {
     sb.append("class OrganizationUserInvitation {\n");
     
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("    roles: ").append(toIndentedString(roles)).append("\n");
+    sb.append("    userName: ").append(toIndentedString(userName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
