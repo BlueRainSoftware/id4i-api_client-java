@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import de.id4i.api.model.ApiError;
 import de.id4i.api.model.BillingPosition;
+import org.joda.time.DateTime;
 import de.id4i.api.model.ServiceCosts;
 
 import java.lang.reflect.Type;
@@ -59,12 +60,14 @@ public class BillingApi {
     /**
      * Build call for getPositionsForOrganization
      * @param organizationId The organization to compute the billing information for (required)
+     * @param fromDate Billing start date (optional)
+     * @param toDate Billing end date (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getPositionsForOrganizationCall(Long organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getPositionsForOrganizationCall(Long organizationId, DateTime fromDate, DateTime toDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -72,6 +75,10 @@ public class BillingApi {
             .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (fromDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "fromDate", fromDate));
+        if (toDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "toDate", toDate));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -106,7 +113,7 @@ public class BillingApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPositionsForOrganizationValidateBeforeCall(Long organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getPositionsForOrganizationValidateBeforeCall(Long organizationId, DateTime fromDate, DateTime toDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -114,7 +121,7 @@ public class BillingApi {
         }
         
         
-        com.squareup.okhttp.Call call = getPositionsForOrganizationCall(organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPositionsForOrganizationCall(organizationId, fromDate, toDate, progressListener, progressRequestListener);
         return call;
 
         
@@ -127,11 +134,13 @@ public class BillingApi {
      * Get billing positions for a given organization
      * 
      * @param organizationId The organization to compute the billing information for (required)
+     * @param fromDate Billing start date (optional)
+     * @param toDate Billing end date (optional)
      * @return List&lt;BillingPosition&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<BillingPosition> getPositionsForOrganization(Long organizationId) throws ApiException {
-        ApiResponse<List<BillingPosition>> resp = getPositionsForOrganizationWithHttpInfo(organizationId);
+    public List<BillingPosition> getPositionsForOrganization(Long organizationId, DateTime fromDate, DateTime toDate) throws ApiException {
+        ApiResponse<List<BillingPosition>> resp = getPositionsForOrganizationWithHttpInfo(organizationId, fromDate, toDate);
         return resp.getData();
     }
 
@@ -139,11 +148,13 @@ public class BillingApi {
      * Get billing positions for a given organization
      * 
      * @param organizationId The organization to compute the billing information for (required)
+     * @param fromDate Billing start date (optional)
+     * @param toDate Billing end date (optional)
      * @return ApiResponse&lt;List&lt;BillingPosition&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<BillingPosition>> getPositionsForOrganizationWithHttpInfo(Long organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getPositionsForOrganizationValidateBeforeCall(organizationId, null, null);
+    public ApiResponse<List<BillingPosition>> getPositionsForOrganizationWithHttpInfo(Long organizationId, DateTime fromDate, DateTime toDate) throws ApiException {
+        com.squareup.okhttp.Call call = getPositionsForOrganizationValidateBeforeCall(organizationId, fromDate, toDate, null, null);
         Type localVarReturnType = new TypeToken<List<BillingPosition>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -152,11 +163,13 @@ public class BillingApi {
      * Get billing positions for a given organization (asynchronously)
      * 
      * @param organizationId The organization to compute the billing information for (required)
+     * @param fromDate Billing start date (optional)
+     * @param toDate Billing end date (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getPositionsForOrganizationAsync(Long organizationId, final ApiCallback<List<BillingPosition>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getPositionsForOrganizationAsync(Long organizationId, DateTime fromDate, DateTime toDate, final ApiCallback<List<BillingPosition>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -177,7 +190,7 @@ public class BillingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getPositionsForOrganizationValidateBeforeCall(organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPositionsForOrganizationValidateBeforeCall(organizationId, fromDate, toDate, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<BillingPosition>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -185,12 +198,14 @@ public class BillingApi {
     /**
      * Build call for getSumForOrganization
      * @param organizationId The organization to compute the billing information for (required)
+     * @param fromDate Billing start date (optional)
+     * @param toDate Billing end date (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getSumForOrganizationCall(Long organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getSumForOrganizationCall(Long organizationId, DateTime fromDate, DateTime toDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -198,6 +213,10 @@ public class BillingApi {
             .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        if (fromDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "fromDate", fromDate));
+        if (toDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "toDate", toDate));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -232,7 +251,7 @@ public class BillingApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getSumForOrganizationValidateBeforeCall(Long organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getSumForOrganizationValidateBeforeCall(Long organizationId, DateTime fromDate, DateTime toDate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -240,7 +259,7 @@ public class BillingApi {
         }
         
         
-        com.squareup.okhttp.Call call = getSumForOrganizationCall(organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSumForOrganizationCall(organizationId, fromDate, toDate, progressListener, progressRequestListener);
         return call;
 
         
@@ -253,11 +272,13 @@ public class BillingApi {
      * Get billing amount of services for a given organization
      * 
      * @param organizationId The organization to compute the billing information for (required)
+     * @param fromDate Billing start date (optional)
+     * @param toDate Billing end date (optional)
      * @return ServiceCosts
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ServiceCosts getSumForOrganization(Long organizationId) throws ApiException {
-        ApiResponse<ServiceCosts> resp = getSumForOrganizationWithHttpInfo(organizationId);
+    public ServiceCosts getSumForOrganization(Long organizationId, DateTime fromDate, DateTime toDate) throws ApiException {
+        ApiResponse<ServiceCosts> resp = getSumForOrganizationWithHttpInfo(organizationId, fromDate, toDate);
         return resp.getData();
     }
 
@@ -265,11 +286,13 @@ public class BillingApi {
      * Get billing amount of services for a given organization
      * 
      * @param organizationId The organization to compute the billing information for (required)
+     * @param fromDate Billing start date (optional)
+     * @param toDate Billing end date (optional)
      * @return ApiResponse&lt;ServiceCosts&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ServiceCosts> getSumForOrganizationWithHttpInfo(Long organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getSumForOrganizationValidateBeforeCall(organizationId, null, null);
+    public ApiResponse<ServiceCosts> getSumForOrganizationWithHttpInfo(Long organizationId, DateTime fromDate, DateTime toDate) throws ApiException {
+        com.squareup.okhttp.Call call = getSumForOrganizationValidateBeforeCall(organizationId, fromDate, toDate, null, null);
         Type localVarReturnType = new TypeToken<ServiceCosts>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -278,11 +301,13 @@ public class BillingApi {
      * Get billing amount of services for a given organization (asynchronously)
      * 
      * @param organizationId The organization to compute the billing information for (required)
+     * @param fromDate Billing start date (optional)
+     * @param toDate Billing end date (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getSumForOrganizationAsync(Long organizationId, final ApiCallback<ServiceCosts> callback) throws ApiException {
+    public com.squareup.okhttp.Call getSumForOrganizationAsync(Long organizationId, DateTime fromDate, DateTime toDate, final ApiCallback<ServiceCosts> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -303,7 +328,7 @@ public class BillingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getSumForOrganizationValidateBeforeCall(organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getSumForOrganizationValidateBeforeCall(organizationId, fromDate, toDate, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ServiceCosts>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
