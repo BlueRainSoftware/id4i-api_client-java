@@ -72,7 +72,7 @@ public class PublicServicesApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}"
+        String localVarPath = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata"
             .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
             .replaceAll("\\{" + "fileName" + "\\}", apiClient.escapeString(fileName.toString()));
@@ -636,7 +636,7 @@ public class PublicServicesApi {
         Object localVarPostBody = null;
         
         // create path and map variables
-        String localVarPath = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content"
+        String localVarPath = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}"
             .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
             .replaceAll("\\{" + "fileName" + "\\}", apiClient.escapeString(fileName.toString()));
@@ -709,11 +709,11 @@ public class PublicServicesApi {
      * @param organizationId organizationId (required)
      * @param id4n id4n (required)
      * @param fileName fileName (required)
-     * @return java.io.File
+     * @return byte[]
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public java.io.File readPublicDocument(Long organizationId, String id4n, String fileName) throws ApiException {
-        ApiResponse<java.io.File> resp = readPublicDocumentWithHttpInfo(organizationId, id4n, fileName);
+    public byte[] readPublicDocument(Long organizationId, String id4n, String fileName) throws ApiException {
+        ApiResponse<byte[]> resp = readPublicDocumentWithHttpInfo(organizationId, id4n, fileName);
         return resp.getData();
     }
 
@@ -723,12 +723,12 @@ public class PublicServicesApi {
      * @param organizationId organizationId (required)
      * @param id4n id4n (required)
      * @param fileName fileName (required)
-     * @return ApiResponse&lt;java.io.File&gt;
+     * @return ApiResponse&lt;byte[]&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<java.io.File> readPublicDocumentWithHttpInfo(Long organizationId, String id4n, String fileName) throws ApiException {
+    public ApiResponse<byte[]> readPublicDocumentWithHttpInfo(Long organizationId, String id4n, String fileName) throws ApiException {
         com.squareup.okhttp.Call call = readPublicDocumentValidateBeforeCall(organizationId, id4n, fileName, null, null);
-        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
+        Type localVarReturnType = new TypeToken<byte[]>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -742,7 +742,7 @@ public class PublicServicesApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call readPublicDocumentAsync(Long organizationId, String id4n, String fileName, final ApiCallback<java.io.File> callback) throws ApiException {
+    public com.squareup.okhttp.Call readPublicDocumentAsync(Long organizationId, String id4n, String fileName, final ApiCallback<byte[]> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -764,7 +764,7 @@ public class PublicServicesApi {
         }
 
         com.squareup.okhttp.Call call = readPublicDocumentValidateBeforeCall(organizationId, id4n, fileName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<java.io.File>(){}.getType();
+        Type localVarReturnType = new TypeToken<byte[]>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
