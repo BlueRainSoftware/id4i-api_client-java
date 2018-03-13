@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PublicImagePresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-13T13:51:15.988Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-13T22:03:35.909Z")
 public class PublicImagePresentation {
   @SerializedName("uri")
   private String uri = null;
