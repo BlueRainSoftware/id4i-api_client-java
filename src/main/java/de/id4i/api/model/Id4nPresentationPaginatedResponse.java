@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * Id4nPresentationPaginatedResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-14T14:03:20.961Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-14T14:17:11.415Z")
 public class Id4nPresentationPaginatedResponse {
   @SerializedName("elements")
   private List<Id4nPresentation> elements = new ArrayList<>();
