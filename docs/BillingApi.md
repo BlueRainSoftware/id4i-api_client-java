@@ -33,8 +33,8 @@ Authorization.setApiKey("YOUR API KEY");
 
 BillingApi apiInstance = new BillingApi();
 Long organizationId = 789L; // Long | The organization to compute the billing information for
-DateTime fromDate = new DateTime(); // DateTime | Billing start date
-DateTime toDate = new DateTime(); // DateTime | Billing end date
+LocalDateTime fromDate = new LocalDateTime(); // LocalDateTime | Billing start date
+LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | Billing end date
 try {
     List<BillingPosition> result = apiInstance.getPositionsForOrganization(organizationId, fromDate, toDate);
     System.out.println(result);
@@ -49,8 +49,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The organization to compute the billing information for |
- **fromDate** | **DateTime**| Billing start date | [optional]
- **toDate** | **DateTime**| Billing end date | [optional]
+ **fromDate** | **LocalDateTime**| Billing start date | [optional]
+ **toDate** | **LocalDateTime**| Billing end date | [optional]
 
 ### Return type
 
@@ -90,8 +90,8 @@ Authorization.setApiKey("YOUR API KEY");
 
 BillingApi apiInstance = new BillingApi();
 Long organizationId = 789L; // Long | The organization to compute the billing information for
-DateTime fromDate = new DateTime(); // DateTime | Billing start date
-DateTime toDate = new DateTime(); // DateTime | Billing end date
+LocalDateTime fromDate = new LocalDateTime(); // LocalDateTime | Billing start date
+LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | Billing end date
 try {
     ServiceCosts result = apiInstance.getSumForOrganization(organizationId, fromDate, toDate);
     System.out.println(result);
@@ -106,8 +106,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The organization to compute the billing information for |
- **fromDate** | **DateTime**| Billing start date | [optional]
- **toDate** | **DateTime**| Billing end date | [optional]
+ **fromDate** | **LocalDateTime**| Billing start date | [optional]
+ **toDate** | **LocalDateTime**| Billing end date | [optional]
 
 ### Return type
 

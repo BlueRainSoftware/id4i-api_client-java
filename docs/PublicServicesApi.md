@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 <a name="go"></a>
 # **go**
-> ApiError go(guid)
+> go(guid)
 
 Forward
 
@@ -88,8 +88,7 @@ Forwarding to the designated route defined in the routing,
 PublicServicesApi apiInstance = new PublicServicesApi();
 String guid = "guid_example"; // String | guid
 try {
-    ApiError result = apiInstance.go(guid);
-    System.out.println(result);
+    apiInstance.go(guid);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicServicesApi#go");
     e.printStackTrace();
@@ -104,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

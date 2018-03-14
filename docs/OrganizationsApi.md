@@ -28,7 +28,7 @@ Method | HTTP request | Description
 
 <a name="addUserRoles"></a>
 # **addUserRoles**
-> ApiError addUserRoles(organizationId, username, changeRoleRequest)
+> addUserRoles(organizationId, username, changeRoleRequest)
 
 Add role(s) to user
 
@@ -54,8 +54,7 @@ Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
-    ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
-    System.out.println(result);
+    apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#addUserRoles");
     e.printStackTrace();
@@ -72,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -140,7 +139,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteOrganization"></a>
 # **deleteOrganization**
-> ApiError deleteOrganization(organizationId)
+> deleteOrganization(organizationId)
 
 Delete organization
 
@@ -164,8 +163,7 @@ Authorization.setApiKey("YOUR API KEY");
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | The id of the organization to be deleted.
 try {
-    ApiError result = apiInstance.deleteOrganization(organizationId);
-    System.out.println(result);
+    apiInstance.deleteOrganization(organizationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#deleteOrganization");
     e.printStackTrace();
@@ -180,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -193,7 +191,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteOrganizationBillingAddress"></a>
 # **deleteOrganizationBillingAddress**
-> ApiError deleteOrganizationBillingAddress(organizationId)
+> deleteOrganizationBillingAddress(organizationId)
 
 Remove billing address
 
@@ -217,8 +215,7 @@ Authorization.setApiKey("YOUR API KEY");
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 try {
-    ApiError result = apiInstance.deleteOrganizationBillingAddress(organizationId);
-    System.out.println(result);
+    apiInstance.deleteOrganizationBillingAddress(organizationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#deleteOrganizationBillingAddress");
     e.printStackTrace();
@@ -233,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -246,7 +243,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteOrganizationLogo"></a>
 # **deleteOrganizationLogo**
-> ApiError deleteOrganizationLogo(organizationId)
+> deleteOrganizationLogo(organizationId)
 
 Delete organization logo
 
@@ -270,8 +267,7 @@ Authorization.setApiKey("YOUR API KEY");
 OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | The id of the organization where the logo should be deleted.
 try {
-    ApiError result = apiInstance.deleteOrganizationLogo(organizationId);
-    System.out.println(result);
+    apiInstance.deleteOrganizationLogo(organizationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#deleteOrganizationLogo");
     e.printStackTrace();
@@ -286,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -759,7 +755,7 @@ Name | Type | Description  | Notes
 
 <a name="inviteUsers"></a>
 # **inviteUsers**
-> ApiError inviteUsers(organizationId, invitationList)
+> inviteUsers(organizationId, invitationList)
 
 Invite Users
 
@@ -784,8 +780,7 @@ OrganizationsApi apiInstance = new OrganizationsApi();
 Long organizationId = 789L; // Long | organizationId
 OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 try {
-    ApiError result = apiInstance.inviteUsers(organizationId, invitationList);
-    System.out.println(result);
+    apiInstance.inviteUsers(organizationId, invitationList);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#inviteUsers");
     e.printStackTrace();
@@ -801,7 +796,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -869,7 +864,7 @@ Name | Type | Description  | Notes
 
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
-> ApiError removeUserRoles(organizationId, username, changeRoleRequest)
+> removeUserRoles(organizationId, username, changeRoleRequest)
 
 Remove role(s) from user
 
@@ -895,8 +890,7 @@ Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
-    ApiError result = apiInstance.removeUserRoles(organizationId, username, changeRoleRequest);
-    System.out.println(result);
+    apiInstance.removeUserRoles(organizationId, username, changeRoleRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#removeUserRoles");
     e.printStackTrace();
@@ -913,7 +907,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

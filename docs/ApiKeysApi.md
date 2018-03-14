@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addApiKeyPrivilege"></a>
 # **addApiKeyPrivilege**
-> ApiError addApiKeyPrivilege(key, addApiKeyPrivilegeRequest)
+> addApiKeyPrivilege(key, addApiKeyPrivilegeRequest)
 
 Add privilege
 
@@ -45,8 +45,7 @@ ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest = new AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
 try {
-    ApiError result = apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest);
-    System.out.println(result);
+    apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#addApiKeyPrivilege");
     e.printStackTrace();
@@ -62,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -75,7 +74,7 @@ Name | Type | Description  | Notes
 
 <a name="addApiKeyPrivilegeForId4ns"></a>
 # **addApiKeyPrivilegeForId4ns**
-> ApiError addApiKeyPrivilegeForId4ns(key, privilege, id4ns)
+> addApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Add ID4ns of a privilege
 
@@ -101,8 +100,7 @@ String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
 ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
 try {
-    ApiError result = apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns);
-    System.out.println(result);
+    apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#addApiKeyPrivilegeForId4ns");
     e.printStackTrace();
@@ -119,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -187,7 +185,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteApiKey"></a>
 # **deleteApiKey**
-> ApiError deleteApiKey(key)
+> deleteApiKey(key)
 
 Delete API key
 
@@ -213,8 +211,7 @@ Authorization.setApiKey("YOUR API KEY");
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | The API key to delete.
 try {
-    ApiError result = apiInstance.deleteApiKey(key);
-    System.out.println(result);
+    apiInstance.deleteApiKey(key);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#deleteApiKey");
     e.printStackTrace();
@@ -229,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -533,7 +530,7 @@ Name | Type | Description  | Notes
 
 <a name="removeApiKeyPrivilege"></a>
 # **removeApiKeyPrivilege**
-> ApiError removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest)
+> removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest)
 
 Remove privilege
 
@@ -558,8 +555,7 @@ ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 RemoveApiKeyPrivilegeRequest removeApiKeyPrivilegeRequest = new RemoveApiKeyPrivilegeRequest(); // RemoveApiKeyPrivilegeRequest | removeApiKeyPrivilegeRequest
 try {
-    ApiError result = apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest);
-    System.out.println(result);
+    apiInstance.removeApiKeyPrivilege(key, removeApiKeyPrivilegeRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#removeApiKeyPrivilege");
     e.printStackTrace();
@@ -575,7 +571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -588,7 +584,7 @@ Name | Type | Description  | Notes
 
 <a name="removeApiKeyPrivilegeForId4ns"></a>
 # **removeApiKeyPrivilegeForId4ns**
-> ApiError removeApiKeyPrivilegeForId4ns(key, privilege, id4ns)
+> removeApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Remove id4ns of a privilege
 
@@ -614,8 +610,7 @@ String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
 ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
 try {
-    ApiError result = apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns);
-    System.out.println(result);
+    apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#removeApiKeyPrivilegeForId4ns");
     e.printStackTrace();
@@ -632,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -645,7 +640,7 @@ Name | Type | Description  | Notes
 
 <a name="updateApiKey"></a>
 # **updateApiKey**
-> ApiError updateApiKey(key, apiKeyChange)
+> updateApiKey(key, apiKeyChange)
 
 Update API keys
 
@@ -672,8 +667,7 @@ ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | The API key to be updated.
 ApiKeyChangeRequest apiKeyChange = new ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
 try {
-    ApiError result = apiInstance.updateApiKey(key, apiKeyChange);
-    System.out.println(result);
+    apiInstance.updateApiKey(key, apiKeyChange);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#updateApiKey");
     e.printStackTrace();
@@ -689,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

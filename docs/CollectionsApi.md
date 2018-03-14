@@ -40,7 +40,7 @@ Method | HTTP request | Description
 
 <a name="addElementsToCollection"></a>
 # **addElementsToCollection**
-> ApiError addElementsToCollection(id4n, listOfGuids)
+> addElementsToCollection(id4n, listOfGuids)
 
 Add elements to collection
 
@@ -65,8 +65,7 @@ CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
 try {
-    ApiError result = apiInstance.addElementsToCollection(id4n, listOfGuids);
-    System.out.println(result);
+    apiInstance.addElementsToCollection(id4n, listOfGuids);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#addElementsToCollection");
     e.printStackTrace();
@@ -82,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -95,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="addElementsToLabelledCollection"></a>
 # **addElementsToLabelledCollection**
-> ApiError addElementsToLabelledCollection(collectionId4n, listOfGuids)
+> addElementsToLabelledCollection(collectionId4n, listOfGuids)
 
 Add elements to labelled collection
 
@@ -120,8 +119,7 @@ CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
 try {
-    ApiError result = apiInstance.addElementsToLabelledCollection(collectionId4n, listOfGuids);
-    System.out.println(result);
+    apiInstance.addElementsToLabelledCollection(collectionId4n, listOfGuids);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#addElementsToLabelledCollection");
     e.printStackTrace();
@@ -137,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -150,7 +148,7 @@ Name | Type | Description  | Notes
 
 <a name="addElementsToLogisticCollection"></a>
 # **addElementsToLogisticCollection**
-> ApiError addElementsToLogisticCollection(collectionId4n, listOfGuids)
+> addElementsToLogisticCollection(collectionId4n, listOfGuids)
 
 Add elements to logistic collection
 
@@ -175,8 +173,7 @@ CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
 try {
-    ApiError result = apiInstance.addElementsToLogisticCollection(collectionId4n, listOfGuids);
-    System.out.println(result);
+    apiInstance.addElementsToLogisticCollection(collectionId4n, listOfGuids);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#addElementsToLogisticCollection");
     e.printStackTrace();
@@ -192,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -205,7 +202,7 @@ Name | Type | Description  | Notes
 
 <a name="addElementsToRoutingCollection"></a>
 # **addElementsToRoutingCollection**
-> ApiError addElementsToRoutingCollection(collectionId4n, listOfGuids)
+> addElementsToRoutingCollection(collectionId4n, listOfGuids)
 
 Add element to routing collection
 
@@ -230,8 +227,7 @@ CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
 try {
-    ApiError result = apiInstance.addElementsToRoutingCollection(collectionId4n, listOfGuids);
-    System.out.println(result);
+    apiInstance.addElementsToRoutingCollection(collectionId4n, listOfGuids);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#addElementsToRoutingCollection");
     e.printStackTrace();
@@ -247,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -419,7 +415,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteCollection"></a>
 # **deleteCollection**
-> ApiError deleteCollection(id4n)
+> deleteCollection(id4n)
 
 Delete collection
 
@@ -443,8 +439,7 @@ Authorization.setApiKey("YOUR API KEY");
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 try {
-    ApiError result = apiInstance.deleteCollection(id4n);
-    System.out.println(result);
+    apiInstance.deleteCollection(id4n);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#deleteCollection");
     e.printStackTrace();
@@ -459,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -472,7 +467,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteLabelledCollection"></a>
 # **deleteLabelledCollection**
-> ApiError deleteLabelledCollection(id4n)
+> deleteLabelledCollection(id4n)
 
 Delete labelled collection
 
@@ -496,8 +491,7 @@ Authorization.setApiKey("YOUR API KEY");
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 try {
-    ApiError result = apiInstance.deleteLabelledCollection(id4n);
-    System.out.println(result);
+    apiInstance.deleteLabelledCollection(id4n);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#deleteLabelledCollection");
     e.printStackTrace();
@@ -512,7 +506,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -578,7 +572,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteRoutingCollection"></a>
 # **deleteRoutingCollection**
-> ApiError deleteRoutingCollection(id4n)
+> deleteRoutingCollection(id4n)
 
 Delete routing collection
 
@@ -602,8 +596,7 @@ Authorization.setApiKey("YOUR API KEY");
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 try {
-    ApiError result = apiInstance.deleteRoutingCollection(id4n);
-    System.out.println(result);
+    apiInstance.deleteRoutingCollection(id4n);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#deleteRoutingCollection");
     e.printStackTrace();
@@ -618,7 +611,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -1136,7 +1129,7 @@ Name | Type | Description  | Notes
 
 <a name="removeElementsFromCollection"></a>
 # **removeElementsFromCollection**
-> ApiError removeElementsFromCollection(id4n, listOfGuids)
+> removeElementsFromCollection(id4n, listOfGuids)
 
 Remove elements from collection
 
@@ -1161,8 +1154,7 @@ CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
 try {
-    ApiError result = apiInstance.removeElementsFromCollection(id4n, listOfGuids);
-    System.out.println(result);
+    apiInstance.removeElementsFromCollection(id4n, listOfGuids);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#removeElementsFromCollection");
     e.printStackTrace();
@@ -1178,7 +1170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -1191,7 +1183,7 @@ Name | Type | Description  | Notes
 
 <a name="removeElementsFromLabelledCollection"></a>
 # **removeElementsFromLabelledCollection**
-> ApiError removeElementsFromLabelledCollection(collectionId4n, listOfGuids)
+> removeElementsFromLabelledCollection(collectionId4n, listOfGuids)
 
 Remove elements from labelled collection
 
@@ -1216,8 +1208,7 @@ CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
 try {
-    ApiError result = apiInstance.removeElementsFromLabelledCollection(collectionId4n, listOfGuids);
-    System.out.println(result);
+    apiInstance.removeElementsFromLabelledCollection(collectionId4n, listOfGuids);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#removeElementsFromLabelledCollection");
     e.printStackTrace();
@@ -1233,7 +1224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -1246,7 +1237,7 @@ Name | Type | Description  | Notes
 
 <a name="removeElementsFromLogisticCollection"></a>
 # **removeElementsFromLogisticCollection**
-> ApiError removeElementsFromLogisticCollection(collectionId4n, listOfGuids)
+> removeElementsFromLogisticCollection(collectionId4n, listOfGuids)
 
 Remove elements from logistic collection
 
@@ -1271,8 +1262,7 @@ CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
 try {
-    ApiError result = apiInstance.removeElementsFromLogisticCollection(collectionId4n, listOfGuids);
-    System.out.println(result);
+    apiInstance.removeElementsFromLogisticCollection(collectionId4n, listOfGuids);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#removeElementsFromLogisticCollection");
     e.printStackTrace();
@@ -1288,7 +1278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -1301,7 +1291,7 @@ Name | Type | Description  | Notes
 
 <a name="removeElementsFromRoutingCollection"></a>
 # **removeElementsFromRoutingCollection**
-> ApiError removeElementsFromRoutingCollection(collectionId4n, listOfGuids)
+> removeElementsFromRoutingCollection(collectionId4n, listOfGuids)
 
 Remove elements from routing collection
 
@@ -1326,8 +1316,7 @@ CollectionsApi apiInstance = new CollectionsApi();
 String collectionId4n = "collectionId4n_example"; // String | collectionId4n
 ListOfId4ns listOfGuids = new ListOfId4ns(); // ListOfId4ns | listOfGuids
 try {
-    ApiError result = apiInstance.removeElementsFromRoutingCollection(collectionId4n, listOfGuids);
-    System.out.println(result);
+    apiInstance.removeElementsFromRoutingCollection(collectionId4n, listOfGuids);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#removeElementsFromRoutingCollection");
     e.printStackTrace();
@@ -1343,7 +1332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 

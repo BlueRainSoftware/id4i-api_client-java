@@ -11,8 +11,16 @@ For additional information, please refer to
 * http://id4i.de for high level information about the ID4i platform
 * https://backend.id4i.de/docs/reference/en/reference.html for information about implementing your own solutions on top of ID4i
 * https://backend.id4i.de/docs/reference/en/reference.html#_java for more about this library
+* https://github.com/BlueRainSoftware/id4i-api_client-java for this libraries sources
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
+* https://github.com/BlueRainSoftware/support for getting additional support
 
+- API version: 0.2.4-SNAPSHOT
+- Package version: 
+    - Build date: 2018-03-14T10:12:40.460Z
+- Build package: io.swagger.codegen.languages.JavaClientCodegen
+
+    For more information, please visit [http://bluerain.de](http://bluerain.de)
 
 ## Installation
 
@@ -24,7 +32,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.2.3-SNAPSHOT</version>
+    <version>0.2.4-SNAPSHOT</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -34,7 +42,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.2.3-SNAPSHOT"
+compile "de.id4i.api:id4i-api-client:0.2.4-SNAPSHOT"
 ```
 
 ### Others
@@ -64,38 +72,37 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import de.id4i.*;
-import de.id4i.auth.*;
-import de.id4i.api.model.*;
-import de.id4i.api.AccountsApi;
+    import de.id4i.*;
+    import de.id4i.auth.*;
+    import de.id4i.api.model.*;
+    import de.id4i.api.AccountsApi;
 
-import java.io.File;
-import java.util.*;
+    import java.io.File;
+    import java.util.*;
 
-public class AccountsApiExample {
+    public class AccountsApiExample {
 
     public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    
         // Configure API key authorization: Authorization
         ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
         Authorization.setApiKey("YOUR API KEY");
         // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
         //Authorization.setApiKeyPrefix("Token");
 
-        AccountsApi apiInstance = new AccountsApi();
+    AccountsApi apiInstance = new AccountsApi();
         Long organizationId = 789L; // Long | organizationId
         String username = "username_example"; // String | username
         ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
-        try {
-            ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AccountsApi#addUserRoles");
-            e.printStackTrace();
-        }
+    try {
+    apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
+    } catch (ApiException e) {
+    System.err.println("Exception when calling AccountsApi#addUserRoles");
+    e.printStackTrace();
     }
-}
+    }
+    }
 
 ```
 
@@ -122,9 +129,9 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**verifyPasswordReset**](docs/AccountsApi.md#verifyPasswordReset) | **PUT** /account/password | Verify password reset
 *AccountsApi* | [**verifyUserRegistration**](docs/AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
 *AliasApi* | [**addGuidAlias**](docs/AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-*AliasApi* | [**addGuidAlias1**](docs/AliasApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *AliasApi* | [**getGuidAliasTypes**](docs/AliasApi.md#getGuidAliasTypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
 *AliasApi* | [**getGuidAliases**](docs/AliasApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*AliasApi* | [**removeGuidAlias**](docs/AliasApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *AliasApi* | [**searchByAlias**](docs/AliasApi.md#searchByAlias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 *ApiKeysApi* | [**addApiKeyPrivilege**](docs/ApiKeysApi.md#addApiKeyPrivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
 *ApiKeysApi* | [**addApiKeyPrivilegeForId4ns**](docs/ApiKeysApi.md#addApiKeyPrivilegeForId4ns) | **POST** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Add ID4ns of a privilege
@@ -172,15 +179,15 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**updateLabelledCollection**](docs/CollectionsApi.md#updateLabelledCollection) | **PATCH** /api/v1/collections/labelled/{id4n} | Update labelled collection
 *CollectionsApi* | [**updateLogisticCollection**](docs/CollectionsApi.md#updateLogisticCollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
 *CollectionsApi* | [**updateRoutingCollection**](docs/CollectionsApi.md#updateRoutingCollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
-*GUIDsApi* | [**addGuidAlias**](docs/GUIDsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-*GUIDsApi* | [**addGuidAlias1**](docs/GUIDsApi.md#addGuidAlias1) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-*GUIDsApi* | [**createGuid**](docs/GUIDsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
-*GUIDsApi* | [**getGuid**](docs/GUIDsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-*GUIDsApi* | [**getGuidAliases**](docs/GUIDsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
-*GUIDsApi* | [**getGuidsWithoutCollection**](docs/GUIDsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
-*GUIDsApi* | [**getId4n**](docs/GUIDsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-*GUIDsApi* | [**setGuid**](docs/GUIDsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-*GUIDsApi* | [**setGuid1**](docs/GUIDsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*GuidsApi* | [**addGuidAlias**](docs/GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+*GuidsApi* | [**createGuid**](docs/GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+*GuidsApi* | [**getGuid**](docs/GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
+*GuidsApi* | [**getGuidAliases**](docs/GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*GuidsApi* | [**getGuidsWithoutCollection**](docs/GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
+*GuidsApi* | [**getId4n**](docs/GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+*GuidsApi* | [**removeGuidAlias**](docs/GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+*GuidsApi* | [**setGuid**](docs/GuidsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+*GuidsApi* | [**setGuid1**](docs/GuidsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *OrganizationsApi* | [**addUserRoles**](docs/OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -331,4 +338,3 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 ## Author
 
 info@bluerain.de
-
