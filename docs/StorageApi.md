@@ -4,82 +4,19 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 [**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
-[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
-[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 [**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/documents/{id4n} | List documents
 [**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
 [**listPublicDocuments**](StorageApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
-[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
-[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
-[**updateDocument**](StorageApi.md#updateDocument) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
-[**writeDocument**](StorageApi.md#writeDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId}/{fileName}/content | Write document contents
+[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
 [**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
-
-<a name="createDocument"></a>
-# **createDocument**
-> Document createDocument(organizationId, id4n, document, mimeType)
-
-Create an empty document for an id4n
-
-The document is created empty, mime-type defaults to text/plain
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.StorageApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
-String id4n = "id4n_example"; // String | id4n
-Document document = new Document(); // Document | document
-String mimeType = "mimeType_example"; // String | mimeType
-try {
-    Document result = apiInstance.createDocument(organizationId, id4n, document, mimeType);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StorageApi#createDocument");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
- **id4n** | **String**| id4n |
- **document** | [**Document**](Document.md)| document |
- **mimeType** | **String**| mimeType | [optional]
-
-### Return type
-
-[**Document**](Document.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
@@ -135,8 +72,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getDocument"></a>
 # **getDocument**
@@ -192,8 +129,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getPublicDocument"></a>
 # **getPublicDocument**
@@ -249,8 +186,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listAllDocuments"></a>
 # **listAllDocuments**
@@ -308,8 +245,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
@@ -369,8 +306,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listDocuments"></a>
 # **listDocuments**
@@ -430,8 +367,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listPublicDocuments"></a>
 # **listPublicDocuments**
@@ -491,12 +428,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="readDocument"></a>
 # **readDocument**
-> java.io.File readDocument(organizationId, id4n, fileName)
+> byte[] readDocument(organizationId, id4n, fileName)
 
 Read document contents
 
@@ -522,7 +459,7 @@ Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
-    java.io.File result = apiInstance.readDocument(organizationId, id4n, fileName);
+    byte[] result = apiInstance.readDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#readDocument");
@@ -540,7 +477,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**java.io.File**](java.io.File.md)
+**byte[]**
 
 ### Authorization
 
@@ -548,12 +485,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="readFromMicrostorage"></a>
 # **readFromMicrostorage**
-> String readFromMicrostorage(organization, id4n)
+> byte[] readFromMicrostorage(organization, id4n)
 
 Read data from microstorage
 
@@ -578,7 +515,7 @@ StorageApi apiInstance = new StorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
 try {
-    String result = apiInstance.readFromMicrostorage(organization, id4n);
+    byte[] result = apiInstance.readFromMicrostorage(organization, id4n);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#readFromMicrostorage");
@@ -595,7 +532,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+**byte[]**
 
 ### Authorization
 
@@ -603,12 +540,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
-> java.io.File readPublicDocument(organizationId, id4n, fileName)
+> byte[] readPublicDocument(organizationId, id4n, fileName)
 
 Read document contents
 
@@ -634,7 +571,7 @@ Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
-    java.io.File result = apiInstance.readPublicDocument(organizationId, id4n, fileName);
+    byte[] result = apiInstance.readPublicDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#readPublicDocument");
@@ -652,7 +589,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**java.io.File**](java.io.File.md)
+**byte[]**
 
 ### Authorization
 
@@ -660,12 +597,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
-<a name="updateDocument"></a>
-# **updateDocument**
-> Document updateDocument(organizationId, id4n, fileName, document)
+<a name="updateDocumentMetadata"></a>
+# **updateDocumentMetadata**
+> Document updateDocumentMetadata(organizationId, id4n, fileName, document)
 
 Update a document
 
@@ -692,10 +629,10 @@ String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 DocumentUpdate document = new DocumentUpdate(); // DocumentUpdate | document
 try {
-    Document result = apiInstance.updateDocument(organizationId, id4n, fileName, document);
+    Document result = apiInstance.updateDocumentMetadata(organizationId, id4n, fileName, document);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling StorageApi#updateDocument");
+    System.err.println("Exception when calling StorageApi#updateDocumentMetadata");
     e.printStackTrace();
 }
 ```
@@ -719,71 +656,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
-
-<a name="writeDocument"></a>
-# **writeDocument**
-> ResponseEntity writeDocument(organizationId, id4n, fileName, body, contentType, contentLength)
-
-Write document contents
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.StorageApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
-String id4n = "id4n_example"; // String | id4n
-String fileName = "fileName_example"; // String | fileName
-java.io.File body = new java.io.File(); // java.io.File | binary data
-String contentType = "contentType_example"; // String | Content-Type
-Long contentLength = 789L; // Long | Content-Length
-try {
-    ResponseEntity result = apiInstance.writeDocument(organizationId, id4n, fileName, body, contentType, contentLength);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StorageApi#writeDocument");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
- **id4n** | **String**| id4n |
- **fileName** | **String**| fileName |
- **body** | [**java.io.File**](java.io.File.md)| binary data |
- **contentType** | **String**| Content-Type | [optional]
- **contentLength** | **Long**| Content-Length | [optional]
-
-### Return type
-
-[**ResponseEntity**](ResponseEntity.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="writeToMicrostorage"></a>
 # **writeToMicrostorage**
@@ -811,7 +685,7 @@ Authorization.setApiKey("YOUR API KEY");
 StorageApi apiInstance = new StorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
-String body = "body_example"; // String | binary data
+String body = "body_example"; // String | 
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
 try {
@@ -829,7 +703,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Long**| organization |
  **id4n** | **String**| id4n |
- **body** | **String**| binary data |
+ **body** | **String**|  |
  **contentType** | **String**| Content-Type | [optional]
  **contentLength** | **Long**| Content-Length | [optional]
 
@@ -844,5 +718,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: */*
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Accept**: application/xml, application/json
 

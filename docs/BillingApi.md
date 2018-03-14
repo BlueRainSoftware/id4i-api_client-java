@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getPositionsForOrganization"></a>
 # **getPositionsForOrganization**
-> List&lt;BillingPosition&gt; getPositionsForOrganization(organizationId)
+> List&lt;BillingPosition&gt; getPositionsForOrganization(organizationId, fromDate, toDate)
 
 Get billing positions for a given organization
 
@@ -33,8 +33,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 BillingApi apiInstance = new BillingApi();
 Long organizationId = 789L; // Long | The organization to compute the billing information for
+LocalDateTime fromDate = new LocalDateTime(); // LocalDateTime | Billing start date
+LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | Billing end date
 try {
-    List<BillingPosition> result = apiInstance.getPositionsForOrganization(organizationId);
+    List<BillingPosition> result = apiInstance.getPositionsForOrganization(organizationId, fromDate, toDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BillingApi#getPositionsForOrganization");
@@ -47,6 +49,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The organization to compute the billing information for |
+ **fromDate** | **LocalDateTime**| Billing start date | [optional]
+ **toDate** | **LocalDateTime**| Billing end date | [optional]
 
 ### Return type
 
@@ -58,12 +62,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getSumForOrganization"></a>
 # **getSumForOrganization**
-> ServiceCosts getSumForOrganization(organizationId)
+> ServiceCosts getSumForOrganization(organizationId, fromDate, toDate)
 
 Get billing amount of services for a given organization
 
@@ -86,8 +90,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 BillingApi apiInstance = new BillingApi();
 Long organizationId = 789L; // Long | The organization to compute the billing information for
+LocalDateTime fromDate = new LocalDateTime(); // LocalDateTime | Billing start date
+LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | Billing end date
 try {
-    ServiceCosts result = apiInstance.getSumForOrganization(organizationId);
+    ServiceCosts result = apiInstance.getSumForOrganization(organizationId, fromDate, toDate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BillingApi#getSumForOrganization");
@@ -100,6 +106,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **Long**| The organization to compute the billing information for |
+ **fromDate** | **LocalDateTime**| Billing start date | [optional]
+ **toDate** | **LocalDateTime**| Billing end date | [optional]
 
 ### Return type
 
@@ -111,6 +119,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 

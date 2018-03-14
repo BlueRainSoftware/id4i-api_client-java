@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 <a name="addUserRoles"></a>
 # **addUserRoles**
-> ApiError addUserRoles(organizationId, username, changeRoleRequest)
+> addUserRoles(organizationId, username, changeRoleRequest)
 
 Add role(s) to user
 
@@ -50,8 +50,7 @@ Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
-    ApiError result = apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
-    System.out.println(result);
+    apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#addUserRoles");
     e.printStackTrace();
@@ -68,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -76,12 +75,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="completeRegistration"></a>
 # **completeRegistration**
-> ApiError completeRegistration(completeRegistration)
+> completeRegistration(completeRegistration)
 
 Complete registration
 
@@ -97,8 +96,7 @@ Completing a registration e.g. for invited users. Finish registration with a use
 AccountsApi apiInstance = new AccountsApi();
 CompleteUserRegistrationRequest completeRegistration = new CompleteUserRegistrationRequest(); // CompleteUserRegistrationRequest | Contains the verification token, the username and the initial password.
 try {
-    ApiError result = apiInstance.completeRegistration(completeRegistration);
-    System.out.println(result);
+    apiInstance.completeRegistration(completeRegistration);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#completeRegistration");
     e.printStackTrace();
@@ -113,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -121,8 +119,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="findUserByUsername"></a>
 # **findUserByUsername**
@@ -174,8 +172,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="findUsers"></a>
 # **findUsers**
@@ -231,8 +229,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getAllOrganizationRoles"></a>
 # **getAllOrganizationRoles**
@@ -290,8 +288,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getOrganizationsOfUser"></a>
 # **getOrganizationsOfUser**
@@ -347,8 +345,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
@@ -406,8 +404,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getUsersOfOrganization"></a>
 # **getUsersOfOrganization**
@@ -465,12 +463,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="inviteUsers"></a>
 # **inviteUsers**
-> ApiError inviteUsers(organizationId, invitationList)
+> inviteUsers(organizationId, invitationList)
 
 Invite Users
 
@@ -495,8 +493,7 @@ AccountsApi apiInstance = new AccountsApi();
 Long organizationId = 789L; // Long | organizationId
 OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 try {
-    ApiError result = apiInstance.inviteUsers(organizationId, invitationList);
-    System.out.println(result);
+    apiInstance.inviteUsers(organizationId, invitationList);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#inviteUsers");
     e.printStackTrace();
@@ -512,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -520,8 +517,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listAllRoles"></a>
 # **listAllRoles**
@@ -579,8 +576,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="login"></a>
 # **login**
@@ -623,8 +620,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="registerUser"></a>
 # **registerUser**
@@ -668,12 +665,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
-> ApiError removeUserRoles(organizationId, username, changeRoleRequest)
+> removeUserRoles(organizationId, username, changeRoleRequest)
 
 Remove role(s) from user
 
@@ -699,8 +696,7 @@ Long organizationId = 789L; // Long | organizationId
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
-    ApiError result = apiInstance.removeUserRoles(organizationId, username, changeRoleRequest);
-    System.out.println(result);
+    apiInstance.removeUserRoles(organizationId, username, changeRoleRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#removeUserRoles");
     e.printStackTrace();
@@ -717,7 +713,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -725,8 +721,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="requestPasswordReset"></a>
 # **requestPasswordReset**
@@ -770,8 +766,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="verifyPasswordReset"></a>
 # **verifyPasswordReset**
@@ -815,12 +811,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="verifyUserRegistration"></a>
 # **verifyUserRegistration**
-> ApiError verifyUserRegistration(token)
+> verifyUserRegistration(token)
 
 Verify registration
 
@@ -836,8 +832,7 @@ Verifies a new user registration.
 AccountsApi apiInstance = new AccountsApi();
 RegistrationVerificationTokenPresentation token = new RegistrationVerificationTokenPresentation(); // RegistrationVerificationTokenPresentation | The token for user verification.
 try {
-    ApiError result = apiInstance.verifyUserRegistration(token);
-    System.out.println(result);
+    apiInstance.verifyUserRegistration(token);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#verifyUserRegistration");
     e.printStackTrace();
@@ -852,7 +847,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -860,6 +855,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 

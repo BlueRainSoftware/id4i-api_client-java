@@ -4,11 +4,11 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 [**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 [**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listPublicDocuments**](PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
-[**readPublicDocument**](PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/content | Read document contents
+[**readPublicDocument**](PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**resolveImageUsingGET**](PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 [**resolveWhoIsEntry**](PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
 
@@ -67,12 +67,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="go"></a>
 # **go**
-> ApiError go(guid)
+> go(guid)
 
 Forward
 
@@ -88,8 +88,7 @@ Forwarding to the designated route defined in the routing,
 PublicServicesApi apiInstance = new PublicServicesApi();
 String guid = "guid_example"; // String | guid
 try {
-    ApiError result = apiInstance.go(guid);
-    System.out.println(result);
+    apiInstance.go(guid);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicServicesApi#go");
     e.printStackTrace();
@@ -104,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -112,8 +111,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
@@ -173,8 +172,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="listPublicDocuments"></a>
 # **listPublicDocuments**
@@ -234,12 +233,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
-> java.io.File readPublicDocument(organizationId, id4n, fileName)
+> byte[] readPublicDocument(organizationId, id4n, fileName)
 
 Read document contents
 
@@ -265,7 +264,7 @@ Long organizationId = 789L; // Long | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
-    java.io.File result = apiInstance.readPublicDocument(organizationId, id4n, fileName);
+    byte[] result = apiInstance.readPublicDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicServicesApi#readPublicDocument");
@@ -283,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**java.io.File**](java.io.File.md)
+**byte[]**
 
 ### Authorization
 
@@ -291,8 +290,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="resolveImageUsingGET"></a>
 # **resolveImageUsingGET**
@@ -344,8 +343,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="resolveWhoIsEntry"></a>
 # **resolveWhoIsEntry**
@@ -387,6 +386,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 

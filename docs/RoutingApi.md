@@ -67,8 +67,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="getRoutingFile"></a>
 # **getRoutingFile**
@@ -122,12 +122,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="updateRoutingFile"></a>
 # **updateRoutingFile**
-> ApiError updateRoutingFile(rfr, id4n)
+> updateRoutingFile(rfr, id4n)
 
 Store routing file
 
@@ -152,8 +152,7 @@ RoutingApi apiInstance = new RoutingApi();
 RoutingFileRequest rfr = new RoutingFileRequest(); // RoutingFileRequest | rfr
 String id4n = "id4n_example"; // String | id4n
 try {
-    ApiError result = apiInstance.updateRoutingFile(rfr, id4n);
-    System.out.println(result);
+    apiInstance.updateRoutingFile(rfr, id4n);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#updateRoutingFile");
     e.printStackTrace();
@@ -169,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiError**](ApiError.md)
+null (empty response body)
 
 ### Authorization
 
@@ -177,6 +176,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/xml, application/json;charset=UTF-8
- - **Accept**: application/xml, application/json;charset=UTF-8
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
