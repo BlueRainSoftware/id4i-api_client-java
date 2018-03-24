@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PasswordResetRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-23T22:02:01.938Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-24T22:02:39.564Z")
 public class PasswordResetRequest {
   @SerializedName("username")
   private String username = null;
