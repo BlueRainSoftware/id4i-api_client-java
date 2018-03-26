@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * AccountCredentials
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-25T22:03:27.409Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-26T07:01:58.750Z")
 public class AccountCredentials {
   @SerializedName("login")
   private String login = null;
