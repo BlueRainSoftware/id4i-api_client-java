@@ -15,7 +15,7 @@ Method | HTTP request | Description
 [**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 [**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
-[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 [**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
 
@@ -721,7 +721,7 @@ Name | Type | Description  | Notes
 
 <a name="writeToMicrostorage"></a>
 # **writeToMicrostorage**
-> Object writeToMicrostorage(organization, id4n, body, contentType, contentLength)
+> Object writeToMicrostorage(organization, id4n, contentType, contentLength, body)
 
 Write data to microstorage
 
@@ -745,11 +745,11 @@ Authorization.setApiKey("YOUR API KEY");
 StorageApi apiInstance = new StorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
-String body = "body_example"; // String | 
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
+byte[] body = BINARY_DATA_HERE; // byte[] | body
 try {
-    Object result = apiInstance.writeToMicrostorage(organization, id4n, body, contentType, contentLength);
+    Object result = apiInstance.writeToMicrostorage(organization, id4n, contentType, contentLength, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#writeToMicrostorage");
@@ -763,9 +763,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Long**| organization |
  **id4n** | **String**| id4n |
- **body** | **String**|  |
  **contentType** | **String**| Content-Type | [optional]
  **contentLength** | **Long**| Content-Length | [optional]
+ **body** | **byte[]**| body | [optional]
 
 ### Return type
 

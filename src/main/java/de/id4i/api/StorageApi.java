@@ -1633,7 +1633,7 @@ public class StorageApi {
         Object localVarPostBody = document;
 
         // create path and map variables
-        String localVarPath = "/api/v1/documents/{id4n}/{organizationId}/{fileName}"
+        String localVarPath = "/api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata"
             .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
             .replaceAll("\\{" + "fileName" + "\\}", apiClient.escapeString(fileName.toString()));
@@ -1774,15 +1774,15 @@ public class StorageApi {
      * Build call for writeToMicrostorage
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param body  (required)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
+     * @param body body (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call writeToMicrostorageCall(Long organization, String id4n, String body, String contentType, Long contentLength, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call writeToMicrostorageCall(Long organization, String id4n, String contentType, Long contentLength, byte[] body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -1830,7 +1830,7 @@ public class StorageApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call writeToMicrostorageValidateBeforeCall(Long organization, String id4n, String body, String contentType, Long contentLength, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call writeToMicrostorageValidateBeforeCall(Long organization, String id4n, String contentType, Long contentLength, byte[] body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organization' is set
         if (organization == null) {
@@ -1842,13 +1842,8 @@ public class StorageApi {
             throw new ApiException("Missing the required parameter 'id4n' when calling writeToMicrostorage(Async)");
         }
         
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling writeToMicrostorage(Async)");
-        }
-        
 
-        com.squareup.okhttp.Call call = writeToMicrostorageCall(organization, id4n, body, contentType, contentLength, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = writeToMicrostorageCall(organization, id4n, contentType, contentLength, body, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1858,14 +1853,14 @@ public class StorageApi {
      * 
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param body  (required)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
+     * @param body body (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Object writeToMicrostorage(Long organization, String id4n, String body, String contentType, Long contentLength) throws ApiException {
-        ApiResponse<Object> resp = writeToMicrostorageWithHttpInfo(organization, id4n, body, contentType, contentLength);
+    public Object writeToMicrostorage(Long organization, String id4n, String contentType, Long contentLength, byte[] body) throws ApiException {
+        ApiResponse<Object> resp = writeToMicrostorageWithHttpInfo(organization, id4n, contentType, contentLength, body);
         return resp.getData();
     }
 
@@ -1874,14 +1869,14 @@ public class StorageApi {
      * 
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param body  (required)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
+     * @param body body (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Object> writeToMicrostorageWithHttpInfo(Long organization, String id4n, String body, String contentType, Long contentLength) throws ApiException {
-        com.squareup.okhttp.Call call = writeToMicrostorageValidateBeforeCall(organization, id4n, body, contentType, contentLength, null, null);
+    public ApiResponse<Object> writeToMicrostorageWithHttpInfo(Long organization, String id4n, String contentType, Long contentLength, byte[] body) throws ApiException {
+        com.squareup.okhttp.Call call = writeToMicrostorageValidateBeforeCall(organization, id4n, contentType, contentLength, body, null, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1891,14 +1886,14 @@ public class StorageApi {
      * 
      * @param organization organization (required)
      * @param id4n id4n (required)
-     * @param body  (required)
      * @param contentType Content-Type (optional)
      * @param contentLength Content-Length (optional)
+     * @param body body (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call writeToMicrostorageAsync(Long organization, String id4n, String body, String contentType, Long contentLength, final ApiCallback<Object> callback) throws ApiException {
+    public com.squareup.okhttp.Call writeToMicrostorageAsync(Long organization, String id4n, String contentType, Long contentLength, byte[] body, final ApiCallback<Object> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1919,7 +1914,7 @@ public class StorageApi {
             };
         }
 
-        com.squareup.okhttp.Call call = writeToMicrostorageValidateBeforeCall(organization, id4n, body, contentType, contentLength, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = writeToMicrostorageValidateBeforeCall(organization, id4n, contentType, contentLength, body, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
