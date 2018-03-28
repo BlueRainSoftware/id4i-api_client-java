@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.Role;
+import de.id4i.api.model.ChangeLogEntry;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,12 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PaginatedResponseRole
+ * PaginatedResponseChangeLogEntry
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-28T13:57:32.989Z")
-public class PaginatedResponseRole {
+public class PaginatedResponseChangeLogEntry {
   @SerializedName("elements")
-  private List<Role> elements = new ArrayList<>();
+  private List<ChangeLogEntry> elements = new ArrayList<>();
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -43,12 +43,12 @@ public class PaginatedResponseRole {
   @SerializedName("total")
   private Integer total = null;
 
-  public PaginatedResponseRole elements(List<Role> elements) {
+  public PaginatedResponseChangeLogEntry elements(List<ChangeLogEntry> elements) {
     this.elements = elements;
     return this;
   }
 
-  public PaginatedResponseRole addElementsItem(Role elementsItem) {
+  public PaginatedResponseChangeLogEntry addElementsItem(ChangeLogEntry elementsItem) {
     this.elements.add(elementsItem);
     return this;
   }
@@ -58,15 +58,15 @@ public class PaginatedResponseRole {
    * @return elements
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<Role> getElements() {
+  public List<ChangeLogEntry> getElements() {
     return elements;
   }
 
-  public void setElements(List<Role> elements) {
+  public void setElements(List<ChangeLogEntry> elements) {
     this.elements = elements;
   }
 
-  public PaginatedResponseRole limit(Integer limit) {
+  public PaginatedResponseChangeLogEntry limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -84,7 +84,7 @@ public class PaginatedResponseRole {
     this.limit = limit;
   }
 
-  public PaginatedResponseRole offset(Integer offset) {
+  public PaginatedResponseChangeLogEntry offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -102,7 +102,7 @@ public class PaginatedResponseRole {
     this.offset = offset;
   }
 
-  public PaginatedResponseRole total(Integer total) {
+  public PaginatedResponseChangeLogEntry total(Integer total) {
     this.total = total;
     return this;
   }
@@ -129,11 +129,11 @@ public class PaginatedResponseRole {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedResponseRole paginatedResponseRole = (PaginatedResponseRole) o;
-    return Objects.equals(this.elements, paginatedResponseRole.elements) &&
-        Objects.equals(this.limit, paginatedResponseRole.limit) &&
-        Objects.equals(this.offset, paginatedResponseRole.offset) &&
-        Objects.equals(this.total, paginatedResponseRole.total);
+    PaginatedResponseChangeLogEntry paginatedResponseChangeLogEntry = (PaginatedResponseChangeLogEntry) o;
+    return Objects.equals(this.elements, paginatedResponseChangeLogEntry.elements) &&
+        Objects.equals(this.limit, paginatedResponseChangeLogEntry.limit) &&
+        Objects.equals(this.offset, paginatedResponseChangeLogEntry.offset) &&
+        Objects.equals(this.total, paginatedResponseChangeLogEntry.total);
   }
 
   @Override
@@ -145,7 +145,7 @@ public class PaginatedResponseRole {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedResponseRole {\n");
+    sb.append("class PaginatedResponseChangeLogEntry {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

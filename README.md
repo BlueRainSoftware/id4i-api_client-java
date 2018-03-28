@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.3.3-SNAPSHOT
 - Package version: 
-    - Build date: 2018-03-28T13:55:34.470Z
+    - Build date: 2018-03-28T13:57:32.989Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -145,6 +145,7 @@ Class | Method | HTTP request | Description
 *ApiKeysApi* | [**removeApiKeyPrivilege**](docs/ApiKeysApi.md#removeApiKeyPrivilege) | **DELETE** /api/v1/apikeys/{key}/privileges | Remove privilege
 *ApiKeysApi* | [**removeApiKeyPrivilegeForId4ns**](docs/ApiKeysApi.md#removeApiKeyPrivilegeForId4ns) | **DELETE** /api/v1/apikeys/{key}/privileges/{privilege}/id4ns | Remove id4ns of a privilege
 *ApiKeysApi* | [**updateApiKey**](docs/ApiKeysApi.md#updateApiKey) | **PUT** /api/v1/apikeys/{key} | Update API keys
+*AuditingApi* | [**listOrganizationChangeLog**](docs/AuditingApi.md#listOrganizationChangeLog) | **GET** /api/v1/changelog/organization/{organizationId}/ | List change log entries of an organization
 *BillingApi* | [**getPositionsForOrganization**](docs/BillingApi.md#getPositionsForOrganization) | **GET** /api/v1/billing/{organizationId}/positions | Get billing positions for a given organization
 *BillingApi* | [**getSumForOrganization**](docs/BillingApi.md#getSumForOrganization) | **GET** /api/v1/billing/{organizationId} | Get billing amount of services for a given organization
 *CollectionsApi* | [**addElementsToCollection**](docs/CollectionsApi.md#addElementsToCollection) | **POST** /api/v1/collections/{id4n}/elements | Add elements to collection
@@ -250,6 +251,7 @@ Class | Method | HTTP request | Description
  - [ApiKeyPrivilegePaginatedResponse](docs/ApiKeyPrivilegePaginatedResponse.md)
  - [AppInfoPresentation](docs/AppInfoPresentation.md)
  - [BillingPosition](docs/BillingPosition.md)
+ - [ChangeLogEntry](docs/ChangeLogEntry.md)
  - [ChangeRoleRequest](docs/ChangeRoleRequest.md)
  - [CompleteUserRegistrationRequest](docs/CompleteUserRegistrationRequest.md)
  - [Country](docs/Country.md)
@@ -274,6 +276,7 @@ Class | Method | HTTP request | Description
  - [OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
  - [OwnedDocument](docs/OwnedDocument.md)
  - [PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
+ - [PaginatedChangeLogEntryResponse](docs/PaginatedChangeLogEntryResponse.md)
  - [PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
  - [PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
  - [PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
@@ -283,6 +286,7 @@ Class | Method | HTTP request | Description
  - [PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
  - [PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
  - [PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
+ - [PaginatedResponseChangeLogEntry](docs/PaginatedResponseChangeLogEntry.md)
  - [PaginatedResponseCountry](docs/PaginatedResponseCountry.md)
  - [PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
  - [PaginatedResponseGuid](docs/PaginatedResponseGuid.md)

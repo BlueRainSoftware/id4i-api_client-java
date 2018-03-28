@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * SimpleMessageResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-28T13:55:34.470Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-28T13:57:32.989Z")
 public class SimpleMessageResponse {
   @SerializedName("message")
   private String message = null;
@@ -40,7 +40,7 @@ public class SimpleMessageResponse {
    * Get message
    * @return message
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public String getMessage() {
     return message;
   }
