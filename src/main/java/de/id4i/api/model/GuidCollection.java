@@ -26,19 +26,19 @@ import java.io.IOException;
 /**
  * GuidCollection
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-26T22:02:51.299Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-28T09:29:32.774Z")
 public class GuidCollection {
   @SerializedName("createdTimestamp")
   private Long createdTimestamp = null;
+
+  @SerializedName("holderOrganizationId")
+  private Long holderOrganizationId = null;
 
   @SerializedName("id4n")
   private String id4n = null;
 
   @SerializedName("label")
   private String label = null;
-
-  @SerializedName("nextScanOwnership")
-  private Boolean nextScanOwnership = null;
 
   @SerializedName("ownerOrganizationId")
   private Long ownerOrganizationId = null;
@@ -105,6 +105,15 @@ public class GuidCollection {
   }
 
    /**
+   * The UTC unix timestamp of when this collection has been created
+   * @return holderOrganizationId
+  **/
+  @ApiModelProperty(value = "The UTC unix timestamp of when this collection has been created")
+  public Long getHolderOrganizationId() {
+    return holderOrganizationId;
+  }
+
+   /**
    * The ID
    * @return id4n
   **/
@@ -131,40 +140,13 @@ public class GuidCollection {
     this.label = label;
   }
 
-  public GuidCollection nextScanOwnership(Boolean nextScanOwnership) {
-    this.nextScanOwnership = nextScanOwnership;
-    return this;
-  }
-
    /**
-   * Get nextScanOwnership
-   * @return nextScanOwnership
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isNextScanOwnership() {
-    return nextScanOwnership;
-  }
-
-  public void setNextScanOwnership(Boolean nextScanOwnership) {
-    this.nextScanOwnership = nextScanOwnership;
-  }
-
-  public GuidCollection ownerOrganizationId(Long ownerOrganizationId) {
-    this.ownerOrganizationId = ownerOrganizationId;
-    return this;
-  }
-
-   /**
-   * Get ownerOrganizationId
+   * The UTC unix timestamp of when this collection has been created
    * @return ownerOrganizationId
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "The UTC unix timestamp of when this collection has been created")
   public Long getOwnerOrganizationId() {
     return ownerOrganizationId;
-  }
-
-  public void setOwnerOrganizationId(Long ownerOrganizationId) {
-    this.ownerOrganizationId = ownerOrganizationId;
   }
 
    /**
@@ -187,16 +169,16 @@ public class GuidCollection {
     }
     GuidCollection guidCollection = (GuidCollection) o;
     return Objects.equals(this.createdTimestamp, guidCollection.createdTimestamp) &&
+        Objects.equals(this.holderOrganizationId, guidCollection.holderOrganizationId) &&
         Objects.equals(this.id4n, guidCollection.id4n) &&
         Objects.equals(this.label, guidCollection.label) &&
-        Objects.equals(this.nextScanOwnership, guidCollection.nextScanOwnership) &&
         Objects.equals(this.ownerOrganizationId, guidCollection.ownerOrganizationId) &&
         Objects.equals(this.type, guidCollection.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(createdTimestamp, id4n, label, nextScanOwnership, ownerOrganizationId, type);
+    return Objects.hash(createdTimestamp, holderOrganizationId, id4n, label, ownerOrganizationId, type);
   }
 
 
@@ -206,9 +188,9 @@ public class GuidCollection {
     sb.append("class GuidCollection {\n");
     
     sb.append("    createdTimestamp: ").append(toIndentedString(createdTimestamp)).append("\n");
+    sb.append("    holderOrganizationId: ").append(toIndentedString(holderOrganizationId)).append("\n");
     sb.append("    id4n: ").append(toIndentedString(id4n)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
-    sb.append("    nextScanOwnership: ").append(toIndentedString(nextScanOwnership)).append("\n");
     sb.append("    ownerOrganizationId: ").append(toIndentedString(ownerOrganizationId)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");

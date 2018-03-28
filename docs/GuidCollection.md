@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdTimestamp** | **Long** | The UTC unix timestamp of when this collection has been created |  [optional]
+**holderOrganizationId** | **Long** | The UTC unix timestamp of when this collection has been created |  [optional]
 **id4n** | **String** | The ID |  [optional]
 **label** | **String** |  |  [optional]
-**nextScanOwnership** | **Boolean** |  |  [optional]
-**ownerOrganizationId** | **Long** |  |  [optional]
+**ownerOrganizationId** | **Long** | The UTC unix timestamp of when this collection has been created |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
 
 

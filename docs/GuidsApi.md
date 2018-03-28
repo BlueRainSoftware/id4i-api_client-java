@@ -11,8 +11,8 @@ Method | HTTP request | Description
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**setGuid**](GuidsApi.md#setGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**setGuid1**](GuidsApi.md#setGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**updateGuid**](GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
+[**updateGuid1**](GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 <a name="addGuidAlias"></a>
@@ -404,9 +404,9 @@ null (empty response body)
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
 
-<a name="setGuid"></a>
-# **setGuid**
-> Object setGuid(id4n, request)
+<a name="updateGuid"></a>
+# **updateGuid**
+> Object updateGuid(id4n, request)
 
 Change GUID information.
 
@@ -433,10 +433,10 @@ GuidsApi apiInstance = new GuidsApi();
 String id4n = "id4n_example"; // String | The GUID number
 Guid request = new Guid(); // Guid | request
 try {
-    Object result = apiInstance.setGuid(id4n, request);
+    Object result = apiInstance.updateGuid(id4n, request);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GuidsApi#setGuid");
+    System.err.println("Exception when calling GuidsApi#updateGuid");
     e.printStackTrace();
 }
 ```
@@ -461,9 +461,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
 
-<a name="setGuid1"></a>
-# **setGuid1**
-> Object setGuid1(id4n, request)
+<a name="updateGuid1"></a>
+# **updateGuid1**
+> Object updateGuid1(id4n, request)
 
 Change GUID information.
 
@@ -490,10 +490,10 @@ GuidsApi apiInstance = new GuidsApi();
 String id4n = "id4n_example"; // String | The GUID number
 Guid request = new Guid(); // Guid | request
 try {
-    Object result = apiInstance.setGuid1(id4n, request);
+    Object result = apiInstance.updateGuid1(id4n, request);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling GuidsApi#setGuid1");
+    System.err.println("Exception when calling GuidsApi#updateGuid1");
     e.printStackTrace();
 }
 ```

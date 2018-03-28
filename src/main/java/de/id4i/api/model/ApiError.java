@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-26T22:02:51.299Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-28T09:29:32.774Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -112,7 +112,9 @@ public class ApiError {
     
     MODULE_NOT_ACTIVE("ERR_MODULE_NOT_ACTIVE"),
     
-    INSECURE_PASSWORD("ERR_INSECURE_PASSWORD");
+    INSECURE_PASSWORD("ERR_INSECURE_PASSWORD"),
+    
+    TRANSFER_DENIED("ERR_TRANSFER_DENIED");
 
     private String value;
 
