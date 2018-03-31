@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * OrganizationAddress
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-30T22:02:52.551Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-03-31T12:19:47.051Z")
 public class OrganizationAddress {
   @SerializedName("companyName")
   private String companyName = null;
