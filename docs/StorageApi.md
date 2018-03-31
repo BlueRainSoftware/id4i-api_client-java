@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 [**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 [**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 [**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
@@ -14,9 +15,68 @@ Method | HTTP request | Description
 [**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
 [**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
-[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Update a document
+[**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 [**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
+
+<a name="createDocument"></a>
+# **createDocument**
+> Document createDocument(organizationId, id4n, content)
+
+Create an empty document for an id4n
+
+The document is created empty, mime-type defaults to text/plain
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiClient;
+//import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
+//import de.id4i.api.StorageApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+StorageApi apiInstance = new StorageApi();
+Long organizationId = 789L; // Long | organizationId
+String id4n = "id4n_example"; // String | id4n
+File content = new File("/path/to/file.txt"); // File | content
+try {
+    Document result = apiInstance.createDocument(organizationId, id4n, content);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling StorageApi#createDocument");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| organizationId |
+ **id4n** | **String**| id4n |
+ **content** | **File**| content |
+
+### Return type
+
+[**Document**](Document.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: application/xml, application/json
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
@@ -661,7 +721,7 @@ Name | Type | Description  | Notes
 
 <a name="writeToMicrostorage"></a>
 # **writeToMicrostorage**
-> Object writeToMicrostorage(organization, id4n, body, contentType, contentLength)
+> Object writeToMicrostorage(organization, id4n, contentType, contentLength, body)
 
 Write data to microstorage
 
@@ -685,11 +745,11 @@ Authorization.setApiKey("YOUR API KEY");
 StorageApi apiInstance = new StorageApi();
 Long organization = 789L; // Long | organization
 String id4n = "id4n_example"; // String | id4n
-String body = "body_example"; // String | 
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
+byte[] body = BINARY_DATA_HERE; // byte[] | body
 try {
-    Object result = apiInstance.writeToMicrostorage(organization, id4n, body, contentType, contentLength);
+    Object result = apiInstance.writeToMicrostorage(organization, id4n, contentType, contentLength, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#writeToMicrostorage");
@@ -703,9 +763,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organization** | **Long**| organization |
  **id4n** | **String**| id4n |
- **body** | **String**|  |
  **contentType** | **String**| Content-Type | [optional]
  **contentLength** | **Long**| Content-Length | [optional]
+ **body** | **byte[]**| body | [optional]
 
 ### Return type
 
