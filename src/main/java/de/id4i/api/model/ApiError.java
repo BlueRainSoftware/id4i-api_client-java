@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-10T22:02:08.673Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-11T09:02:05.168Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -114,7 +114,9 @@ public class ApiError {
     
     INSECURE_PASSWORD("ERR_INSECURE_PASSWORD"),
     
-    TRANSFER_DENIED("ERR_TRANSFER_DENIED");
+    TRANSFER_DENIED("ERR_TRANSFER_DENIED"),
+    
+    INVALID_PHYSICAL_STATE("ERR_INVALID_PHYSICAL_STATE");
 
     private String value;
 

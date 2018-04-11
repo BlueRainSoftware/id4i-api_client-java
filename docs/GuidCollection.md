@@ -5,11 +5,21 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdTimestamp** | **Long** | The UTC unix timestamp of when this collection has been created |  [optional]
-**holderOrganizationId** | **Long** | Organization ID of the GUID holder |  [optional]
+**holderOrganizationId** | **Long** | Organization ID of the holder of the collection |  [optional]
 **id4n** | **String** | The ID |  [optional]
 **label** | **String** |  |  [optional]
-**ownerOrganizationId** | **Long** | Organization ID of the GUID owner |  [optional]
+**ownerOrganizationId** | **Long** | Organization ID of the collection owner |  [optional]
+**physicalState** | [**PhysicalStateEnum**](#PhysicalStateEnum) | Physical attachment state of the collection |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
+
+
+<a name="PhysicalStateEnum"></a>
+## Enum: PhysicalStateEnum
+Name | Value
+---- | -----
+UNATTACHED | &quot;UNATTACHED&quot;
+ATTACHED | &quot;ATTACHED&quot;
+DETACHED | &quot;DETACHED&quot;
 
 
 <a name="TypeEnum"></a>
