@@ -4,10 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | [**CodeEnum**](#CodeEnum) |  |  [optional]
-**errorId** | **String** |  |  [optional]
-**errorList** | [**List&lt;ApiError&gt;**](ApiError.md) |  |  [optional]
-**message** | **String** |  |  [optional]
+**code** | [**CodeEnum**](#CodeEnum) |  | 
+**errorList** | [**List&lt;ApiError&gt;**](ApiError.md) |  | 
+**message** | **String** |  | 
 
 
 <a name="CodeEnum"></a>

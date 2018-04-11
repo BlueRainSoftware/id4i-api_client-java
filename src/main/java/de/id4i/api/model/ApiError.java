@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-11T09:02:05.168Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-11T14:50:45.417Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -159,11 +159,8 @@ public class ApiError {
   @SerializedName("code")
   private CodeEnum code = null;
 
-  @SerializedName("errorId")
-  private String errorId = null;
-
   @SerializedName("errorList")
-  private List<ApiError> errorList = null;
+  private List<ApiError> errorList = new ArrayList<>();
 
   @SerializedName("message")
   private String message = null;
@@ -177,7 +174,7 @@ public class ApiError {
    * Get code
    * @return code
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public CodeEnum getCode() {
     return code;
   }
@@ -186,33 +183,12 @@ public class ApiError {
     this.code = code;
   }
 
-  public ApiError errorId(String errorId) {
-    this.errorId = errorId;
-    return this;
-  }
-
-   /**
-   * Get errorId
-   * @return errorId
-  **/
-  @ApiModelProperty(value = "")
-  public String getErrorId() {
-    return errorId;
-  }
-
-  public void setErrorId(String errorId) {
-    this.errorId = errorId;
-  }
-
   public ApiError errorList(List<ApiError> errorList) {
     this.errorList = errorList;
     return this;
   }
 
   public ApiError addErrorListItem(ApiError errorListItem) {
-    if (this.errorList == null) {
-      this.errorList = new ArrayList<>();
-    }
     this.errorList.add(errorListItem);
     return this;
   }
@@ -221,7 +197,7 @@ public class ApiError {
    * Get errorList
    * @return errorList
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public List<ApiError> getErrorList() {
     return errorList;
   }
@@ -239,7 +215,7 @@ public class ApiError {
    * Get message
    * @return message
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public String getMessage() {
     return message;
   }
@@ -259,14 +235,13 @@ public class ApiError {
     }
     ApiError apiError = (ApiError) o;
     return Objects.equals(this.code, apiError.code) &&
-        Objects.equals(this.errorId, apiError.errorId) &&
         Objects.equals(this.errorList, apiError.errorList) &&
         Objects.equals(this.message, apiError.message);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, errorId, errorList, message);
+    return Objects.hash(code, errorList, message);
   }
 
 
@@ -276,7 +251,6 @@ public class ApiError {
     sb.append("class ApiError {\n");
     
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    errorId: ").append(toIndentedString(errorId)).append("\n");
     sb.append("    errorList: ").append(toIndentedString(errorList)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
