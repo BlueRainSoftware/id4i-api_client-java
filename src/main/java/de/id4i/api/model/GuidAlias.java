@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GuidAlias
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-12T07:36:52.339Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-12T11:35:00.910Z")
 public class GuidAlias {
   @SerializedName("alias")
   private String alias = null;
