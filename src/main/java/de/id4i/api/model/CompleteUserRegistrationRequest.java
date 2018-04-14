@@ -26,33 +26,33 @@ import java.io.IOException;
 /**
  * CompleteUserRegistrationRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T22:03:07.920Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-14T09:05:53.015Z")
 public class CompleteUserRegistrationRequest {
-  @SerializedName("password")
-  private String password = null;
+  @SerializedName("verificationToken")
+  private String verificationToken = null;
 
   @SerializedName("username")
   private String username = null;
 
-  @SerializedName("verificationToken")
-  private String verificationToken = null;
+  @SerializedName("password")
+  private String password = null;
 
-  public CompleteUserRegistrationRequest password(String password) {
-    this.password = password;
+  public CompleteUserRegistrationRequest verificationToken(String verificationToken) {
+    this.verificationToken = verificationToken;
     return this;
   }
 
    /**
-   * Get password
-   * @return password
+   * Get verificationToken
+   * @return verificationToken
   **/
   @ApiModelProperty(required = true, value = "")
-  public String getPassword() {
-    return password;
+  public String getVerificationToken() {
+    return verificationToken;
   }
 
-  public void setPassword(String password) {
-    this.password = password;
+  public void setVerificationToken(String verificationToken) {
+    this.verificationToken = verificationToken;
   }
 
   public CompleteUserRegistrationRequest username(String username) {
@@ -73,22 +73,22 @@ public class CompleteUserRegistrationRequest {
     this.username = username;
   }
 
-  public CompleteUserRegistrationRequest verificationToken(String verificationToken) {
-    this.verificationToken = verificationToken;
+  public CompleteUserRegistrationRequest password(String password) {
+    this.password = password;
     return this;
   }
 
    /**
-   * Get verificationToken
-   * @return verificationToken
+   * Get password
+   * @return password
   **/
   @ApiModelProperty(required = true, value = "")
-  public String getVerificationToken() {
-    return verificationToken;
+  public String getPassword() {
+    return password;
   }
 
-  public void setVerificationToken(String verificationToken) {
-    this.verificationToken = verificationToken;
+  public void setPassword(String password) {
+    this.password = password;
   }
 
 
@@ -101,14 +101,14 @@ public class CompleteUserRegistrationRequest {
       return false;
     }
     CompleteUserRegistrationRequest completeUserRegistrationRequest = (CompleteUserRegistrationRequest) o;
-    return Objects.equals(this.password, completeUserRegistrationRequest.password) &&
+    return Objects.equals(this.verificationToken, completeUserRegistrationRequest.verificationToken) &&
         Objects.equals(this.username, completeUserRegistrationRequest.username) &&
-        Objects.equals(this.verificationToken, completeUserRegistrationRequest.verificationToken);
+        Objects.equals(this.password, completeUserRegistrationRequest.password);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(password, username, verificationToken);
+    return Objects.hash(verificationToken, username, password);
   }
 
 
@@ -117,9 +117,9 @@ public class CompleteUserRegistrationRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class CompleteUserRegistrationRequest {\n");
     
-    sb.append("    password: ").append(toIndentedString(password)).append("\n");
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
     sb.append("    verificationToken: ").append(toIndentedString(verificationToken)).append("\n");
+    sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -28,10 +28,10 @@ import java.util.List;
 /**
  * ChangeRoleRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T22:03:07.920Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-14T09:05:53.015Z")
 public class ChangeRoleRequest {
   @SerializedName("roles")
-  private List<String> roles = new ArrayList<>();
+  private List<String> roles = null;
 
   public ChangeRoleRequest roles(List<String> roles) {
     this.roles = roles;
@@ -39,6 +39,9 @@ public class ChangeRoleRequest {
   }
 
   public ChangeRoleRequest addRolesItem(String rolesItem) {
+    if (this.roles == null) {
+      this.roles = new ArrayList<>();
+    }
     this.roles.add(rolesItem);
     return this;
   }
@@ -47,7 +50,7 @@ public class ChangeRoleRequest {
    * Get roles
    * @return roles
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public List<String> getRoles() {
     return roles;
   }

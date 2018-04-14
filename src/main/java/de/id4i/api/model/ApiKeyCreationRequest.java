@@ -26,16 +26,16 @@ import java.io.IOException;
 /**
  * ApiKeyCreationRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-13T22:03:07.920Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-14T09:05:53.015Z")
 public class ApiKeyCreationRequest {
   @SerializedName("label")
   private String label = null;
 
-  @SerializedName("organizationId")
-  private Long organizationId = null;
-
   @SerializedName("secret")
   private String secret = null;
+
+  @SerializedName("organizationId")
+  private Long organizationId = null;
 
   public ApiKeyCreationRequest label(String label) {
     this.label = label;
@@ -53,24 +53,6 @@ public class ApiKeyCreationRequest {
 
   public void setLabel(String label) {
     this.label = label;
-  }
-
-  public ApiKeyCreationRequest organizationId(Long organizationId) {
-    this.organizationId = organizationId;
-    return this;
-  }
-
-   /**
-   * Get organizationId
-   * @return organizationId
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public Long getOrganizationId() {
-    return organizationId;
-  }
-
-  public void setOrganizationId(Long organizationId) {
-    this.organizationId = organizationId;
   }
 
   public ApiKeyCreationRequest secret(String secret) {
@@ -91,6 +73,24 @@ public class ApiKeyCreationRequest {
     this.secret = secret;
   }
 
+  public ApiKeyCreationRequest organizationId(Long organizationId) {
+    this.organizationId = organizationId;
+    return this;
+  }
+
+   /**
+   * Get organizationId
+   * @return organizationId
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public Long getOrganizationId() {
+    return organizationId;
+  }
+
+  public void setOrganizationId(Long organizationId) {
+    this.organizationId = organizationId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,13 +102,13 @@ public class ApiKeyCreationRequest {
     }
     ApiKeyCreationRequest apiKeyCreationRequest = (ApiKeyCreationRequest) o;
     return Objects.equals(this.label, apiKeyCreationRequest.label) &&
-        Objects.equals(this.organizationId, apiKeyCreationRequest.organizationId) &&
-        Objects.equals(this.secret, apiKeyCreationRequest.secret);
+        Objects.equals(this.secret, apiKeyCreationRequest.secret) &&
+        Objects.equals(this.organizationId, apiKeyCreationRequest.organizationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(label, organizationId, secret);
+    return Objects.hash(label, secret, organizationId);
   }
 
 
@@ -118,8 +118,8 @@ public class ApiKeyCreationRequest {
     sb.append("class ApiKeyCreationRequest {\n");
     
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    secret: ").append(toIndentedString(secret)).append("\n");
+    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

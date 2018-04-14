@@ -199,7 +199,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
-String usernamePrefix = "usernamePrefix_example"; // String | Find users starting with this prefix.
+String usernamePrefix = "usernamePrefix_example"; // String | 
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -215,7 +215,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **usernamePrefix** | **String**| Find users starting with this prefix. |
+ **usernamePrefix** | **String**|  | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 

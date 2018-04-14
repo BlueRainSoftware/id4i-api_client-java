@@ -451,7 +451,7 @@ public class AccountsApi {
     }
     /**
      * Build call for findUsers
-     * @param usernamePrefix Find users starting with this prefix. (required)
+     * @param usernamePrefix  (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
@@ -509,11 +509,6 @@ public class AccountsApi {
     @SuppressWarnings("rawtypes")
     private com.squareup.okhttp.Call findUsersValidateBeforeCall(String usernamePrefix, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'usernamePrefix' is set
-        if (usernamePrefix == null) {
-            throw new ApiException("Missing the required parameter 'usernamePrefix' when calling findUsers(Async)");
-        }
-        
 
         com.squareup.okhttp.Call call = findUsersCall(usernamePrefix, offset, limit, progressListener, progressRequestListener);
         return call;
@@ -523,7 +518,7 @@ public class AccountsApi {
     /**
      * Find users
      * 
-     * @param usernamePrefix Find users starting with this prefix. (required)
+     * @param usernamePrefix  (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
      * @return PaginatedUserPresentationResponse
@@ -537,7 +532,7 @@ public class AccountsApi {
     /**
      * Find users
      * 
-     * @param usernamePrefix Find users starting with this prefix. (required)
+     * @param usernamePrefix  (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedUserPresentationResponse&gt;
@@ -552,7 +547,7 @@ public class AccountsApi {
     /**
      * Find users (asynchronously)
      * 
-     * @param usernamePrefix Find users starting with this prefix. (required)
+     * @param usernamePrefix  (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
