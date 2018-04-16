@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * Visibility
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-16T09:54:04.943Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-16T22:02:56.051Z")
 public class Visibility {
   @SerializedName("public")
   private Boolean _public = null;
