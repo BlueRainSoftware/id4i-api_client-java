@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-17T12:52:41.552Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-17T18:20:38.191Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -53,6 +53,8 @@ public class ApiError {
     AUTHORIZATION_MISSING_PRIVILEGES("ERR_AUTHORIZATION_MISSING_PRIVILEGES"),
     
     AUTHORIZATION_FORBIDDEN("ERR_AUTHORIZATION_FORBIDDEN"),
+    
+    AUTHORIZATION_REQUIRE_USER("ERR_AUTHORIZATION_REQUIRE_USER"),
     
     INPUT_VALIDATION_FAILED("ERR_INPUT_VALIDATION_FAILED"),
     
