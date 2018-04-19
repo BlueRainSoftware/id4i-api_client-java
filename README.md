@@ -15,9 +15,9 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.4.1-SNAPSHOT
+- API version: 0.5.0-SNAPSHOT
 - Package version: 
-    - Build date: 2018-04-18T22:02:53.528Z
+    - Build date: 2018-04-19T12:42:01.649Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -32,7 +32,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.4.1-SNAPSHOT</version>
+    <version>0.5.0-SNAPSHOT</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.4.1-SNAPSHOT"
+compile "de.id4i.api:id4i-api-client:0.5.0-SNAPSHOT"
 ```
 
 ### Others
@@ -177,14 +177,18 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**updateLogisticCollection**](docs/CollectionsApi.md#updateLogisticCollection) | **PATCH** /api/v1/collections/logistic/{id4n} | Update logistic collection
 *CollectionsApi* | [**updateRoutingCollection**](docs/CollectionsApi.md#updateRoutingCollection) | **PATCH** /api/v1/collections/routing/{id4n} | Update routing collection
 *GuidsApi* | [**addGuidAlias**](docs/GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+*GuidsApi* | [**addHistoryItem**](docs/GuidsApi.md#addHistoryItem) | **POST** /api/v1/guids/{id4n}/history | Add history item
 *GuidsApi* | [**createGuid**](docs/GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 *GuidsApi* | [**getGuid**](docs/GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *GuidsApi* | [**getGuidAliases**](docs/GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 *GuidsApi* | [**getGuidsWithoutCollection**](docs/GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**getId4n**](docs/GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+*GuidsApi* | [**listHistory**](docs/GuidsApi.md#listHistory) | **GET** /api/v1/guids/{id4n}/history | List history
+*GuidsApi* | [**listHistoryOfOrganization**](docs/GuidsApi.md#listHistoryOfOrganization) | **GET** /api/v1/guids/{id4n}/history/{organizationId} | List history
 *GuidsApi* | [**removeGuidAlias**](docs/GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *GuidsApi* | [**updateGuid**](docs/GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
 *GuidsApi* | [**updateGuid1**](docs/GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*GuidsApi* | [**updateHistoryItemVisibility**](docs/GuidsApi.md#updateHistoryItemVisibility) | **PUT** /api/v1/guids/{id4n}/history/{organizationId}/{sequence}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *OrganizationsApi* | [**addUserRoles**](docs/OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -212,6 +216,8 @@ Class | Method | HTTP request | Description
 *PublicServicesApi* | [**go**](docs/PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 *PublicServicesApi* | [**listAllPublicDocuments**](docs/PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 *PublicServicesApi* | [**listPublicDocuments**](docs/PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+*PublicServicesApi* | [**listPublicHistory**](docs/PublicServicesApi.md#listPublicHistory) | **GET** /api/v1/public/history/{id4n} | Shows the public history of the given GUID
+*PublicServicesApi* | [**readOrganizationInfo**](docs/PublicServicesApi.md#readOrganizationInfo) | **GET** /api/v1/public/organizations/{organizationId} | Read public organization information
 *PublicServicesApi* | [**readPublicDocument**](docs/PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 *PublicServicesApi* | [**resolveImageUsingGET**](docs/PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *PublicServicesApi* | [**resolveWhoIsEntry**](docs/PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
@@ -266,6 +272,7 @@ Class | Method | HTTP request | Description
  - [Guid](docs/Guid.md)
  - [GuidAlias](docs/GuidAlias.md)
  - [GuidCollection](docs/GuidCollection.md)
+ - [HistoryItem](docs/HistoryItem.md)
  - [Id4n](docs/Id4n.md)
  - [Id4nPresentation](docs/Id4nPresentation.md)
  - [Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
@@ -283,6 +290,7 @@ Class | Method | HTTP request | Description
  - [PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
  - [PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
  - [PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
+ - [PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
  - [PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
  - [PaginatedOwnedDocumentResponse](docs/PaginatedOwnedDocumentResponse.md)
  - [PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
@@ -293,6 +301,7 @@ Class | Method | HTTP request | Description
  - [PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
  - [PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
  - [PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
+ - [PaginatedResponseHistoryItem](docs/PaginatedResponseHistoryItem.md)
  - [PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
  - [PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
  - [PaginatedResponseOwnedDocument](docs/PaginatedResponseOwnedDocument.md)

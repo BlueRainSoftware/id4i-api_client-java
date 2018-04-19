@@ -9,6 +9,8 @@ Method | HTTP request | Description
 [**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 [**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listPublicDocuments**](PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
+[**listPublicHistory**](PublicServicesApi.md#listPublicHistory) | **GET** /api/v1/public/history/{id4n} | Shows the public history of the given GUID
+[**readOrganizationInfo**](PublicServicesApi.md#readOrganizationInfo) | **GET** /api/v1/public/organizations/{organizationId} | Read public organization information
 [**readPublicDocument**](PublicServicesApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**resolveImageUsingGET**](PublicServicesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 [**resolveWhoIsEntry**](PublicServicesApi.md#resolveWhoIsEntry) | **GET** /whois/{id4n} | Resolve owner of id4n
@@ -280,6 +282,118 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="listPublicHistory"></a>
+# **listPublicHistory**
+> PaginatedHistoryItemResponse listPublicHistory(id4n, offset, limit)
+
+Shows the public history of the given GUID
+
+Only contains public history items
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiClient;
+//import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
+//import de.id4i.api.PublicServicesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+PublicServicesApi apiInstance = new PublicServicesApi();
+String id4n = "id4n_example"; // String | GUID to retrieve the history for
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
+try {
+    PaginatedHistoryItemResponse result = apiInstance.listPublicHistory(id4n, offset, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PublicServicesApi#listPublicHistory");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| GUID to retrieve the history for |
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
+
+### Return type
+
+[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="readOrganizationInfo"></a>
+# **readOrganizationInfo**
+> Organization readOrganizationInfo(organizationId)
+
+Read public organization information
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiClient;
+//import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
+//import de.id4i.api.PublicServicesApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+PublicServicesApi apiInstance = new PublicServicesApi();
+Long organizationId = 789L; // Long | Organization ID
+try {
+    Organization result = apiInstance.readOrganizationInfo(organizationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PublicServicesApi#readOrganizationInfo");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **Long**| Organization ID |
+
+### Return type
+
+[**Organization**](Organization.md)
 
 ### Authorization
 

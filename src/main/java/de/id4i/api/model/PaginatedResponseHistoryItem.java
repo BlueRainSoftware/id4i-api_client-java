@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.ApiKeyPrivilege;
+import de.id4i.api.model.HistoryItem;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,12 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PaginatedResponseApiKeyPrivilege
+ * PaginatedResponseHistoryItem
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-19T12:42:01.649Z")
-public class PaginatedResponseApiKeyPrivilege {
+public class PaginatedResponseHistoryItem {
   @SerializedName("elements")
-  private List<ApiKeyPrivilege> elements = new ArrayList<>();
+  private List<HistoryItem> elements = new ArrayList<>();
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -43,12 +43,12 @@ public class PaginatedResponseApiKeyPrivilege {
   @SerializedName("total")
   private Integer total = null;
 
-  public PaginatedResponseApiKeyPrivilege elements(List<ApiKeyPrivilege> elements) {
+  public PaginatedResponseHistoryItem elements(List<HistoryItem> elements) {
     this.elements = elements;
     return this;
   }
 
-  public PaginatedResponseApiKeyPrivilege addElementsItem(ApiKeyPrivilege elementsItem) {
+  public PaginatedResponseHistoryItem addElementsItem(HistoryItem elementsItem) {
     this.elements.add(elementsItem);
     return this;
   }
@@ -58,15 +58,15 @@ public class PaginatedResponseApiKeyPrivilege {
    * @return elements
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<ApiKeyPrivilege> getElements() {
+  public List<HistoryItem> getElements() {
     return elements;
   }
 
-  public void setElements(List<ApiKeyPrivilege> elements) {
+  public void setElements(List<HistoryItem> elements) {
     this.elements = elements;
   }
 
-  public PaginatedResponseApiKeyPrivilege limit(Integer limit) {
+  public PaginatedResponseHistoryItem limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -84,7 +84,7 @@ public class PaginatedResponseApiKeyPrivilege {
     this.limit = limit;
   }
 
-  public PaginatedResponseApiKeyPrivilege offset(Integer offset) {
+  public PaginatedResponseHistoryItem offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -102,7 +102,7 @@ public class PaginatedResponseApiKeyPrivilege {
     this.offset = offset;
   }
 
-  public PaginatedResponseApiKeyPrivilege total(Integer total) {
+  public PaginatedResponseHistoryItem total(Integer total) {
     this.total = total;
     return this;
   }
@@ -129,11 +129,11 @@ public class PaginatedResponseApiKeyPrivilege {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedResponseApiKeyPrivilege paginatedResponseApiKeyPrivilege = (PaginatedResponseApiKeyPrivilege) o;
-    return Objects.equals(this.elements, paginatedResponseApiKeyPrivilege.elements) &&
-        Objects.equals(this.limit, paginatedResponseApiKeyPrivilege.limit) &&
-        Objects.equals(this.offset, paginatedResponseApiKeyPrivilege.offset) &&
-        Objects.equals(this.total, paginatedResponseApiKeyPrivilege.total);
+    PaginatedResponseHistoryItem paginatedResponseHistoryItem = (PaginatedResponseHistoryItem) o;
+    return Objects.equals(this.elements, paginatedResponseHistoryItem.elements) &&
+        Objects.equals(this.limit, paginatedResponseHistoryItem.limit) &&
+        Objects.equals(this.offset, paginatedResponseHistoryItem.offset) &&
+        Objects.equals(this.total, paginatedResponseHistoryItem.total);
   }
 
   @Override
@@ -145,7 +145,7 @@ public class PaginatedResponseApiKeyPrivilege {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedResponseApiKeyPrivilege {\n");
+    sb.append("class PaginatedResponseHistoryItem {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
