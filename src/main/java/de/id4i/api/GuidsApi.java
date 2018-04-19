@@ -214,7 +214,7 @@ public class GuidsApi {
         Object localVarPostBody = historyItem;
 
         // create path and map variables
-        String localVarPath = "/api/v1/guids/{id4n}/history"
+        String localVarPath = "/api/v1/history/{id4n}"
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -971,7 +971,7 @@ public class GuidsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/guids/{id4n}/history"
+        String localVarPath = "/api/v1/history/{id4n}"
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -1113,7 +1113,7 @@ public class GuidsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/guids/{id4n}/history/{organizationId}"
+        String localVarPath = "/api/v1/history/{id4n}/{organizationId}"
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
             .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
 
@@ -1656,7 +1656,7 @@ public class GuidsApi {
         Object localVarPostBody = visibility;
 
         // create path and map variables
-        String localVarPath = "/api/v1/guids/{id4n}/history/{organizationId}/{sequence}/visibility"
+        String localVarPath = "/api/v1/history/{id4n}/{organizationId}/{sequence}/visibility"
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
             .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
             .replaceAll("\\{" + "sequence" + "\\}", apiClient.escapeString(sequence.toString()));
