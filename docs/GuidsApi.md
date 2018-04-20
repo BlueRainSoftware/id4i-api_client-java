@@ -5,17 +5,13 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
-[**addHistoryItem**](GuidsApi.md#addHistoryItem) | **POST** /api/v1/history/{id4n} | Add history item
 [**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 [**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-[**listHistory**](GuidsApi.md#listHistory) | **GET** /api/v1/history/{id4n} | List history
-[**listHistoryOfOrganization**](GuidsApi.md#listHistoryOfOrganization) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
-[**updateHistoryItemVisibility**](GuidsApi.md#updateHistoryItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequence}/visibility | Set history item visibility
 
 
 <a name="addGuidAlias"></a>
@@ -62,62 +58,6 @@ Name | Type | Description  | Notes
  **id4n** | **String**| The GUID to operate on |
  **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="addHistoryItem"></a>
-# **addHistoryItem**
-> addHistoryItem(id4n, historyItem)
-
-Add history item
-
-Add a new history item
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.GuidsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | GUID to retrieve the history for
-HistoryItem historyItem = new HistoryItem(); // HistoryItem | The history item to publish
-try {
-    apiInstance.addHistoryItem(id4n, historyItem);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GuidsApi#addHistoryItem");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| GUID to retrieve the history for |
- **historyItem** | [**HistoryItem**](HistoryItem.md)| The history item to publish |
 
 ### Return type
 
@@ -407,130 +347,6 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
 
-<a name="listHistory"></a>
-# **listHistory**
-> PaginatedHistoryItemResponse listHistory(id4n, includePrivate, offset, limit)
-
-List history
-
-Lists the history of a GUID
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.GuidsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | GUID to retrieve the history for
-Boolean includePrivate = true; // Boolean | Also return private history entries
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
-try {
-    PaginatedHistoryItemResponse result = apiInstance.listHistory(id4n, includePrivate, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GuidsApi#listHistory");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| GUID to retrieve the history for |
- **includePrivate** | **Boolean**| Also return private history entries | [optional] [default to true]
- **offset** | **Integer**| Start with the n-th element | [optional]
- **limit** | **Integer**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="listHistoryOfOrganization"></a>
-# **listHistoryOfOrganization**
-> PaginatedHistoryItemResponse listHistoryOfOrganization(id4n, organizationId, includePrivate, offset, limit)
-
-List history
-
-Lists the history of a GUID
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.GuidsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | GUID to retrieve the history for
-Long organizationId = 789L; // Long | organizationId
-Boolean includePrivate = true; // Boolean | Also return private history entries
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
-try {
-    PaginatedHistoryItemResponse result = apiInstance.listHistoryOfOrganization(id4n, organizationId, includePrivate, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GuidsApi#listHistoryOfOrganization");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| GUID to retrieve the history for |
- **organizationId** | **Long**| organizationId |
- **includePrivate** | **Boolean**| Also return private history entries | [optional] [default to true]
- **offset** | **Integer**| Start with the n-th element | [optional]
- **limit** | **Integer**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
 <a name="removeGuidAlias"></a>
 # **removeGuidAlias**
 > removeGuidAlias(id4n, aliasType)
@@ -634,65 +450,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 **Object**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="updateHistoryItemVisibility"></a>
-# **updateHistoryItemVisibility**
-> HistoryItem updateHistoryItemVisibility(id4n, organizationId, sequence, visibility)
-
-Set history item visibility
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.GuidsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | GUID to retrieve the history for
-Long organizationId = 789L; // Long | organizationId
-Integer sequence = 56; // Integer | sequence
-Visibility visibility = new Visibility(); // Visibility | History item visibility restrictions
-try {
-    HistoryItem result = apiInstance.updateHistoryItemVisibility(id4n, organizationId, sequence, visibility);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GuidsApi#updateHistoryItemVisibility");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| GUID to retrieve the history for |
- **organizationId** | **Long**| organizationId |
- **sequence** | **Integer**| sequence |
- **visibility** | [**Visibility**](Visibility.md)| History item visibility restrictions |
-
-### Return type
-
-[**HistoryItem**](HistoryItem.md)
 
 ### Authorization
 

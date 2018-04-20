@@ -26,8 +26,11 @@ import java.io.IOException;
 /**
  * ApiKeyPrivilegeInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-20T07:13:24.612Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-20T13:24:05.749Z")
 public class ApiKeyPrivilegeInfo {
+  @SerializedName("allowsBillableOperations")
+  private Boolean allowsBillableOperations = null;
+
   @SerializedName("helpText")
   private String helpText = null;
 
@@ -36,6 +39,24 @@ public class ApiKeyPrivilegeInfo {
 
   @SerializedName("name")
   private String name = null;
+
+  public ApiKeyPrivilegeInfo allowsBillableOperations(Boolean allowsBillableOperations) {
+    this.allowsBillableOperations = allowsBillableOperations;
+    return this;
+  }
+
+   /**
+   * Get allowsBillableOperations
+   * @return allowsBillableOperations
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isAllowsBillableOperations() {
+    return allowsBillableOperations;
+  }
+
+  public void setAllowsBillableOperations(Boolean allowsBillableOperations) {
+    this.allowsBillableOperations = allowsBillableOperations;
+  }
 
   public ApiKeyPrivilegeInfo helpText(String helpText) {
     this.helpText = helpText;
@@ -101,14 +122,15 @@ public class ApiKeyPrivilegeInfo {
       return false;
     }
     ApiKeyPrivilegeInfo apiKeyPrivilegeInfo = (ApiKeyPrivilegeInfo) o;
-    return Objects.equals(this.helpText, apiKeyPrivilegeInfo.helpText) &&
+    return Objects.equals(this.allowsBillableOperations, apiKeyPrivilegeInfo.allowsBillableOperations) &&
+        Objects.equals(this.helpText, apiKeyPrivilegeInfo.helpText) &&
         Objects.equals(this.id4nAssociated, apiKeyPrivilegeInfo.id4nAssociated) &&
         Objects.equals(this.name, apiKeyPrivilegeInfo.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(helpText, id4nAssociated, name);
+    return Objects.hash(allowsBillableOperations, helpText, id4nAssociated, name);
   }
 
 
@@ -117,6 +139,7 @@ public class ApiKeyPrivilegeInfo {
     StringBuilder sb = new StringBuilder();
     sb.append("class ApiKeyPrivilegeInfo {\n");
     
+    sb.append("    allowsBillableOperations: ").append(toIndentedString(allowsBillableOperations)).append("\n");
     sb.append("    helpText: ").append(toIndentedString(helpText)).append("\n");
     sb.append("    id4nAssociated: ").append(toIndentedString(id4nAssociated)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

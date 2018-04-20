@@ -25,65 +25,45 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Document
+ * GUID history item update (diff patch)
  */
+@ApiModel(description = "GUID history item update (diff patch)")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-20T13:24:05.749Z")
-public class Document {
-  @SerializedName("filename")
-  private String filename = null;
-
-  @SerializedName("mimeType")
-  private String mimeType = null;
+public class HistoryItemUpdate {
+  @SerializedName("organizationId")
+  private Long organizationId = null;
 
   @SerializedName("visibility")
   private Visibility visibility = null;
 
-  public Document filename(String filename) {
-    this.filename = filename;
+  public HistoryItemUpdate organizationId(Long organizationId) {
+    this.organizationId = organizationId;
     return this;
   }
 
    /**
-   * File Name
-   * @return filename
+   * New organization id displayed for this item. If given, must match the holder of GUID and the organization the history item is found under.
+   * @return organizationId
   **/
-  @ApiModelProperty(example = "publicInfo.pdf", value = "File Name")
-  public String getFilename() {
-    return filename;
+  @ApiModelProperty(example = "93", value = "New organization id displayed for this item. If given, must match the holder of GUID and the organization the history item is found under.")
+  public Long getOrganizationId() {
+    return organizationId;
   }
 
-  public void setFilename(String filename) {
-    this.filename = filename;
+  public void setOrganizationId(Long organizationId) {
+    this.organizationId = organizationId;
   }
 
-  public Document mimeType(String mimeType) {
-    this.mimeType = mimeType;
-    return this;
-  }
-
-   /**
-   * Mime Type
-   * @return mimeType
-  **/
-  @ApiModelProperty(example = "text/plain", value = "Mime Type")
-  public String getMimeType() {
-    return mimeType;
-  }
-
-  public void setMimeType(String mimeType) {
-    this.mimeType = mimeType;
-  }
-
-  public Document visibility(Visibility visibility) {
+  public HistoryItemUpdate visibility(Visibility visibility) {
     this.visibility = visibility;
     return this;
   }
 
    /**
-   * Visibility configuration
+   * History item visibility restrictions
    * @return visibility
   **/
-  @ApiModelProperty(value = "Visibility configuration")
+  @ApiModelProperty(value = "History item visibility restrictions")
   public Visibility getVisibility() {
     return visibility;
   }
@@ -101,25 +81,23 @@ public class Document {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Document document = (Document) o;
-    return Objects.equals(this.filename, document.filename) &&
-        Objects.equals(this.mimeType, document.mimeType) &&
-        Objects.equals(this.visibility, document.visibility);
+    HistoryItemUpdate historyItemUpdate = (HistoryItemUpdate) o;
+    return Objects.equals(this.organizationId, historyItemUpdate.organizationId) &&
+        Objects.equals(this.visibility, historyItemUpdate.visibility);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filename, mimeType, visibility);
+    return Objects.hash(organizationId, visibility);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Document {\n");
+    sb.append("class HistoryItemUpdate {\n");
     
-    sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
-    sb.append("    mimeType: ").append(toIndentedString(mimeType)).append("\n");
+    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("}");
     return sb.toString();
