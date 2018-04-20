@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.5.0
 - Package version: 
-    - Build date: 2018-04-19T22:03:43.055Z
+    - Build date: 2018-04-20T07:13:24.612Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -186,8 +186,7 @@ Class | Method | HTTP request | Description
 *GuidsApi* | [**listHistory**](docs/GuidsApi.md#listHistory) | **GET** /api/v1/history/{id4n} | List history
 *GuidsApi* | [**listHistoryOfOrganization**](docs/GuidsApi.md#listHistoryOfOrganization) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 *GuidsApi* | [**removeGuidAlias**](docs/GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-*GuidsApi* | [**updateGuid**](docs/GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-*GuidsApi* | [**updateGuid1**](docs/GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+*GuidsApi* | [**updateGuid**](docs/GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *GuidsApi* | [**updateHistoryItemVisibility**](docs/GuidsApi.md#updateHistoryItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequence}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
 *MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i

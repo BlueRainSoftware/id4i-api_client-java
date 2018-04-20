@@ -14,8 +14,7 @@ Method | HTTP request | Description
 [**listHistory**](GuidsApi.md#listHistory) | **GET** /api/v1/history/{id4n} | List history
 [**listHistoryOfOrganization**](GuidsApi.md#listHistoryOfOrganization) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**updateGuid**](GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**updateGuid1**](GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 [**updateHistoryItemVisibility**](GuidsApi.md#updateHistoryItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequence}/visibility | Set history item visibility
 
 
@@ -621,63 +620,6 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#updateGuid");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID number |
- **request** | [**Guid**](Guid.md)| request |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="updateGuid1"></a>
-# **updateGuid1**
-> Object updateGuid1(id4n, request)
-
-Change GUID information.
-
-Allows ownership transfer.
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.GuidsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | The GUID number
-Guid request = new Guid(); // Guid | request
-try {
-    Object result = apiInstance.updateGuid1(id4n, request);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GuidsApi#updateGuid1");
     e.printStackTrace();
 }
 ```
