@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-23T13:24:57.642Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-23T13:55:51.182Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -93,6 +93,8 @@ public class ApiError {
     USER_INVITATION_NEEDS_MINIMUM_ONE_ROLE("ERR_USER_INVITATION_NEEDS_MINIMUM_ONE_ROLE"),
     
     USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME("ERR_USER_INVITATION_SPECIFY_EMAIL_OR_USERNAME"),
+    
+    USER_DEACTIVATED("ERR_USER_DEACTIVATED"),
     
     LANGUAGE_NOT_SUPPORTED("ERR_LANGUAGE_NOT_SUPPORTED"),
     
