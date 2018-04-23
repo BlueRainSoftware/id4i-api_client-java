@@ -11,8 +11,7 @@ Method | HTTP request | Description
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
-[**updateGuid**](GuidsApi.md#updateGuid) | **PUT** /api/v1/guids/{id4n} | Change GUID information.
-[**updateGuid1**](GuidsApi.md#updateGuid1) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
+[**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
 <a name="addGuidAlias"></a>
@@ -57,7 +56,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
 
 ### Return type
@@ -389,7 +388,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID to operate on |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc]
 
 ### Return type
 
@@ -437,63 +436,6 @@ try {
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#updateGuid");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID number |
- **request** | [**Guid**](Guid.md)| request |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="updateGuid1"></a>
-# **updateGuid1**
-> Object updateGuid1(id4n, request)
-
-Change GUID information.
-
-Allows ownership transfer.
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.GuidsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | The GUID number
-Guid request = new Guid(); // Guid | request
-try {
-    Object result = apiInstance.updateGuid1(id4n, request);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling GuidsApi#updateGuid1");
     e.printStackTrace();
 }
 ```

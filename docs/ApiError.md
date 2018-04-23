@@ -4,10 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**code** | [**CodeEnum**](#CodeEnum) |  |  [optional]
-**errorId** | **String** |  |  [optional]
-**errorList** | [**List&lt;ApiError&gt;**](ApiError.md) |  |  [optional]
-**message** | **String** |  |  [optional]
+**code** | [**CodeEnum**](#CodeEnum) |  | 
+**errorList** | [**List&lt;ApiError&gt;**](ApiError.md) |  | 
+**message** | **String** |  | 
 
 
 <a name="CodeEnum"></a>
@@ -23,6 +22,7 @@ AUTHENTICATION_EXPIRED_TOKEN | &quot;ERR_AUTHENTICATION_EXPIRED_TOKEN&quot;
 AUTHENTICATION_FAILED | &quot;ERR_AUTHENTICATION_FAILED&quot;
 AUTHORIZATION_MISSING_PRIVILEGES | &quot;ERR_AUTHORIZATION_MISSING_PRIVILEGES&quot;
 AUTHORIZATION_FORBIDDEN | &quot;ERR_AUTHORIZATION_FORBIDDEN&quot;
+AUTHORIZATION_REQUIRE_USER | &quot;ERR_AUTHORIZATION_REQUIRE_USER&quot;
 INPUT_VALIDATION_FAILED | &quot;ERR_INPUT_VALIDATION_FAILED&quot;
 FIELD_INPUT_VALIDATION_FAILED | &quot;ERR_FIELD_INPUT_VALIDATION_FAILED&quot;
 VALIDATION_CONSTRAINT_FAILED | &quot;ERR_VALIDATION_CONSTRAINT_FAILED&quot;
@@ -54,6 +54,7 @@ INVALID_URI_TEMPLATE_VARIABLE | &quot;ERR_INVALID_URI_TEMPLATE_VARIABLE&quot;
 MODULE_NOT_ACTIVE | &quot;ERR_MODULE_NOT_ACTIVE&quot;
 INSECURE_PASSWORD | &quot;ERR_INSECURE_PASSWORD&quot;
 TRANSFER_DENIED | &quot;ERR_TRANSFER_DENIED&quot;
+INVALID_PHYSICAL_STATE | &quot;ERR_INVALID_PHYSICAL_STATE&quot;
 
 
 
