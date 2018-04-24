@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.5.1
 - Package version: 
-    - Build date: 2018-04-24T10:45:55.402Z
+    - Build date: 2018-04-24T15:24:09.407Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -131,7 +131,7 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**verifyUserRegistration**](docs/AccountsApi.md#verifyUserRegistration) | **POST** /account/verification | Verify registration
 *AliasApi* | [**addGuidAlias**](docs/AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *AliasApi* | [**getGuidAliasTypes**](docs/AliasApi.md#getGuidAliasTypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
-*AliasApi* | [**getGuidAliases**](docs/AliasApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*AliasApi* | [**getGuidAliases**](docs/AliasApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 *AliasApi* | [**removeGuidAlias**](docs/AliasApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 *AliasApi* | [**searchByAlias**](docs/AliasApi.md#searchByAlias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 *ApiKeysApi* | [**addApiKeyPrivilege**](docs/ApiKeysApi.md#addApiKeyPrivilege) | **POST** /api/v1/apikeys/{key}/privileges | Add privilege
@@ -160,7 +160,7 @@ Class | Method | HTTP request | Description
 *GuidsApi* | [**addGuidAlias**](docs/GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 *GuidsApi* | [**createGuid**](docs/GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 *GuidsApi* | [**getGuid**](docs/GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-*GuidsApi* | [**getGuidAliases**](docs/GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+*GuidsApi* | [**getGuidAliases**](docs/GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 *GuidsApi* | [**getGuidsWithoutCollection**](docs/GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**getId4n**](docs/GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 *GuidsApi* | [**removeGuidAlias**](docs/GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs

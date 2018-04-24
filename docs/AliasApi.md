@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addGuidAlias**](AliasApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 [**getGuidAliasTypes**](AliasApi.md#getGuidAliasTypes) | **GET** /api/v1/search/guids/aliases/types | List all supported alias types
-[**getGuidAliases**](AliasApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+[**getGuidAliases**](AliasApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 [**removeGuidAlias**](AliasApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
 [**searchByAlias**](AliasApi.md#searchByAlias) | **GET** /api/v1/search/guids | Search for GUIDs by alias
 
@@ -124,9 +124,9 @@ This endpoint does not need any parameter.
 # **getGuidAliases**
 > Map&lt;String, String&gt; getGuidAliases(id4n)
 
-Get all aliases for the given GUID
+Get all aliases for the given GUID.
 
-Looks up the alias for each alias type (group and single GUID) and returns all found ones
+Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
 
 ### Example
 ```java
