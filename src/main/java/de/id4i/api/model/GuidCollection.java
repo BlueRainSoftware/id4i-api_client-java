@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GuidCollection
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-23T22:03:15.380Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-24T05:26:51.620Z")
 public class GuidCollection {
   @SerializedName("createdTimestamp")
   private Long createdTimestamp = null;
@@ -156,6 +156,11 @@ public class GuidCollection {
     return createdTimestamp;
   }
 
+  public GuidCollection holderOrganizationId(Long holderOrganizationId) {
+    this.holderOrganizationId = holderOrganizationId;
+    return this;
+  }
+
    /**
    * Organization ID of the holder of the collection
    * @return holderOrganizationId
@@ -163,6 +168,10 @@ public class GuidCollection {
   @ApiModelProperty(value = "Organization ID of the holder of the collection")
   public Long getHolderOrganizationId() {
     return holderOrganizationId;
+  }
+
+  public void setHolderOrganizationId(Long holderOrganizationId) {
+    this.holderOrganizationId = holderOrganizationId;
   }
 
    /**
