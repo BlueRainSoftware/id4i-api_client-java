@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
 [**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 [**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-[**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID
+[**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
 [**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
@@ -98,7 +98,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 GuidsApi apiInstance = new GuidsApi();
-CreateGuidRequest createGUIDInfo = new CreateGuidRequest(); // CreateGuidRequest | createGUIDInfo
+CreateGuidRequest createGUIDInfo = new CreateGuidRequest(); // CreateGuidRequest | GUID creation model
 try {
     ListOfId4ns result = apiInstance.createGuid(createGUIDInfo);
     System.out.println(result);
@@ -112,7 +112,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| createGUIDInfo |
+ **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| GUID creation model |
 
 ### Return type
 
@@ -184,9 +184,9 @@ Name | Type | Description  | Notes
 # **getGuidAliases**
 > Map&lt;String, String&gt; getGuidAliases(id4n)
 
-Get all aliases for the given GUID
+Get all aliases for the given GUID.
 
-Looks up the alias for each alias type (group and single GUID) and returns all found ones
+Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
 
 ### Example
 ```java
@@ -259,7 +259,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 GuidsApi apiInstance = new GuidsApi();
-Long organizationId = 789L; // Long | Organization to search GUIDs for (required).
+String organizationId = "organizationId_example"; // String | The namespace of the organization to search GUIDs for
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -275,7 +275,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| Organization to search GUIDs for (required). |
+ **organizationId** | **String**| The namespace of the organization to search GUIDs for |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 

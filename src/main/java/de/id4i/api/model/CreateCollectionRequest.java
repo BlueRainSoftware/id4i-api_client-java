@@ -19,58 +19,34 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.Visibility;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * GUID history item
+ * CreateCollectionRequest
  */
-@ApiModel(description = "GUID history item")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-04T17:22:37.488Z")
-public class HistoryItem {
+public class CreateCollectionRequest {
+  @SerializedName("label")
+  private String label = null;
+
   @SerializedName("organizationId")
   private String organizationId = null;
 
-  @SerializedName("sequenceId")
-  private Integer sequenceId = null;
-
-  @SerializedName("timestamp")
-  private Long timestamp = null;
+  @SerializedName("length")
+  private Integer length = null;
 
   /**
-   * Type of the history item
+   * Gets or Sets type
    */
   @JsonAdapter(TypeEnum.Adapter.class)
   public enum TypeEnum {
-    CREATED("CREATED"),
+    ROUTING_COLLECTION("ROUTING_COLLECTION"),
     
-    DESTROYED("DESTROYED"),
+    LOGISTIC_COLLECTION("LOGISTIC_COLLECTION"),
     
-    RECYCLED("RECYCLED"),
-    
-    SHIPMENT_PREPARED("SHIPMENT_PREPARED"),
-    
-    STORED("STORED"),
-    
-    RETRIEVED_FROM_STORAGE("RETRIEVED_FROM_STORAGE"),
-    
-    PACKAGED("PACKAGED"),
-    
-    DISPATCHED("DISPATCHED"),
-    
-    RECEIVED("RECEIVED"),
-    
-    REPROCESSING_STARTED("REPROCESSING_STARTED"),
-    
-    REPROCESSING_FINISHED("REPROCESSING_FINISHED"),
-    
-    DISASSEMBLED("DISASSEMBLED"),
-    
-    MAINTENANCE_STARTED("MAINTENANCE_STARTED"),
-    
-    MAINTENANCE_FINISHED("MAINTENANCE_FINISHED");
+    LABELLED_COLLECTION("LABELLED_COLLECTION");
 
     private String value;
 
@@ -113,19 +89,34 @@ public class HistoryItem {
   @SerializedName("type")
   private TypeEnum type = null;
 
-  @SerializedName("visibility")
-  private Visibility visibility = null;
+  public CreateCollectionRequest label(String label) {
+    this.label = label;
+    return this;
+  }
 
-  public HistoryItem organizationId(String organizationId) {
+   /**
+   * Get label
+   * @return label
+  **/
+  @ApiModelProperty(value = "")
+  public String getLabel() {
+    return label;
+  }
+
+  public void setLabel(String label) {
+    this.label = label;
+  }
+
+  public CreateCollectionRequest organizationId(String organizationId) {
     this.organizationId = organizationId;
     return this;
   }
 
    /**
-   * Originator of the history item
+   * Get organizationId
    * @return organizationId
   **/
-  @ApiModelProperty(example = "93", required = true, value = "Originator of the history item")
+  @ApiModelProperty(example = "de.acme", required = true, value = "")
   public String getOrganizationId() {
     return organizationId;
   }
@@ -134,58 +125,42 @@ public class HistoryItem {
     this.organizationId = organizationId;
   }
 
-   /**
-   * Forms the primary key of the history item together with the GUID and the organizationId
-   * @return sequenceId
-  **/
-  @ApiModelProperty(example = "9784", value = "Forms the primary key of the history item together with the GUID and the organizationId")
-  public Integer getSequenceId() {
-    return sequenceId;
+  public CreateCollectionRequest length(Integer length) {
+    this.length = length;
+    return this;
   }
 
    /**
-   * History item timestamp
-   * @return timestamp
+   * Get length
+   * minimum: 6
+   * maximum: 255
+   * @return length
   **/
-  @ApiModelProperty(example = "1517232722", value = "History item timestamp")
-  public Long getTimestamp() {
-    return timestamp;
+  @ApiModelProperty(required = true, value = "")
+  public Integer getLength() {
+    return length;
   }
 
-  public HistoryItem type(TypeEnum type) {
+  public void setLength(Integer length) {
+    this.length = length;
+  }
+
+  public CreateCollectionRequest type(TypeEnum type) {
     this.type = type;
     return this;
   }
 
    /**
-   * Type of the history item
+   * Get type
    * @return type
   **/
-  @ApiModelProperty(example = "DISPATCHED", required = true, value = "Type of the history item")
+  @ApiModelProperty(required = true, value = "")
   public TypeEnum getType() {
     return type;
   }
 
   public void setType(TypeEnum type) {
     this.type = type;
-  }
-
-  public HistoryItem visibility(Visibility visibility) {
-    this.visibility = visibility;
-    return this;
-  }
-
-   /**
-   * History item visibility restrictions
-   * @return visibility
-  **/
-  @ApiModelProperty(value = "History item visibility restrictions")
-  public Visibility getVisibility() {
-    return visibility;
-  }
-
-  public void setVisibility(Visibility visibility) {
-    this.visibility = visibility;
   }
 
 
@@ -197,30 +172,28 @@ public class HistoryItem {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    HistoryItem historyItem = (HistoryItem) o;
-    return Objects.equals(this.organizationId, historyItem.organizationId) &&
-        Objects.equals(this.sequenceId, historyItem.sequenceId) &&
-        Objects.equals(this.timestamp, historyItem.timestamp) &&
-        Objects.equals(this.type, historyItem.type) &&
-        Objects.equals(this.visibility, historyItem.visibility);
+    CreateCollectionRequest createCollectionRequest = (CreateCollectionRequest) o;
+    return Objects.equals(this.label, createCollectionRequest.label) &&
+        Objects.equals(this.organizationId, createCollectionRequest.organizationId) &&
+        Objects.equals(this.length, createCollectionRequest.length) &&
+        Objects.equals(this.type, createCollectionRequest.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(organizationId, sequenceId, timestamp, type, visibility);
+    return Objects.hash(label, organizationId, length, type);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class HistoryItem {\n");
+    sb.append("class CreateCollectionRequest {\n");
     
+    sb.append("    label: ").append(toIndentedString(label)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    sequenceId: ").append(toIndentedString(sequenceId)).append("\n");
-    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+    sb.append("    length: ").append(toIndentedString(length)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    visibility: ").append(toIndentedString(visibility)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -33,7 +33,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AuditingApi apiInstance = new AuditingApi();
-Long organizationId = 789L; // Long | Organization-ID of change log entries to be listed
+String organizationId = "organizationId_example"; // String | The namespace identifying the organization whose change log entries are to be listed
 String messageMimeType = "text/mustache"; // String | The Mime-type for the message format that should be returned. e.g. 'text/plain' or 'text/mustache' 
 LocalDateTime fromDate = new LocalDateTime(); // LocalDateTime | From date time as UTC Date-Time format
 LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | To date time as UTC Date-Time format
@@ -52,7 +52,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| Organization-ID of change log entries to be listed |
+ **organizationId** | **String**| The namespace identifying the organization whose change log entries are to be listed |
  **messageMimeType** | **String**| The Mime-type for the message format that should be returned. e.g. &#39;text/plain&#39; or &#39;text/mustache&#39;  | [optional] [default to text/mustache]
  **fromDate** | **LocalDateTime**| From date time as UTC Date-Time format | [optional]
  **toDate** | **LocalDateTime**| To date time as UTC Date-Time format | [optional]

@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alias** | **String** |  |  [optional]
+**alias** | **String** | An alias | 
 
 
 

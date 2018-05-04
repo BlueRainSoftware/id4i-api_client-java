@@ -32,7 +32,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 BillingApi apiInstance = new BillingApi();
-Long organizationId = 789L; // Long | The organization to compute the billing information for
+String organizationId = "organizationId_example"; // String | The organization to compute the billing information for
 LocalDateTime fromDate = new LocalDateTime(); // LocalDateTime | Billing start date
 LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | Billing end date
 try {
@@ -48,7 +48,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The organization to compute the billing information for |
+ **organizationId** | **String**| The organization to compute the billing information for |
  **fromDate** | **LocalDateTime**| Billing start date | [optional]
  **toDate** | **LocalDateTime**| Billing end date | [optional]
 
@@ -89,7 +89,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 BillingApi apiInstance = new BillingApi();
-Long organizationId = 789L; // Long | The organization to compute the billing information for
+String organizationId = "organizationId_example"; // String | The organization to compute the billing information for
 LocalDateTime fromDate = new LocalDateTime(); // LocalDateTime | Billing start date
 LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | Billing end date
 try {
@@ -105,7 +105,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The organization to compute the billing information for |
+ **organizationId** | **String**| The organization to compute the billing information for |
  **fromDate** | **LocalDateTime**| Billing start date | [optional]
  **toDate** | **LocalDateTime**| Billing end date | [optional]
 

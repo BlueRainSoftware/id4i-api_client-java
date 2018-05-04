@@ -24,20 +24,51 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * PublicImagePresentation
+ * An organization
  */
+@ApiModel(description = "An organization")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-04T17:22:37.488Z")
-public class PublicImagePresentation {
-  @SerializedName("uri")
-  private String uri = null;
+public class OrganizationUpdate {
+  @SerializedName("name")
+  private String name = null;
+
+  @SerializedName("namespace")
+  private String namespace = null;
+
+  public OrganizationUpdate name(String name) {
+    this.name = name;
+    return this;
+  }
 
    /**
-   * The uri/url of the image
-   * @return uri
+   * The name of the organization
+   * @return name
   **/
-  @ApiModelProperty(example = "/api/v1/public/image/bc671c63-4a9b-46e7-8c59-9bbe1917e6cc", required = true, value = "The uri/url of the image")
-  public String getUri() {
-    return uri;
+  @ApiModelProperty(example = "ACME Inc.", value = "The name of the organization")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public OrganizationUpdate namespace(String namespace) {
+    this.namespace = namespace;
+    return this;
+  }
+
+   /**
+   * The namespace of the organization
+   * @return namespace
+  **/
+  @ApiModelProperty(example = "de.acme", value = "The namespace of the organization")
+  public String getNamespace() {
+    return namespace;
+  }
+
+  public void setNamespace(String namespace) {
+    this.namespace = namespace;
   }
 
 
@@ -49,22 +80,24 @@ public class PublicImagePresentation {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PublicImagePresentation publicImagePresentation = (PublicImagePresentation) o;
-    return Objects.equals(this.uri, publicImagePresentation.uri);
+    OrganizationUpdate organizationUpdate = (OrganizationUpdate) o;
+    return Objects.equals(this.name, organizationUpdate.name) &&
+        Objects.equals(this.namespace, organizationUpdate.namespace);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(uri);
+    return Objects.hash(name, namespace);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PublicImagePresentation {\n");
+    sb.append("class OrganizationUpdate {\n");
     
-    sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("}");
     return sb.toString();
   }

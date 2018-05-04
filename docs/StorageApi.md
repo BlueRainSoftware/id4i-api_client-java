@@ -45,7 +45,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 File content = new File("/path/to/file.txt"); // File | content
 try {
@@ -61,7 +61,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **content** | **File**| content |
 
@@ -102,7 +102,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
@@ -118,7 +118,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
 
@@ -159,7 +159,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
@@ -175,7 +175,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
 
@@ -216,7 +216,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
@@ -232,7 +232,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
 
@@ -335,7 +335,7 @@ Authorization.setApiKey("YOUR API KEY");
 
 StorageApi apiInstance = new StorageApi();
 String id4n = "id4n_example"; // String | id4n
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -352,7 +352,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **organizationId** | **Long**| organizationId | [optional]
+ **organizationId** | **String**| organizationId | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -395,7 +395,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
@@ -412,7 +412,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -456,7 +456,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
@@ -473,7 +473,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -515,7 +515,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
@@ -531,7 +531,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
 
@@ -572,7 +572,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organization = 789L; // Long | organization
+String organization = "organization_example"; // String | organization
 String id4n = "id4n_example"; // String | id4n
 try {
     byte[] result = apiInstance.readFromMicrostorage(organization, id4n);
@@ -587,7 +587,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **Long**| organization |
+ **organization** | **String**| organization |
  **id4n** | **String**| id4n |
 
 ### Return type
@@ -627,7 +627,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
@@ -643,7 +643,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
 
@@ -684,7 +684,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 DocumentUpdate document = new DocumentUpdate(); // DocumentUpdate | document
@@ -701,7 +701,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
  **document** | [**DocumentUpdate**](DocumentUpdate.md)| document |
@@ -743,7 +743,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 StorageApi apiInstance = new StorageApi();
-Long organization = 789L; // Long | organization
+String organization = "organization_example"; // String | organization
 String id4n = "id4n_example"; // String | id4n
 String contentType = "contentType_example"; // String | Content-Type
 Long contentLength = 789L; // Long | Content-Length
@@ -761,7 +761,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organization** | **Long**| organization |
+ **organization** | **String**| organization |
  **id4n** | **String**| id4n |
  **contentType** | **String**| Content-Type | [optional]
  **contentLength** | **Long**| Content-Length | [optional]

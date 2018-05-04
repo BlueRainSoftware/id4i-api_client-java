@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**addItem**](HistoryApi.md#addItem) | **POST** /api/v1/history/{id4n} | Add history item
 [**list**](HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 [**listAll**](HistoryApi.md#listAll) | **GET** /api/v1/history/{id4n} | List history
-[**retrieveItem**](HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+[**retrieveItem**](HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 [**updateItem**](HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 [**updateItemVisibility**](HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 
@@ -74,7 +74,7 @@ null (empty response body)
 
 List history
 
-Lists the history of a GUID
+Lists the history of a GUID of the specified organization
 
 ### Example
 ```java
@@ -95,7 +95,7 @@ Authorization.setApiKey("YOUR API KEY");
 
 HistoryApi apiInstance = new HistoryApi();
 String id4n = "id4n_example"; // String | GUID to retrieve the history for
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Boolean includePrivate = true; // Boolean | Also return private history entries
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
@@ -113,7 +113,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for |
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **includePrivate** | **Boolean**| Also return private history entries | [optional] [default to true]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -196,9 +196,7 @@ Name | Type | Description  | Notes
 # **retrieveItem**
 > PaginatedHistoryItemResponse retrieveItem(id4n, organizationId, sequenceId)
 
-List history
-
-Lists the history of a GUID
+Get history item
 
 ### Example
 ```java
@@ -219,7 +217,7 @@ Authorization.setApiKey("YOUR API KEY");
 
 HistoryApi apiInstance = new HistoryApi();
 String id4n = "id4n_example"; // String | GUID to retrieve the history for
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Integer sequenceId = 56; // Integer | sequenceId
 try {
     PaginatedHistoryItemResponse result = apiInstance.retrieveItem(id4n, organizationId, sequenceId);
@@ -235,7 +233,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for |
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **sequenceId** | **Integer**| sequenceId |
 
 ### Return type
@@ -276,7 +274,7 @@ Authorization.setApiKey("YOUR API KEY");
 
 HistoryApi apiInstance = new HistoryApi();
 String id4n = "id4n_example"; // String | GUID to retrieve the history for
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Integer sequenceId = 56; // Integer | sequenceId
 HistoryItemUpdate update = new HistoryItemUpdate(); // HistoryItemUpdate | update
 try {
@@ -293,7 +291,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for |
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **sequenceId** | **Integer**| sequenceId |
  **update** | [**HistoryItemUpdate**](HistoryItemUpdate.md)| update |
 
@@ -335,7 +333,7 @@ Authorization.setApiKey("YOUR API KEY");
 
 HistoryApi apiInstance = new HistoryApi();
 String id4n = "id4n_example"; // String | GUID to retrieve the history for
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Integer sequenceId = 56; // Integer | sequenceId
 Visibility visibility = new Visibility(); // Visibility | History item visibility restrictions
 try {
@@ -352,7 +350,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for |
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **sequenceId** | **Integer**| sequenceId |
  **visibility** | [**Visibility**](Visibility.md)| History item visibility restrictions |
 

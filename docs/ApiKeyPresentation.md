@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **createdBy** | **String** |  | 
 **key** | **String** | The api key identifier | 
 **label** | **String** | The label / name of the api key | 
-**organizationId** | **Long** | The organization id this api key belongs to | 
+**organizationId** | **String** | The organization namespace this api key belongs to | 
 
 
 
