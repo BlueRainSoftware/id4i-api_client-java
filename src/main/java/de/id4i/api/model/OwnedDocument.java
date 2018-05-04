@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * OwnedDocument
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-04T15:29:21.084Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-04T15:53:23.249Z")
 public class OwnedDocument {
   @SerializedName("filename")
   private String filename = null;
@@ -81,7 +81,7 @@ public class OwnedDocument {
    * The organization&#39;s namespace which owns the document
    * @return ownerOrganizationId
   **/
-  @ApiModelProperty(example = "5", value = "The organization's namespace which owns the document")
+  @ApiModelProperty(example = "de.bluerain", value = "The organization's namespace which owns the document")
   public String getOwnerOrganizationId() {
     return ownerOrganizationId;
   }

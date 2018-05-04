@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * TransferReceiveInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-04T15:29:21.084Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-04T15:53:23.249Z")
 public class TransferReceiveInfo {
   @SerializedName("holderOrganizationId")
   private String holderOrganizationId = null;
@@ -54,7 +54,7 @@ public class TransferReceiveInfo {
    * The current holder of the object
    * @return holderOrganizationId
   **/
-  @ApiModelProperty(example = "2", required = true, value = "The current holder of the object")
+  @ApiModelProperty(example = "de.id4i", required = true, value = "The current holder of the object")
   public String getHolderOrganizationId() {
     return holderOrganizationId;
   }
@@ -85,7 +85,7 @@ public class TransferReceiveInfo {
    * The current publicly visible owner of the object
    * @return ownerOrganizationId
   **/
-  @ApiModelProperty(example = "1", value = "The current publicly visible owner of the object")
+  @ApiModelProperty(example = "de.bluerain", value = "The current publicly visible owner of the object")
   public String getOwnerOrganizationId() {
     return ownerOrganizationId;
   }
@@ -107,7 +107,7 @@ public class TransferReceiveInfo {
    * Allow only these organizations to obtain this object
    * @return recipientOrganizationIds
   **/
-  @ApiModelProperty(example = "[3,4,5]", value = "Allow only these organizations to obtain this object")
+  @ApiModelProperty(example = "[\"de.acme\",\"com.porsche\",\"com.example\"]", value = "Allow only these organizations to obtain this object")
   public List<String> getRecipientOrganizationIds() {
     return recipientOrganizationIds;
   }

@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * TransferSendInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-04T15:29:21.084Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-04T15:53:23.249Z")
 public class TransferSendInfo {
   @SerializedName("holderOrganizationId")
   private String holderOrganizationId = null;
@@ -49,7 +49,7 @@ public class TransferSendInfo {
    * The current holder of the object
    * @return holderOrganizationId
   **/
-  @ApiModelProperty(example = "2", value = "The current holder of the object")
+  @ApiModelProperty(example = "de.id4i", value = "The current holder of the object")
   public String getHolderOrganizationId() {
     return holderOrganizationId;
   }
@@ -94,7 +94,7 @@ public class TransferSendInfo {
    * The current publicly visible owner of the object
    * @return ownerOrganizationId
   **/
-  @ApiModelProperty(example = "1", value = "The current publicly visible owner of the object")
+  @ApiModelProperty(example = "de.bluerain", value = "The current publicly visible owner of the object")
   public String getOwnerOrganizationId() {
     return ownerOrganizationId;
   }
