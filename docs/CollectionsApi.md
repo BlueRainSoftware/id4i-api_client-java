@@ -252,7 +252,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 CollectionsApi apiInstance = new CollectionsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 String type = "type_example"; // String | Filter by this type
@@ -271,7 +271,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
  **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]

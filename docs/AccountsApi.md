@@ -47,7 +47,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
@@ -62,7 +62,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
 
@@ -259,7 +259,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -275,7 +275,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -373,7 +373,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization
 String username = "username_example"; // String | username
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
@@ -390,7 +390,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization |
  **username** | **String**| username |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -434,7 +434,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -450,7 +450,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -491,7 +491,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization where users should be invited
 OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 try {
     apiInstance.inviteUsers(organizationId, invitationList);
@@ -505,7 +505,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization where users should be invited |
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList |
 
 ### Return type
@@ -734,7 +734,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AccountsApi apiInstance = new AccountsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
@@ -749,7 +749,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
 

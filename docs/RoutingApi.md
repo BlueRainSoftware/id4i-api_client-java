@@ -151,7 +151,7 @@ Authorization.setApiKey("YOUR API KEY");
 
 RoutingApi apiInstance = new RoutingApi();
 String id4n = "id4n_example"; // String | id4n
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 try {
     RoutingFile result = apiInstance.getRoutingFile(id4n, organizationId);
     System.out.println(result);
@@ -166,7 +166,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **organizationId** | **Long**| organizationId | [optional]
+ **organizationId** | **String**| organizationId | [optional]
 
 ### Return type
 

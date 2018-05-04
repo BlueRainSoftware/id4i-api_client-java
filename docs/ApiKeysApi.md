@@ -377,7 +377,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-Long organizationId = 789L; // Long | The id of the organization to search in.
+String organizationId = "organizationId_example"; // String | The namespace of the organization to search in.
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -393,7 +393,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The id of the organization to search in. |
+ **organizationId** | **String**| The namespace of the organization to search in. | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 

@@ -40,7 +40,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
@@ -56,7 +56,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
 
@@ -197,7 +197,7 @@ Authorization.setApiKey("YOUR API KEY");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
 String id4n = "id4n_example"; // String | id4n
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -214,7 +214,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **organizationId** | **Long**| organizationId | [optional]
+ **organizationId** | **String**| organizationId | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -257,7 +257,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
@@ -274,7 +274,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -375,7 +375,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
-Long organizationId = 789L; // Long | Organization ID
+String organizationId = "organizationId_example"; // String | Organization ID
 try {
     Organization result = apiInstance.readOrganizationInfo(organizationId);
     System.out.println(result);
@@ -389,7 +389,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| Organization ID |
+ **organizationId** | **String**| Organization ID |
 
 ### Return type
 
@@ -428,7 +428,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
@@ -444,7 +444,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
  **fileName** | **String**| fileName |
 

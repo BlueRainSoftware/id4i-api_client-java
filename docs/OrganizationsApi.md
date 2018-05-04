@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 [**deleteOrganizationBillingAddress**](OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
 [**deleteOrganizationLogo**](OrganizationsApi.md#deleteOrganizationLogo) | **DELETE** /api/v1/organizations/{organizationId}/logo | Delete organization logo
-[**findOrganization**](OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id
+[**findOrganization**](OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id/namespace
 [**findOrganizationAddress**](OrganizationsApi.md#findOrganizationAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/default | Retrieve address
 [**findOrganizationBillingAddress**](OrganizationsApi.md#findOrganizationBillingAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 [**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
@@ -50,7 +50,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
@@ -65,7 +65,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
 
@@ -161,7 +161,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | The id of the organization to be deleted.
+String organizationId = "organizationId_example"; // String | The namespace of the organization to be deleted.
 try {
     apiInstance.deleteOrganization(organizationId);
 } catch (ApiException e) {
@@ -174,7 +174,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The id of the organization to be deleted. |
+ **organizationId** | **String**| The namespace of the organization to be deleted. |
 
 ### Return type
 
@@ -213,7 +213,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 try {
     apiInstance.deleteOrganizationBillingAddress(organizationId);
 } catch (ApiException e) {
@@ -226,7 +226,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
 
 ### Return type
 
@@ -265,7 +265,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | The id of the organization where the logo should be deleted.
+String organizationId = "organizationId_example"; // String | The namespace of the organization where the logo should be deleted.
 try {
     apiInstance.deleteOrganizationLogo(organizationId);
 } catch (ApiException e) {
@@ -278,7 +278,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The id of the organization where the logo should be deleted. |
+ **organizationId** | **String**| The namespace of the organization where the logo should be deleted. |
 
 ### Return type
 
@@ -297,7 +297,7 @@ null (empty response body)
 # **findOrganization**
 > Organization findOrganization(organizationId)
 
-Find organization by id
+Find organization by id/namespace
 
 Returns a single organization.
 
@@ -319,7 +319,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | The id of the organization to be retrieved.
+String organizationId = "organizationId_example"; // String | The namespace of the organization to be retrieved.
 try {
     Organization result = apiInstance.findOrganization(organizationId);
     System.out.println(result);
@@ -333,7 +333,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The id of the organization to be retrieved. |
+ **organizationId** | **String**| The namespace of the organization to be retrieved. |
 
 ### Return type
 
@@ -372,7 +372,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 try {
     OrganizationAddress result = apiInstance.findOrganizationAddress(organizationId);
     System.out.println(result);
@@ -386,7 +386,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
 
 ### Return type
 
@@ -425,7 +425,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 try {
     OrganizationAddress result = apiInstance.findOrganizationBillingAddress(organizationId);
     System.out.println(result);
@@ -439,7 +439,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
 
 ### Return type
 
@@ -480,7 +480,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 String type = "type_example"; // String | Filter by this type
@@ -499,7 +499,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
  **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]
@@ -545,7 +545,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -561,7 +561,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -659,7 +659,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization
 String username = "username_example"; // String | username
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
@@ -676,7 +676,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization |
  **username** | **String**| username |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
@@ -720,7 +720,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -736,7 +736,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -777,7 +777,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization where users should be invited
 OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
 try {
     apiInstance.inviteUsers(organizationId, invitationList);
@@ -791,7 +791,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization where users should be invited |
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList |
 
 ### Return type
@@ -886,7 +886,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | The namespace of the organization
 String username = "username_example"; // String | username
 ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
@@ -901,7 +901,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| The namespace of the organization |
  **username** | **String**| username |
  **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
 
@@ -944,7 +944,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | The id of the organization where the logo should be updated.
+String organizationId = "organizationId_example"; // String | The namespace of the organization where the logo should be updated.
 File file = new File("/path/to/file.txt"); // File | An image containing the new logo.
 try {
     PublicImagePresentation result = apiInstance.setOrganizationLogo(organizationId, file);
@@ -959,7 +959,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The id of the organization where the logo should be updated. |
+ **organizationId** | **String**| The namespace of the organization where the logo should be updated. |
  **file** | **File**| An image containing the new logo. |
 
 ### Return type
@@ -977,7 +977,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganization"></a>
 # **updateOrganization**
-> Organization updateOrganization(organizationId, organization)
+> Organization updateOrganization(organizationId, organizationUpdate)
 
 Update organization
 
@@ -999,10 +999,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | The id of the organization to be updated.
-Organization organization = new Organization(); // Organization | Updated organization object
+String organizationId = "organizationId_example"; // String | The namespace of the organization to be updated.
+OrganizationUpdate organizationUpdate = new OrganizationUpdate(); // OrganizationUpdate | Updated organization object
 try {
-    Organization result = apiInstance.updateOrganization(organizationId, organization);
+    Organization result = apiInstance.updateOrganization(organizationId, organizationUpdate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#updateOrganization");
@@ -1014,8 +1014,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| The id of the organization to be updated. |
- **organization** | [**Organization**](Organization.md)| Updated organization object |
+ **organizationId** | **String**| The namespace of the organization to be updated. |
+ **organizationUpdate** | [**OrganizationUpdate**](OrganizationUpdate.md)| Updated organization object |
 
 ### Return type
 
@@ -1054,7 +1054,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 OrganizationAddress addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
 try {
     OrganizationAddress result = apiInstance.updateOrganizationAddress(organizationId, addressResource);
@@ -1069,7 +1069,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource |
 
 ### Return type
@@ -1109,7 +1109,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Long organizationId = 789L; // Long | organizationId
+String organizationId = "organizationId_example"; // String | organizationId
 OrganizationAddress addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
 try {
     OrganizationAddress result = apiInstance.updateOrganizationBillingAddress(organizationId, addressResource);
@@ -1124,7 +1124,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| organizationId |
+ **organizationId** | **String**| organizationId |
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource |
 
 ### Return type

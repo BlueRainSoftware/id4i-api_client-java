@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **label** | **String** |  |  [optional]
+**organizationId** | **String** |  | 
 **length** | **Integer** |  | 
-**organizationId** | **Long** |  | 
 **type** | [**TypeEnum**](#TypeEnum) |  | 
 
 

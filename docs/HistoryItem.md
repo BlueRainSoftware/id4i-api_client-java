@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**organizationId** | **Long** | Originator of the history item | 
+**organizationId** | **String** | Originator of the history item | 
 **sequenceId** | **Integer** | Forms the primary key of the history item together with the GUID and the organizationId |  [optional]
 **timestamp** | **Long** | History item timestamp |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) | Type of the history item | 

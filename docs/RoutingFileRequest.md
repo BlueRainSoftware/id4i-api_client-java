@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **routing** | [**RoutingFile**](RoutingFile.md) |  | 
-**organizationId** | **Long** |  |  [optional]
+**organizationId** | **String** |  |  [optional]
 
 
 

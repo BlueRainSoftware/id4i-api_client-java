@@ -98,7 +98,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 GuidsApi apiInstance = new GuidsApi();
-CreateGuidRequest createGUIDInfo = new CreateGuidRequest(); // CreateGuidRequest | createGUIDInfo
+CreateGuidRequest createGUIDInfo = new CreateGuidRequest(); // CreateGuidRequest | GUID creation model
 try {
     ListOfId4ns result = apiInstance.createGuid(createGUIDInfo);
     System.out.println(result);
@@ -112,7 +112,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| createGUIDInfo |
+ **createGUIDInfo** | [**CreateGuidRequest**](CreateGuidRequest.md)| GUID creation model |
 
 ### Return type
 
@@ -259,7 +259,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 GuidsApi apiInstance = new GuidsApi();
-Long organizationId = 789L; // Long | Organization to search GUIDs for (required).
+String organizationId = "organizationId_example"; // String | The namespace of the organization to search GUIDs for
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
@@ -275,7 +275,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **Long**| Organization to search GUIDs for (required). |
+ **organizationId** | **String**| The namespace of the organization to search GUIDs for |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 

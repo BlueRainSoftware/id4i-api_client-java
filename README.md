@@ -15,9 +15,9 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.5.1
+- API version: 0.6.0
 - Package version: 
-    - Build date: 2018-05-04T07:49:51.782Z
+    - Build date: 2018-05-04T15:22:57.450Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -32,7 +32,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.5.1</version>
+    <version>0.6.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.5.1"
+compile "de.id4i.api:id4i-api-client:0.6.0"
 ```
 
 ### Others
@@ -92,7 +92,7 @@ Please follow the [installation](#installation) instruction and execute the foll
         //Authorization.setApiKeyPrefix("Token");
 
     AccountsApi apiInstance = new AccountsApi();
-        Long organizationId = 789L; // Long | organizationId
+        String organizationId = "organizationId_example"; // String | The namespace of the organization
         String username = "username_example"; // String | username
         ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
     try {
@@ -168,7 +168,7 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**addItem**](docs/HistoryApi.md#addItem) | **POST** /api/v1/history/{id4n} | Add history item
 *HistoryApi* | [**list**](docs/HistoryApi.md#list) | **GET** /api/v1/history/{id4n}/{organizationId} | List history
 *HistoryApi* | [**listAll**](docs/HistoryApi.md#listAll) | **GET** /api/v1/history/{id4n} | List history
-*HistoryApi* | [**retrieveItem**](docs/HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | List history
+*HistoryApi* | [**retrieveItem**](docs/HistoryApi.md#retrieveItem) | **GET** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Get history item
 *HistoryApi* | [**updateItem**](docs/HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *HistoryApi* | [**updateItemVisibility**](docs/HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
@@ -178,7 +178,7 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**deleteOrganization**](docs/OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
 *OrganizationsApi* | [**deleteOrganizationBillingAddress**](docs/OrganizationsApi.md#deleteOrganizationBillingAddress) | **DELETE** /api/v1/organizations/{organizationId}/addresses/billing | Remove billing address
 *OrganizationsApi* | [**deleteOrganizationLogo**](docs/OrganizationsApi.md#deleteOrganizationLogo) | **DELETE** /api/v1/organizations/{organizationId}/logo | Delete organization logo
-*OrganizationsApi* | [**findOrganization**](docs/OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id
+*OrganizationsApi* | [**findOrganization**](docs/OrganizationsApi.md#findOrganization) | **GET** /api/v1/organizations/{organizationId} | Find organization by id/namespace
 *OrganizationsApi* | [**findOrganizationAddress**](docs/OrganizationsApi.md#findOrganizationAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/default | Retrieve address
 *OrganizationsApi* | [**findOrganizationBillingAddress**](docs/OrganizationsApi.md#findOrganizationBillingAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 *OrganizationsApi* | [**getAllCollectionsOfOrganization**](docs/OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
@@ -262,6 +262,7 @@ Class | Method | HTTP request | Description
  - [ListOfId4ns](docs/ListOfId4ns.md)
  - [Organization](docs/Organization.md)
  - [OrganizationAddress](docs/OrganizationAddress.md)
+ - [OrganizationUpdate](docs/OrganizationUpdate.md)
  - [OrganizationUserInvitation](docs/OrganizationUserInvitation.md)
  - [OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
  - [OwnedDocument](docs/OwnedDocument.md)

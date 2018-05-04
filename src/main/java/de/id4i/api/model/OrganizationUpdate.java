@@ -22,42 +22,53 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * A list of id4ns
+ * An organization
  */
-@ApiModel(description = "A list of id4ns")
+@ApiModel(description = "An organization")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-04T15:22:57.450Z")
-public class ListOfId4ns {
-  @SerializedName("id4ns")
-  private List<String> id4ns = null;
+public class OrganizationUpdate {
+  @SerializedName("name")
+  private String name = null;
 
-  public ListOfId4ns id4ns(List<String> id4ns) {
-    this.id4ns = id4ns;
-    return this;
-  }
+  @SerializedName("namespace")
+  private String namespace = null;
 
-  public ListOfId4ns addId4nsItem(String id4nsItem) {
-    if (this.id4ns == null) {
-      this.id4ns = new ArrayList<>();
-    }
-    this.id4ns.add(id4nsItem);
+  public OrganizationUpdate name(String name) {
+    this.name = name;
     return this;
   }
 
    /**
-   * A list of id4ns.
-   * @return id4ns
+   * The name of the organization
+   * @return name
   **/
-  @ApiModelProperty(value = "A list of id4ns.")
-  public List<String> getId4ns() {
-    return id4ns;
+  @ApiModelProperty(example = "ACME Inc.", value = "The name of the organization")
+  public String getName() {
+    return name;
   }
 
-  public void setId4ns(List<String> id4ns) {
-    this.id4ns = id4ns;
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public OrganizationUpdate namespace(String namespace) {
+    this.namespace = namespace;
+    return this;
+  }
+
+   /**
+   * The namespace of the organization
+   * @return namespace
+  **/
+  @ApiModelProperty(example = "de.acme", value = "The namespace of the organization")
+  public String getNamespace() {
+    return namespace;
+  }
+
+  public void setNamespace(String namespace) {
+    this.namespace = namespace;
   }
 
 
@@ -69,22 +80,24 @@ public class ListOfId4ns {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ListOfId4ns listOfId4ns = (ListOfId4ns) o;
-    return Objects.equals(this.id4ns, listOfId4ns.id4ns);
+    OrganizationUpdate organizationUpdate = (OrganizationUpdate) o;
+    return Objects.equals(this.name, organizationUpdate.name) &&
+        Objects.equals(this.namespace, organizationUpdate.namespace);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id4ns);
+    return Objects.hash(name, namespace);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ListOfId4ns {\n");
+    sb.append("class OrganizationUpdate {\n");
     
-    sb.append("    id4ns: ").append(toIndentedString(id4ns)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("}");
     return sb.toString();
   }
