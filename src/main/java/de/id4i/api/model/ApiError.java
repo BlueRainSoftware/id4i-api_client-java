@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-15T22:03:17.483Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-16T09:15:55.683Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -117,8 +117,6 @@ public class ApiError {
     INVALID_NAMESPACE("ERR_INVALID_NAMESPACE"),
     
     NAMESPACE_ALREADY_EXISTS("ERR_NAMESPACE_ALREADY_EXISTS"),
-    
-    MODULE_NOT_ACTIVE("ERR_MODULE_NOT_ACTIVE"),
     
     INSECURE_PASSWORD("ERR_INSECURE_PASSWORD"),
     
