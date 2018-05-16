@@ -28,7 +28,7 @@ import java.io.IOException;
  * GUID history item
  */
 @ApiModel(description = "GUID history item")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-16T10:59:13.324Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-16T14:51:42.004Z")
 public class HistoryItem {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -64,13 +64,23 @@ public class HistoryItem {
     
     REPROCESSING_STARTED("REPROCESSING_STARTED"),
     
+    REPROCESSING_CANCELLED("REPROCESSING_CANCELLED"),
+    
     REPROCESSING_FINISHED("REPROCESSING_FINISHED"),
     
     DISASSEMBLED("DISASSEMBLED"),
     
     MAINTENANCE_STARTED("MAINTENANCE_STARTED"),
     
-    MAINTENANCE_FINISHED("MAINTENANCE_FINISHED");
+    MAINTENANCE_CANCELLED("MAINTENANCE_CANCELLED"),
+    
+    MAINTENANCE_FINISHED("MAINTENANCE_FINISHED"),
+    
+    PRODUCTION_STEP_STARTED("PRODUCTION_STEP_STARTED"),
+    
+    PRODUCTION_STEP_CANCELLED("PRODUCTION_STEP_CANCELLED"),
+    
+    PRODUCTION_STEP_FINISHED("PRODUCTION_STEP_FINISHED");
 
     private String value;
 
