@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * TransferReceiveInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-18T11:45:16.915Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-05-18T12:43:30.214Z")
 public class TransferReceiveInfo {
   @SerializedName("holderOrganizationId")
   private String holderOrganizationId = null;
