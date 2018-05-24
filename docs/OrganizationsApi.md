@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**findOrganizationBillingAddress**](OrganizationsApi.md#findOrganizationBillingAddress) | **GET** /api/v1/organizations/{organizationId}/addresses/billing | Retrieve billing address
 [**getAllCollectionsOfOrganization**](OrganizationsApi.md#getAllCollectionsOfOrganization) | **GET** /api/v1/organizations/{organizationId}/collections | Get collections of organization
 [**getAllOrganizationRoles**](OrganizationsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
+[**getOrganizationPrivileges**](OrganizationsApi.md#getOrganizationPrivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 [**getOrganizationsOfUser**](OrganizationsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
 [**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
@@ -568,6 +569,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedUserRolesResponse**](PaginatedUserRolesResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="getOrganizationPrivileges"></a>
+# **getOrganizationPrivileges**
+> List&lt;String&gt; getOrganizationPrivileges(organizationId)
+
+List my privileges
+
+Listing all privileges of the current user/APIKey of the specified organization.
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiClient;
+//import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
+//import de.id4i.api.OrganizationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+String organizationId = "organizationId_example"; // String | The namespace of the organization
+try {
+    List<String> result = apiInstance.getOrganizationPrivileges(organizationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#getOrganizationPrivileges");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**| The namespace of the organization |
+
+### Return type
+
+**List&lt;String&gt;**
 
 ### Authorization
 
