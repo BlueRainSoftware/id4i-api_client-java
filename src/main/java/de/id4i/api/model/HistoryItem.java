@@ -28,7 +28,7 @@ import java.io.IOException;
  * GUID history item
  */
 @ApiModel(description = "GUID history item")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-03T22:05:57.834Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-04T17:21:37.987Z")
 public class HistoryItem {
   @SerializedName("organizationId")
   private String organizationId = null;
@@ -135,7 +135,7 @@ public class HistoryItem {
    * Originator of the history item
    * @return organizationId
   **/
-  @ApiModelProperty(example = "93", required = true, value = "Originator of the history item")
+  @ApiModelProperty(example = "org.acme", required = true, value = "Originator of the history item")
   public String getOrganizationId() {
     return organizationId;
   }

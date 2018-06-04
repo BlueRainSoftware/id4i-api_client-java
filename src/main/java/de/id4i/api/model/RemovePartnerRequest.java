@@ -24,29 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * PasswordResetRequest
+ * RemovePartnerRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-04T17:21:37.987Z")
-public class PasswordResetRequest {
-  @SerializedName("username")
-  private String username = null;
+public class RemovePartnerRequest {
+  @SerializedName("organizationId")
+  private String organizationId = null;
 
-  public PasswordResetRequest username(String username) {
-    this.username = username;
+  public RemovePartnerRequest organizationId(String organizationId) {
+    this.organizationId = organizationId;
     return this;
   }
 
    /**
-   * Get username
-   * @return username
+   * The namespace of the partner organization to remove
+   * @return organizationId
   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getUsername() {
-    return username;
+  @ApiModelProperty(example = "org.acme", required = true, value = "The namespace of the partner organization to remove")
+  public String getOrganizationId() {
+    return organizationId;
   }
 
-  public void setUsername(String username) {
-    this.username = username;
+  public void setOrganizationId(String organizationId) {
+    this.organizationId = organizationId;
   }
 
 
@@ -58,22 +58,22 @@ public class PasswordResetRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PasswordResetRequest passwordResetRequest = (PasswordResetRequest) o;
-    return Objects.equals(this.username, passwordResetRequest.username);
+    RemovePartnerRequest removePartnerRequest = (RemovePartnerRequest) o;
+    return Objects.equals(this.organizationId, removePartnerRequest.organizationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(username);
+    return Objects.hash(organizationId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PasswordResetRequest {\n");
+    sb.append("class RemovePartnerRequest {\n");
     
-    sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

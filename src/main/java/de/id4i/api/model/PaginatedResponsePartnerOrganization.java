@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.Id4nPresentation;
+import de.id4i.api.model.PartnerOrganization;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,12 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Id4nPresentationPaginatedResponse
+ * PaginatedResponsePartnerOrganization
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-04T17:21:37.987Z")
-public class Id4nPresentationPaginatedResponse {
+public class PaginatedResponsePartnerOrganization {
   @SerializedName("elements")
-  private List<Id4nPresentation> elements = new ArrayList<>();
+  private List<PartnerOrganization> elements = new ArrayList<>();
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -43,12 +43,12 @@ public class Id4nPresentationPaginatedResponse {
   @SerializedName("total")
   private Integer total = null;
 
-  public Id4nPresentationPaginatedResponse elements(List<Id4nPresentation> elements) {
+  public PaginatedResponsePartnerOrganization elements(List<PartnerOrganization> elements) {
     this.elements = elements;
     return this;
   }
 
-  public Id4nPresentationPaginatedResponse addElementsItem(Id4nPresentation elementsItem) {
+  public PaginatedResponsePartnerOrganization addElementsItem(PartnerOrganization elementsItem) {
     this.elements.add(elementsItem);
     return this;
   }
@@ -58,15 +58,15 @@ public class Id4nPresentationPaginatedResponse {
    * @return elements
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<Id4nPresentation> getElements() {
+  public List<PartnerOrganization> getElements() {
     return elements;
   }
 
-  public void setElements(List<Id4nPresentation> elements) {
+  public void setElements(List<PartnerOrganization> elements) {
     this.elements = elements;
   }
 
-  public Id4nPresentationPaginatedResponse limit(Integer limit) {
+  public PaginatedResponsePartnerOrganization limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -84,7 +84,7 @@ public class Id4nPresentationPaginatedResponse {
     this.limit = limit;
   }
 
-  public Id4nPresentationPaginatedResponse offset(Integer offset) {
+  public PaginatedResponsePartnerOrganization offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -102,7 +102,7 @@ public class Id4nPresentationPaginatedResponse {
     this.offset = offset;
   }
 
-  public Id4nPresentationPaginatedResponse total(Integer total) {
+  public PaginatedResponsePartnerOrganization total(Integer total) {
     this.total = total;
     return this;
   }
@@ -129,11 +129,11 @@ public class Id4nPresentationPaginatedResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Id4nPresentationPaginatedResponse id4nPresentationPaginatedResponse = (Id4nPresentationPaginatedResponse) o;
-    return Objects.equals(this.elements, id4nPresentationPaginatedResponse.elements) &&
-        Objects.equals(this.limit, id4nPresentationPaginatedResponse.limit) &&
-        Objects.equals(this.offset, id4nPresentationPaginatedResponse.offset) &&
-        Objects.equals(this.total, id4nPresentationPaginatedResponse.total);
+    PaginatedResponsePartnerOrganization paginatedResponsePartnerOrganization = (PaginatedResponsePartnerOrganization) o;
+    return Objects.equals(this.elements, paginatedResponsePartnerOrganization.elements) &&
+        Objects.equals(this.limit, paginatedResponsePartnerOrganization.limit) &&
+        Objects.equals(this.offset, paginatedResponsePartnerOrganization.offset) &&
+        Objects.equals(this.total, paginatedResponsePartnerOrganization.total);
   }
 
   @Override
@@ -145,7 +145,7 @@ public class Id4nPresentationPaginatedResponse {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Id4nPresentationPaginatedResponse {\n");
+    sb.append("class PaginatedResponsePartnerOrganization {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");

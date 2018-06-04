@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ApiKeyPresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-03T22:05:57.834Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-04T17:21:37.987Z")
 public class ApiKeyPresentation {
   @SerializedName("active")
   private Boolean active = null;
@@ -145,7 +145,7 @@ public class ApiKeyPresentation {
    * The organization namespace this api key belongs to
    * @return organizationId
   **/
-  @ApiModelProperty(example = "10", required = true, value = "The organization namespace this api key belongs to")
+  @ApiModelProperty(example = "de.acme", required = true, value = "The organization namespace this api key belongs to")
   public String getOrganizationId() {
     return organizationId;
   }

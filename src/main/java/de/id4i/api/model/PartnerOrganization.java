@@ -24,20 +24,27 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * An organization
+ * A partner organization
  */
-@ApiModel(description = "An organization")
+@ApiModel(description = "A partner organization")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-04T17:21:37.987Z")
-public class OrganizationUpdate {
+public class PartnerOrganization {
+  @SerializedName("logoURL")
+  private String logoURL = null;
+
   @SerializedName("name")
   private String name = null;
 
   @SerializedName("namespace")
   private String namespace = null;
 
-  public OrganizationUpdate name(String name) {
-    this.name = name;
-    return this;
+   /**
+   * URL to a logo of the organization
+   * @return logoURL
+  **/
+  @ApiModelProperty(example = "/api/v1/public/images/abcdef", value = "URL to a logo of the organization")
+  public String getLogoURL() {
+    return logoURL;
   }
 
    /**
@@ -49,15 +56,6 @@ public class OrganizationUpdate {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public OrganizationUpdate namespace(String namespace) {
-    this.namespace = namespace;
-    return this;
-  }
-
    /**
    * The namespace of the organization
    * @return namespace
@@ -65,10 +63,6 @@ public class OrganizationUpdate {
   @ApiModelProperty(example = "de.acme", value = "The namespace of the organization")
   public String getNamespace() {
     return namespace;
-  }
-
-  public void setNamespace(String namespace) {
-    this.namespace = namespace;
   }
 
 
@@ -80,22 +74,24 @@ public class OrganizationUpdate {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganizationUpdate organizationUpdate = (OrganizationUpdate) o;
-    return Objects.equals(this.name, organizationUpdate.name) &&
-        Objects.equals(this.namespace, organizationUpdate.namespace);
+    PartnerOrganization partnerOrganization = (PartnerOrganization) o;
+    return Objects.equals(this.logoURL, partnerOrganization.logoURL) &&
+        Objects.equals(this.name, partnerOrganization.name) &&
+        Objects.equals(this.namespace, partnerOrganization.namespace);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, namespace);
+    return Objects.hash(logoURL, name, namespace);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrganizationUpdate {\n");
+    sb.append("class PartnerOrganization {\n");
     
+    sb.append("    logoURL: ").append(toIndentedString(logoURL)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
     sb.append("}");

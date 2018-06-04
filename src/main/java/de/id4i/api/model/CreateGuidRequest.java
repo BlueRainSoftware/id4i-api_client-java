@@ -27,7 +27,7 @@ import java.io.IOException;
  * GUID creation information
  */
 @ApiModel(description = "GUID creation information")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-03T22:05:57.834Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-04T17:21:37.987Z")
 public class CreateGuidRequest {
   @SerializedName("count")
   private Integer count = null;
@@ -87,7 +87,7 @@ public class CreateGuidRequest {
    * The namespace of the organization where the generated GUIDs should be assigned.
    * @return organizationId
   **/
-  @ApiModelProperty(example = "123", required = true, value = "The namespace of the organization where the generated GUIDs should be assigned.")
+  @ApiModelProperty(example = "de.acme", required = true, value = "The namespace of the organization where the generated GUIDs should be assigned.")
   public String getOrganizationId() {
     return organizationId;
   }
