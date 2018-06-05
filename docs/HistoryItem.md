@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**additionalProperties** | **Map&lt;String, String&gt;** | History items custom additional properties |  [optional]
 **organizationId** | **String** | Originator of the history item | 
 **sequenceId** | **Integer** | Forms the primary key of the history item together with the GUID and the organizationId |  [optional]
 **timestamp** | **Long** | History item timestamp |  [optional]
