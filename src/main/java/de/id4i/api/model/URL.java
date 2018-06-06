@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * URL
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-06T11:33:44.994Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-06T12:32:07.191Z")
 public class URL {
   @SerializedName("authority")
   private String authority = null;
