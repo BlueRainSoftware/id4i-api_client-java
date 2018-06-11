@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-10T22:04:27.107Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-11T08:02:19.556Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -173,6 +173,9 @@ public class ApiError {
   @SerializedName("message")
   private String message = null;
 
+  @SerializedName("errorId")
+  private String errorId = null;
+
   public ApiError code(CodeEnum code) {
     this.code = code;
     return this;
@@ -232,6 +235,24 @@ public class ApiError {
     this.message = message;
   }
 
+  public ApiError errorId(String errorId) {
+    this.errorId = errorId;
+    return this;
+  }
+
+   /**
+   * Get errorId
+   * @return errorId
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public String getErrorId() {
+    return errorId;
+  }
+
+  public void setErrorId(String errorId) {
+    this.errorId = errorId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -244,12 +265,13 @@ public class ApiError {
     ApiError apiError = (ApiError) o;
     return Objects.equals(this.code, apiError.code) &&
         Objects.equals(this.errorList, apiError.errorList) &&
-        Objects.equals(this.message, apiError.message);
+        Objects.equals(this.message, apiError.message) &&
+        Objects.equals(this.errorId, apiError.errorId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(code, errorList, message);
+    return Objects.hash(code, errorList, message, errorId);
   }
 
 
@@ -261,6 +283,7 @@ public class ApiError {
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    errorList: ").append(toIndentedString(errorList)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    errorId: ").append(toIndentedString(errorId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
