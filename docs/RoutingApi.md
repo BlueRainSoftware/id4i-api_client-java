@@ -4,19 +4,17 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAllWebRoutes**](RoutingApi.md#getAllWebRoutes) | **GET** /api/v1/routingfiles/{id4n}/routes | Retrieve all web routes
-[**getRoute**](RoutingApi.md#getRoute) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve current route of a GUID (or ID4N)
+[**getAllRoutes**](RoutingApi.md#getAllRoutes) | **GET** /api/v1/routingfiles/{id4n}/routes/{type} | Retrieve all routes of a GUID (or ID4N)
+[**getRoute**](RoutingApi.md#getRoute) | **GET** /api/v1/routingfiles/{id4n}/route/{type} | Retrieve current route of a GUID (or ID4N)
 [**getRoutingFile**](RoutingApi.md#getRoutingFile) | **GET** /api/v1/routingfiles/{id4n} | Retrieve routing file
 [**updateRoutingFile**](RoutingApi.md#updateRoutingFile) | **PUT** /api/v1/routingfiles/{id4n} | Store routing file
 
 
-<a name="getAllWebRoutes"></a>
-# **getAllWebRoutes**
-> List&lt;Route&gt; getAllWebRoutes(id4n)
+<a name="getAllRoutes"></a>
+# **getAllRoutes**
+> List&lt;Route&gt; getAllRoutes(id4n, type, organizationId, interpolate)
 
-Retrieve all web routes
-
-Retrieves public and private web routes and interpolates them
+Retrieve all routes of a GUID (or ID4N)
 
 ### Example
 ```java
@@ -37,11 +35,14 @@ Authorization.setApiKey("YOUR API KEY");
 
 RoutingApi apiInstance = new RoutingApi();
 String id4n = "id4n_example"; // String | id4n
+String type = "type_example"; // String | The type of route you want to have
+String organizationId = "organizationId_example"; // String | organizationId
+Boolean interpolate = true; // Boolean | interpolate
 try {
-    List<Route> result = apiInstance.getAllWebRoutes(id4n);
+    List<Route> result = apiInstance.getAllRoutes(id4n, type, organizationId, interpolate);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling RoutingApi#getAllWebRoutes");
+    System.err.println("Exception when calling RoutingApi#getAllRoutes");
     e.printStackTrace();
 }
 ```
@@ -51,6 +52,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
+ **type** | **String**| The type of route you want to have |
+ **organizationId** | **String**| organizationId | [optional]
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 
@@ -109,9 +113,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **type** | **String**| The type of route you want to have |
- **privateRoutes** | **Boolean**| privateRoutes | [optional]
- **publicRoutes** | **Boolean**| publicRoutes | [optional]
- **interpolate** | **Boolean**| interpolate | [optional]
+ **privateRoutes** | **Boolean**| privateRoutes | [optional] [default to true]
+ **publicRoutes** | **Boolean**| publicRoutes | [optional] [default to true]
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 

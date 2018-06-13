@@ -5,7 +5,7 @@ All URIs are relative to *https://backend.id4i.de*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPublicDocument**](PublicServicesApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-[**getWebRoutes**](PublicServicesApi.md#getWebRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
+[**getRoutes**](PublicServicesApi.md#getRoutes) | **GET** /api/v1/public/routes/{id4n} | Retrieve all public routes for a GUID
 [**go**](PublicServicesApi.md#go) | **GET** /go/{guid} | Forward
 [**listAllPublicDocuments**](PublicServicesApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
 [**listPublicDocuments**](PublicServicesApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
@@ -73,9 +73,9 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
 
-<a name="getWebRoutes"></a>
-# **getWebRoutes**
-> List&lt;Route&gt; getWebRoutes(id4n)
+<a name="getRoutes"></a>
+# **getRoutes**
+> List&lt;Route&gt; getRoutes(id4n, type, interpolate)
 
 Retrieve all public routes for a GUID
 
@@ -98,11 +98,13 @@ Authorization.setApiKey("YOUR API KEY");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
 String id4n = "id4n_example"; // String | id4n
+String type = "web"; // String | type
+Boolean interpolate = true; // Boolean | interpolate
 try {
-    List<Route> result = apiInstance.getWebRoutes(id4n);
+    List<Route> result = apiInstance.getRoutes(id4n, type, interpolate);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling PublicServicesApi#getWebRoutes");
+    System.err.println("Exception when calling PublicServicesApi#getRoutes");
     e.printStackTrace();
 }
 ```
@@ -112,6 +114,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
+ **type** | **String**| type | [default to web]
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 

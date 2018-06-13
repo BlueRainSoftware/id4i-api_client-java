@@ -58,22 +58,30 @@ public class RoutingApi {
     }
 
     /**
-     * Build call for getAllWebRoutes
+     * Build call for getAllRoutes
      * @param id4n id4n (required)
+     * @param type The type of route you want to have (required)
+     * @param organizationId organizationId (optional)
+     * @param interpolate interpolate (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllWebRoutesCall(String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllRoutesCall(String id4n, String type, String organizationId, Boolean interpolate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/routingfiles/{id4n}/routes"
-            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+        String localVarPath = "/api/v1/routingfiles/{id4n}/routes/{type}"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
+            .replaceAll("\\{" + "type" + "\\}", apiClient.escapeString(type.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
+        if (interpolate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("interpolate", interpolate));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -108,53 +116,67 @@ public class RoutingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllWebRoutesValidateBeforeCall(String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllRoutesValidateBeforeCall(String id4n, String type, String organizationId, Boolean interpolate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
-            throw new ApiException("Missing the required parameter 'id4n' when calling getAllWebRoutes(Async)");
+            throw new ApiException("Missing the required parameter 'id4n' when calling getAllRoutes(Async)");
+        }
+        
+        // verify the required parameter 'type' is set
+        if (type == null) {
+            throw new ApiException("Missing the required parameter 'type' when calling getAllRoutes(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = getAllWebRoutesCall(id4n, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllRoutesCall(id4n, type, organizationId, interpolate, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
-     * Retrieve all web routes
-     * Retrieves public and private web routes and interpolates them
+     * Retrieve all routes of a GUID (or ID4N)
+     * 
      * @param id4n id4n (required)
+     * @param type The type of route you want to have (required)
+     * @param organizationId organizationId (optional)
+     * @param interpolate interpolate (optional, default to true)
      * @return List&lt;Route&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<Route> getAllWebRoutes(String id4n) throws ApiException {
-        ApiResponse<List<Route>> resp = getAllWebRoutesWithHttpInfo(id4n);
+    public List<Route> getAllRoutes(String id4n, String type, String organizationId, Boolean interpolate) throws ApiException {
+        ApiResponse<List<Route>> resp = getAllRoutesWithHttpInfo(id4n, type, organizationId, interpolate);
         return resp.getData();
     }
 
     /**
-     * Retrieve all web routes
-     * Retrieves public and private web routes and interpolates them
+     * Retrieve all routes of a GUID (or ID4N)
+     * 
      * @param id4n id4n (required)
+     * @param type The type of route you want to have (required)
+     * @param organizationId organizationId (optional)
+     * @param interpolate interpolate (optional, default to true)
      * @return ApiResponse&lt;List&lt;Route&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<Route>> getAllWebRoutesWithHttpInfo(String id4n) throws ApiException {
-        com.squareup.okhttp.Call call = getAllWebRoutesValidateBeforeCall(id4n, null, null);
+    public ApiResponse<List<Route>> getAllRoutesWithHttpInfo(String id4n, String type, String organizationId, Boolean interpolate) throws ApiException {
+        com.squareup.okhttp.Call call = getAllRoutesValidateBeforeCall(id4n, type, organizationId, interpolate, null, null);
         Type localVarReturnType = new TypeToken<List<Route>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * Retrieve all web routes (asynchronously)
-     * Retrieves public and private web routes and interpolates them
+     * Retrieve all routes of a GUID (or ID4N) (asynchronously)
+     * 
      * @param id4n id4n (required)
+     * @param type The type of route you want to have (required)
+     * @param organizationId organizationId (optional)
+     * @param interpolate interpolate (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllWebRoutesAsync(String id4n, final ApiCallback<List<Route>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllRoutesAsync(String id4n, String type, String organizationId, Boolean interpolate, final ApiCallback<List<Route>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -175,7 +197,7 @@ public class RoutingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllWebRoutesValidateBeforeCall(id4n, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllRoutesValidateBeforeCall(id4n, type, organizationId, interpolate, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<Route>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -184,9 +206,9 @@ public class RoutingApi {
      * Build call for getRoute
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param privateRoutes privateRoutes (optional)
-     * @param publicRoutes publicRoutes (optional)
-     * @param interpolate interpolate (optional)
+     * @param privateRoutes privateRoutes (optional, default to true)
+     * @param publicRoutes publicRoutes (optional, default to true)
+     * @param interpolate interpolate (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -196,7 +218,7 @@ public class RoutingApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/routingfiles/{id4n}/routes/{type}"
+        String localVarPath = "/api/v1/routingfiles/{id4n}/route/{type}"
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
             .replaceAll("\\{" + "type" + "\\}", apiClient.escapeString(type.toString()));
 
@@ -265,9 +287,9 @@ public class RoutingApi {
      * 
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param privateRoutes privateRoutes (optional)
-     * @param publicRoutes publicRoutes (optional)
-     * @param interpolate interpolate (optional)
+     * @param privateRoutes privateRoutes (optional, default to true)
+     * @param publicRoutes publicRoutes (optional, default to true)
+     * @param interpolate interpolate (optional, default to true)
      * @return Route
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -281,9 +303,9 @@ public class RoutingApi {
      * 
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param privateRoutes privateRoutes (optional)
-     * @param publicRoutes publicRoutes (optional)
-     * @param interpolate interpolate (optional)
+     * @param privateRoutes privateRoutes (optional, default to true)
+     * @param publicRoutes publicRoutes (optional, default to true)
+     * @param interpolate interpolate (optional, default to true)
      * @return ApiResponse&lt;Route&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -298,9 +320,9 @@ public class RoutingApi {
      * 
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param privateRoutes privateRoutes (optional)
-     * @param publicRoutes publicRoutes (optional)
-     * @param interpolate interpolate (optional)
+     * @param privateRoutes privateRoutes (optional, default to true)
+     * @param publicRoutes publicRoutes (optional, default to true)
+     * @param interpolate interpolate (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
