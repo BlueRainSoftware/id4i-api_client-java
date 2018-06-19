@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * BillingPosition
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-18T22:03:51.397Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-19T22:03:31.904Z")
 public class BillingPosition {
   @SerializedName("count")
   private Long count = null;
