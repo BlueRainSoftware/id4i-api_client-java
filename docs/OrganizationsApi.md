@@ -4,6 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**addPartnerOrganization**](OrganizationsApi.md#addPartnerOrganization) | **PUT** /api/v1/organizations/{organizationId}/partner | Add partner
 [**addUserRoles**](OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
 [**createOrganization**](OrganizationsApi.md#createOrganization) | **POST** /api/v1/organizations | Create organization
 [**deleteOrganization**](OrganizationsApi.md#deleteOrganization) | **DELETE** /api/v1/organizations/{organizationId} | Delete organization
@@ -16,16 +17,74 @@ Method | HTTP request | Description
 [**getAllOrganizationRoles**](OrganizationsApi.md#getAllOrganizationRoles) | **GET** /api/v1/organizations/{organizationId}/roles | List users and their roles
 [**getOrganizationPrivileges**](OrganizationsApi.md#getOrganizationPrivileges) | **GET** /api/v1/organizations/{organizationId}/privileges | List my privileges
 [**getOrganizationsOfUser**](OrganizationsApi.md#getOrganizationsOfUser) | **GET** /api/v1/user/organizations | Retrieve organizations of user
+[**getPartnerOrganizations**](OrganizationsApi.md#getPartnerOrganizations) | **GET** /api/v1/organizations/{organizationId}/partner | Get partners of an organization
 [**getUserRoles**](OrganizationsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 [**getUsersOfOrganization**](OrganizationsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 [**inviteUsers**](OrganizationsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
 [**listCountries**](OrganizationsApi.md#listCountries) | **GET** /api/v1/countries | List countries
+[**removePartnerOrganization**](OrganizationsApi.md#removePartnerOrganization) | **DELETE** /api/v1/organizations/{organizationId}/partner | Remove partner
 [**removeUserRoles**](OrganizationsApi.md#removeUserRoles) | **DELETE** /api/v1/organizations/{organizationId}/users/{username}/roles | Remove role(s) from user
 [**setOrganizationLogo**](OrganizationsApi.md#setOrganizationLogo) | **POST** /api/v1/organizations/{organizationId}/logo | Update organization logo
 [**updateOrganization**](OrganizationsApi.md#updateOrganization) | **PUT** /api/v1/organizations/{organizationId} | Update organization
 [**updateOrganizationAddress**](OrganizationsApi.md#updateOrganizationAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/default | Store address
 [**updateOrganizationBillingAddress**](OrganizationsApi.md#updateOrganizationBillingAddress) | **PUT** /api/v1/organizations/{organizationId}/addresses/billing | Store billing address
 
+
+<a name="addPartnerOrganization"></a>
+# **addPartnerOrganization**
+> addPartnerOrganization(organizationId, request)
+
+Add partner
+
+Adding a partner organization. If the given organization is already a partner the result will be state 200 too.
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiClient;
+//import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
+//import de.id4i.api.OrganizationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+String organizationId = "organizationId_example"; // String | The namespace of the organization
+AddPartnerRequest request = new AddPartnerRequest(); // AddPartnerRequest | request
+try {
+    apiInstance.addPartnerOrganization(organizationId, request);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#addPartnerOrganization");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**| The namespace of the organization |
+ **request** | [**AddPartnerRequest**](AddPartnerRequest.md)| request |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
 
 <a name="addUserRoles"></a>
 # **addUserRoles**
@@ -691,6 +750,65 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
 
+<a name="getPartnerOrganizations"></a>
+# **getPartnerOrganizations**
+> PaginatedResponsePartnerOrganization getPartnerOrganizations(organizationId, offset, limit)
+
+Get partners of an organization
+
+Listing partners in a paginated manner.
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiClient;
+//import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
+//import de.id4i.api.OrganizationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+String organizationId = "organizationId_example"; // String | The namespace of the organization to query partner organizations
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
+try {
+    PaginatedResponsePartnerOrganization result = apiInstance.getPartnerOrganizations(organizationId, offset, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#getPartnerOrganizations");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**| The namespace of the organization to query partner organizations |
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
+
+### Return type
+
+[**PaginatedResponsePartnerOrganization**](PaginatedResponsePartnerOrganization.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
 <a name="getUserRoles"></a>
 # **getUserRoles**
 > PaginatedStringResponse getUserRoles(organizationId, username, offset, limit)
@@ -908,6 +1026,62 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**PaginatedCountryResponse**](PaginatedCountryResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="removePartnerOrganization"></a>
+# **removePartnerOrganization**
+> removePartnerOrganization(organizationId, request)
+
+Remove partner
+
+Removing a partner organization
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiClient;
+//import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
+//import de.id4i.api.OrganizationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+OrganizationsApi apiInstance = new OrganizationsApi();
+String organizationId = "organizationId_example"; // String | The namespace of the organization
+RemovePartnerRequest request = new RemovePartnerRequest(); // RemovePartnerRequest | request
+try {
+    apiInstance.removePartnerOrganization(organizationId, request);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OrganizationsApi#removePartnerOrganization");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **organizationId** | **String**| The namespace of the organization |
+ **request** | [**RemovePartnerRequest**](RemovePartnerRequest.md)| request |
+
+### Return type
+
+null (empty response body)
 
 ### Authorization
 
