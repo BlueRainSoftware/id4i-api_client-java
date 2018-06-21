@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-21T13:01:10.605Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-06-21T13:59:00.073Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -69,6 +69,8 @@ public class ApiError {
     GUID_CREATION("ERR_GUID_CREATION"),
     
     INVALID_ID4N_OBJECT_TYPE("ERR_INVALID_ID4N_OBJECT_TYPE"),
+    
+    MISSING_BILLING_INFORMATION("ERR_MISSING_BILLING_INFORMATION"),
     
     COLLECTION_UPDATE_DENIED("ERR_COLLECTION_UPDATE_DENIED"),
     
