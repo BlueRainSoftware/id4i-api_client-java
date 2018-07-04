@@ -13,7 +13,7 @@
 
 package de.id4i;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-03T22:03:28.927Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-04T22:03:18.745Z")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 
