@@ -62,7 +62,7 @@ public class GuidsApi {
 
     /**
      * Build call for addGuidAlias
-     * @param id4n The GUID to operate on (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
      * @param progressListener Progress listener
@@ -74,7 +74,7 @@ public class GuidsApi {
         Object localVarPostBody = alias;
 
         // create path and map variables
-        String localVarPath = "/api/v1/guids/{id4n}/alias/{aliasType}"
+        String localVarPath = "/api/v1/id4ns/{id4n}/alias/{aliasType}"
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
             .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()));
 
@@ -138,9 +138,9 @@ public class GuidsApi {
     }
 
     /**
-     * Add alias for GUIDs
-     * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
-     * @param id4n The GUID to operate on (required)
+     * Add alias for GUID or Collection
+     * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -150,9 +150,9 @@ public class GuidsApi {
     }
 
     /**
-     * Add alias for GUIDs
-     * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
-     * @param id4n The GUID to operate on (required)
+     * Add alias for GUID or Collection
+     * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
      * @return ApiResponse&lt;Void&gt;
@@ -164,9 +164,9 @@ public class GuidsApi {
     }
 
     /**
-     * Add alias for GUIDs (asynchronously)
-     * Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
-     * @param id4n The GUID to operate on (required)
+     * Add alias for GUID or Collection (asynchronously)
+     * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
      * @param callback The callback to be executed when the API call finishes
@@ -445,7 +445,7 @@ public class GuidsApi {
     }
     /**
      * Build call for getGuidAliases
-     * @param id4n The GUID to operate on (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -455,7 +455,7 @@ public class GuidsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/guids/{id4n}/alias"
+        String localVarPath = "/api/v1/id4ns/{id4n}/alias"
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -508,9 +508,9 @@ public class GuidsApi {
     }
 
     /**
-     * Get all aliases for the given GUID.
-     * Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
-     * @param id4n The GUID to operate on (required)
+     * Get all aliases for the given GUID or Collection.
+     * Looks up the alias for each alias type (group and single) and returns a map of all aliases found.
+     * @param id4n The GUID or Collection to operate on (required)
      * @return Map&lt;String, String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -520,9 +520,9 @@ public class GuidsApi {
     }
 
     /**
-     * Get all aliases for the given GUID.
-     * Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
-     * @param id4n The GUID to operate on (required)
+     * Get all aliases for the given GUID or Collection.
+     * Looks up the alias for each alias type (group and single) and returns a map of all aliases found.
+     * @param id4n The GUID or Collection to operate on (required)
      * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -533,9 +533,9 @@ public class GuidsApi {
     }
 
     /**
-     * Get all aliases for the given GUID. (asynchronously)
-     * Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
-     * @param id4n The GUID to operate on (required)
+     * Get all aliases for the given GUID or Collection. (asynchronously)
+     * Looks up the alias for each alias type (group and single) and returns a map of all aliases found.
+     * @param id4n The GUID or Collection to operate on (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -827,7 +827,7 @@ public class GuidsApi {
     }
     /**
      * Build call for removeGuidAlias
-     * @param id4n The GUID to operate on (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -838,7 +838,7 @@ public class GuidsApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/guids/{id4n}/alias/{aliasType}"
+        String localVarPath = "/api/v1/id4ns/{id4n}/alias/{aliasType}"
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
             .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()));
 
@@ -897,9 +897,9 @@ public class GuidsApi {
     }
 
     /**
-     * Remove aliases from GUIDs
+     * Remove aliases from GUID or Collection
      * Remove the alias of the given type
-     * @param id4n The GUID to operate on (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -908,9 +908,9 @@ public class GuidsApi {
     }
 
     /**
-     * Remove aliases from GUIDs
+     * Remove aliases from GUID or Collection
      * Remove the alias of the given type
-     * @param id4n The GUID to operate on (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -921,9 +921,9 @@ public class GuidsApi {
     }
 
     /**
-     * Remove aliases from GUIDs (asynchronously)
+     * Remove aliases from GUID or Collection (asynchronously)
      * Remove the alias of the given type
-     * @param id4n The GUID to operate on (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
