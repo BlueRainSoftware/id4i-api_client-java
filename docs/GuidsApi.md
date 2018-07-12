@@ -4,13 +4,13 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/guids/{id4n}/alias/{aliasType} | Add alias for GUIDs
+[**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 [**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
 [**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
-[**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/guids/{id4n}/alias | Get all aliases for the given GUID.
+[**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 [**getId4n**](GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
-[**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/guids/{id4n}/alias/{aliasType} | Remove aliases from GUIDs
+[**removeGuidAlias**](GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 [**updateGuid**](GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 
 
@@ -18,9 +18,9 @@ Method | HTTP request | Description
 # **addGuidAlias**
 > addGuidAlias(id4n, aliasType, alias)
 
-Add alias for GUIDs
+Add alias for GUID or Collection
 
-Adds or replaces aliases for single GUIDs (alias type item and mapp) or groups of GUIDs (alias types gtin, ean and article)
+Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
 
 ### Example
 ```java
@@ -40,7 +40,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | The GUID to operate on
+String id4n = "id4n_example"; // String | The GUID or Collection to operate on
 String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 GuidAlias alias = new GuidAlias(); // GuidAlias | The alias to add or update
 try {
@@ -55,7 +55,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID to operate on |
+ **id4n** | **String**| The GUID or Collection to operate on |
  **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
 
@@ -184,9 +184,9 @@ Name | Type | Description  | Notes
 # **getGuidAliases**
 > Map&lt;String, String&gt; getGuidAliases(id4n)
 
-Get all aliases for the given GUID.
+Get all aliases for the given GUID or Collection.
 
-Looks up the alias for each alias type (group and single GUID) and returns a map of all aliases found.
+Looks up the alias for each alias type (group and single) and returns a map of all aliases found.
 
 ### Example
 ```java
@@ -206,7 +206,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | The GUID to operate on
+String id4n = "id4n_example"; // String | The GUID or Collection to operate on
 try {
     Map<String, String> result = apiInstance.getGuidAliases(id4n);
     System.out.println(result);
@@ -220,7 +220,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID to operate on |
+ **id4n** | **String**| The GUID or Collection to operate on |
 
 ### Return type
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 # **removeGuidAlias**
 > removeGuidAlias(id4n, aliasType)
 
-Remove aliases from GUIDs
+Remove aliases from GUID or Collection
 
 Remove the alias of the given type
 
@@ -373,7 +373,7 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | The GUID to operate on
+String id4n = "id4n_example"; // String | The GUID or Collection to operate on
 String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 try {
     apiInstance.removeGuidAlias(id4n, aliasType);
@@ -387,7 +387,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID to operate on |
+ **id4n** | **String**| The GUID or Collection to operate on |
  **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc]
 
 ### Return type
