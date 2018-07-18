@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * PaginatedOwnedDocumentResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-18T14:24:17.993Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-18T22:03:29.059Z")
 public class PaginatedOwnedDocumentResponse {
   @SerializedName("elements")
   private List<OwnedDocument> elements = new ArrayList<>();
