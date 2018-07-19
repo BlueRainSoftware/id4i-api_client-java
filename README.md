@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.8.4-SNAPSHOT
 - Package version: 
-    - Build date: 2018-07-18T22:03:29.059Z
+    - Build date: 2018-07-19T06:03:32.860Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -121,7 +121,6 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**getUserRoles**](docs/AccountsApi.md#getUserRoles) | **GET** /api/v1/organizations/{organizationId}/users/{username}/roles | Get user roles by username
 *AccountsApi* | [**getUsersOfOrganization**](docs/AccountsApi.md#getUsersOfOrganization) | **GET** /api/v1/organizations/{organizationId}/users | Find users in organization
 *AccountsApi* | [**inviteUsers**](docs/AccountsApi.md#inviteUsers) | **POST** /api/v1/organizations/{organizationId}/users/invite | Invite Users
-*AccountsApi* | [**isContractRequired**](docs/AccountsApi.md#isContractRequired) | **GET** /account/contractRequired | Tells you whether your company needs to have a contract with BlueRain to be able to sign up
 *AccountsApi* | [**listAllRoles**](docs/AccountsApi.md#listAllRoles) | **GET** /api/v1/roles | List roles
 *AccountsApi* | [**login**](docs/AccountsApi.md#login) | **POST** /login | 
 *AccountsApi* | [**registerUser**](docs/AccountsApi.md#registerUser) | **POST** /account/registration | Register user
