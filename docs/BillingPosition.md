@@ -4,10 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**count** | **Long** |  | 
+**amount** | **Long** |  | 
+**count** | **Double** |  | 
 **description** | **String** |  | 
 **service** | **String** |  | 
-**sum** | **Float** |  | 
+**singlePrice** | **Double** |  | 
+**sum** | **Double** |  | 
+**unit** | **String** |  | 
 
 
 
