@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * RoutingFileRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-30T14:35:08.790Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-30T22:03:04.706Z")
 public class RoutingFileRequest {
   @SerializedName("routing")
   private RoutingFile routing = null;
