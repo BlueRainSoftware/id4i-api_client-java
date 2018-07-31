@@ -22,17 +22,18 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * BillingPosition
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-31T13:18:26.778Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-31T22:04:17.089Z")
 public class BillingPosition {
   @SerializedName("amount")
   private Long amount = null;
 
   @SerializedName("count")
-  private Double count = null;
+  private BigDecimal count = null;
 
   @SerializedName("description")
   private String description = null;
@@ -41,10 +42,10 @@ public class BillingPosition {
   private String service = null;
 
   @SerializedName("singlePrice")
-  private Double singlePrice = null;
+  private BigDecimal singlePrice = null;
 
   @SerializedName("sum")
-  private Double sum = null;
+  private BigDecimal sum = null;
 
   @SerializedName("unit")
   private String unit = null;
@@ -67,7 +68,7 @@ public class BillingPosition {
     this.amount = amount;
   }
 
-  public BillingPosition count(Double count) {
+  public BillingPosition count(BigDecimal count) {
     this.count = count;
     return this;
   }
@@ -77,11 +78,11 @@ public class BillingPosition {
    * @return count
   **/
   @ApiModelProperty(required = true, value = "")
-  public Double getCount() {
+  public BigDecimal getCount() {
     return count;
   }
 
-  public void setCount(Double count) {
+  public void setCount(BigDecimal count) {
     this.count = count;
   }
 
@@ -121,7 +122,7 @@ public class BillingPosition {
     this.service = service;
   }
 
-  public BillingPosition singlePrice(Double singlePrice) {
+  public BillingPosition singlePrice(BigDecimal singlePrice) {
     this.singlePrice = singlePrice;
     return this;
   }
@@ -131,15 +132,15 @@ public class BillingPosition {
    * @return singlePrice
   **/
   @ApiModelProperty(required = true, value = "")
-  public Double getSinglePrice() {
+  public BigDecimal getSinglePrice() {
     return singlePrice;
   }
 
-  public void setSinglePrice(Double singlePrice) {
+  public void setSinglePrice(BigDecimal singlePrice) {
     this.singlePrice = singlePrice;
   }
 
-  public BillingPosition sum(Double sum) {
+  public BillingPosition sum(BigDecimal sum) {
     this.sum = sum;
     return this;
   }
@@ -149,11 +150,11 @@ public class BillingPosition {
    * @return sum
   **/
   @ApiModelProperty(required = true, value = "")
-  public Double getSum() {
+  public BigDecimal getSum() {
     return sum;
   }
 
-  public void setSum(Double sum) {
+  public void setSum(BigDecimal sum) {
     this.sum = sum;
   }
 

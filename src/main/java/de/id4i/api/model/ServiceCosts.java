@@ -22,6 +22,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,17 +30,17 @@ import java.util.Map;
 /**
  * ServiceCosts
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-31T13:18:26.778Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-31T22:04:17.089Z")
 public class ServiceCosts {
   @SerializedName("listing")
-  private Map<String, Double> listing = new HashMap<>();
+  private Map<String, BigDecimal> listing = new HashMap<>();
 
-  public ServiceCosts listing(Map<String, Double> listing) {
+  public ServiceCosts listing(Map<String, BigDecimal> listing) {
     this.listing = listing;
     return this;
   }
 
-  public ServiceCosts putListingItem(String key, Double listingItem) {
+  public ServiceCosts putListingItem(String key, BigDecimal listingItem) {
     this.listing.put(key, listingItem);
     return this;
   }
@@ -49,11 +50,11 @@ public class ServiceCosts {
    * @return listing
   **/
   @ApiModelProperty(required = true, value = "")
-  public Map<String, Double> getListing() {
+  public Map<String, BigDecimal> getListing() {
     return listing;
   }
 
-  public void setListing(Map<String, Double> listing) {
+  public void setListing(Map<String, BigDecimal> listing) {
     this.listing = listing;
   }
 
