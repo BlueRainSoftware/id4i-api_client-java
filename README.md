@@ -15,9 +15,9 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.8.6-SNAPSHOT
+- API version: 0.8.6
 - Package version: 
-    - Build date: 2018-07-31T22:04:17.089Z
+    - Build date: 2018-08-01T13:57:06.157Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -32,7 +32,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.8.6-SNAPSHOT</version>
+    <version>0.8.6</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.8.6-SNAPSHOT"
+compile "de.id4i.api:id4i-api-client:0.8.6"
 ```
 
 ### Others

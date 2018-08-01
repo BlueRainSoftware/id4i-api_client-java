@@ -2,7 +2,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 
 group = 'de.id4i.api'
-version = '0.8.6-SNAPSHOT'
+version = '0.8.6'
 
 buildscript {
     repositories {
