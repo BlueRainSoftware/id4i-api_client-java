@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ApiKeyChangeRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-02T14:24:00.315Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-02T15:02:54.966Z")
 public class ApiKeyChangeRequest {
   @SerializedName("active")
   private Boolean active = null;
