@@ -5,11 +5,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Long** |  | 
-**count** | **Double** |  | 
+**count** | [**BigDecimal**](BigDecimal.md) |  | 
 **description** | **String** |  | 
 **service** | **String** |  | 
-**singlePrice** | **Double** |  | 
-**sum** | **Double** |  | 
+**singlePrice** | [**BigDecimal**](BigDecimal.md) |  | 
+**sum** | [**BigDecimal**](BigDecimal.md) |  | 
 **unit** | **String** |  | 
 
 
