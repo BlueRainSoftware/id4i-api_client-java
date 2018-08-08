@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * URI
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-08T09:24:24.631Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-08T19:54:53.838Z")
 public class URI {
   @SerializedName("absolute")
   private Boolean absolute = null;

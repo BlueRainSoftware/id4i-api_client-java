@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * AppInfoPresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-08T09:24:24.631Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-08T19:54:53.838Z")
 public class AppInfoPresentation {
   @SerializedName("branch")
   private String branch = null;
