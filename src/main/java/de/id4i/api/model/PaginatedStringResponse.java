@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * PaginatedStringResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-28T22:04:47.779Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-08-29T22:03:31.625Z")
 public class PaginatedStringResponse {
   @SerializedName("elements")
   private List<String> elements = new ArrayList<>();
