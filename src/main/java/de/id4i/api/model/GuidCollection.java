@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * GuidCollection
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-07T07:36:30.959Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-07T08:13:20.473Z")
 public class GuidCollection {
   @SerializedName("createdTimestamp")
   private Long createdTimestamp = null;
