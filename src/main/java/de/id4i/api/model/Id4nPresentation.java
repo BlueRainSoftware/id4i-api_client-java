@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Id4nPresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-07T07:35:19.376Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-07T07:36:30.959Z")
 public class Id4nPresentation {
   @SerializedName("createdTimestamp")
   private Long createdTimestamp = null;
@@ -107,10 +107,10 @@ public class Id4nPresentation {
   }
 
    /**
-   * ${Id4nPresentation.Guid.holderOrganizationId}
+   * Organization namespace of the holder of the ID
    * @return holderOrganizationId
   **/
-  @ApiModelProperty(example = "de.example", value = "${Id4nPresentation.Guid.holderOrganizationId}")
+  @ApiModelProperty(example = "de.example", value = "Organization namespace of the holder of the ID")
   public String getHolderOrganizationId() {
     return holderOrganizationId;
   }
@@ -134,10 +134,10 @@ public class Id4nPresentation {
   }
 
    /**
-   * ${Id4nPresentation.Guid.ownerOrganizationId}
+   * Organization namespace of the ID owner
    * @return ownerOrganizationId
   **/
-  @ApiModelProperty(example = "org.acme", value = "${Id4nPresentation.Guid.ownerOrganizationId}")
+  @ApiModelProperty(example = "org.acme", value = "Organization namespace of the ID owner")
   public String getOwnerOrganizationId() {
     return ownerOrganizationId;
   }
