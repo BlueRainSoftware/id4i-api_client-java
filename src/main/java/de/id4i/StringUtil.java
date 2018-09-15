@@ -13,7 +13,7 @@
 
 package de.id4i;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-15T16:15:19.470Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-15T17:19:13.068Z")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).
