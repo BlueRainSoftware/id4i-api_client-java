@@ -7,14 +7,13 @@ Method | HTTP request | Description
 [**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
 [**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 [**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
-[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
+[**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
 [**listAllDocuments**](StorageApi.md#listAllDocuments) | **GET** /api/v1/documents/{id4n} | List documents
-[**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List organization specific documents
+[**listAllPublicDocuments**](StorageApi.md#listAllPublicDocuments) | **GET** /api/v1/public/documents/{id4n} | List public documents
 [**listDocuments**](StorageApi.md#listDocuments) | **GET** /api/v1/documents/{id4n}/{organizationId} | List organization specific documents
-[**listPublicDocuments**](StorageApi.md#listPublicDocuments) | **GET** /api/v1/public/documents/{id4n}/{organizationId} | List organization specific documents
 [**readDocument**](StorageApi.md#readDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Read document contents
 [**readFromMicrostorage**](StorageApi.md#readFromMicrostorage) | **GET** /api/v1/microstorage/{id4n}/{organization} | Read data from microstorage
-[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read document contents
+[**readPublicDocument**](StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 [**updateDocumentMetadata**](StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 [**writeToMicrostorage**](StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
 
@@ -196,7 +195,7 @@ Name | Type | Description  | Notes
 # **getPublicDocument**
 > Document getPublicDocument(organizationId, id4n, fileName)
 
-Retrieve a document (meta-data only, no content)
+Retrieve a public document (meta-data only, no content)
 
 ### Example
 ```java
@@ -251,7 +250,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllDocuments"></a>
 # **listAllDocuments**
-> PaginatedOwnedDocumentResponse listAllDocuments(id4n, offset, limit)
+> PaginatedDocumentResponse listAllDocuments(id4n, owner, offset, limit)
 
 List documents
 
@@ -276,10 +275,11 @@ Authorization.setApiKey("YOUR API KEY");
 
 StorageApi apiInstance = new StorageApi();
 String id4n = "id4n_example"; // String | id4n
+String owner = "owner_example"; // String | Filter by owner organization
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedOwnedDocumentResponse result = apiInstance.listAllDocuments(id4n, offset, limit);
+    PaginatedDocumentResponse result = apiInstance.listAllDocuments(id4n, owner, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listAllDocuments");
@@ -292,128 +292,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **offset** | **Integer**| Start with the n-th element | [optional]
- **limit** | **Integer**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="listAllPublicDocuments"></a>
-# **listAllPublicDocuments**
-> PaginatedOwnedDocumentResponse listAllPublicDocuments(id4n, organizationId, offset, limit)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.StorageApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-StorageApi apiInstance = new StorageApi();
-String id4n = "id4n_example"; // String | id4n
-String organizationId = "organizationId_example"; // String | organizationId
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
-try {
-    PaginatedOwnedDocumentResponse result = apiInstance.listAllPublicDocuments(id4n, organizationId, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StorageApi#listAllPublicDocuments");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n |
- **organizationId** | **String**| organizationId | [optional]
- **offset** | **Integer**| Start with the n-th element | [optional]
- **limit** | **Integer**| The maximum count of returned elements | [optional]
-
-### Return type
-
-[**PaginatedOwnedDocumentResponse**](PaginatedOwnedDocumentResponse.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
-
-<a name="listDocuments"></a>
-# **listDocuments**
-> PaginatedDocumentResponse listDocuments(organizationId, id4n, offset, limit)
-
-List organization specific documents
-
-Listing documents of an id4n owned by a specified organization
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.StorageApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-StorageApi apiInstance = new StorageApi();
-String organizationId = "organizationId_example"; // String | organizationId
-String id4n = "id4n_example"; // String | id4n
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
-try {
-    PaginatedDocumentResponse result = apiInstance.listDocuments(organizationId, id4n, offset, limit);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling StorageApi#listDocuments");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId |
- **id4n** | **String**| id4n |
+ **owner** | **String**| Filter by owner organization | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -430,13 +309,76 @@ Name | Type | Description  | Notes
  - **Content-Type**: application/xml, application/json
  - **Accept**: application/xml, application/json
 
-<a name="listPublicDocuments"></a>
-# **listPublicDocuments**
-> PaginatedDocumentResponse listPublicDocuments(organizationId, id4n, offset, limit)
+<a name="listAllPublicDocuments"></a>
+# **listAllPublicDocuments**
+> PaginatedDocumentResponse listAllPublicDocuments(id4n, organizationId, owner, offset, limit)
+
+List public documents
+
+Listing all public documents of an id4n
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiClient;
+//import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
+//import de.id4i.api.StorageApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+StorageApi apiInstance = new StorageApi();
+String id4n = "id4n_example"; // String | id4n
+String organizationId = "organizationId_example"; // String | organizationId
+String owner = "owner_example"; // String | Filter by owner organization
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
+try {
+    PaginatedDocumentResponse result = apiInstance.listAllPublicDocuments(id4n, organizationId, owner, offset, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling StorageApi#listAllPublicDocuments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| id4n |
+ **organizationId** | **String**| organizationId | [optional]
+ **owner** | **String**| Filter by owner organization | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
+
+### Return type
+
+[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="listDocuments"></a>
+# **listDocuments**
+> PaginatedDocumentResponse listDocuments(organizationId, id4n, owner, offset, limit)
 
 List organization specific documents
 
-Listing documents of an id4n owned by a specified organization
+Listing documents of an id4n seen by a specified organization
 
 ### Example
 ```java
@@ -458,13 +400,14 @@ Authorization.setApiKey("YOUR API KEY");
 StorageApi apiInstance = new StorageApi();
 String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
+String owner = "owner_example"; // String | Filter by owner organization
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listPublicDocuments(organizationId, id4n, offset, limit);
+    PaginatedDocumentResponse result = apiInstance.listDocuments(organizationId, id4n, owner, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling StorageApi#listPublicDocuments");
+    System.err.println("Exception when calling StorageApi#listDocuments");
     e.printStackTrace();
 }
 ```
@@ -475,6 +418,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| organizationId |
  **id4n** | **String**| id4n |
+ **owner** | **String**| Filter by owner organization | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
 
@@ -607,7 +551,7 @@ Name | Type | Description  | Notes
 # **readPublicDocument**
 > byte[] readPublicDocument(organizationId, id4n, fileName)
 
-Read document contents
+Read public document contents
 
 ### Example
 ```java
