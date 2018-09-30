@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-29T22:04:06.261Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-09-30T05:10:53.216Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -126,7 +126,9 @@ public class ApiError {
     
     INVALID_PHYSICAL_STATE("ERR_INVALID_PHYSICAL_STATE"),
     
-    INVALID_HISTORY_PROPERTY_NAMESPACE("ERR_INVALID_HISTORY_PROPERTY_NAMESPACE");
+    INVALID_HISTORY_PROPERTY_NAMESPACE("ERR_INVALID_HISTORY_PROPERTY_NAMESPACE"),
+    
+    ORGA_CANNOT_BE_OWN_PARTNER("ERR_ORGA_CANNOT_BE_OWN_PARTNER");
 
     private String value;
 
