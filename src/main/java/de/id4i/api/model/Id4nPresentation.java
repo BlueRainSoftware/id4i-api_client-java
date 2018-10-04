@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Id4nPresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-04T12:54:44.949Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-04T16:55:51.056Z")
 public class Id4nPresentation {
   @SerializedName("createdTimestamp")
   private Long createdTimestamp = null;

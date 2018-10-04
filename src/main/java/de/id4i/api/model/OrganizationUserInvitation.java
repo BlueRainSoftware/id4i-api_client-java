@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * OrganizationUserInvitation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-04T12:54:44.949Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-04T16:55:51.056Z")
 public class OrganizationUserInvitation {
   @SerializedName("email")
   private String email = null;
