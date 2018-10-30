@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.9.2-SNAPSHOT
 - Package version: 
-    - Build date: 2018-10-30T10:44:09.857Z
+    - Build date: 2018-10-30T10:52:09.116Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -158,6 +158,7 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**updateCollection**](docs/CollectionsApi.md#updateCollection) | **PATCH** /api/v1/collections/{id4n} | Update collection
 *GuidsApi* | [**addGuidAlias**](docs/GuidsApi.md#addGuidAlias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 *GuidsApi* | [**createGuid**](docs/GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+*GuidsApi* | [**getCollections**](docs/GuidsApi.md#getCollections) | **GET** /api/v1/id4ns/{id4n}/collections | Retrieve collections of an ID
 *GuidsApi* | [**getGuid**](docs/GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 *GuidsApi* | [**getGuidAliases**](docs/GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 *GuidsApi* | [**getGuidsWithoutCollection**](docs/GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
@@ -272,6 +273,7 @@ Class | Method | HTTP request | Description
  - [PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
  - [PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
  - [PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
+ - [PaginatedGuidCollectionResponse](docs/PaginatedGuidCollectionResponse.md)
  - [PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
  - [PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
  - [PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
