@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addGuidAlias**](GuidsApi.md#addGuidAlias) | **POST** /api/v1/id4ns/{id4n}/alias/{aliasType} | Add alias for GUID or Collection
 [**createGuid**](GuidsApi.md#createGuid) | **POST** /api/v1/guids | Create GUID(s)
+[**getCollections**](GuidsApi.md#getCollections) | **GET** /api/v1/id4ns/{id4n}/collections | Retrieve collections of an ID
 [**getGuid**](GuidsApi.md#getGuid) | **GET** /api/v1/guids/{id4n} | Retrieve GUID information
 [**getGuidAliases**](GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 [**getGuidsWithoutCollection**](GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
@@ -56,7 +57,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID or Collection to operate on |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
 
 ### Return type
@@ -117,6 +118,67 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListOfId4ns**](ListOfId4ns.md)
+
+### Authorization
+
+[Authorization](../README.md#Authorization)
+
+### HTTP request headers
+
+ - **Content-Type**: application/xml, application/json
+ - **Accept**: application/xml, application/json
+
+<a name="getCollections"></a>
+# **getCollections**
+> PaginatedGuidCollectionResponse getCollections(id4n, organizationId, offset, limit)
+
+Retrieve collections of an ID
+
+Retrieving all owned or holding collections the specified id4n is assigned to.
+
+### Example
+```java
+// Import classes:
+//import de.id4i.ApiClient;
+//import de.id4i.ApiException;
+//import de.id4i.Configuration;
+//import de.id4i.auth.*;
+//import de.id4i.api.GuidsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Authorization
+ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
+Authorization.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Authorization.setApiKeyPrefix("Token");
+
+GuidsApi apiInstance = new GuidsApi();
+String id4n = "id4n_example"; // String | The ID which the collections should contain
+String organizationId = "organizationId_example"; // String | The organization holding the collections.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
+try {
+    PaginatedGuidCollectionResponse result = apiInstance.getCollections(id4n, organizationId, offset, limit);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling GuidsApi#getCollections");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id4n** | **String**| The ID which the collections should contain |
+ **organizationId** | **String**| The organization holding the collections. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
+
+### Return type
+
+[**PaginatedGuidCollectionResponse**](PaginatedGuidCollectionResponse.md)
 
 ### Authorization
 
@@ -388,7 +450,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID or Collection to operate on |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc]
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
 
 ### Return type
 

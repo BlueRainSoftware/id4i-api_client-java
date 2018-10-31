@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.Country;
+import de.id4i.api.model.GuidCollection;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,12 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PaginatedResponseCountry
+ * PaginatedGuidCollectionResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-31T10:26:45.925Z")
-public class PaginatedResponseCountry {
+public class PaginatedGuidCollectionResponse {
   @SerializedName("elements")
-  private List<Country> elements = new ArrayList<>();
+  private List<GuidCollection> elements = new ArrayList<>();
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -43,12 +43,12 @@ public class PaginatedResponseCountry {
   @SerializedName("total")
   private Integer total = null;
 
-  public PaginatedResponseCountry elements(List<Country> elements) {
+  public PaginatedGuidCollectionResponse elements(List<GuidCollection> elements) {
     this.elements = elements;
     return this;
   }
 
-  public PaginatedResponseCountry addElementsItem(Country elementsItem) {
+  public PaginatedGuidCollectionResponse addElementsItem(GuidCollection elementsItem) {
     this.elements.add(elementsItem);
     return this;
   }
@@ -58,15 +58,15 @@ public class PaginatedResponseCountry {
    * @return elements
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<Country> getElements() {
+  public List<GuidCollection> getElements() {
     return elements;
   }
 
-  public void setElements(List<Country> elements) {
+  public void setElements(List<GuidCollection> elements) {
     this.elements = elements;
   }
 
-  public PaginatedResponseCountry limit(Integer limit) {
+  public PaginatedGuidCollectionResponse limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -84,7 +84,7 @@ public class PaginatedResponseCountry {
     this.limit = limit;
   }
 
-  public PaginatedResponseCountry offset(Integer offset) {
+  public PaginatedGuidCollectionResponse offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -102,7 +102,7 @@ public class PaginatedResponseCountry {
     this.offset = offset;
   }
 
-  public PaginatedResponseCountry total(Integer total) {
+  public PaginatedGuidCollectionResponse total(Integer total) {
     this.total = total;
     return this;
   }
@@ -129,11 +129,11 @@ public class PaginatedResponseCountry {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedResponseCountry paginatedResponseCountry = (PaginatedResponseCountry) o;
-    return Objects.equals(this.elements, paginatedResponseCountry.elements) &&
-        Objects.equals(this.limit, paginatedResponseCountry.limit) &&
-        Objects.equals(this.offset, paginatedResponseCountry.offset) &&
-        Objects.equals(this.total, paginatedResponseCountry.total);
+    PaginatedGuidCollectionResponse paginatedGuidCollectionResponse = (PaginatedGuidCollectionResponse) o;
+    return Objects.equals(this.elements, paginatedGuidCollectionResponse.elements) &&
+        Objects.equals(this.limit, paginatedGuidCollectionResponse.limit) &&
+        Objects.equals(this.offset, paginatedGuidCollectionResponse.offset) &&
+        Objects.equals(this.total, paginatedGuidCollectionResponse.total);
   }
 
   @Override
@@ -145,7 +145,7 @@ public class PaginatedResponseCountry {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedResponseCountry {\n");
+    sb.append("class PaginatedGuidCollectionResponse {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
