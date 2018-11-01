@@ -19,7 +19,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import de.id4i.api.model.Guid;
+import de.id4i.api.model.GuidCollection;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,12 +27,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PaginatedResponseGuid
+ * PaginatedGuidCollectionResponse
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-01T12:03:55.379Z")
-public class PaginatedResponseGuid {
+public class PaginatedGuidCollectionResponse {
   @SerializedName("elements")
-  private List<Guid> elements = new ArrayList<>();
+  private List<GuidCollection> elements = new ArrayList<>();
 
   @SerializedName("limit")
   private Integer limit = null;
@@ -43,12 +43,12 @@ public class PaginatedResponseGuid {
   @SerializedName("total")
   private Integer total = null;
 
-  public PaginatedResponseGuid elements(List<Guid> elements) {
+  public PaginatedGuidCollectionResponse elements(List<GuidCollection> elements) {
     this.elements = elements;
     return this;
   }
 
-  public PaginatedResponseGuid addElementsItem(Guid elementsItem) {
+  public PaginatedGuidCollectionResponse addElementsItem(GuidCollection elementsItem) {
     this.elements.add(elementsItem);
     return this;
   }
@@ -58,15 +58,15 @@ public class PaginatedResponseGuid {
    * @return elements
   **/
   @ApiModelProperty(required = true, value = "")
-  public List<Guid> getElements() {
+  public List<GuidCollection> getElements() {
     return elements;
   }
 
-  public void setElements(List<Guid> elements) {
+  public void setElements(List<GuidCollection> elements) {
     this.elements = elements;
   }
 
-  public PaginatedResponseGuid limit(Integer limit) {
+  public PaginatedGuidCollectionResponse limit(Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -84,7 +84,7 @@ public class PaginatedResponseGuid {
     this.limit = limit;
   }
 
-  public PaginatedResponseGuid offset(Integer offset) {
+  public PaginatedGuidCollectionResponse offset(Integer offset) {
     this.offset = offset;
     return this;
   }
@@ -102,7 +102,7 @@ public class PaginatedResponseGuid {
     this.offset = offset;
   }
 
-  public PaginatedResponseGuid total(Integer total) {
+  public PaginatedGuidCollectionResponse total(Integer total) {
     this.total = total;
     return this;
   }
@@ -129,11 +129,11 @@ public class PaginatedResponseGuid {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PaginatedResponseGuid paginatedResponseGuid = (PaginatedResponseGuid) o;
-    return Objects.equals(this.elements, paginatedResponseGuid.elements) &&
-        Objects.equals(this.limit, paginatedResponseGuid.limit) &&
-        Objects.equals(this.offset, paginatedResponseGuid.offset) &&
-        Objects.equals(this.total, paginatedResponseGuid.total);
+    PaginatedGuidCollectionResponse paginatedGuidCollectionResponse = (PaginatedGuidCollectionResponse) o;
+    return Objects.equals(this.elements, paginatedGuidCollectionResponse.elements) &&
+        Objects.equals(this.limit, paginatedGuidCollectionResponse.limit) &&
+        Objects.equals(this.offset, paginatedGuidCollectionResponse.offset) &&
+        Objects.equals(this.total, paginatedGuidCollectionResponse.total);
   }
 
   @Override
@@ -145,7 +145,7 @@ public class PaginatedResponseGuid {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class PaginatedResponseGuid {\n");
+    sb.append("class PaginatedGuidCollectionResponse {\n");
     
     sb.append("    elements: ").append(toIndentedString(elements)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
