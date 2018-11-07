@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.9.5-SNAPSHOT
 - Package version: 
-    - Build date: 2018-11-07T14:09:40.383Z
+    - Build date: 2018-11-07T14:16:04.239Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -276,22 +276,22 @@ Class | Method | HTTP request | Description
  - [PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
  - [PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
  - [PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
- - [PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
- - [PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
- - [PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
- - [PaginatedResponseChangeLogEntry](docs/PaginatedResponseChangeLogEntry.md)
- - [PaginatedResponseCountry](docs/PaginatedResponseCountry.md)
- - [PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
- - [PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
- - [PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
- - [PaginatedResponseHistoryItem](docs/PaginatedResponseHistoryItem.md)
- - [PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
- - [PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
- - [PaginatedResponsePartnerOrganization](docs/PaginatedResponsePartnerOrganization.md)
- - [PaginatedResponseRole](docs/PaginatedResponseRole.md)
- - [PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
- - [PaginatedResponseUserRoles](docs/PaginatedResponseUserRoles.md)
- - [PaginatedResponsestring](docs/PaginatedResponsestring.md)
+ - [PaginatedResponseOfApiKeyPresentation](docs/PaginatedResponseOfApiKeyPresentation.md)
+ - [PaginatedResponseOfApiKeyPrivilege](docs/PaginatedResponseOfApiKeyPrivilege.md)
+ - [PaginatedResponseOfApiKeyPrivilegeInfo](docs/PaginatedResponseOfApiKeyPrivilegeInfo.md)
+ - [PaginatedResponseOfChangeLogEntry](docs/PaginatedResponseOfChangeLogEntry.md)
+ - [PaginatedResponseOfCountry](docs/PaginatedResponseOfCountry.md)
+ - [PaginatedResponseOfDocument](docs/PaginatedResponseOfDocument.md)
+ - [PaginatedResponseOfGuid](docs/PaginatedResponseOfGuid.md)
+ - [PaginatedResponseOfGuidCollection](docs/PaginatedResponseOfGuidCollection.md)
+ - [PaginatedResponseOfHistoryItem](docs/PaginatedResponseOfHistoryItem.md)
+ - [PaginatedResponseOfId4nPresentation](docs/PaginatedResponseOfId4nPresentation.md)
+ - [PaginatedResponseOfOrganization](docs/PaginatedResponseOfOrganization.md)
+ - [PaginatedResponseOfPartnerOrganization](docs/PaginatedResponseOfPartnerOrganization.md)
+ - [PaginatedResponseOfRole](docs/PaginatedResponseOfRole.md)
+ - [PaginatedResponseOfUserPresentation](docs/PaginatedResponseOfUserPresentation.md)
+ - [PaginatedResponseOfUserRoles](docs/PaginatedResponseOfUserRoles.md)
+ - [PaginatedResponseOfstring](docs/PaginatedResponseOfstring.md)
  - [PaginatedStringResponse](docs/PaginatedStringResponse.md)
  - [PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
  - [PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
