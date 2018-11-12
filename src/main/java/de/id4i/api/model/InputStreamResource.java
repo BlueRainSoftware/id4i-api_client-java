@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * InputStreamResource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-12T08:02:42.409Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-12T11:41:09.679Z")
 public class InputStreamResource {
   @SerializedName("description")
   private String description = null;
