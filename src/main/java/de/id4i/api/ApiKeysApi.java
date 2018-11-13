@@ -66,14 +66,14 @@ public class ApiKeysApi {
 
     /**
      * Build call for addApiKeyPrivilege
-     * @param key key (required)
      * @param addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest (required)
+     * @param key key (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addApiKeyPrivilegeCall(String key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addApiKeyPrivilegeCall(AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, String key, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = addApiKeyPrivilegeRequest;
 
         // create path and map variables
@@ -116,20 +116,20 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addApiKeyPrivilegeValidateBeforeCall(String key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'key' is set
-        if (key == null) {
-            throw new ApiException("Missing the required parameter 'key' when calling addApiKeyPrivilege(Async)");
-        }
+    private com.squareup.okhttp.Call addApiKeyPrivilegeValidateBeforeCall(AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, String key, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'addApiKeyPrivilegeRequest' is set
         if (addApiKeyPrivilegeRequest == null) {
             throw new ApiException("Missing the required parameter 'addApiKeyPrivilegeRequest' when calling addApiKeyPrivilege(Async)");
         }
         
+        // verify the required parameter 'key' is set
+        if (key == null) {
+            throw new ApiException("Missing the required parameter 'key' when calling addApiKeyPrivilege(Async)");
+        }
+        
 
-        com.squareup.okhttp.Call call = addApiKeyPrivilegeCall(key, addApiKeyPrivilegeRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addApiKeyPrivilegeCall(addApiKeyPrivilegeRequest, key, progressListener, progressRequestListener);
         return call;
 
     }
@@ -137,37 +137,37 @@ public class ApiKeysApi {
     /**
      * Add privilege
      * 
-     * @param key key (required)
      * @param addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest (required)
+     * @param key key (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void addApiKeyPrivilege(String key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest) throws ApiException {
-        addApiKeyPrivilegeWithHttpInfo(key, addApiKeyPrivilegeRequest);
+    public void addApiKeyPrivilege(AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, String key) throws ApiException {
+        addApiKeyPrivilegeWithHttpInfo(addApiKeyPrivilegeRequest, key);
     }
 
     /**
      * Add privilege
      * 
-     * @param key key (required)
      * @param addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest (required)
+     * @param key key (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> addApiKeyPrivilegeWithHttpInfo(String key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest) throws ApiException {
-        com.squareup.okhttp.Call call = addApiKeyPrivilegeValidateBeforeCall(key, addApiKeyPrivilegeRequest, null, null);
+    public ApiResponse<Void> addApiKeyPrivilegeWithHttpInfo(AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, String key) throws ApiException {
+        com.squareup.okhttp.Call call = addApiKeyPrivilegeValidateBeforeCall(addApiKeyPrivilegeRequest, key, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Add privilege (asynchronously)
      * 
-     * @param key key (required)
      * @param addApiKeyPrivilegeRequest addApiKeyPrivilegeRequest (required)
+     * @param key key (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addApiKeyPrivilegeAsync(String key, AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call addApiKeyPrivilegeAsync(AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest, String key, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -188,21 +188,21 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addApiKeyPrivilegeValidateBeforeCall(key, addApiKeyPrivilegeRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addApiKeyPrivilegeValidateBeforeCall(addApiKeyPrivilegeRequest, key, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for addApiKeyPrivilegeForId4ns
+     * @param id4ns id4ns (required)
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addApiKeyPrivilegeForId4nsCall(String key, String privilege, ListOfId4ns id4ns, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addApiKeyPrivilegeForId4nsCall(ListOfId4ns id4ns, String key, String privilege, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = id4ns;
 
         // create path and map variables
@@ -246,7 +246,12 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addApiKeyPrivilegeForId4nsValidateBeforeCall(String key, String privilege, ListOfId4ns id4ns, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addApiKeyPrivilegeForId4nsValidateBeforeCall(ListOfId4ns id4ns, String key, String privilege, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4ns' is set
+        if (id4ns == null) {
+            throw new ApiException("Missing the required parameter 'id4ns' when calling addApiKeyPrivilegeForId4ns(Async)");
+        }
         
         // verify the required parameter 'key' is set
         if (key == null) {
@@ -258,13 +263,8 @@ public class ApiKeysApi {
             throw new ApiException("Missing the required parameter 'privilege' when calling addApiKeyPrivilegeForId4ns(Async)");
         }
         
-        // verify the required parameter 'id4ns' is set
-        if (id4ns == null) {
-            throw new ApiException("Missing the required parameter 'id4ns' when calling addApiKeyPrivilegeForId4ns(Async)");
-        }
-        
 
-        com.squareup.okhttp.Call call = addApiKeyPrivilegeForId4nsCall(key, privilege, id4ns, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addApiKeyPrivilegeForId4nsCall(id4ns, key, privilege, progressListener, progressRequestListener);
         return call;
 
     }
@@ -272,40 +272,40 @@ public class ApiKeysApi {
     /**
      * Add ID4ns of a privilege
      * 
+     * @param id4ns id4ns (required)
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void addApiKeyPrivilegeForId4ns(String key, String privilege, ListOfId4ns id4ns) throws ApiException {
-        addApiKeyPrivilegeForId4nsWithHttpInfo(key, privilege, id4ns);
+    public void addApiKeyPrivilegeForId4ns(ListOfId4ns id4ns, String key, String privilege) throws ApiException {
+        addApiKeyPrivilegeForId4nsWithHttpInfo(id4ns, key, privilege);
     }
 
     /**
      * Add ID4ns of a privilege
      * 
+     * @param id4ns id4ns (required)
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> addApiKeyPrivilegeForId4nsWithHttpInfo(String key, String privilege, ListOfId4ns id4ns) throws ApiException {
-        com.squareup.okhttp.Call call = addApiKeyPrivilegeForId4nsValidateBeforeCall(key, privilege, id4ns, null, null);
+    public ApiResponse<Void> addApiKeyPrivilegeForId4nsWithHttpInfo(ListOfId4ns id4ns, String key, String privilege) throws ApiException {
+        com.squareup.okhttp.Call call = addApiKeyPrivilegeForId4nsValidateBeforeCall(id4ns, key, privilege, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Add ID4ns of a privilege (asynchronously)
      * 
+     * @param id4ns id4ns (required)
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addApiKeyPrivilegeForId4nsAsync(String key, String privilege, ListOfId4ns id4ns, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call addApiKeyPrivilegeForId4nsAsync(ListOfId4ns id4ns, String key, String privilege, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -326,7 +326,7 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addApiKeyPrivilegeForId4nsValidateBeforeCall(key, privilege, id4ns, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addApiKeyPrivilegeForId4nsValidateBeforeCall(id4ns, key, privilege, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -697,14 +697,14 @@ public class ApiKeysApi {
     /**
      * Build call for listAllApiKeyPrivileges
      * @param id4nConcerning id4nConcerning (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listAllApiKeyPrivilegesCall(Boolean id4nConcerning, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listAllApiKeyPrivilegesCall(Boolean id4nConcerning, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -714,10 +714,10 @@ public class ApiKeysApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (id4nConcerning != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("id4nConcerning", id4nConcerning));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -752,10 +752,10 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listAllApiKeyPrivilegesValidateBeforeCall(Boolean id4nConcerning, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listAllApiKeyPrivilegesValidateBeforeCall(Boolean id4nConcerning, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listAllApiKeyPrivilegesCall(id4nConcerning, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listAllApiKeyPrivilegesCall(id4nConcerning, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -764,13 +764,13 @@ public class ApiKeysApi {
      * List all privileges
      * Listing all possible API key privileges.
      * @param id4nConcerning id4nConcerning (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiKeyPrivilegeInfoResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(Boolean id4nConcerning, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<ApiKeyPrivilegeInfoResponse> resp = listAllApiKeyPrivilegesWithHttpInfo(id4nConcerning, offset, limit);
+    public ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(Boolean id4nConcerning, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ApiKeyPrivilegeInfoResponse> resp = listAllApiKeyPrivilegesWithHttpInfo(id4nConcerning, limit, offset);
         return resp.getData();
     }
 
@@ -778,13 +778,13 @@ public class ApiKeysApi {
      * List all privileges
      * Listing all possible API key privileges.
      * @param id4nConcerning id4nConcerning (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;ApiKeyPrivilegeInfoResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiKeyPrivilegeInfoResponse> listAllApiKeyPrivilegesWithHttpInfo(Boolean id4nConcerning, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = listAllApiKeyPrivilegesValidateBeforeCall(id4nConcerning, offset, limit, null, null);
+    public ApiResponse<ApiKeyPrivilegeInfoResponse> listAllApiKeyPrivilegesWithHttpInfo(Boolean id4nConcerning, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = listAllApiKeyPrivilegesValidateBeforeCall(id4nConcerning, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<ApiKeyPrivilegeInfoResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -793,13 +793,13 @@ public class ApiKeysApi {
      * List all privileges (asynchronously)
      * Listing all possible API key privileges.
      * @param id4nConcerning id4nConcerning (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAllApiKeyPrivilegesAsync(Boolean id4nConcerning, Integer offset, Integer limit, final ApiCallback<ApiKeyPrivilegeInfoResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAllApiKeyPrivilegesAsync(Boolean id4nConcerning, Integer limit, Integer offset, final ApiCallback<ApiKeyPrivilegeInfoResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -820,22 +820,22 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listAllApiKeyPrivilegesValidateBeforeCall(id4nConcerning, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listAllApiKeyPrivilegesValidateBeforeCall(id4nConcerning, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ApiKeyPrivilegeInfoResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for listAllApiKeysOfOrganization
-     * @param organizationId The namespace of the organization to search in. (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param organizationId The namespace of the organization to search in. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listAllApiKeysOfOrganizationCall(String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listAllApiKeysOfOrganizationCall(Integer limit, Integer offset, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -843,12 +843,12 @@ public class ApiKeysApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (organizationId != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -883,10 +883,10 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listAllApiKeysOfOrganizationValidateBeforeCall(String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listAllApiKeysOfOrganizationValidateBeforeCall(Integer limit, Integer offset, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listAllApiKeysOfOrganizationCall(organizationId, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listAllApiKeysOfOrganizationCall(limit, offset, organizationId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -894,28 +894,28 @@ public class ApiKeysApi {
     /**
      * Find API key by organization
      * Finding all API key assigned to the specified organization in a paginated manner.
-     * @param organizationId The namespace of the organization to search in. (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param organizationId The namespace of the organization to search in. (optional)
      * @return PaginatedApiKeyResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedApiKeyResponse listAllApiKeysOfOrganization(String organizationId, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedApiKeyResponse> resp = listAllApiKeysOfOrganizationWithHttpInfo(organizationId, offset, limit);
+    public PaginatedApiKeyResponse listAllApiKeysOfOrganization(Integer limit, Integer offset, String organizationId) throws ApiException {
+        ApiResponse<PaginatedApiKeyResponse> resp = listAllApiKeysOfOrganizationWithHttpInfo(limit, offset, organizationId);
         return resp.getData();
     }
 
     /**
      * Find API key by organization
      * Finding all API key assigned to the specified organization in a paginated manner.
-     * @param organizationId The namespace of the organization to search in. (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param organizationId The namespace of the organization to search in. (optional)
      * @return ApiResponse&lt;PaginatedApiKeyResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedApiKeyResponse> listAllApiKeysOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = listAllApiKeysOfOrganizationValidateBeforeCall(organizationId, offset, limit, null, null);
+    public ApiResponse<PaginatedApiKeyResponse> listAllApiKeysOfOrganizationWithHttpInfo(Integer limit, Integer offset, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = listAllApiKeysOfOrganizationValidateBeforeCall(limit, offset, organizationId, null, null);
         Type localVarReturnType = new TypeToken<PaginatedApiKeyResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -923,14 +923,14 @@ public class ApiKeysApi {
     /**
      * Find API key by organization (asynchronously)
      * Finding all API key assigned to the specified organization in a paginated manner.
-     * @param organizationId The namespace of the organization to search in. (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param organizationId The namespace of the organization to search in. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAllApiKeysOfOrganizationAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedApiKeyResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAllApiKeysOfOrganizationAsync(Integer limit, Integer offset, String organizationId, final ApiCallback<PaginatedApiKeyResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -951,7 +951,7 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listAllApiKeysOfOrganizationValidateBeforeCall(organizationId, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listAllApiKeysOfOrganizationValidateBeforeCall(limit, offset, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedApiKeyResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -959,14 +959,14 @@ public class ApiKeysApi {
     /**
      * Build call for listApiKeyPrivileges
      * @param key key (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listApiKeyPrivilegesCall(String key, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listApiKeyPrivilegesCall(String key, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -975,10 +975,10 @@ public class ApiKeysApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1013,7 +1013,7 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listApiKeyPrivilegesValidateBeforeCall(String key, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listApiKeyPrivilegesValidateBeforeCall(String key, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'key' is set
         if (key == null) {
@@ -1021,7 +1021,7 @@ public class ApiKeysApi {
         }
         
 
-        com.squareup.okhttp.Call call = listApiKeyPrivilegesCall(key, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listApiKeyPrivilegesCall(key, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1030,13 +1030,13 @@ public class ApiKeysApi {
      * List privileges
      * 
      * @param key key (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiKeyPrivilegePaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(String key, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<ApiKeyPrivilegePaginatedResponse> resp = listApiKeyPrivilegesWithHttpInfo(key, offset, limit);
+    public ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(String key, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ApiKeyPrivilegePaginatedResponse> resp = listApiKeyPrivilegesWithHttpInfo(key, limit, offset);
         return resp.getData();
     }
 
@@ -1044,13 +1044,13 @@ public class ApiKeysApi {
      * List privileges
      * 
      * @param key key (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;ApiKeyPrivilegePaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiKeyPrivilegePaginatedResponse> listApiKeyPrivilegesWithHttpInfo(String key, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = listApiKeyPrivilegesValidateBeforeCall(key, offset, limit, null, null);
+    public ApiResponse<ApiKeyPrivilegePaginatedResponse> listApiKeyPrivilegesWithHttpInfo(String key, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = listApiKeyPrivilegesValidateBeforeCall(key, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<ApiKeyPrivilegePaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1059,13 +1059,13 @@ public class ApiKeysApi {
      * List privileges (asynchronously)
      * 
      * @param key key (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listApiKeyPrivilegesAsync(String key, Integer offset, Integer limit, final ApiCallback<ApiKeyPrivilegePaginatedResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listApiKeyPrivilegesAsync(String key, Integer limit, Integer offset, final ApiCallback<ApiKeyPrivilegePaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1086,7 +1086,7 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listApiKeyPrivilegesValidateBeforeCall(key, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listApiKeyPrivilegesValidateBeforeCall(key, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ApiKeyPrivilegePaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1095,14 +1095,14 @@ public class ApiKeysApi {
      * Build call for listId4ns
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listId4nsCall(String key, String privilege, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listId4nsCall(String key, String privilege, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1112,10 +1112,10 @@ public class ApiKeysApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1150,7 +1150,7 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listId4nsValidateBeforeCall(String key, String privilege, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listId4nsValidateBeforeCall(String key, String privilege, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'key' is set
         if (key == null) {
@@ -1163,7 +1163,7 @@ public class ApiKeysApi {
         }
         
 
-        com.squareup.okhttp.Call call = listId4nsCall(key, privilege, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listId4nsCall(key, privilege, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1173,13 +1173,13 @@ public class ApiKeysApi {
      * Listing ID4ns of a id4n concerning privilege
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return Id4nPresentationPaginatedResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Id4nPresentationPaginatedResponse listId4ns(String key, String privilege, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<Id4nPresentationPaginatedResponse> resp = listId4nsWithHttpInfo(key, privilege, offset, limit);
+    public Id4nPresentationPaginatedResponse listId4ns(String key, String privilege, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<Id4nPresentationPaginatedResponse> resp = listId4nsWithHttpInfo(key, privilege, limit, offset);
         return resp.getData();
     }
 
@@ -1188,13 +1188,13 @@ public class ApiKeysApi {
      * Listing ID4ns of a id4n concerning privilege
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;Id4nPresentationPaginatedResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Id4nPresentationPaginatedResponse> listId4nsWithHttpInfo(String key, String privilege, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = listId4nsValidateBeforeCall(key, privilege, offset, limit, null, null);
+    public ApiResponse<Id4nPresentationPaginatedResponse> listId4nsWithHttpInfo(String key, String privilege, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = listId4nsValidateBeforeCall(key, privilege, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<Id4nPresentationPaginatedResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1204,13 +1204,13 @@ public class ApiKeysApi {
      * Listing ID4ns of a id4n concerning privilege
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listId4nsAsync(String key, String privilege, Integer offset, Integer limit, final ApiCallback<Id4nPresentationPaginatedResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listId4nsAsync(String key, String privilege, Integer limit, Integer offset, final ApiCallback<Id4nPresentationPaginatedResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1231,7 +1231,7 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listId4nsValidateBeforeCall(key, privilege, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listId4nsValidateBeforeCall(key, privilege, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Id4nPresentationPaginatedResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1366,15 +1366,15 @@ public class ApiKeysApi {
     }
     /**
      * Build call for removeApiKeyPrivilegeForId4ns
+     * @param id4ns id4ns (required)
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call removeApiKeyPrivilegeForId4nsCall(String key, String privilege, ListOfId4ns id4ns, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call removeApiKeyPrivilegeForId4nsCall(ListOfId4ns id4ns, String key, String privilege, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = id4ns;
 
         // create path and map variables
@@ -1418,7 +1418,12 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call removeApiKeyPrivilegeForId4nsValidateBeforeCall(String key, String privilege, ListOfId4ns id4ns, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call removeApiKeyPrivilegeForId4nsValidateBeforeCall(ListOfId4ns id4ns, String key, String privilege, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4ns' is set
+        if (id4ns == null) {
+            throw new ApiException("Missing the required parameter 'id4ns' when calling removeApiKeyPrivilegeForId4ns(Async)");
+        }
         
         // verify the required parameter 'key' is set
         if (key == null) {
@@ -1430,13 +1435,8 @@ public class ApiKeysApi {
             throw new ApiException("Missing the required parameter 'privilege' when calling removeApiKeyPrivilegeForId4ns(Async)");
         }
         
-        // verify the required parameter 'id4ns' is set
-        if (id4ns == null) {
-            throw new ApiException("Missing the required parameter 'id4ns' when calling removeApiKeyPrivilegeForId4ns(Async)");
-        }
-        
 
-        com.squareup.okhttp.Call call = removeApiKeyPrivilegeForId4nsCall(key, privilege, id4ns, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeApiKeyPrivilegeForId4nsCall(id4ns, key, privilege, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1444,40 +1444,40 @@ public class ApiKeysApi {
     /**
      * Remove id4ns of a privilege
      * 
+     * @param id4ns id4ns (required)
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void removeApiKeyPrivilegeForId4ns(String key, String privilege, ListOfId4ns id4ns) throws ApiException {
-        removeApiKeyPrivilegeForId4nsWithHttpInfo(key, privilege, id4ns);
+    public void removeApiKeyPrivilegeForId4ns(ListOfId4ns id4ns, String key, String privilege) throws ApiException {
+        removeApiKeyPrivilegeForId4nsWithHttpInfo(id4ns, key, privilege);
     }
 
     /**
      * Remove id4ns of a privilege
      * 
+     * @param id4ns id4ns (required)
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> removeApiKeyPrivilegeForId4nsWithHttpInfo(String key, String privilege, ListOfId4ns id4ns) throws ApiException {
-        com.squareup.okhttp.Call call = removeApiKeyPrivilegeForId4nsValidateBeforeCall(key, privilege, id4ns, null, null);
+    public ApiResponse<Void> removeApiKeyPrivilegeForId4nsWithHttpInfo(ListOfId4ns id4ns, String key, String privilege) throws ApiException {
+        com.squareup.okhttp.Call call = removeApiKeyPrivilegeForId4nsValidateBeforeCall(id4ns, key, privilege, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Remove id4ns of a privilege (asynchronously)
      * 
+     * @param id4ns id4ns (required)
      * @param key key (required)
      * @param privilege privilege (required)
-     * @param id4ns id4ns (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call removeApiKeyPrivilegeForId4nsAsync(String key, String privilege, ListOfId4ns id4ns, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeApiKeyPrivilegeForId4nsAsync(ListOfId4ns id4ns, String key, String privilege, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1498,20 +1498,20 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = removeApiKeyPrivilegeForId4nsValidateBeforeCall(key, privilege, id4ns, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeApiKeyPrivilegeForId4nsValidateBeforeCall(id4ns, key, privilege, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for updateApiKey
-     * @param key The API key to be updated. (required)
      * @param apiKeyChange The new values to apply. (required)
+     * @param key The API key to be updated. (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateApiKeyCall(String key, ApiKeyChangeRequest apiKeyChange, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateApiKeyCall(ApiKeyChangeRequest apiKeyChange, String key, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = apiKeyChange;
 
         // create path and map variables
@@ -1554,20 +1554,20 @@ public class ApiKeysApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateApiKeyValidateBeforeCall(String key, ApiKeyChangeRequest apiKeyChange, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'key' is set
-        if (key == null) {
-            throw new ApiException("Missing the required parameter 'key' when calling updateApiKey(Async)");
-        }
+    private com.squareup.okhttp.Call updateApiKeyValidateBeforeCall(ApiKeyChangeRequest apiKeyChange, String key, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'apiKeyChange' is set
         if (apiKeyChange == null) {
             throw new ApiException("Missing the required parameter 'apiKeyChange' when calling updateApiKey(Async)");
         }
         
+        // verify the required parameter 'key' is set
+        if (key == null) {
+            throw new ApiException("Missing the required parameter 'key' when calling updateApiKey(Async)");
+        }
+        
 
-        com.squareup.okhttp.Call call = updateApiKeyCall(key, apiKeyChange, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateApiKeyCall(apiKeyChange, key, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1575,37 +1575,37 @@ public class ApiKeysApi {
     /**
      * Update API keys
      * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
-     * @param key The API key to be updated. (required)
      * @param apiKeyChange The new values to apply. (required)
+     * @param key The API key to be updated. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updateApiKey(String key, ApiKeyChangeRequest apiKeyChange) throws ApiException {
-        updateApiKeyWithHttpInfo(key, apiKeyChange);
+    public void updateApiKey(ApiKeyChangeRequest apiKeyChange, String key) throws ApiException {
+        updateApiKeyWithHttpInfo(apiKeyChange, key);
     }
 
     /**
      * Update API keys
      * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
-     * @param key The API key to be updated. (required)
      * @param apiKeyChange The new values to apply. (required)
+     * @param key The API key to be updated. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updateApiKeyWithHttpInfo(String key, ApiKeyChangeRequest apiKeyChange) throws ApiException {
-        com.squareup.okhttp.Call call = updateApiKeyValidateBeforeCall(key, apiKeyChange, null, null);
+    public ApiResponse<Void> updateApiKeyWithHttpInfo(ApiKeyChangeRequest apiKeyChange, String key) throws ApiException {
+        com.squareup.okhttp.Call call = updateApiKeyValidateBeforeCall(apiKeyChange, key, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Update API keys (asynchronously)
      * API keys can be updated with new labels, and be activated and deactivated. The secret or UUID cannot be changed.
-     * @param key The API key to be updated. (required)
      * @param apiKeyChange The new values to apply. (required)
+     * @param key The API key to be updated. (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateApiKeyAsync(String key, ApiKeyChangeRequest apiKeyChange, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateApiKeyAsync(ApiKeyChangeRequest apiKeyChange, String key, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1626,7 +1626,7 @@ public class ApiKeysApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateApiKeyValidateBeforeCall(key, apiKeyChange, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateApiKeyValidateBeforeCall(apiKeyChange, key, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

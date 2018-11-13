@@ -88,7 +88,7 @@ null (empty response body)
 
 <a name="addUserRoles"></a>
 # **addUserRoles**
-> addUserRoles(organizationId, username, changeRoleRequest)
+> addUserRoles(changeRoleRequest, organizationId, username)
 
 Add role(s) to user
 
@@ -110,11 +110,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
+ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 String organizationId = "organizationId_example"; // String | The namespace of the organization
 String username = "username_example"; // String | username
-ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
-    apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
+    apiInstance.addUserRoles(changeRoleRequest, organizationId, username);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#addUserRoles");
     e.printStackTrace();
@@ -125,9 +125,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
  **organizationId** | **String**| The namespace of the organization |
  **username** | **String**| username |
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
 
 ### Return type
 
@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix)
+> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, label, labelPrefix, limit, offset, type)
 
 Get collections of organization
 
@@ -541,13 +541,13 @@ Authorization.setApiKey("YOUR API KEY");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 String organizationId = "organizationId_example"; // String | The namespace of the organization
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
-String type = "type_example"; // String | Filter by this type
 String label = "label_example"; // String | Filter by this label
 String labelPrefix = "labelPrefix_example"; // String | Filter by this label prefix
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
+String type = "type_example"; // String | Filter by this type
 try {
-    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
+    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, label, labelPrefix, limit, offset, type);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getAllCollectionsOfOrganization");
@@ -560,11 +560,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| The namespace of the organization |
- **offset** | **Integer**| Start with the n-th element | [optional]
- **limit** | **Integer**| The maximum count of returned elements | [optional]
- **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]
  **label** | **String**| Filter by this label | [optional]
  **labelPrefix** | **String**| Filter by this label prefix | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]
 
 ### Return type
 
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllOrganizationRoles"></a>
 # **getAllOrganizationRoles**
-> PaginatedUserRolesResponse getAllOrganizationRoles(organizationId, offset, limit)
+> PaginatedUserRolesResponse getAllOrganizationRoles(organizationId, limit, offset)
 
 List users and their roles
 
@@ -606,10 +606,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 String organizationId = "organizationId_example"; // String | organizationId
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
 try {
-    PaginatedUserRolesResponse result = apiInstance.getAllOrganizationRoles(organizationId, offset, limit);
+    PaginatedUserRolesResponse result = apiInstance.getAllOrganizationRoles(organizationId, limit, offset);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getAllOrganizationRoles");
@@ -622,8 +622,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| organizationId |
- **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -695,7 +695,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationsOfUser"></a>
 # **getOrganizationsOfUser**
-> PaginatedOrganizationResponse getOrganizationsOfUser(role, offset, limit)
+> PaginatedOrganizationResponse getOrganizationsOfUser(limit, offset, role)
 
 Retrieve organizations of user
 
@@ -717,11 +717,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
 String role = "role_example"; // String | role
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedOrganizationResponse result = apiInstance.getOrganizationsOfUser(role, offset, limit);
+    PaginatedOrganizationResponse result = apiInstance.getOrganizationsOfUser(limit, offset, role);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getOrganizationsOfUser");
@@ -733,9 +733,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **role** | **String**| role | [optional]
- **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **role** | **String**| role | [optional]
 
 ### Return type
 
@@ -752,7 +752,7 @@ Name | Type | Description  | Notes
 
 <a name="getPartnerOrganizations"></a>
 # **getPartnerOrganizations**
-> PaginatedResponseOfPartnerOrganization getPartnerOrganizations(organizationId, offset, limit)
+> PaginatedResponseOfPartnerOrganization getPartnerOrganizations(organizationId, limit, offset)
 
 Get partners of an organization
 
@@ -777,10 +777,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 String organizationId = "organizationId_example"; // String | The namespace of the organization to query partner organizations
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
 try {
-    PaginatedResponseOfPartnerOrganization result = apiInstance.getPartnerOrganizations(organizationId, offset, limit);
+    PaginatedResponseOfPartnerOrganization result = apiInstance.getPartnerOrganizations(organizationId, limit, offset);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getPartnerOrganizations");
@@ -793,8 +793,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| The namespace of the organization to query partner organizations |
- **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -811,7 +811,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
-> PaginatedStringResponse getUserRoles(organizationId, username, offset, limit)
+> PaginatedStringResponse getUserRoles(organizationId, username, limit, offset)
 
 Get user roles by username
 
@@ -835,10 +835,10 @@ Authorization.setApiKey("YOUR API KEY");
 OrganizationsApi apiInstance = new OrganizationsApi();
 String organizationId = "organizationId_example"; // String | The namespace of the organization
 String username = "username_example"; // String | username
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
 try {
-    PaginatedStringResponse result = apiInstance.getUserRoles(organizationId, username, offset, limit);
+    PaginatedStringResponse result = apiInstance.getUserRoles(organizationId, username, limit, offset);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getUserRoles");
@@ -852,8 +852,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| The namespace of the organization |
  **username** | **String**| username |
- **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsersOfOrganization"></a>
 # **getUsersOfOrganization**
-> PaginatedUserPresentationResponse getUsersOfOrganization(organizationId, offset, limit)
+> PaginatedUserPresentationResponse getUsersOfOrganization(organizationId, limit, offset)
 
 Find users in organization
 
@@ -895,10 +895,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
 String organizationId = "organizationId_example"; // String | organizationId
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
 try {
-    PaginatedUserPresentationResponse result = apiInstance.getUsersOfOrganization(organizationId, offset, limit);
+    PaginatedUserPresentationResponse result = apiInstance.getUsersOfOrganization(organizationId, limit, offset);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getUsersOfOrganization");
@@ -911,8 +911,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| organizationId |
- **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -929,7 +929,7 @@ Name | Type | Description  | Notes
 
 <a name="inviteUsers"></a>
 # **inviteUsers**
-> inviteUsers(organizationId, invitationList)
+> inviteUsers(invitationList, organizationId)
 
 Invite Users
 
@@ -951,10 +951,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-String organizationId = "organizationId_example"; // String | The namespace of the organization where users should be invited
 OrganizationUserInvitationListRequest invitationList = new OrganizationUserInvitationListRequest(); // OrganizationUserInvitationListRequest | invitationList
+String organizationId = "organizationId_example"; // String | The namespace of the organization where users should be invited
 try {
-    apiInstance.inviteUsers(organizationId, invitationList);
+    apiInstance.inviteUsers(invitationList, organizationId);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#inviteUsers");
     e.printStackTrace();
@@ -965,8 +965,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| The namespace of the organization where users should be invited |
  **invitationList** | [**OrganizationUserInvitationListRequest**](OrganizationUserInvitationListRequest.md)| invitationList |
+ **organizationId** | **String**| The namespace of the organization where users should be invited |
 
 ### Return type
 
@@ -983,7 +983,7 @@ null (empty response body)
 
 <a name="listCountries"></a>
 # **listCountries**
-> PaginatedCountryResponse listCountries(offset, limit)
+> PaginatedCountryResponse listCountries(limit, offset)
 
 List countries
 
@@ -1005,10 +1005,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
 try {
-    PaginatedCountryResponse result = apiInstance.listCountries(offset, limit);
+    PaginatedCountryResponse result = apiInstance.listCountries(limit, offset);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#listCountries");
@@ -1020,8 +1020,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -1094,7 +1094,7 @@ null (empty response body)
 
 <a name="removeUserRoles"></a>
 # **removeUserRoles**
-> removeUserRoles(organizationId, username, changeRoleRequest)
+> removeUserRoles(changeRoleRequest, organizationId, username)
 
 Remove role(s) from user
 
@@ -1116,11 +1116,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
+ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 String organizationId = "organizationId_example"; // String | The namespace of the organization
 String username = "username_example"; // String | username
-ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
 try {
-    apiInstance.removeUserRoles(organizationId, username, changeRoleRequest);
+    apiInstance.removeUserRoles(changeRoleRequest, organizationId, username);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#removeUserRoles");
     e.printStackTrace();
@@ -1131,9 +1131,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
  **organizationId** | **String**| The namespace of the organization |
  **username** | **String**| username |
- **changeRoleRequest** | [**ChangeRoleRequest**](ChangeRoleRequest.md)| changeRoleRequest |
 
 ### Return type
 
@@ -1150,7 +1150,7 @@ null (empty response body)
 
 <a name="setOrganizationLogo"></a>
 # **setOrganizationLogo**
-> PublicImagePresentation setOrganizationLogo(organizationId, file)
+> PublicImagePresentation setOrganizationLogo(file, organizationId)
 
 Update organization logo
 
@@ -1174,10 +1174,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-String organizationId = "organizationId_example"; // String | The namespace of the organization where the logo should be updated.
 File file = new File("/path/to/file.txt"); // File | An image containing the new logo.
+String organizationId = "organizationId_example"; // String | The namespace of the organization where the logo should be updated.
 try {
-    PublicImagePresentation result = apiInstance.setOrganizationLogo(organizationId, file);
+    PublicImagePresentation result = apiInstance.setOrganizationLogo(file, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#setOrganizationLogo");
@@ -1189,8 +1189,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| The namespace of the organization where the logo should be updated. |
  **file** | **File**| An image containing the new logo. |
+ **organizationId** | **String**| The namespace of the organization where the logo should be updated. |
 
 ### Return type
 
@@ -1262,7 +1262,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationAddress"></a>
 # **updateOrganizationAddress**
-> OrganizationAddress updateOrganizationAddress(organizationId, addressResource)
+> OrganizationAddress updateOrganizationAddress(addressResource, organizationId)
 
 Store address
 
@@ -1284,10 +1284,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-String organizationId = "organizationId_example"; // String | organizationId
 OrganizationAddress addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
+String organizationId = "organizationId_example"; // String | organizationId
 try {
-    OrganizationAddress result = apiInstance.updateOrganizationAddress(organizationId, addressResource);
+    OrganizationAddress result = apiInstance.updateOrganizationAddress(addressResource, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#updateOrganizationAddress");
@@ -1299,8 +1299,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId |
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource |
+ **organizationId** | **String**| organizationId |
 
 ### Return type
 
@@ -1317,7 +1317,7 @@ Name | Type | Description  | Notes
 
 <a name="updateOrganizationBillingAddress"></a>
 # **updateOrganizationBillingAddress**
-> OrganizationAddress updateOrganizationBillingAddress(organizationId, addressResource)
+> OrganizationAddress updateOrganizationBillingAddress(addressResource, organizationId)
 
 Store billing address
 
@@ -1339,10 +1339,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 OrganizationsApi apiInstance = new OrganizationsApi();
-String organizationId = "organizationId_example"; // String | organizationId
 OrganizationAddress addressResource = new OrganizationAddress(); // OrganizationAddress | addressResource
+String organizationId = "organizationId_example"; // String | organizationId
 try {
-    OrganizationAddress result = apiInstance.updateOrganizationBillingAddress(organizationId, addressResource);
+    OrganizationAddress result = apiInstance.updateOrganizationBillingAddress(addressResource, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#updateOrganizationBillingAddress");
@@ -1354,8 +1354,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **organizationId** | **String**| organizationId |
  **addressResource** | [**OrganizationAddress**](OrganizationAddress.md)| addressResource |
+ **organizationId** | **String**| organizationId |
 
 ### Return type
 

@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * PublicImagePresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-13T11:21:42.764Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-13T14:14:01.617Z")
 public class PublicImagePresentation {
   @SerializedName("uri")
   private String uri = null;
@@ -35,7 +35,7 @@ public class PublicImagePresentation {
    * The uri/url of the image
    * @return uri
   **/
-  @ApiModelProperty(example = "/api/v1/public/image/bc671c63-4a9b-46e7-8c59-9bbe1917e6cc", required = true, value = "The uri/url of the image")
+  @ApiModelProperty(example = "/api/v1/public/image/bc671c63-4a9b-46e7-8c59-9bbe1917e6cc", value = "The uri/url of the image")
   public String getUri() {
     return uri;
   }

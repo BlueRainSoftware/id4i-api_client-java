@@ -58,21 +58,21 @@ public class AliasApi {
 
     /**
      * Build call for addGuidAlias
-     * @param id4n The GUID or Collection to operate on (required)
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addGuidAliasCall(String id4n, String aliasType, GuidAlias alias, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addGuidAliasCall(GuidAlias alias, String aliasType, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = alias;
 
         // create path and map variables
         String localVarPath = "/api/v1/id4ns/{id4n}/alias/{aliasType}"
-            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
-            .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()));
+            .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()))
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -110,11 +110,11 @@ public class AliasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addGuidAliasValidateBeforeCall(String id4n, String aliasType, GuidAlias alias, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addGuidAliasValidateBeforeCall(GuidAlias alias, String aliasType, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'id4n' is set
-        if (id4n == null) {
-            throw new ApiException("Missing the required parameter 'id4n' when calling addGuidAlias(Async)");
+        // verify the required parameter 'alias' is set
+        if (alias == null) {
+            throw new ApiException("Missing the required parameter 'alias' when calling addGuidAlias(Async)");
         }
         
         // verify the required parameter 'aliasType' is set
@@ -122,13 +122,13 @@ public class AliasApi {
             throw new ApiException("Missing the required parameter 'aliasType' when calling addGuidAlias(Async)");
         }
         
-        // verify the required parameter 'alias' is set
-        if (alias == null) {
-            throw new ApiException("Missing the required parameter 'alias' when calling addGuidAlias(Async)");
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling addGuidAlias(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = addGuidAliasCall(id4n, aliasType, alias, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addGuidAliasCall(alias, aliasType, id4n, progressListener, progressRequestListener);
         return call;
 
     }
@@ -136,40 +136,40 @@ public class AliasApi {
     /**
      * Add alias for GUID or Collection
      * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
-     * @param id4n The GUID or Collection to operate on (required)
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void addGuidAlias(String id4n, String aliasType, GuidAlias alias) throws ApiException {
-        addGuidAliasWithHttpInfo(id4n, aliasType, alias);
+    public void addGuidAlias(GuidAlias alias, String aliasType, String id4n) throws ApiException {
+        addGuidAliasWithHttpInfo(alias, aliasType, id4n);
     }
 
     /**
      * Add alias for GUID or Collection
      * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
-     * @param id4n The GUID or Collection to operate on (required)
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> addGuidAliasWithHttpInfo(String id4n, String aliasType, GuidAlias alias) throws ApiException {
-        com.squareup.okhttp.Call call = addGuidAliasValidateBeforeCall(id4n, aliasType, alias, null, null);
+    public ApiResponse<Void> addGuidAliasWithHttpInfo(GuidAlias alias, String aliasType, String id4n) throws ApiException {
+        com.squareup.okhttp.Call call = addGuidAliasValidateBeforeCall(alias, aliasType, id4n, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Add alias for GUID or Collection (asynchronously)
      * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
-     * @param id4n The GUID or Collection to operate on (required)
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param alias The alias to add or update (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addGuidAliasAsync(String id4n, String aliasType, GuidAlias alias, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call addGuidAliasAsync(GuidAlias alias, String aliasType, String id4n, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -190,7 +190,7 @@ public class AliasApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addGuidAliasValidateBeforeCall(id4n, aliasType, alias, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addGuidAliasValidateBeforeCall(alias, aliasType, id4n, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -432,20 +432,20 @@ public class AliasApi {
     }
     /**
      * Build call for removeGuidAlias
-     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call removeGuidAliasCall(String id4n, String aliasType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call removeGuidAliasCall(String aliasType, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/v1/id4ns/{id4n}/alias/{aliasType}"
-            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
-            .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()));
+            .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()))
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -483,20 +483,20 @@ public class AliasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call removeGuidAliasValidateBeforeCall(String id4n, String aliasType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'id4n' is set
-        if (id4n == null) {
-            throw new ApiException("Missing the required parameter 'id4n' when calling removeGuidAlias(Async)");
-        }
+    private com.squareup.okhttp.Call removeGuidAliasValidateBeforeCall(String aliasType, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'aliasType' is set
         if (aliasType == null) {
             throw new ApiException("Missing the required parameter 'aliasType' when calling removeGuidAlias(Async)");
         }
         
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling removeGuidAlias(Async)");
+        }
+        
 
-        com.squareup.okhttp.Call call = removeGuidAliasCall(id4n, aliasType, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeGuidAliasCall(aliasType, id4n, progressListener, progressRequestListener);
         return call;
 
     }
@@ -504,37 +504,37 @@ public class AliasApi {
     /**
      * Remove aliases from GUID or Collection
      * Remove the alias of the given type
-     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void removeGuidAlias(String id4n, String aliasType) throws ApiException {
-        removeGuidAliasWithHttpInfo(id4n, aliasType);
+    public void removeGuidAlias(String aliasType, String id4n) throws ApiException {
+        removeGuidAliasWithHttpInfo(aliasType, id4n);
     }
 
     /**
      * Remove aliases from GUID or Collection
      * Remove the alias of the given type
-     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> removeGuidAliasWithHttpInfo(String id4n, String aliasType) throws ApiException {
-        com.squareup.okhttp.Call call = removeGuidAliasValidateBeforeCall(id4n, aliasType, null, null);
+    public ApiResponse<Void> removeGuidAliasWithHttpInfo(String aliasType, String id4n) throws ApiException {
+        com.squareup.okhttp.Call call = removeGuidAliasValidateBeforeCall(aliasType, id4n, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Remove aliases from GUID or Collection (asynchronously)
      * Remove the alias of the given type
-     * @param id4n The GUID or Collection to operate on (required)
      * @param aliasType Alias type, see the corresponding API model (required)
+     * @param id4n The GUID or Collection to operate on (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call removeGuidAliasAsync(String id4n, String aliasType, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeGuidAliasAsync(String aliasType, String id4n, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -555,7 +555,7 @@ public class AliasApi {
             };
         }
 
-        com.squareup.okhttp.Call call = removeGuidAliasValidateBeforeCall(id4n, aliasType, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeGuidAliasValidateBeforeCall(aliasType, id4n, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -563,14 +563,14 @@ public class AliasApi {
      * Build call for searchByAlias
      * @param alias The alias to search for (required)
      * @param aliasType Alias type type to search for (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call searchByAliasCall(String alias, String aliasType, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call searchByAliasCall(String alias, String aliasType, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -582,10 +582,10 @@ public class AliasApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("alias", alias));
         if (aliasType != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("aliasType", aliasType));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -620,7 +620,7 @@ public class AliasApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call searchByAliasValidateBeforeCall(String alias, String aliasType, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call searchByAliasValidateBeforeCall(String alias, String aliasType, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'alias' is set
         if (alias == null) {
@@ -633,7 +633,7 @@ public class AliasApi {
         }
         
 
-        com.squareup.okhttp.Call call = searchByAliasCall(alias, aliasType, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchByAliasCall(alias, aliasType, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -643,13 +643,13 @@ public class AliasApi {
      * 
      * @param alias The alias to search for (required)
      * @param aliasType Alias type type to search for (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return PaginatedGuidResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedGuidResponse searchByAlias(String alias, String aliasType, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedGuidResponse> resp = searchByAliasWithHttpInfo(alias, aliasType, offset, limit);
+    public PaginatedGuidResponse searchByAlias(String alias, String aliasType, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<PaginatedGuidResponse> resp = searchByAliasWithHttpInfo(alias, aliasType, limit, offset);
         return resp.getData();
     }
 
@@ -658,13 +658,13 @@ public class AliasApi {
      * 
      * @param alias The alias to search for (required)
      * @param aliasType Alias type type to search for (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;PaginatedGuidResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedGuidResponse> searchByAliasWithHttpInfo(String alias, String aliasType, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = searchByAliasValidateBeforeCall(alias, aliasType, offset, limit, null, null);
+    public ApiResponse<PaginatedGuidResponse> searchByAliasWithHttpInfo(String alias, String aliasType, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = searchByAliasValidateBeforeCall(alias, aliasType, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -674,13 +674,13 @@ public class AliasApi {
      * 
      * @param alias The alias to search for (required)
      * @param aliasType Alias type type to search for (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchByAliasAsync(String alias, String aliasType, Integer offset, Integer limit, final ApiCallback<PaginatedGuidResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchByAliasAsync(String alias, String aliasType, Integer limit, Integer offset, final ApiCallback<PaginatedGuidResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -701,7 +701,7 @@ public class AliasApi {
             };
         }
 
-        com.squareup.okhttp.Call call = searchByAliasValidateBeforeCall(alias, aliasType, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchByAliasValidateBeforeCall(alias, aliasType, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

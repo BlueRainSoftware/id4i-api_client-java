@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="addItem"></a>
 # **addItem**
-> addItem(id4n, historyItem)
+> addItem(historyItem, id4n)
 
 Add history item
 
@@ -38,10 +38,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 HistoryApi apiInstance = new HistoryApi();
-String id4n = "id4n_example"; // String | GUID to retrieve the history for
 HistoryItem historyItem = new HistoryItem(); // HistoryItem | The history item to publish
+String id4n = "id4n_example"; // String | GUID to retrieve the history for
 try {
-    apiInstance.addItem(id4n, historyItem);
+    apiInstance.addItem(historyItem, id4n);
 } catch (ApiException e) {
     System.err.println("Exception when calling HistoryApi#addItem");
     e.printStackTrace();
@@ -52,8 +52,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| GUID to retrieve the history for |
  **historyItem** | [**HistoryItem**](HistoryItem.md)| The history item to publish |
+ **id4n** | **String**| GUID to retrieve the history for |
 
 ### Return type
 
@@ -70,7 +70,7 @@ null (empty response body)
 
 <a name="filteredList"></a>
 # **filteredList**
-> PaginatedHistoryItemResponse filteredList(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit)
+> PaginatedHistoryItemResponse filteredList(id4n, fromDate, includePrivate, limit, offset, organization, qualifier, toDate, type)
 
 List history
 
@@ -95,16 +95,16 @@ Authorization.setApiKey("YOUR API KEY");
 
 HistoryApi apiInstance = new HistoryApi();
 String id4n = "id4n_example"; // String | GUID to retrieve the history for
-Boolean includePrivate = true; // Boolean | Also return private history entries
-String organization = "organization_example"; // String | Show only entries created by one of the given organizations. This parameter can be used multiple times.
-List<String> type = Arrays.asList("type_example"); // List<String> | Show only entries matching one of the given history item types. This parameter can be used multiple times.
-List<String> qualifier = Arrays.asList("qualifier_example"); // List<String> | Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times.
 LocalDateTime fromDate = new LocalDateTime(); // LocalDateTime | From date time as UTC Date-Time format
+Boolean includePrivate = true; // Boolean | Also return private history entries
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
+String organization = "organization_example"; // String | Show only entries created by one of the given organizations. This parameter can be used multiple times.
+List<String> qualifier = Arrays.asList("qualifier_example"); // List<String> | Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times.
 LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | To date time as UTC Date-Time format
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
+List<String> type = Arrays.asList("type_example"); // List<String> | Show only entries matching one of the given history item types. This parameter can be used multiple times.
 try {
-    PaginatedHistoryItemResponse result = apiInstance.filteredList(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit);
+    PaginatedHistoryItemResponse result = apiInstance.filteredList(id4n, fromDate, includePrivate, limit, offset, organization, qualifier, toDate, type);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HistoryApi#filteredList");
@@ -117,14 +117,14 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for |
- **includePrivate** | **Boolean**| Also return private history entries | [optional] [default to true]
- **organization** | **String**| Show only entries created by one of the given organizations. This parameter can be used multiple times. | [optional]
- **type** | [**List&lt;String&gt;**](String.md)| Show only entries matching one of the given history item types. This parameter can be used multiple times. | [optional] [enum: CREATED, DESTROYED, RECYCLED, SHIPMENT_PREPARED, STORED, RETRIEVED_FROM_STORAGE, PACKAGED, DISPATCHED, RECEIVED, REPROCESSING_STARTED, REPROCESSING_STEP_STARTED, REPROCESSING_STEP_CANCELLED, REPROCESSING_STEP_FINISHED, REPROCESSING_CANCELLED, REPROCESSING_FINISHED, DISASSEMBLED, MAINTENANCE_STARTED, MAINTENANCE_STEP_STARTED, MAINTENANCE_STEP_CANCELLED, MAINTENANCE_STEP_FINISHED, MAINTENANCE_CANCELLED, MAINTENANCE_FINISHED, PRODUCTION_STARTED, PRODUCTION_CANCELLED, PRODUCTION_FINISHED, PRODUCTION_STEP_STARTED, PRODUCTION_STEP_CANCELLED, PRODUCTION_STEP_FINISHED, QUALITY_CHECK_PERFORMED]
- **qualifier** | [**List&lt;String&gt;**](String.md)| Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. | [optional]
  **fromDate** | **LocalDateTime**| From date time as UTC Date-Time format | [optional]
- **toDate** | **LocalDateTime**| To date time as UTC Date-Time format | [optional]
- **offset** | **Integer**| Start with the n-th element | [optional]
+ **includePrivate** | **Boolean**| Also return private history entries | [optional] [default to true]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **organization** | **String**| Show only entries created by one of the given organizations. This parameter can be used multiple times. | [optional]
+ **qualifier** | [**List&lt;String&gt;**](String.md)| Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. | [optional]
+ **toDate** | **LocalDateTime**| To date time as UTC Date-Time format | [optional]
+ **type** | [**List&lt;String&gt;**](String.md)| Show only entries matching one of the given history item types. This parameter can be used multiple times. | [optional] [enum: CREATED, DESTROYED, RECYCLED, SHIPMENT_PREPARED, STORED, RETRIEVED_FROM_STORAGE, PACKAGED, DISPATCHED, RECEIVED, REPROCESSING_STARTED, REPROCESSING_STEP_STARTED, REPROCESSING_STEP_CANCELLED, REPROCESSING_STEP_FINISHED, REPROCESSING_CANCELLED, REPROCESSING_FINISHED, DISASSEMBLED, MAINTENANCE_STARTED, MAINTENANCE_STEP_STARTED, MAINTENANCE_STEP_CANCELLED, MAINTENANCE_STEP_FINISHED, MAINTENANCE_CANCELLED, MAINTENANCE_FINISHED, PRODUCTION_STARTED, PRODUCTION_CANCELLED, PRODUCTION_FINISHED, PRODUCTION_STEP_STARTED, PRODUCTION_STEP_CANCELLED, PRODUCTION_STEP_FINISHED, QUALITY_CHECK_PERFORMED]
 
 ### Return type
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 <a name="list"></a>
 # **list**
-> PaginatedHistoryItemResponse list(id4n, organizationId, includePrivate, offset, limit)
+> PaginatedHistoryItemResponse list(id4n, organizationId, includePrivate, limit, offset)
 
 DEPRECATED - List history
 
@@ -168,10 +168,10 @@ HistoryApi apiInstance = new HistoryApi();
 String id4n = "id4n_example"; // String | GUID to retrieve the history for
 String organizationId = "organizationId_example"; // String | organizationId
 Boolean includePrivate = true; // Boolean | Also return private history entries
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
 try {
-    PaginatedHistoryItemResponse result = apiInstance.list(id4n, organizationId, includePrivate, offset, limit);
+    PaginatedHistoryItemResponse result = apiInstance.list(id4n, organizationId, includePrivate, limit, offset);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HistoryApi#list");
@@ -186,8 +186,8 @@ Name | Type | Description  | Notes
  **id4n** | **String**| GUID to retrieve the history for |
  **organizationId** | **String**| organizationId |
  **includePrivate** | **Boolean**| Also return private history entries | [optional] [default to true]
- **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
 
 ### Return type
 

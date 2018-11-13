@@ -61,14 +61,14 @@ public class HistoryApi {
 
     /**
      * Build call for addItem
-     * @param id4n GUID to retrieve the history for (required)
      * @param historyItem The history item to publish (required)
+     * @param id4n GUID to retrieve the history for (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addItemCall(String id4n, HistoryItem historyItem, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addItemCall(HistoryItem historyItem, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = historyItem;
 
         // create path and map variables
@@ -111,20 +111,20 @@ public class HistoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addItemValidateBeforeCall(String id4n, HistoryItem historyItem, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'id4n' is set
-        if (id4n == null) {
-            throw new ApiException("Missing the required parameter 'id4n' when calling addItem(Async)");
-        }
+    private com.squareup.okhttp.Call addItemValidateBeforeCall(HistoryItem historyItem, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'historyItem' is set
         if (historyItem == null) {
             throw new ApiException("Missing the required parameter 'historyItem' when calling addItem(Async)");
         }
         
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling addItem(Async)");
+        }
+        
 
-        com.squareup.okhttp.Call call = addItemCall(id4n, historyItem, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addItemCall(historyItem, id4n, progressListener, progressRequestListener);
         return call;
 
     }
@@ -132,37 +132,37 @@ public class HistoryApi {
     /**
      * Add history item
      * Add a new history item
-     * @param id4n GUID to retrieve the history for (required)
      * @param historyItem The history item to publish (required)
+     * @param id4n GUID to retrieve the history for (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void addItem(String id4n, HistoryItem historyItem) throws ApiException {
-        addItemWithHttpInfo(id4n, historyItem);
+    public void addItem(HistoryItem historyItem, String id4n) throws ApiException {
+        addItemWithHttpInfo(historyItem, id4n);
     }
 
     /**
      * Add history item
      * Add a new history item
-     * @param id4n GUID to retrieve the history for (required)
      * @param historyItem The history item to publish (required)
+     * @param id4n GUID to retrieve the history for (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> addItemWithHttpInfo(String id4n, HistoryItem historyItem) throws ApiException {
-        com.squareup.okhttp.Call call = addItemValidateBeforeCall(id4n, historyItem, null, null);
+    public ApiResponse<Void> addItemWithHttpInfo(HistoryItem historyItem, String id4n) throws ApiException {
+        com.squareup.okhttp.Call call = addItemValidateBeforeCall(historyItem, id4n, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Add history item (asynchronously)
      * Add a new history item
-     * @param id4n GUID to retrieve the history for (required)
      * @param historyItem The history item to publish (required)
+     * @param id4n GUID to retrieve the history for (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addItemAsync(String id4n, HistoryItem historyItem, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call addItemAsync(HistoryItem historyItem, String id4n, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -183,27 +183,27 @@ public class HistoryApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addItemValidateBeforeCall(id4n, historyItem, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addItemValidateBeforeCall(historyItem, id4n, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for filteredList
      * @param id4n GUID to retrieve the history for (required)
-     * @param includePrivate Also return private history entries (optional, default to true)
-     * @param organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
-     * @param type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
-     * @param qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
      * @param fromDate From date time as UTC Date-Time format (optional)
-     * @param toDate To date time as UTC Date-Time format (optional)
-     * @param offset Start with the n-th element (optional)
+     * @param includePrivate Also return private history entries (optional, default to true)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
+     * @param qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
+     * @param toDate To date time as UTC Date-Time format (optional)
+     * @param type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call filteredListCall(String id4n, Boolean includePrivate, String organization, List<String> type, List<String> qualifier, LocalDateTime fromDate, LocalDateTime toDate, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call filteredListCall(String id4n, LocalDateTime fromDate, Boolean includePrivate, Integer limit, Integer offset, String organization, List<String> qualifier, LocalDateTime toDate, List<String> type, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -212,22 +212,22 @@ public class HistoryApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (includePrivate != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("includePrivate", includePrivate));
-        if (organization != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("organization", organization));
-        if (type != null)
-        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "type", type));
-        if (qualifier != null)
-        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "qualifier", qualifier));
         if (fromDate != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("fromDate", fromDate));
-        if (toDate != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("toDate", toDate));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (includePrivate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("includePrivate", includePrivate));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (organization != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("organization", organization));
+        if (qualifier != null)
+        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "qualifier", qualifier));
+        if (toDate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("toDate", toDate));
+        if (type != null)
+        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "type", type));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -262,7 +262,7 @@ public class HistoryApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call filteredListValidateBeforeCall(String id4n, Boolean includePrivate, String organization, List<String> type, List<String> qualifier, LocalDateTime fromDate, LocalDateTime toDate, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call filteredListValidateBeforeCall(String id4n, LocalDateTime fromDate, Boolean includePrivate, Integer limit, Integer offset, String organization, List<String> qualifier, LocalDateTime toDate, List<String> type, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
@@ -270,7 +270,7 @@ public class HistoryApi {
         }
         
 
-        com.squareup.okhttp.Call call = filteredListCall(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = filteredListCall(id4n, fromDate, includePrivate, limit, offset, organization, qualifier, toDate, type, progressListener, progressRequestListener);
         return call;
 
     }
@@ -279,19 +279,19 @@ public class HistoryApi {
      * List history
      * Lists the history of a GUID
      * @param id4n GUID to retrieve the history for (required)
-     * @param includePrivate Also return private history entries (optional, default to true)
-     * @param organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
-     * @param type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
-     * @param qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
      * @param fromDate From date time as UTC Date-Time format (optional)
-     * @param toDate To date time as UTC Date-Time format (optional)
-     * @param offset Start with the n-th element (optional)
+     * @param includePrivate Also return private history entries (optional, default to true)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
+     * @param qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
+     * @param toDate To date time as UTC Date-Time format (optional)
+     * @param type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
      * @return PaginatedHistoryItemResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedHistoryItemResponse filteredList(String id4n, Boolean includePrivate, String organization, List<String> type, List<String> qualifier, LocalDateTime fromDate, LocalDateTime toDate, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedHistoryItemResponse> resp = filteredListWithHttpInfo(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit);
+    public PaginatedHistoryItemResponse filteredList(String id4n, LocalDateTime fromDate, Boolean includePrivate, Integer limit, Integer offset, String organization, List<String> qualifier, LocalDateTime toDate, List<String> type) throws ApiException {
+        ApiResponse<PaginatedHistoryItemResponse> resp = filteredListWithHttpInfo(id4n, fromDate, includePrivate, limit, offset, organization, qualifier, toDate, type);
         return resp.getData();
     }
 
@@ -299,19 +299,19 @@ public class HistoryApi {
      * List history
      * Lists the history of a GUID
      * @param id4n GUID to retrieve the history for (required)
-     * @param includePrivate Also return private history entries (optional, default to true)
-     * @param organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
-     * @param type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
-     * @param qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
      * @param fromDate From date time as UTC Date-Time format (optional)
-     * @param toDate To date time as UTC Date-Time format (optional)
-     * @param offset Start with the n-th element (optional)
+     * @param includePrivate Also return private history entries (optional, default to true)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
+     * @param qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
+     * @param toDate To date time as UTC Date-Time format (optional)
+     * @param type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
      * @return ApiResponse&lt;PaginatedHistoryItemResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedHistoryItemResponse> filteredListWithHttpInfo(String id4n, Boolean includePrivate, String organization, List<String> type, List<String> qualifier, LocalDateTime fromDate, LocalDateTime toDate, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = filteredListValidateBeforeCall(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit, null, null);
+    public ApiResponse<PaginatedHistoryItemResponse> filteredListWithHttpInfo(String id4n, LocalDateTime fromDate, Boolean includePrivate, Integer limit, Integer offset, String organization, List<String> qualifier, LocalDateTime toDate, List<String> type) throws ApiException {
+        com.squareup.okhttp.Call call = filteredListValidateBeforeCall(id4n, fromDate, includePrivate, limit, offset, organization, qualifier, toDate, type, null, null);
         Type localVarReturnType = new TypeToken<PaginatedHistoryItemResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -320,19 +320,19 @@ public class HistoryApi {
      * List history (asynchronously)
      * Lists the history of a GUID
      * @param id4n GUID to retrieve the history for (required)
-     * @param includePrivate Also return private history entries (optional, default to true)
-     * @param organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
-     * @param type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
-     * @param qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
      * @param fromDate From date time as UTC Date-Time format (optional)
-     * @param toDate To date time as UTC Date-Time format (optional)
-     * @param offset Start with the n-th element (optional)
+     * @param includePrivate Also return private history entries (optional, default to true)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param organization Show only entries created by one of the given organizations. This parameter can be used multiple times. (optional)
+     * @param qualifier Show only entries matching one of the given history item qualifiers (additional property de.id4i.history.item.qualifier). This parameter can be used multiple times. (optional)
+     * @param toDate To date time as UTC Date-Time format (optional)
+     * @param type Show only entries matching one of the given history item types. This parameter can be used multiple times. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call filteredListAsync(String id4n, Boolean includePrivate, String organization, List<String> type, List<String> qualifier, LocalDateTime fromDate, LocalDateTime toDate, Integer offset, Integer limit, final ApiCallback<PaginatedHistoryItemResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call filteredListAsync(String id4n, LocalDateTime fromDate, Boolean includePrivate, Integer limit, Integer offset, String organization, List<String> qualifier, LocalDateTime toDate, List<String> type, final ApiCallback<PaginatedHistoryItemResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -353,7 +353,7 @@ public class HistoryApi {
             };
         }
 
-        com.squareup.okhttp.Call call = filteredListValidateBeforeCall(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = filteredListValidateBeforeCall(id4n, fromDate, includePrivate, limit, offset, organization, qualifier, toDate, type, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedHistoryItemResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -363,8 +363,8 @@ public class HistoryApi {
      * @param id4n GUID to retrieve the history for (required)
      * @param organizationId organizationId (required)
      * @param includePrivate Also return private history entries (optional, default to true)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -372,7 +372,7 @@ public class HistoryApi {
      * @deprecated
      */
     @Deprecated
-    public com.squareup.okhttp.Call listCall(String id4n, String organizationId, Boolean includePrivate, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listCall(String id4n, String organizationId, Boolean includePrivate, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -384,10 +384,10 @@ public class HistoryApi {
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         if (includePrivate != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("includePrivate", includePrivate));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -423,7 +423,7 @@ public class HistoryApi {
 
     @Deprecated
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listValidateBeforeCall(String id4n, String organizationId, Boolean includePrivate, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listValidateBeforeCall(String id4n, String organizationId, Boolean includePrivate, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
@@ -436,7 +436,7 @@ public class HistoryApi {
         }
         
 
-        com.squareup.okhttp.Call call = listCall(id4n, organizationId, includePrivate, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listCall(id4n, organizationId, includePrivate, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -447,15 +447,15 @@ public class HistoryApi {
      * @param id4n GUID to retrieve the history for (required)
      * @param organizationId organizationId (required)
      * @param includePrivate Also return private history entries (optional, default to true)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return PaginatedHistoryItemResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @deprecated
      */
     @Deprecated
-    public PaginatedHistoryItemResponse list(String id4n, String organizationId, Boolean includePrivate, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedHistoryItemResponse> resp = listWithHttpInfo(id4n, organizationId, includePrivate, offset, limit);
+    public PaginatedHistoryItemResponse list(String id4n, String organizationId, Boolean includePrivate, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<PaginatedHistoryItemResponse> resp = listWithHttpInfo(id4n, organizationId, includePrivate, limit, offset);
         return resp.getData();
     }
 
@@ -465,15 +465,15 @@ public class HistoryApi {
      * @param id4n GUID to retrieve the history for (required)
      * @param organizationId organizationId (required)
      * @param includePrivate Also return private history entries (optional, default to true)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;PaginatedHistoryItemResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @deprecated
      */
     @Deprecated
-    public ApiResponse<PaginatedHistoryItemResponse> listWithHttpInfo(String id4n, String organizationId, Boolean includePrivate, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = listValidateBeforeCall(id4n, organizationId, includePrivate, offset, limit, null, null);
+    public ApiResponse<PaginatedHistoryItemResponse> listWithHttpInfo(String id4n, String organizationId, Boolean includePrivate, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = listValidateBeforeCall(id4n, organizationId, includePrivate, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<PaginatedHistoryItemResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -484,15 +484,15 @@ public class HistoryApi {
      * @param id4n GUID to retrieve the history for (required)
      * @param organizationId organizationId (required)
      * @param includePrivate Also return private history entries (optional, default to true)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @deprecated
      */
     @Deprecated
-    public com.squareup.okhttp.Call listAsync(String id4n, String organizationId, Boolean includePrivate, Integer offset, Integer limit, final ApiCallback<PaginatedHistoryItemResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAsync(String id4n, String organizationId, Boolean includePrivate, Integer limit, Integer offset, final ApiCallback<PaginatedHistoryItemResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -513,7 +513,7 @@ public class HistoryApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listValidateBeforeCall(id4n, organizationId, includePrivate, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listValidateBeforeCall(id4n, organizationId, includePrivate, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedHistoryItemResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

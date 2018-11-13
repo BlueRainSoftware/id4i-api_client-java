@@ -72,15 +72,15 @@ public class AccountsApi {
 
     /**
      * Build call for addUserRoles
+     * @param changeRoleRequest changeRoleRequest (required)
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addUserRolesCall(String organizationId, String username, ChangeRoleRequest changeRoleRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addUserRolesCall(ChangeRoleRequest changeRoleRequest, String organizationId, String username, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = changeRoleRequest;
 
         // create path and map variables
@@ -124,7 +124,12 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addUserRolesValidateBeforeCall(String organizationId, String username, ChangeRoleRequest changeRoleRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addUserRolesValidateBeforeCall(ChangeRoleRequest changeRoleRequest, String organizationId, String username, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'changeRoleRequest' is set
+        if (changeRoleRequest == null) {
+            throw new ApiException("Missing the required parameter 'changeRoleRequest' when calling addUserRoles(Async)");
+        }
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -136,13 +141,8 @@ public class AccountsApi {
             throw new ApiException("Missing the required parameter 'username' when calling addUserRoles(Async)");
         }
         
-        // verify the required parameter 'changeRoleRequest' is set
-        if (changeRoleRequest == null) {
-            throw new ApiException("Missing the required parameter 'changeRoleRequest' when calling addUserRoles(Async)");
-        }
-        
 
-        com.squareup.okhttp.Call call = addUserRolesCall(organizationId, username, changeRoleRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addUserRolesCall(changeRoleRequest, organizationId, username, progressListener, progressRequestListener);
         return call;
 
     }
@@ -150,40 +150,40 @@ public class AccountsApi {
     /**
      * Add role(s) to user
      * 
+     * @param changeRoleRequest changeRoleRequest (required)
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void addUserRoles(String organizationId, String username, ChangeRoleRequest changeRoleRequest) throws ApiException {
-        addUserRolesWithHttpInfo(organizationId, username, changeRoleRequest);
+    public void addUserRoles(ChangeRoleRequest changeRoleRequest, String organizationId, String username) throws ApiException {
+        addUserRolesWithHttpInfo(changeRoleRequest, organizationId, username);
     }
 
     /**
      * Add role(s) to user
      * 
+     * @param changeRoleRequest changeRoleRequest (required)
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> addUserRolesWithHttpInfo(String organizationId, String username, ChangeRoleRequest changeRoleRequest) throws ApiException {
-        com.squareup.okhttp.Call call = addUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, null, null);
+    public ApiResponse<Void> addUserRolesWithHttpInfo(ChangeRoleRequest changeRoleRequest, String organizationId, String username) throws ApiException {
+        com.squareup.okhttp.Call call = addUserRolesValidateBeforeCall(changeRoleRequest, organizationId, username, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Add role(s) to user (asynchronously)
      * 
+     * @param changeRoleRequest changeRoleRequest (required)
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addUserRolesAsync(String organizationId, String username, ChangeRoleRequest changeRoleRequest, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call addUserRolesAsync(ChangeRoleRequest changeRoleRequest, String organizationId, String username, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -204,7 +204,7 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addUserRolesValidateBeforeCall(changeRoleRequest, organizationId, username, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -451,15 +451,15 @@ public class AccountsApi {
     }
     /**
      * Build call for findUsers
-     * @param usernamePrefix  (optional)
-     * @param offset Start with the n-th element (optional)
+     * @param usernamePrefix Find users starting with this prefix. (required)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call findUsersCall(String usernamePrefix, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call findUsersCall(String usernamePrefix, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -467,12 +467,12 @@ public class AccountsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (usernamePrefix != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("usernamePrefix", usernamePrefix));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (usernamePrefix != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("usernamePrefix", usernamePrefix));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -507,10 +507,15 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call findUsersValidateBeforeCall(String usernamePrefix, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call findUsersValidateBeforeCall(String usernamePrefix, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'usernamePrefix' is set
+        if (usernamePrefix == null) {
+            throw new ApiException("Missing the required parameter 'usernamePrefix' when calling findUsers(Async)");
+        }
         
 
-        com.squareup.okhttp.Call call = findUsersCall(usernamePrefix, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = findUsersCall(usernamePrefix, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -518,28 +523,28 @@ public class AccountsApi {
     /**
      * Find users
      * 
-     * @param usernamePrefix  (optional)
-     * @param offset Start with the n-th element (optional)
+     * @param usernamePrefix Find users starting with this prefix. (required)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return PaginatedUserPresentationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedUserPresentationResponse findUsers(String usernamePrefix, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedUserPresentationResponse> resp = findUsersWithHttpInfo(usernamePrefix, offset, limit);
+    public PaginatedUserPresentationResponse findUsers(String usernamePrefix, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<PaginatedUserPresentationResponse> resp = findUsersWithHttpInfo(usernamePrefix, limit, offset);
         return resp.getData();
     }
 
     /**
      * Find users
      * 
-     * @param usernamePrefix  (optional)
-     * @param offset Start with the n-th element (optional)
+     * @param usernamePrefix Find users starting with this prefix. (required)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;PaginatedUserPresentationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedUserPresentationResponse> findUsersWithHttpInfo(String usernamePrefix, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = findUsersValidateBeforeCall(usernamePrefix, offset, limit, null, null);
+    public ApiResponse<PaginatedUserPresentationResponse> findUsersWithHttpInfo(String usernamePrefix, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = findUsersValidateBeforeCall(usernamePrefix, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<PaginatedUserPresentationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -547,14 +552,14 @@ public class AccountsApi {
     /**
      * Find users (asynchronously)
      * 
-     * @param usernamePrefix  (optional)
-     * @param offset Start with the n-th element (optional)
+     * @param usernamePrefix Find users starting with this prefix. (required)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call findUsersAsync(String usernamePrefix, Integer offset, Integer limit, final ApiCallback<PaginatedUserPresentationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call findUsersAsync(String usernamePrefix, Integer limit, Integer offset, final ApiCallback<PaginatedUserPresentationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -575,7 +580,7 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = findUsersValidateBeforeCall(usernamePrefix, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = findUsersValidateBeforeCall(usernamePrefix, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedUserPresentationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -583,14 +588,14 @@ public class AccountsApi {
     /**
      * Build call for getAllOrganizationRoles
      * @param organizationId organizationId (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllOrganizationRolesCall(String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllOrganizationRolesCall(String organizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -599,10 +604,10 @@ public class AccountsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -637,7 +642,7 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllOrganizationRolesValidateBeforeCall(String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllOrganizationRolesValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -645,7 +650,7 @@ public class AccountsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getAllOrganizationRolesCall(organizationId, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllOrganizationRolesCall(organizationId, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -654,13 +659,13 @@ public class AccountsApi {
      * List users and their roles
      * Listing users and their roles in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return PaginatedUserRolesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedUserRolesResponse getAllOrganizationRoles(String organizationId, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedUserRolesResponse> resp = getAllOrganizationRolesWithHttpInfo(organizationId, offset, limit);
+    public PaginatedUserRolesResponse getAllOrganizationRoles(String organizationId, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<PaginatedUserRolesResponse> resp = getAllOrganizationRolesWithHttpInfo(organizationId, limit, offset);
         return resp.getData();
     }
 
@@ -668,13 +673,13 @@ public class AccountsApi {
      * List users and their roles
      * Listing users and their roles in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;PaginatedUserRolesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedUserRolesResponse> getAllOrganizationRolesWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = getAllOrganizationRolesValidateBeforeCall(organizationId, offset, limit, null, null);
+    public ApiResponse<PaginatedUserRolesResponse> getAllOrganizationRolesWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = getAllOrganizationRolesValidateBeforeCall(organizationId, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<PaginatedUserRolesResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -683,13 +688,13 @@ public class AccountsApi {
      * List users and their roles (asynchronously)
      * Listing users and their roles in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllOrganizationRolesAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedUserRolesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllOrganizationRolesAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<PaginatedUserRolesResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -710,22 +715,22 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllOrganizationRolesValidateBeforeCall(organizationId, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllOrganizationRolesValidateBeforeCall(organizationId, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedUserRolesResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for getOrganizationsOfUser
-     * @param role role (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param role role (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getOrganizationsOfUserCall(String role, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getOrganizationsOfUserCall(Integer limit, Integer offset, String role, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -733,12 +738,12 @@ public class AccountsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (role != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("role", role));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (role != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("role", role));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -773,10 +778,10 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getOrganizationsOfUserValidateBeforeCall(String role, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getOrganizationsOfUserValidateBeforeCall(Integer limit, Integer offset, String role, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = getOrganizationsOfUserCall(role, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrganizationsOfUserCall(limit, offset, role, progressListener, progressRequestListener);
         return call;
 
     }
@@ -784,28 +789,28 @@ public class AccountsApi {
     /**
      * Retrieve organizations of user
      * 
-     * @param role role (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param role role (optional)
      * @return PaginatedOrganizationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedOrganizationResponse getOrganizationsOfUser(String role, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedOrganizationResponse> resp = getOrganizationsOfUserWithHttpInfo(role, offset, limit);
+    public PaginatedOrganizationResponse getOrganizationsOfUser(Integer limit, Integer offset, String role) throws ApiException {
+        ApiResponse<PaginatedOrganizationResponse> resp = getOrganizationsOfUserWithHttpInfo(limit, offset, role);
         return resp.getData();
     }
 
     /**
      * Retrieve organizations of user
      * 
-     * @param role role (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param role role (optional)
      * @return ApiResponse&lt;PaginatedOrganizationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedOrganizationResponse> getOrganizationsOfUserWithHttpInfo(String role, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = getOrganizationsOfUserValidateBeforeCall(role, offset, limit, null, null);
+    public ApiResponse<PaginatedOrganizationResponse> getOrganizationsOfUserWithHttpInfo(Integer limit, Integer offset, String role) throws ApiException {
+        com.squareup.okhttp.Call call = getOrganizationsOfUserValidateBeforeCall(limit, offset, role, null, null);
         Type localVarReturnType = new TypeToken<PaginatedOrganizationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -813,14 +818,14 @@ public class AccountsApi {
     /**
      * Retrieve organizations of user (asynchronously)
      * 
-     * @param role role (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param role role (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrganizationsOfUserAsync(String role, Integer offset, Integer limit, final ApiCallback<PaginatedOrganizationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrganizationsOfUserAsync(Integer limit, Integer offset, String role, final ApiCallback<PaginatedOrganizationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -841,7 +846,7 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getOrganizationsOfUserValidateBeforeCall(role, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getOrganizationsOfUserValidateBeforeCall(limit, offset, role, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedOrganizationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -850,14 +855,14 @@ public class AccountsApi {
      * Build call for getUserRoles
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getUserRolesCall(String organizationId, String username, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getUserRolesCall(String organizationId, String username, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -867,10 +872,10 @@ public class AccountsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -905,7 +910,7 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUserRolesValidateBeforeCall(String organizationId, String username, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getUserRolesValidateBeforeCall(String organizationId, String username, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -918,7 +923,7 @@ public class AccountsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getUserRolesCall(organizationId, username, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUserRolesCall(organizationId, username, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -928,13 +933,13 @@ public class AccountsApi {
      * 
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return PaginatedStringResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedStringResponse getUserRoles(String organizationId, String username, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedStringResponse> resp = getUserRolesWithHttpInfo(organizationId, username, offset, limit);
+    public PaginatedStringResponse getUserRoles(String organizationId, String username, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<PaginatedStringResponse> resp = getUserRolesWithHttpInfo(organizationId, username, limit, offset);
         return resp.getData();
     }
 
@@ -943,13 +948,13 @@ public class AccountsApi {
      * 
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;PaginatedStringResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedStringResponse> getUserRolesWithHttpInfo(String organizationId, String username, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, offset, limit, null, null);
+    public ApiResponse<PaginatedStringResponse> getUserRolesWithHttpInfo(String organizationId, String username, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<PaginatedStringResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -959,13 +964,13 @@ public class AccountsApi {
      * 
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUserRolesAsync(String organizationId, String username, Integer offset, Integer limit, final ApiCallback<PaginatedStringResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserRolesAsync(String organizationId, String username, Integer limit, Integer offset, final ApiCallback<PaginatedStringResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -986,7 +991,7 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedStringResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -994,14 +999,14 @@ public class AccountsApi {
     /**
      * Build call for getUsersOfOrganization
      * @param organizationId organizationId (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getUsersOfOrganizationCall(String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getUsersOfOrganizationCall(String organizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1010,10 +1015,10 @@ public class AccountsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1048,7 +1053,7 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getUsersOfOrganizationValidateBeforeCall(String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getUsersOfOrganizationValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -1056,7 +1061,7 @@ public class AccountsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getUsersOfOrganizationCall(organizationId, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUsersOfOrganizationCall(organizationId, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1065,13 +1070,13 @@ public class AccountsApi {
      * Find users in organization
      * Finding users in the specified organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return PaginatedUserPresentationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedUserPresentationResponse getUsersOfOrganization(String organizationId, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedUserPresentationResponse> resp = getUsersOfOrganizationWithHttpInfo(organizationId, offset, limit);
+    public PaginatedUserPresentationResponse getUsersOfOrganization(String organizationId, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<PaginatedUserPresentationResponse> resp = getUsersOfOrganizationWithHttpInfo(organizationId, limit, offset);
         return resp.getData();
     }
 
@@ -1079,13 +1084,13 @@ public class AccountsApi {
      * Find users in organization
      * Finding users in the specified organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;PaginatedUserPresentationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedUserPresentationResponse> getUsersOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = getUsersOfOrganizationValidateBeforeCall(organizationId, offset, limit, null, null);
+    public ApiResponse<PaginatedUserPresentationResponse> getUsersOfOrganizationWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = getUsersOfOrganizationValidateBeforeCall(organizationId, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<PaginatedUserPresentationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1094,13 +1099,13 @@ public class AccountsApi {
      * Find users in organization (asynchronously)
      * Finding users in the specified organization in a paginated manner.
      * @param organizationId organizationId (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUsersOfOrganizationAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedUserPresentationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUsersOfOrganizationAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<PaginatedUserPresentationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1121,21 +1126,21 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getUsersOfOrganizationValidateBeforeCall(organizationId, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getUsersOfOrganizationValidateBeforeCall(organizationId, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedUserPresentationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for inviteUsers
-     * @param organizationId The namespace of the organization where users should be invited (required)
      * @param invitationList invitationList (required)
+     * @param organizationId The namespace of the organization where users should be invited (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call inviteUsersCall(String organizationId, OrganizationUserInvitationListRequest invitationList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call inviteUsersCall(OrganizationUserInvitationListRequest invitationList, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = invitationList;
 
         // create path and map variables
@@ -1178,20 +1183,20 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call inviteUsersValidateBeforeCall(String organizationId, OrganizationUserInvitationListRequest invitationList, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'organizationId' is set
-        if (organizationId == null) {
-            throw new ApiException("Missing the required parameter 'organizationId' when calling inviteUsers(Async)");
-        }
+    private com.squareup.okhttp.Call inviteUsersValidateBeforeCall(OrganizationUserInvitationListRequest invitationList, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'invitationList' is set
         if (invitationList == null) {
             throw new ApiException("Missing the required parameter 'invitationList' when calling inviteUsers(Async)");
         }
         
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling inviteUsers(Async)");
+        }
+        
 
-        com.squareup.okhttp.Call call = inviteUsersCall(organizationId, invitationList, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = inviteUsersCall(invitationList, organizationId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1199,37 +1204,37 @@ public class AccountsApi {
     /**
      * Invite Users
      * 
-     * @param organizationId The namespace of the organization where users should be invited (required)
      * @param invitationList invitationList (required)
+     * @param organizationId The namespace of the organization where users should be invited (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void inviteUsers(String organizationId, OrganizationUserInvitationListRequest invitationList) throws ApiException {
-        inviteUsersWithHttpInfo(organizationId, invitationList);
+    public void inviteUsers(OrganizationUserInvitationListRequest invitationList, String organizationId) throws ApiException {
+        inviteUsersWithHttpInfo(invitationList, organizationId);
     }
 
     /**
      * Invite Users
      * 
-     * @param organizationId The namespace of the organization where users should be invited (required)
      * @param invitationList invitationList (required)
+     * @param organizationId The namespace of the organization where users should be invited (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> inviteUsersWithHttpInfo(String organizationId, OrganizationUserInvitationListRequest invitationList) throws ApiException {
-        com.squareup.okhttp.Call call = inviteUsersValidateBeforeCall(organizationId, invitationList, null, null);
+    public ApiResponse<Void> inviteUsersWithHttpInfo(OrganizationUserInvitationListRequest invitationList, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = inviteUsersValidateBeforeCall(invitationList, organizationId, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Invite Users (asynchronously)
      * 
-     * @param organizationId The namespace of the organization where users should be invited (required)
      * @param invitationList invitationList (required)
+     * @param organizationId The namespace of the organization where users should be invited (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call inviteUsersAsync(String organizationId, OrganizationUserInvitationListRequest invitationList, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call inviteUsersAsync(OrganizationUserInvitationListRequest invitationList, String organizationId, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1250,21 +1255,21 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = inviteUsersValidateBeforeCall(organizationId, invitationList, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = inviteUsersValidateBeforeCall(invitationList, organizationId, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
     /**
      * Build call for listAllRoles
-     * @param privilege If specified the roles will be filtered containing that privilege. (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param privilege If specified the roles will be filtered containing that privilege. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listAllRolesCall(String privilege, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listAllRolesCall(Integer limit, Integer offset, String privilege, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1272,12 +1277,12 @@ public class AccountsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (privilege != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("privilege", privilege));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (privilege != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("privilege", privilege));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1312,10 +1317,10 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listAllRolesValidateBeforeCall(String privilege, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listAllRolesValidateBeforeCall(Integer limit, Integer offset, String privilege, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = listAllRolesCall(privilege, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listAllRolesCall(limit, offset, privilege, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1323,28 +1328,28 @@ public class AccountsApi {
     /**
      * List roles
      * Listing of roles.
-     * @param privilege If specified the roles will be filtered containing that privilege. (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param privilege If specified the roles will be filtered containing that privilege. (optional)
      * @return RoleResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public RoleResponse listAllRoles(String privilege, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<RoleResponse> resp = listAllRolesWithHttpInfo(privilege, offset, limit);
+    public RoleResponse listAllRoles(Integer limit, Integer offset, String privilege) throws ApiException {
+        ApiResponse<RoleResponse> resp = listAllRolesWithHttpInfo(limit, offset, privilege);
         return resp.getData();
     }
 
     /**
      * List roles
      * Listing of roles.
-     * @param privilege If specified the roles will be filtered containing that privilege. (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param privilege If specified the roles will be filtered containing that privilege. (optional)
      * @return ApiResponse&lt;RoleResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<RoleResponse> listAllRolesWithHttpInfo(String privilege, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = listAllRolesValidateBeforeCall(privilege, offset, limit, null, null);
+    public ApiResponse<RoleResponse> listAllRolesWithHttpInfo(Integer limit, Integer offset, String privilege) throws ApiException {
+        com.squareup.okhttp.Call call = listAllRolesValidateBeforeCall(limit, offset, privilege, null, null);
         Type localVarReturnType = new TypeToken<RoleResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1352,14 +1357,14 @@ public class AccountsApi {
     /**
      * List roles (asynchronously)
      * Listing of roles.
-     * @param privilege If specified the roles will be filtered containing that privilege. (optional)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param privilege If specified the roles will be filtered containing that privilege. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAllRolesAsync(String privilege, Integer offset, Integer limit, final ApiCallback<RoleResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAllRolesAsync(Integer limit, Integer offset, String privilege, final ApiCallback<RoleResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1380,7 +1385,7 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listAllRolesValidateBeforeCall(privilege, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listAllRolesValidateBeforeCall(limit, offset, privilege, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<RoleResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -1627,15 +1632,15 @@ public class AccountsApi {
     }
     /**
      * Build call for removeUserRoles
+     * @param changeRoleRequest changeRoleRequest (required)
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call removeUserRolesCall(String organizationId, String username, ChangeRoleRequest changeRoleRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call removeUserRolesCall(ChangeRoleRequest changeRoleRequest, String organizationId, String username, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = changeRoleRequest;
 
         // create path and map variables
@@ -1679,7 +1684,12 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call removeUserRolesValidateBeforeCall(String organizationId, String username, ChangeRoleRequest changeRoleRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call removeUserRolesValidateBeforeCall(ChangeRoleRequest changeRoleRequest, String organizationId, String username, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'changeRoleRequest' is set
+        if (changeRoleRequest == null) {
+            throw new ApiException("Missing the required parameter 'changeRoleRequest' when calling removeUserRoles(Async)");
+        }
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -1691,13 +1701,8 @@ public class AccountsApi {
             throw new ApiException("Missing the required parameter 'username' when calling removeUserRoles(Async)");
         }
         
-        // verify the required parameter 'changeRoleRequest' is set
-        if (changeRoleRequest == null) {
-            throw new ApiException("Missing the required parameter 'changeRoleRequest' when calling removeUserRoles(Async)");
-        }
-        
 
-        com.squareup.okhttp.Call call = removeUserRolesCall(organizationId, username, changeRoleRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeUserRolesCall(changeRoleRequest, organizationId, username, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1705,40 +1710,40 @@ public class AccountsApi {
     /**
      * Remove role(s) from user
      * 
+     * @param changeRoleRequest changeRoleRequest (required)
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void removeUserRoles(String organizationId, String username, ChangeRoleRequest changeRoleRequest) throws ApiException {
-        removeUserRolesWithHttpInfo(organizationId, username, changeRoleRequest);
+    public void removeUserRoles(ChangeRoleRequest changeRoleRequest, String organizationId, String username) throws ApiException {
+        removeUserRolesWithHttpInfo(changeRoleRequest, organizationId, username);
     }
 
     /**
      * Remove role(s) from user
      * 
+     * @param changeRoleRequest changeRoleRequest (required)
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> removeUserRolesWithHttpInfo(String organizationId, String username, ChangeRoleRequest changeRoleRequest) throws ApiException {
-        com.squareup.okhttp.Call call = removeUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, null, null);
+    public ApiResponse<Void> removeUserRolesWithHttpInfo(ChangeRoleRequest changeRoleRequest, String organizationId, String username) throws ApiException {
+        com.squareup.okhttp.Call call = removeUserRolesValidateBeforeCall(changeRoleRequest, organizationId, username, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Remove role(s) from user (asynchronously)
      * 
+     * @param changeRoleRequest changeRoleRequest (required)
      * @param organizationId The namespace of the organization (required)
      * @param username username (required)
-     * @param changeRoleRequest changeRoleRequest (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call removeUserRolesAsync(String organizationId, String username, ChangeRoleRequest changeRoleRequest, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeUserRolesAsync(ChangeRoleRequest changeRoleRequest, String organizationId, String username, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1759,7 +1764,7 @@ public class AccountsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = removeUserRolesValidateBeforeCall(organizationId, username, changeRoleRequest, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeUserRolesValidateBeforeCall(changeRoleRequest, organizationId, username, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

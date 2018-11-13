@@ -25,11 +25,12 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-13T11:21:42.764Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-13T14:14:01.617Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -180,7 +181,7 @@ public class ApiError {
   private String message = null;
 
   @SerializedName("errorId")
-  private String errorId = null;
+  private UUID errorId = null;
 
   public ApiError code(CodeEnum code) {
     this.code = code;
@@ -241,7 +242,7 @@ public class ApiError {
     this.message = message;
   }
 
-  public ApiError errorId(String errorId) {
+  public ApiError errorId(UUID errorId) {
     this.errorId = errorId;
     return this;
   }
@@ -251,11 +252,11 @@ public class ApiError {
    * @return errorId
   **/
   @ApiModelProperty(required = true, value = "")
-  public String getErrorId() {
+  public UUID getErrorId() {
     return errorId;
   }
 
-  public void setErrorId(String errorId) {
+  public void setErrorId(UUID errorId) {
     this.errorId = errorId;
   }
 

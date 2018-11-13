@@ -62,22 +62,22 @@ public class PublicServicesApi {
 
     /**
      * Build call for getPublicDocument
-     * @param organizationId organizationId (required)
-     * @param id4n id4n (required)
      * @param fileName fileName (required)
+     * @param id4n id4n (required)
+     * @param organizationId organizationId (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getPublicDocumentCall(String organizationId, String id4n, String fileName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getPublicDocumentCall(String fileName, String id4n, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata"
-            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
+            .replaceAll("\\{" + "fileName" + "\\}", apiClient.escapeString(fileName.toString()))
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
-            .replaceAll("\\{" + "fileName" + "\\}", apiClient.escapeString(fileName.toString()));
+            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -115,11 +115,11 @@ public class PublicServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getPublicDocumentValidateBeforeCall(String organizationId, String id4n, String fileName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getPublicDocumentValidateBeforeCall(String fileName, String id4n, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'organizationId' is set
-        if (organizationId == null) {
-            throw new ApiException("Missing the required parameter 'organizationId' when calling getPublicDocument(Async)");
+        // verify the required parameter 'fileName' is set
+        if (fileName == null) {
+            throw new ApiException("Missing the required parameter 'fileName' when calling getPublicDocument(Async)");
         }
         
         // verify the required parameter 'id4n' is set
@@ -127,13 +127,13 @@ public class PublicServicesApi {
             throw new ApiException("Missing the required parameter 'id4n' when calling getPublicDocument(Async)");
         }
         
-        // verify the required parameter 'fileName' is set
-        if (fileName == null) {
-            throw new ApiException("Missing the required parameter 'fileName' when calling getPublicDocument(Async)");
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getPublicDocument(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = getPublicDocumentCall(organizationId, id4n, fileName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPublicDocumentCall(fileName, id4n, organizationId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -141,28 +141,28 @@ public class PublicServicesApi {
     /**
      * Retrieve a public document (meta-data only, no content)
      * 
-     * @param organizationId organizationId (required)
-     * @param id4n id4n (required)
      * @param fileName fileName (required)
+     * @param id4n id4n (required)
+     * @param organizationId organizationId (required)
      * @return Document
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Document getPublicDocument(String organizationId, String id4n, String fileName) throws ApiException {
-        ApiResponse<Document> resp = getPublicDocumentWithHttpInfo(organizationId, id4n, fileName);
+    public Document getPublicDocument(String fileName, String id4n, String organizationId) throws ApiException {
+        ApiResponse<Document> resp = getPublicDocumentWithHttpInfo(fileName, id4n, organizationId);
         return resp.getData();
     }
 
     /**
      * Retrieve a public document (meta-data only, no content)
      * 
-     * @param organizationId organizationId (required)
-     * @param id4n id4n (required)
      * @param fileName fileName (required)
+     * @param id4n id4n (required)
+     * @param organizationId organizationId (required)
      * @return ApiResponse&lt;Document&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Document> getPublicDocumentWithHttpInfo(String organizationId, String id4n, String fileName) throws ApiException {
-        com.squareup.okhttp.Call call = getPublicDocumentValidateBeforeCall(organizationId, id4n, fileName, null, null);
+    public ApiResponse<Document> getPublicDocumentWithHttpInfo(String fileName, String id4n, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = getPublicDocumentValidateBeforeCall(fileName, id4n, organizationId, null, null);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -170,14 +170,14 @@ public class PublicServicesApi {
     /**
      * Retrieve a public document (meta-data only, no content) (asynchronously)
      * 
-     * @param organizationId organizationId (required)
-     * @param id4n id4n (required)
      * @param fileName fileName (required)
+     * @param id4n id4n (required)
+     * @param organizationId organizationId (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getPublicDocumentAsync(String organizationId, String id4n, String fileName, final ApiCallback<Document> callback) throws ApiException {
+    public com.squareup.okhttp.Call getPublicDocumentAsync(String fileName, String id4n, String organizationId, final ApiCallback<Document> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -198,7 +198,7 @@ public class PublicServicesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getPublicDocumentValidateBeforeCall(organizationId, id4n, fileName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getPublicDocumentValidateBeforeCall(fileName, id4n, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Document>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -222,10 +222,10 @@ public class PublicServicesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (type != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("type", type));
         if (interpolate != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("interpolate", interpolate));
+        if (type != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("type", type));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -465,16 +465,16 @@ public class PublicServicesApi {
     /**
      * Build call for listAllPublicDocuments
      * @param id4n id4n (required)
+     * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param organizationId organizationId (optional)
      * @param owner Filter by owner organization (optional)
-     * @param offset Start with the n-th element (optional)
-     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listAllPublicDocumentsCall(String id4n, String organizationId, String owner, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listAllPublicDocumentsCall(String id4n, Integer limit, Integer offset, String organizationId, String owner, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -483,14 +483,14 @@ public class PublicServicesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (organizationId != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
         if (owner != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("owner", owner));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
-        if (limit != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -525,7 +525,7 @@ public class PublicServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listAllPublicDocumentsValidateBeforeCall(String id4n, String organizationId, String owner, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listAllPublicDocumentsValidateBeforeCall(String id4n, Integer limit, Integer offset, String organizationId, String owner, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
@@ -533,7 +533,7 @@ public class PublicServicesApi {
         }
         
 
-        com.squareup.okhttp.Call call = listAllPublicDocumentsCall(id4n, organizationId, owner, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listAllPublicDocumentsCall(id4n, limit, offset, organizationId, owner, progressListener, progressRequestListener);
         return call;
 
     }
@@ -542,15 +542,15 @@ public class PublicServicesApi {
      * List public documents
      * Listing all public documents of an id4n
      * @param id4n id4n (required)
+     * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param organizationId organizationId (optional)
      * @param owner Filter by owner organization (optional)
-     * @param offset Start with the n-th element (optional)
-     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedDocumentResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedDocumentResponse listAllPublicDocuments(String id4n, String organizationId, String owner, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedDocumentResponse> resp = listAllPublicDocumentsWithHttpInfo(id4n, organizationId, owner, offset, limit);
+    public PaginatedDocumentResponse listAllPublicDocuments(String id4n, Integer limit, Integer offset, String organizationId, String owner) throws ApiException {
+        ApiResponse<PaginatedDocumentResponse> resp = listAllPublicDocumentsWithHttpInfo(id4n, limit, offset, organizationId, owner);
         return resp.getData();
     }
 
@@ -558,15 +558,15 @@ public class PublicServicesApi {
      * List public documents
      * Listing all public documents of an id4n
      * @param id4n id4n (required)
+     * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param organizationId organizationId (optional)
      * @param owner Filter by owner organization (optional)
-     * @param offset Start with the n-th element (optional)
-     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedDocumentResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedDocumentResponse> listAllPublicDocumentsWithHttpInfo(String id4n, String organizationId, String owner, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = listAllPublicDocumentsValidateBeforeCall(id4n, organizationId, owner, offset, limit, null, null);
+    public ApiResponse<PaginatedDocumentResponse> listAllPublicDocumentsWithHttpInfo(String id4n, Integer limit, Integer offset, String organizationId, String owner) throws ApiException {
+        com.squareup.okhttp.Call call = listAllPublicDocumentsValidateBeforeCall(id4n, limit, offset, organizationId, owner, null, null);
         Type localVarReturnType = new TypeToken<PaginatedDocumentResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -575,15 +575,15 @@ public class PublicServicesApi {
      * List public documents (asynchronously)
      * Listing all public documents of an id4n
      * @param id4n id4n (required)
+     * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param organizationId organizationId (optional)
      * @param owner Filter by owner organization (optional)
-     * @param offset Start with the n-th element (optional)
-     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAllPublicDocumentsAsync(String id4n, String organizationId, String owner, Integer offset, Integer limit, final ApiCallback<PaginatedDocumentResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAllPublicDocumentsAsync(String id4n, Integer limit, Integer offset, String organizationId, String owner, final ApiCallback<PaginatedDocumentResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -604,7 +604,7 @@ public class PublicServicesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listAllPublicDocumentsValidateBeforeCall(id4n, organizationId, owner, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listAllPublicDocumentsValidateBeforeCall(id4n, limit, offset, organizationId, owner, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedDocumentResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -612,14 +612,14 @@ public class PublicServicesApi {
     /**
      * Build call for listPublicHistory
      * @param id4n GUID to retrieve the history for (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listPublicHistoryCall(String id4n, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listPublicHistoryCall(String id4n, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -628,10 +628,10 @@ public class PublicServicesApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (limit != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -666,7 +666,7 @@ public class PublicServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listPublicHistoryValidateBeforeCall(String id4n, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listPublicHistoryValidateBeforeCall(String id4n, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
@@ -674,7 +674,7 @@ public class PublicServicesApi {
         }
         
 
-        com.squareup.okhttp.Call call = listPublicHistoryCall(id4n, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listPublicHistoryCall(id4n, limit, offset, progressListener, progressRequestListener);
         return call;
 
     }
@@ -683,13 +683,13 @@ public class PublicServicesApi {
      * Shows the public history of the given GUID
      * Only contains public history items
      * @param id4n GUID to retrieve the history for (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return PaginatedHistoryItemResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedHistoryItemResponse listPublicHistory(String id4n, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedHistoryItemResponse> resp = listPublicHistoryWithHttpInfo(id4n, offset, limit);
+    public PaginatedHistoryItemResponse listPublicHistory(String id4n, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<PaginatedHistoryItemResponse> resp = listPublicHistoryWithHttpInfo(id4n, limit, offset);
         return resp.getData();
     }
 
@@ -697,13 +697,13 @@ public class PublicServicesApi {
      * Shows the public history of the given GUID
      * Only contains public history items
      * @param id4n GUID to retrieve the history for (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @return ApiResponse&lt;PaginatedHistoryItemResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedHistoryItemResponse> listPublicHistoryWithHttpInfo(String id4n, Integer offset, Integer limit) throws ApiException {
-        com.squareup.okhttp.Call call = listPublicHistoryValidateBeforeCall(id4n, offset, limit, null, null);
+    public ApiResponse<PaginatedHistoryItemResponse> listPublicHistoryWithHttpInfo(String id4n, Integer limit, Integer offset) throws ApiException {
+        com.squareup.okhttp.Call call = listPublicHistoryValidateBeforeCall(id4n, limit, offset, null, null);
         Type localVarReturnType = new TypeToken<PaginatedHistoryItemResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -712,13 +712,13 @@ public class PublicServicesApi {
      * Shows the public history of the given GUID (asynchronously)
      * Only contains public history items
      * @param id4n GUID to retrieve the history for (required)
-     * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
+     * @param offset Start with the n-th element (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listPublicHistoryAsync(String id4n, Integer offset, Integer limit, final ApiCallback<PaginatedHistoryItemResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listPublicHistoryAsync(String id4n, Integer limit, Integer offset, final ApiCallback<PaginatedHistoryItemResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -739,7 +739,7 @@ public class PublicServicesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listPublicHistoryValidateBeforeCall(id4n, offset, limit, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listPublicHistoryValidateBeforeCall(id4n, limit, offset, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedHistoryItemResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -869,22 +869,22 @@ public class PublicServicesApi {
     }
     /**
      * Build call for readPublicDocument
-     * @param organizationId organizationId (required)
-     * @param id4n id4n (required)
      * @param fileName fileName (required)
+     * @param id4n id4n (required)
+     * @param organizationId organizationId (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call readPublicDocumentCall(String organizationId, String id4n, String fileName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call readPublicDocumentCall(String fileName, String id4n, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/v1/public/documents/{id4n}/{organizationId}/{fileName}"
-            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()))
+            .replaceAll("\\{" + "fileName" + "\\}", apiClient.escapeString(fileName.toString()))
             .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
-            .replaceAll("\\{" + "fileName" + "\\}", apiClient.escapeString(fileName.toString()));
+            .replaceAll("\\{" + "organizationId" + "\\}", apiClient.escapeString(organizationId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -922,11 +922,11 @@ public class PublicServicesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call readPublicDocumentValidateBeforeCall(String organizationId, String id4n, String fileName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call readPublicDocumentValidateBeforeCall(String fileName, String id4n, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'organizationId' is set
-        if (organizationId == null) {
-            throw new ApiException("Missing the required parameter 'organizationId' when calling readPublicDocument(Async)");
+        // verify the required parameter 'fileName' is set
+        if (fileName == null) {
+            throw new ApiException("Missing the required parameter 'fileName' when calling readPublicDocument(Async)");
         }
         
         // verify the required parameter 'id4n' is set
@@ -934,13 +934,13 @@ public class PublicServicesApi {
             throw new ApiException("Missing the required parameter 'id4n' when calling readPublicDocument(Async)");
         }
         
-        // verify the required parameter 'fileName' is set
-        if (fileName == null) {
-            throw new ApiException("Missing the required parameter 'fileName' when calling readPublicDocument(Async)");
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling readPublicDocument(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = readPublicDocumentCall(organizationId, id4n, fileName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = readPublicDocumentCall(fileName, id4n, organizationId, progressListener, progressRequestListener);
         return call;
 
     }
@@ -948,28 +948,28 @@ public class PublicServicesApi {
     /**
      * Read public document contents
      * 
-     * @param organizationId organizationId (required)
-     * @param id4n id4n (required)
      * @param fileName fileName (required)
+     * @param id4n id4n (required)
+     * @param organizationId organizationId (required)
      * @return byte[]
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public byte[] readPublicDocument(String organizationId, String id4n, String fileName) throws ApiException {
-        ApiResponse<byte[]> resp = readPublicDocumentWithHttpInfo(organizationId, id4n, fileName);
+    public byte[] readPublicDocument(String fileName, String id4n, String organizationId) throws ApiException {
+        ApiResponse<byte[]> resp = readPublicDocumentWithHttpInfo(fileName, id4n, organizationId);
         return resp.getData();
     }
 
     /**
      * Read public document contents
      * 
-     * @param organizationId organizationId (required)
-     * @param id4n id4n (required)
      * @param fileName fileName (required)
+     * @param id4n id4n (required)
+     * @param organizationId organizationId (required)
      * @return ApiResponse&lt;byte[]&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<byte[]> readPublicDocumentWithHttpInfo(String organizationId, String id4n, String fileName) throws ApiException {
-        com.squareup.okhttp.Call call = readPublicDocumentValidateBeforeCall(organizationId, id4n, fileName, null, null);
+    public ApiResponse<byte[]> readPublicDocumentWithHttpInfo(String fileName, String id4n, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = readPublicDocumentValidateBeforeCall(fileName, id4n, organizationId, null, null);
         Type localVarReturnType = new TypeToken<byte[]>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -977,14 +977,14 @@ public class PublicServicesApi {
     /**
      * Read public document contents (asynchronously)
      * 
-     * @param organizationId organizationId (required)
-     * @param id4n id4n (required)
      * @param fileName fileName (required)
+     * @param id4n id4n (required)
+     * @param organizationId organizationId (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call readPublicDocumentAsync(String organizationId, String id4n, String fileName, final ApiCallback<byte[]> callback) throws ApiException {
+    public com.squareup.okhttp.Call readPublicDocumentAsync(String fileName, String id4n, String organizationId, final ApiCallback<byte[]> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1005,7 +1005,7 @@ public class PublicServicesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = readPublicDocumentValidateBeforeCall(organizationId, id4n, fileName, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = readPublicDocumentValidateBeforeCall(fileName, id4n, organizationId, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<byte[]>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

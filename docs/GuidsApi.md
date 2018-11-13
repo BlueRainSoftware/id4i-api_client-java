@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="addGuidAlias"></a>
 # **addGuidAlias**
-> addGuidAlias(id4n, aliasType, alias)
+> addGuidAlias(alias, aliasType, id4n)
 
 Add alias for GUID or Collection
 
@@ -41,11 +41,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | The GUID or Collection to operate on
-String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 GuidAlias alias = new GuidAlias(); // GuidAlias | The alias to add or update
+String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
+String id4n = "id4n_example"; // String | The GUID or Collection to operate on
 try {
-    apiInstance.addGuidAlias(id4n, aliasType, alias);
+    apiInstance.addGuidAlias(alias, aliasType, id4n);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#addGuidAlias");
     e.printStackTrace();
@@ -56,9 +56,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID or Collection to operate on |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
  **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
+ **id4n** | **String**| The GUID or Collection to operate on |
 
 ### Return type
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 <a name="getCollections"></a>
 # **getCollections**
-> PaginatedGuidCollectionResponse getCollections(id4n, organizationId, offset, limit)
+> PaginatedGuidCollectionResponse getCollections(id4n, limit, offset, organizationId)
 
 Retrieve collections of an ID
 
@@ -155,11 +155,11 @@ Authorization.setApiKey("YOUR API KEY");
 
 GuidsApi apiInstance = new GuidsApi();
 String id4n = "id4n_example"; // String | The ID which the collections should contain
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
 String organizationId = "organizationId_example"; // String | The organization holding the collections.
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedGuidCollectionResponse result = apiInstance.getCollections(id4n, organizationId, offset, limit);
+    PaginatedGuidCollectionResponse result = apiInstance.getCollections(id4n, limit, offset, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#getCollections");
@@ -172,9 +172,9 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The ID which the collections should contain |
- **organizationId** | **String**| The organization holding the collections. | [optional]
- **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **organizationId** | **String**| The organization holding the collections. | [optional]
 
 ### Return type
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 <a name="getGuidsWithoutCollection"></a>
 # **getGuidsWithoutCollection**
-> PaginatedResponseOfGuid getGuidsWithoutCollection(organizationId, offset, limit)
+> PaginatedResponseOfGuid getGuidsWithoutCollection(organizationId, limit, offset)
 
 Retrieve GUIDs not in any collection
 
@@ -322,10 +322,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 GuidsApi apiInstance = new GuidsApi();
 String organizationId = "organizationId_example"; // String | The namespace of the organization to search GUIDs for
-Integer offset = 56; // Integer | Start with the n-th element
-Integer limit = 56; // Integer | The maximum count of returned elements
+Integer limit = 100; // Integer | The maximum count of returned elements
+Integer offset = 0; // Integer | Start with the n-th element
 try {
-    PaginatedResponseOfGuid result = apiInstance.getGuidsWithoutCollection(organizationId, offset, limit);
+    PaginatedResponseOfGuid result = apiInstance.getGuidsWithoutCollection(organizationId, limit, offset);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#getGuidsWithoutCollection");
@@ -338,8 +338,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| The namespace of the organization to search GUIDs for |
- **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
 
 ### Return type
 
@@ -411,7 +411,7 @@ Name | Type | Description  | Notes
 
 <a name="removeGuidAlias"></a>
 # **removeGuidAlias**
-> removeGuidAlias(id4n, aliasType)
+> removeGuidAlias(aliasType, id4n)
 
 Remove aliases from GUID or Collection
 
@@ -435,10 +435,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 GuidsApi apiInstance = new GuidsApi();
-String id4n = "id4n_example"; // String | The GUID or Collection to operate on
 String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
+String id4n = "id4n_example"; // String | The GUID or Collection to operate on
 try {
-    apiInstance.removeGuidAlias(id4n, aliasType);
+    apiInstance.removeGuidAlias(aliasType, id4n);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#removeGuidAlias");
     e.printStackTrace();
@@ -449,8 +449,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The GUID or Collection to operate on |
  **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
+ **id4n** | **String**| The GUID or Collection to operate on |
 
 ### Return type
 
