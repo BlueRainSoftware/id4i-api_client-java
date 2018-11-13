@@ -32,7 +32,6 @@ import de.id4i.api.model.Document;
 import de.id4i.api.model.DocumentUpdate;
 import java.io.File;
 import de.id4i.api.model.PaginatedDocumentResponse;
-import de.id4i.api.model.ResponseEntity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -287,12 +286,10 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param id4n id4n (required)
      * @param fileName fileName (required)
-     * @return ResponseEntity
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResponseEntity deleteDocument(String organizationId, String id4n, String fileName) throws ApiException {
-        ApiResponse<ResponseEntity> resp = deleteDocumentWithHttpInfo(organizationId, id4n, fileName);
-        return resp.getData();
+    public void deleteDocument(String organizationId, String id4n, String fileName) throws ApiException {
+        deleteDocumentWithHttpInfo(organizationId, id4n, fileName);
     }
 
     /**
@@ -301,13 +298,12 @@ public class StorageApi {
      * @param organizationId organizationId (required)
      * @param id4n id4n (required)
      * @param fileName fileName (required)
-     * @return ApiResponse&lt;ResponseEntity&gt;
+     * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResponseEntity> deleteDocumentWithHttpInfo(String organizationId, String id4n, String fileName) throws ApiException {
+    public ApiResponse<Void> deleteDocumentWithHttpInfo(String organizationId, String id4n, String fileName) throws ApiException {
         com.squareup.okhttp.Call call = deleteDocumentValidateBeforeCall(organizationId, id4n, fileName, null, null);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
+        return apiClient.execute(call);
     }
 
     /**
@@ -320,7 +316,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteDocumentAsync(String organizationId, String id4n, String fileName, final ApiCallback<ResponseEntity> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteDocumentAsync(String organizationId, String id4n, String fileName, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -342,8 +338,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = deleteDocumentValidateBeforeCall(organizationId, id4n, fileName, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ResponseEntity>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
+        apiClient.executeAsync(call, callback);
         return call;
     }
     /**
