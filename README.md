@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.9.5-SNAPSHOT
 - Package version: 
-    - Build date: 2018-11-12T22:02:42.775Z
+    - Build date: 2018-11-13T06:52:26.706Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -259,8 +259,6 @@ Class | Method | HTTP request | Description
  - [Id4n](docs/Id4n.md)
  - [Id4nPresentation](docs/Id4nPresentation.md)
  - [Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
- - [InputStream](docs/InputStream.md)
- - [InputStreamResource](docs/InputStreamResource.md)
  - [ListOfId4ns](docs/ListOfId4ns.md)
  - [Organization](docs/Organization.md)
  - [OrganizationAddress](docs/OrganizationAddress.md)
@@ -302,7 +300,6 @@ Class | Method | HTTP request | Description
  - [RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
  - [RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
  - [RemovePartnerRequest](docs/RemovePartnerRequest.md)
- - [ResponseEntity](docs/ResponseEntity.md)
  - [Role](docs/Role.md)
  - [RoleResponse](docs/RoleResponse.md)
  - [Route](docs/Route.md)
@@ -313,8 +310,6 @@ Class | Method | HTTP request | Description
  - [SimpleMessageResponse](docs/SimpleMessageResponse.md)
  - [TransferReceiveInfo](docs/TransferReceiveInfo.md)
  - [TransferSendInfo](docs/TransferSendInfo.md)
- - [URI](docs/URI.md)
- - [URL](docs/URL.md)
  - [UserPresentation](docs/UserPresentation.md)
  - [UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [UserRegistrationResponse](docs/UserRegistrationResponse.md)
