@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **code** | [**CodeEnum**](#CodeEnum) |  | 
 **errorList** | [**List&lt;ApiError&gt;**](ApiError.md) |  | 
 **message** | **String** |  | 
-**errorId** | [**UUID**](UUID.md) |  | 
+**errorId** | **String** |  | 
 
 
 <a name="CodeEnum"></a>

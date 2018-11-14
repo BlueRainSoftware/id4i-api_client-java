@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="getPublicDocument"></a>
 # **getPublicDocument**
-> Document getPublicDocument(fileName, id4n, organizationId)
+> Document getPublicDocument(organizationId, id4n, fileName)
 
 Retrieve a public document (meta-data only, no content)
 
@@ -39,11 +39,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
-String fileName = "fileName_example"; // String | fileName
-String id4n = "id4n_example"; // String | id4n
 String organizationId = "organizationId_example"; // String | organizationId
+String id4n = "id4n_example"; // String | id4n
+String fileName = "fileName_example"; // String | fileName
 try {
-    Document result = apiInstance.getPublicDocument(fileName, id4n, organizationId);
+    Document result = apiInstance.getPublicDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicServicesApi#getPublicDocument");
@@ -55,9 +55,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileName** | **String**| fileName |
- **id4n** | **String**| id4n |
  **organizationId** | **String**| organizationId |
+ **id4n** | **String**| id4n |
+ **fileName** | **String**| fileName |
 
 ### Return type
 
@@ -175,7 +175,7 @@ No authorization required
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
-> PaginatedDocumentResponse listAllPublicDocuments(id4n, limit, offset, organizationId, owner)
+> PaginatedDocumentResponse listAllPublicDocuments(id4n, organizationId, owner, offset, limit)
 
 List public documents
 
@@ -200,12 +200,12 @@ Authorization.setApiKey("YOUR API KEY");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
 String id4n = "id4n_example"; // String | id4n
-Integer limit = 100; // Integer | The maximum count of returned elements
-Integer offset = 0; // Integer | Start with the n-th element
 String organizationId = "organizationId_example"; // String | organizationId
 String owner = "owner_example"; // String | Filter by owner organization
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listAllPublicDocuments(id4n, limit, offset, organizationId, owner);
+    PaginatedDocumentResponse result = apiInstance.listAllPublicDocuments(id4n, organizationId, owner, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicServicesApi#listAllPublicDocuments");
@@ -218,10 +218,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **limit** | **Integer**| The maximum count of returned elements | [optional]
- **offset** | **Integer**| Start with the n-th element | [optional]
  **organizationId** | **String**| organizationId | [optional]
  **owner** | **String**| Filter by owner organization | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 <a name="listPublicHistory"></a>
 # **listPublicHistory**
-> PaginatedHistoryItemResponse listPublicHistory(id4n, limit, offset)
+> PaginatedHistoryItemResponse listPublicHistory(id4n, offset, limit)
 
 Shows the public history of the given GUID
 
@@ -263,10 +263,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
 String id4n = "id4n_example"; // String | GUID to retrieve the history for
-Integer limit = 100; // Integer | The maximum count of returned elements
-Integer offset = 0; // Integer | Start with the n-th element
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedHistoryItemResponse result = apiInstance.listPublicHistory(id4n, limit, offset);
+    PaginatedHistoryItemResponse result = apiInstance.listPublicHistory(id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicServicesApi#listPublicHistory");
@@ -279,8 +279,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| GUID to retrieve the history for |
- **limit** | **Integer**| The maximum count of returned elements | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 <a name="readPublicDocument"></a>
 # **readPublicDocument**
-> byte[] readPublicDocument(fileName, id4n, organizationId)
+> byte[] readPublicDocument(organizationId, id4n, fileName)
 
 Read public document contents
 
@@ -372,11 +372,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 PublicServicesApi apiInstance = new PublicServicesApi();
-String fileName = "fileName_example"; // String | fileName
-String id4n = "id4n_example"; // String | id4n
 String organizationId = "organizationId_example"; // String | organizationId
+String id4n = "id4n_example"; // String | id4n
+String fileName = "fileName_example"; // String | fileName
 try {
-    byte[] result = apiInstance.readPublicDocument(fileName, id4n, organizationId);
+    byte[] result = apiInstance.readPublicDocument(organizationId, id4n, fileName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicServicesApi#readPublicDocument");
@@ -388,9 +388,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fileName** | **String**| fileName |
- **id4n** | **String**| id4n |
  **organizationId** | **String**| organizationId |
+ **id4n** | **String**| id4n |
+ **fileName** | **String**| fileName |
 
 ### Return type
 

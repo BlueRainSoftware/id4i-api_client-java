@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="addGuidAlias"></a>
 # **addGuidAlias**
-> addGuidAlias(alias, aliasType, id4n)
+> addGuidAlias(id4n, aliasType, alias)
 
 Add alias for GUID or Collection
 
@@ -37,11 +37,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AliasApi apiInstance = new AliasApi();
-GuidAlias alias = new GuidAlias(); // GuidAlias | The alias to add or update
-String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 String id4n = "id4n_example"; // String | The GUID or Collection to operate on
+String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
+GuidAlias alias = new GuidAlias(); // GuidAlias | The alias to add or update
 try {
-    apiInstance.addGuidAlias(alias, aliasType, id4n);
+    apiInstance.addGuidAlias(id4n, aliasType, alias);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#addGuidAlias");
     e.printStackTrace();
@@ -52,9 +52,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
  **id4n** | **String**| The GUID or Collection to operate on |
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
+ **alias** | [**GuidAlias**](GuidAlias.md)| The alias to add or update |
 
 ### Return type
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="removeGuidAlias"></a>
 # **removeGuidAlias**
-> removeGuidAlias(aliasType, id4n)
+> removeGuidAlias(id4n, aliasType)
 
 Remove aliases from GUID or Collection
 
@@ -201,10 +201,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 AliasApi apiInstance = new AliasApi();
-String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 String id4n = "id4n_example"; // String | The GUID or Collection to operate on
+String aliasType = "aliasType_example"; // String | Alias type, see the corresponding API model
 try {
-    apiInstance.removeGuidAlias(aliasType, id4n);
+    apiInstance.removeGuidAlias(id4n, aliasType);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#removeGuidAlias");
     e.printStackTrace();
@@ -215,8 +215,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
  **id4n** | **String**| The GUID or Collection to operate on |
+ **aliasType** | **String**| Alias type, see the corresponding API model | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
 
 ### Return type
 
@@ -233,7 +233,7 @@ null (empty response body)
 
 <a name="searchByAlias"></a>
 # **searchByAlias**
-> PaginatedGuidResponse searchByAlias(alias, aliasType, limit, offset)
+> PaginatedGuidResponse searchByAlias(alias, aliasType, offset, limit)
 
 Search for GUIDs by alias
 
@@ -257,10 +257,10 @@ Authorization.setApiKey("YOUR API KEY");
 AliasApi apiInstance = new AliasApi();
 String alias = "alias_example"; // String | The alias to search for
 String aliasType = "aliasType_example"; // String | Alias type type to search for
-Integer limit = 100; // Integer | The maximum count of returned elements
-Integer offset = 0; // Integer | Start with the n-th element
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedGuidResponse result = apiInstance.searchByAlias(alias, aliasType, limit, offset);
+    PaginatedGuidResponse result = apiInstance.searchByAlias(alias, aliasType, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#searchByAlias");
@@ -274,8 +274,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alias** | **String**| The alias to search for |
  **aliasType** | **String**| Alias type type to search for | [enum: gtin, article, mapp, item, rfid, tracking, eclass, unspsc, product, material, reference]
- **limit** | **Integer**| The maximum count of returned elements | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 

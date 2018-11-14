@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 <a name="getAllRoutes"></a>
 # **getAllRoutes**
-> List&lt;Route&gt; getAllRoutes(id4n, type, interpolate, organizationId)
+> List&lt;Route&gt; getAllRoutes(id4n, type, organizationId, interpolate)
 
 Retrieve all routes of a GUID (or ID4N)
 
@@ -36,10 +36,10 @@ Authorization.setApiKey("YOUR API KEY");
 RoutingApi apiInstance = new RoutingApi();
 String id4n = "id4n_example"; // String | id4n
 String type = "type_example"; // String | The type of route you want to have
-Boolean interpolate = true; // Boolean | interpolate
 String organizationId = "organizationId_example"; // String | organizationId
+Boolean interpolate = true; // Boolean | interpolate
 try {
-    List<Route> result = apiInstance.getAllRoutes(id4n, type, interpolate, organizationId);
+    List<Route> result = apiInstance.getAllRoutes(id4n, type, organizationId, interpolate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getAllRoutes");
@@ -53,8 +53,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **type** | **String**| The type of route you want to have |
- **interpolate** | **Boolean**| interpolate | [optional] [default to true]
  **organizationId** | **String**| organizationId | [optional]
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 <a name="getRoute"></a>
 # **getRoute**
-> Route getRoute(id4n, type, interpolate, privateRoutes, publicRoutes)
+> Route getRoute(id4n, type, privateRoutes, publicRoutes, interpolate)
 
 Retrieve current route of a GUID (or ID4N)
 
@@ -95,11 +95,11 @@ Authorization.setApiKey("YOUR API KEY");
 RoutingApi apiInstance = new RoutingApi();
 String id4n = "id4n_example"; // String | id4n
 String type = "type_example"; // String | The type of route you want to have
-Boolean interpolate = true; // Boolean | interpolate
 Boolean privateRoutes = true; // Boolean | privateRoutes
 Boolean publicRoutes = true; // Boolean | publicRoutes
+Boolean interpolate = true; // Boolean | interpolate
 try {
-    Route result = apiInstance.getRoute(id4n, type, interpolate, privateRoutes, publicRoutes);
+    Route result = apiInstance.getRoute(id4n, type, privateRoutes, publicRoutes, interpolate);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoute");
@@ -113,9 +113,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
  **type** | **String**| The type of route you want to have |
- **interpolate** | **Boolean**| interpolate | [optional] [default to true]
  **privateRoutes** | **Boolean**| privateRoutes | [optional] [default to true]
  **publicRoutes** | **Boolean**| publicRoutes | [optional] [default to true]
+ **interpolate** | **Boolean**| interpolate | [optional] [default to true]
 
 ### Return type
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 <a name="updateRoutingFile"></a>
 # **updateRoutingFile**
-> updateRoutingFile(id4n, rfr)
+> updateRoutingFile(rfr, id4n)
 
 Store routing file
 
@@ -209,10 +209,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 RoutingApi apiInstance = new RoutingApi();
-String id4n = "id4n_example"; // String | id4n
 RoutingFileRequest rfr = new RoutingFileRequest(); // RoutingFileRequest | rfr
+String id4n = "id4n_example"; // String | id4n
 try {
-    apiInstance.updateRoutingFile(id4n, rfr);
+    apiInstance.updateRoutingFile(rfr, id4n);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#updateRoutingFile");
     e.printStackTrace();
@@ -223,8 +223,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4n** | **String**| id4n |
  **rfr** | [**RoutingFileRequest**](RoutingFileRequest.md)| rfr |
+ **id4n** | **String**| id4n |
 
 ### Return type
 

@@ -63,21 +63,21 @@ public class GuidsApi {
 
     /**
      * Build call for addGuidAlias
-     * @param alias The alias to add or update (required)
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param id4n The GUID or Collection to operate on (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
+     * @param alias The alias to add or update (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addGuidAliasCall(GuidAlias alias, String aliasType, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call addGuidAliasCall(String id4n, String aliasType, GuidAlias alias, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = alias;
 
         // create path and map variables
         String localVarPath = "/api/v1/id4ns/{id4n}/alias/{aliasType}"
-            .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()))
-            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
+            .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -115,11 +115,11 @@ public class GuidsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addGuidAliasValidateBeforeCall(GuidAlias alias, String aliasType, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call addGuidAliasValidateBeforeCall(String id4n, String aliasType, GuidAlias alias, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        // verify the required parameter 'alias' is set
-        if (alias == null) {
-            throw new ApiException("Missing the required parameter 'alias' when calling addGuidAlias(Async)");
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling addGuidAlias(Async)");
         }
         
         // verify the required parameter 'aliasType' is set
@@ -127,13 +127,13 @@ public class GuidsApi {
             throw new ApiException("Missing the required parameter 'aliasType' when calling addGuidAlias(Async)");
         }
         
-        // verify the required parameter 'id4n' is set
-        if (id4n == null) {
-            throw new ApiException("Missing the required parameter 'id4n' when calling addGuidAlias(Async)");
+        // verify the required parameter 'alias' is set
+        if (alias == null) {
+            throw new ApiException("Missing the required parameter 'alias' when calling addGuidAlias(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = addGuidAliasCall(alias, aliasType, id4n, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addGuidAliasCall(id4n, aliasType, alias, progressListener, progressRequestListener);
         return call;
 
     }
@@ -141,40 +141,40 @@ public class GuidsApi {
     /**
      * Add alias for GUID or Collection
      * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
-     * @param alias The alias to add or update (required)
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param id4n The GUID or Collection to operate on (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
+     * @param alias The alias to add or update (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void addGuidAlias(GuidAlias alias, String aliasType, String id4n) throws ApiException {
-        addGuidAliasWithHttpInfo(alias, aliasType, id4n);
+    public void addGuidAlias(String id4n, String aliasType, GuidAlias alias) throws ApiException {
+        addGuidAliasWithHttpInfo(id4n, aliasType, alias);
     }
 
     /**
      * Add alias for GUID or Collection
      * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
-     * @param alias The alias to add or update (required)
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param id4n The GUID or Collection to operate on (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
+     * @param alias The alias to add or update (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> addGuidAliasWithHttpInfo(GuidAlias alias, String aliasType, String id4n) throws ApiException {
-        com.squareup.okhttp.Call call = addGuidAliasValidateBeforeCall(alias, aliasType, id4n, null, null);
+    public ApiResponse<Void> addGuidAliasWithHttpInfo(String id4n, String aliasType, GuidAlias alias) throws ApiException {
+        com.squareup.okhttp.Call call = addGuidAliasValidateBeforeCall(id4n, aliasType, alias, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Add alias for GUID or Collection (asynchronously)
      * Adds or replaces aliases for single ID4ns (alias type item and mapp) or groups of ID4ns (alias types gtin, ean and article)
-     * @param alias The alias to add or update (required)
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param id4n The GUID or Collection to operate on (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
+     * @param alias The alias to add or update (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addGuidAliasAsync(GuidAlias alias, String aliasType, String id4n, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call addGuidAliasAsync(String id4n, String aliasType, GuidAlias alias, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -195,7 +195,7 @@ public class GuidsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addGuidAliasValidateBeforeCall(alias, aliasType, id4n, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addGuidAliasValidateBeforeCall(id4n, aliasType, alias, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }
@@ -324,15 +324,15 @@ public class GuidsApi {
     /**
      * Build call for getCollections
      * @param id4n The ID which the collections should contain (required)
-     * @param limit The maximum count of returned elements (optional)
-     * @param offset Start with the n-th element (optional)
      * @param organizationId The organization holding the collections. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getCollectionsCall(String id4n, Integer limit, Integer offset, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getCollectionsCall(String id4n, String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -341,12 +341,12 @@ public class GuidsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (limit != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (organizationId != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -381,7 +381,7 @@ public class GuidsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getCollectionsValidateBeforeCall(String id4n, Integer limit, Integer offset, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getCollectionsValidateBeforeCall(String id4n, String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
@@ -389,7 +389,7 @@ public class GuidsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getCollectionsCall(id4n, limit, offset, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCollectionsCall(id4n, organizationId, offset, limit, progressListener, progressRequestListener);
         return call;
 
     }
@@ -398,14 +398,14 @@ public class GuidsApi {
      * Retrieve collections of an ID
      * Retrieving all owned or holding collections the specified id4n is assigned to.
      * @param id4n The ID which the collections should contain (required)
-     * @param limit The maximum count of returned elements (optional)
-     * @param offset Start with the n-th element (optional)
      * @param organizationId The organization holding the collections. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedGuidCollectionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedGuidCollectionResponse getCollections(String id4n, Integer limit, Integer offset, String organizationId) throws ApiException {
-        ApiResponse<PaginatedGuidCollectionResponse> resp = getCollectionsWithHttpInfo(id4n, limit, offset, organizationId);
+    public PaginatedGuidCollectionResponse getCollections(String id4n, String organizationId, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedGuidCollectionResponse> resp = getCollectionsWithHttpInfo(id4n, organizationId, offset, limit);
         return resp.getData();
     }
 
@@ -413,14 +413,14 @@ public class GuidsApi {
      * Retrieve collections of an ID
      * Retrieving all owned or holding collections the specified id4n is assigned to.
      * @param id4n The ID which the collections should contain (required)
-     * @param limit The maximum count of returned elements (optional)
-     * @param offset Start with the n-th element (optional)
      * @param organizationId The organization holding the collections. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedGuidCollectionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedGuidCollectionResponse> getCollectionsWithHttpInfo(String id4n, Integer limit, Integer offset, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getCollectionsValidateBeforeCall(id4n, limit, offset, organizationId, null, null);
+    public ApiResponse<PaginatedGuidCollectionResponse> getCollectionsWithHttpInfo(String id4n, String organizationId, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = getCollectionsValidateBeforeCall(id4n, organizationId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<PaginatedGuidCollectionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -429,14 +429,14 @@ public class GuidsApi {
      * Retrieve collections of an ID (asynchronously)
      * Retrieving all owned or holding collections the specified id4n is assigned to.
      * @param id4n The ID which the collections should contain (required)
-     * @param limit The maximum count of returned elements (optional)
-     * @param offset Start with the n-th element (optional)
      * @param organizationId The organization holding the collections. (optional)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getCollectionsAsync(String id4n, Integer limit, Integer offset, String organizationId, final ApiCallback<PaginatedGuidCollectionResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCollectionsAsync(String id4n, String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedGuidCollectionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -457,7 +457,7 @@ public class GuidsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getCollectionsValidateBeforeCall(id4n, limit, offset, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getCollectionsValidateBeforeCall(id4n, organizationId, offset, limit, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedGuidCollectionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -711,14 +711,14 @@ public class GuidsApi {
     /**
      * Build call for getGuidsWithoutCollection
      * @param organizationId The namespace of the organization to search GUIDs for (required)
-     * @param limit The maximum count of returned elements (optional)
      * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getGuidsWithoutCollectionCall(String organizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getGuidsWithoutCollectionCall(String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -726,12 +726,12 @@ public class GuidsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (limit != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
         if (organizationId != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -766,7 +766,7 @@ public class GuidsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getGuidsWithoutCollectionValidateBeforeCall(String organizationId, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getGuidsWithoutCollectionValidateBeforeCall(String organizationId, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -774,7 +774,7 @@ public class GuidsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getGuidsWithoutCollectionCall(organizationId, limit, offset, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGuidsWithoutCollectionCall(organizationId, offset, limit, progressListener, progressRequestListener);
         return call;
 
     }
@@ -783,13 +783,13 @@ public class GuidsApi {
      * Retrieve GUIDs not in any collection
      * 
      * @param organizationId The namespace of the organization to search GUIDs for (required)
-     * @param limit The maximum count of returned elements (optional)
      * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedResponseOfGuid
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedResponseOfGuid getGuidsWithoutCollection(String organizationId, Integer limit, Integer offset) throws ApiException {
-        ApiResponse<PaginatedResponseOfGuid> resp = getGuidsWithoutCollectionWithHttpInfo(organizationId, limit, offset);
+    public PaginatedResponseOfGuid getGuidsWithoutCollection(String organizationId, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfGuid> resp = getGuidsWithoutCollectionWithHttpInfo(organizationId, offset, limit);
         return resp.getData();
     }
 
@@ -797,13 +797,13 @@ public class GuidsApi {
      * Retrieve GUIDs not in any collection
      * 
      * @param organizationId The namespace of the organization to search GUIDs for (required)
-     * @param limit The maximum count of returned elements (optional)
      * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedResponseOfGuid&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedResponseOfGuid> getGuidsWithoutCollectionWithHttpInfo(String organizationId, Integer limit, Integer offset) throws ApiException {
-        com.squareup.okhttp.Call call = getGuidsWithoutCollectionValidateBeforeCall(organizationId, limit, offset, null, null);
+    public ApiResponse<PaginatedResponseOfGuid> getGuidsWithoutCollectionWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = getGuidsWithoutCollectionValidateBeforeCall(organizationId, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<PaginatedResponseOfGuid>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -812,13 +812,13 @@ public class GuidsApi {
      * Retrieve GUIDs not in any collection (asynchronously)
      * 
      * @param organizationId The namespace of the organization to search GUIDs for (required)
-     * @param limit The maximum count of returned elements (optional)
      * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getGuidsWithoutCollectionAsync(String organizationId, Integer limit, Integer offset, final ApiCallback<PaginatedResponseOfGuid> callback) throws ApiException {
+    public com.squareup.okhttp.Call getGuidsWithoutCollectionAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfGuid> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -839,7 +839,7 @@ public class GuidsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getGuidsWithoutCollectionValidateBeforeCall(organizationId, limit, offset, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getGuidsWithoutCollectionValidateBeforeCall(organizationId, offset, limit, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedResponseOfGuid>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -969,20 +969,20 @@ public class GuidsApi {
     }
     /**
      * Build call for removeGuidAlias
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param id4n The GUID or Collection to operate on (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call removeGuidAliasCall(String aliasType, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call removeGuidAliasCall(String id4n, String aliasType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/api/v1/id4ns/{id4n}/alias/{aliasType}"
-            .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()))
-            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()))
+            .replaceAll("\\{" + "aliasType" + "\\}", apiClient.escapeString(aliasType.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1020,20 +1020,20 @@ public class GuidsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call removeGuidAliasValidateBeforeCall(String aliasType, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'aliasType' is set
-        if (aliasType == null) {
-            throw new ApiException("Missing the required parameter 'aliasType' when calling removeGuidAlias(Async)");
-        }
+    private com.squareup.okhttp.Call removeGuidAliasValidateBeforeCall(String id4n, String aliasType, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
             throw new ApiException("Missing the required parameter 'id4n' when calling removeGuidAlias(Async)");
         }
         
+        // verify the required parameter 'aliasType' is set
+        if (aliasType == null) {
+            throw new ApiException("Missing the required parameter 'aliasType' when calling removeGuidAlias(Async)");
+        }
+        
 
-        com.squareup.okhttp.Call call = removeGuidAliasCall(aliasType, id4n, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeGuidAliasCall(id4n, aliasType, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1041,37 +1041,37 @@ public class GuidsApi {
     /**
      * Remove aliases from GUID or Collection
      * Remove the alias of the given type
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param id4n The GUID or Collection to operate on (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void removeGuidAlias(String aliasType, String id4n) throws ApiException {
-        removeGuidAliasWithHttpInfo(aliasType, id4n);
+    public void removeGuidAlias(String id4n, String aliasType) throws ApiException {
+        removeGuidAliasWithHttpInfo(id4n, aliasType);
     }
 
     /**
      * Remove aliases from GUID or Collection
      * Remove the alias of the given type
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param id4n The GUID or Collection to operate on (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> removeGuidAliasWithHttpInfo(String aliasType, String id4n) throws ApiException {
-        com.squareup.okhttp.Call call = removeGuidAliasValidateBeforeCall(aliasType, id4n, null, null);
+    public ApiResponse<Void> removeGuidAliasWithHttpInfo(String id4n, String aliasType) throws ApiException {
+        com.squareup.okhttp.Call call = removeGuidAliasValidateBeforeCall(id4n, aliasType, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Remove aliases from GUID or Collection (asynchronously)
      * Remove the alias of the given type
-     * @param aliasType Alias type, see the corresponding API model (required)
      * @param id4n The GUID or Collection to operate on (required)
+     * @param aliasType Alias type, see the corresponding API model (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call removeGuidAliasAsync(String aliasType, String id4n, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call removeGuidAliasAsync(String id4n, String aliasType, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1092,7 +1092,7 @@ public class GuidsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = removeGuidAliasValidateBeforeCall(aliasType, id4n, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = removeGuidAliasValidateBeforeCall(id4n, aliasType, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

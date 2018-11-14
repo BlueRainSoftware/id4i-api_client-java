@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.9.5-SNAPSHOT
 - Package version: 
-    - Build date: 2018-11-13T22:02:30.669Z
+    - Build date: 2018-11-14T15:03:04.556Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -92,11 +92,11 @@ Please follow the [installation](#installation) instruction and execute the foll
         //Authorization.setApiKeyPrefix("Token");
 
     AccountsApi apiInstance = new AccountsApi();
-        ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
         String organizationId = "organizationId_example"; // String | The namespace of the organization
         String username = "username_example"; // String | username
+        ChangeRoleRequest changeRoleRequest = new ChangeRoleRequest(); // ChangeRoleRequest | changeRoleRequest
     try {
-    apiInstance.addUserRoles(changeRoleRequest, organizationId, username);
+    apiInstance.addUserRoles(organizationId, username, changeRoleRequest);
     } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#addUserRoles");
     e.printStackTrace();

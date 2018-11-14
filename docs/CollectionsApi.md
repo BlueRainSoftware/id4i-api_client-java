@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, label, labelPrefix, limit, offset, type)
+> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix)
 
 Get collections of organization
 
@@ -253,13 +253,13 @@ Authorization.setApiKey("YOUR API KEY");
 
 CollectionsApi apiInstance = new CollectionsApi();
 String organizationId = "organizationId_example"; // String | The namespace of the organization
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
+String type = "type_example"; // String | Filter by this type
 String label = "label_example"; // String | Filter by this label
 String labelPrefix = "labelPrefix_example"; // String | Filter by this label prefix
-Integer limit = 100; // Integer | The maximum count of returned elements
-Integer offset = 0; // Integer | Start with the n-th element
-String type = "type_example"; // String | Filter by this type
 try {
-    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, label, labelPrefix, limit, offset, type);
+    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#getAllCollectionsOfOrganization");
@@ -272,11 +272,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organizationId** | **String**| The namespace of the organization |
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]
  **label** | **String**| Filter by this label | [optional]
  **labelPrefix** | **String**| Filter by this label prefix | [optional]
- **limit** | **Integer**| The maximum count of returned elements | [optional]
- **offset** | **Integer**| Start with the n-th element | [optional]
- **type** | **String**| Filter by this type | [optional] [enum: ROUTING_COLLECTION, LOGISTIC_COLLECTION, LABELLED_COLLECTION]
 
 ### Return type
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 <a name="listElementsOfCollection"></a>
 # **listElementsOfCollection**
-> PaginatedGuidResponse listElementsOfCollection(id4n, limit, offset)
+> PaginatedGuidResponse listElementsOfCollection(id4n, offset, limit)
 
 List contents of the collection
 
@@ -316,10 +316,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
-Integer limit = 100; // Integer | The maximum count of returned elements
-Integer offset = 0; // Integer | Start with the n-th element
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedGuidResponse result = apiInstance.listElementsOfCollection(id4n, limit, offset);
+    PaginatedGuidResponse result = apiInstance.listElementsOfCollection(id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#listElementsOfCollection");
@@ -332,8 +332,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| id4n |
- **limit** | **Integer**| The maximum count of returned elements | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 

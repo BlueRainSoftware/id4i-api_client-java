@@ -61,14 +61,14 @@ public class RoutingApi {
      * Build call for getAllRoutes
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param interpolate interpolate (optional, default to true)
      * @param organizationId organizationId (optional)
+     * @param interpolate interpolate (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllRoutesCall(String id4n, String type, Boolean interpolate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllRoutesCall(String id4n, String type, String organizationId, Boolean interpolate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -78,10 +78,10 @@ public class RoutingApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (interpolate != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("interpolate", interpolate));
         if (organizationId != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
+        if (interpolate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("interpolate", interpolate));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -116,7 +116,7 @@ public class RoutingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllRoutesValidateBeforeCall(String id4n, String type, Boolean interpolate, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllRoutesValidateBeforeCall(String id4n, String type, String organizationId, Boolean interpolate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
@@ -129,7 +129,7 @@ public class RoutingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getAllRoutesCall(id4n, type, interpolate, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllRoutesCall(id4n, type, organizationId, interpolate, progressListener, progressRequestListener);
         return call;
 
     }
@@ -139,13 +139,13 @@ public class RoutingApi {
      * 
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param interpolate interpolate (optional, default to true)
      * @param organizationId organizationId (optional)
+     * @param interpolate interpolate (optional, default to true)
      * @return List&lt;Route&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<Route> getAllRoutes(String id4n, String type, Boolean interpolate, String organizationId) throws ApiException {
-        ApiResponse<List<Route>> resp = getAllRoutesWithHttpInfo(id4n, type, interpolate, organizationId);
+    public List<Route> getAllRoutes(String id4n, String type, String organizationId, Boolean interpolate) throws ApiException {
+        ApiResponse<List<Route>> resp = getAllRoutesWithHttpInfo(id4n, type, organizationId, interpolate);
         return resp.getData();
     }
 
@@ -154,13 +154,13 @@ public class RoutingApi {
      * 
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param interpolate interpolate (optional, default to true)
      * @param organizationId organizationId (optional)
+     * @param interpolate interpolate (optional, default to true)
      * @return ApiResponse&lt;List&lt;Route&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<Route>> getAllRoutesWithHttpInfo(String id4n, String type, Boolean interpolate, String organizationId) throws ApiException {
-        com.squareup.okhttp.Call call = getAllRoutesValidateBeforeCall(id4n, type, interpolate, organizationId, null, null);
+    public ApiResponse<List<Route>> getAllRoutesWithHttpInfo(String id4n, String type, String organizationId, Boolean interpolate) throws ApiException {
+        com.squareup.okhttp.Call call = getAllRoutesValidateBeforeCall(id4n, type, organizationId, interpolate, null, null);
         Type localVarReturnType = new TypeToken<List<Route>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -170,13 +170,13 @@ public class RoutingApi {
      * 
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param interpolate interpolate (optional, default to true)
      * @param organizationId organizationId (optional)
+     * @param interpolate interpolate (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllRoutesAsync(String id4n, String type, Boolean interpolate, String organizationId, final ApiCallback<List<Route>> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllRoutesAsync(String id4n, String type, String organizationId, Boolean interpolate, final ApiCallback<List<Route>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -197,7 +197,7 @@ public class RoutingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllRoutesValidateBeforeCall(id4n, type, interpolate, organizationId, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllRoutesValidateBeforeCall(id4n, type, organizationId, interpolate, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<Route>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -206,15 +206,15 @@ public class RoutingApi {
      * Build call for getRoute
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param interpolate interpolate (optional, default to true)
      * @param privateRoutes privateRoutes (optional, default to true)
      * @param publicRoutes publicRoutes (optional, default to true)
+     * @param interpolate interpolate (optional, default to true)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getRouteCall(String id4n, String type, Boolean interpolate, Boolean privateRoutes, Boolean publicRoutes, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getRouteCall(String id4n, String type, Boolean privateRoutes, Boolean publicRoutes, Boolean interpolate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -224,12 +224,12 @@ public class RoutingApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (interpolate != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("interpolate", interpolate));
         if (privateRoutes != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("privateRoutes", privateRoutes));
         if (publicRoutes != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("publicRoutes", publicRoutes));
+        if (interpolate != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("interpolate", interpolate));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -264,7 +264,7 @@ public class RoutingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getRouteValidateBeforeCall(String id4n, String type, Boolean interpolate, Boolean privateRoutes, Boolean publicRoutes, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getRouteValidateBeforeCall(String id4n, String type, Boolean privateRoutes, Boolean publicRoutes, Boolean interpolate, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
@@ -277,7 +277,7 @@ public class RoutingApi {
         }
         
 
-        com.squareup.okhttp.Call call = getRouteCall(id4n, type, interpolate, privateRoutes, publicRoutes, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getRouteCall(id4n, type, privateRoutes, publicRoutes, interpolate, progressListener, progressRequestListener);
         return call;
 
     }
@@ -287,14 +287,14 @@ public class RoutingApi {
      * 
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param interpolate interpolate (optional, default to true)
      * @param privateRoutes privateRoutes (optional, default to true)
      * @param publicRoutes publicRoutes (optional, default to true)
+     * @param interpolate interpolate (optional, default to true)
      * @return Route
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Route getRoute(String id4n, String type, Boolean interpolate, Boolean privateRoutes, Boolean publicRoutes) throws ApiException {
-        ApiResponse<Route> resp = getRouteWithHttpInfo(id4n, type, interpolate, privateRoutes, publicRoutes);
+    public Route getRoute(String id4n, String type, Boolean privateRoutes, Boolean publicRoutes, Boolean interpolate) throws ApiException {
+        ApiResponse<Route> resp = getRouteWithHttpInfo(id4n, type, privateRoutes, publicRoutes, interpolate);
         return resp.getData();
     }
 
@@ -303,14 +303,14 @@ public class RoutingApi {
      * 
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param interpolate interpolate (optional, default to true)
      * @param privateRoutes privateRoutes (optional, default to true)
      * @param publicRoutes publicRoutes (optional, default to true)
+     * @param interpolate interpolate (optional, default to true)
      * @return ApiResponse&lt;Route&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Route> getRouteWithHttpInfo(String id4n, String type, Boolean interpolate, Boolean privateRoutes, Boolean publicRoutes) throws ApiException {
-        com.squareup.okhttp.Call call = getRouteValidateBeforeCall(id4n, type, interpolate, privateRoutes, publicRoutes, null, null);
+    public ApiResponse<Route> getRouteWithHttpInfo(String id4n, String type, Boolean privateRoutes, Boolean publicRoutes, Boolean interpolate) throws ApiException {
+        com.squareup.okhttp.Call call = getRouteValidateBeforeCall(id4n, type, privateRoutes, publicRoutes, interpolate, null, null);
         Type localVarReturnType = new TypeToken<Route>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -320,14 +320,14 @@ public class RoutingApi {
      * 
      * @param id4n id4n (required)
      * @param type The type of route you want to have (required)
-     * @param interpolate interpolate (optional, default to true)
      * @param privateRoutes privateRoutes (optional, default to true)
      * @param publicRoutes publicRoutes (optional, default to true)
+     * @param interpolate interpolate (optional, default to true)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getRouteAsync(String id4n, String type, Boolean interpolate, Boolean privateRoutes, Boolean publicRoutes, final ApiCallback<Route> callback) throws ApiException {
+    public com.squareup.okhttp.Call getRouteAsync(String id4n, String type, Boolean privateRoutes, Boolean publicRoutes, Boolean interpolate, final ApiCallback<Route> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -348,7 +348,7 @@ public class RoutingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getRouteValidateBeforeCall(id4n, type, interpolate, privateRoutes, publicRoutes, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getRouteValidateBeforeCall(id4n, type, privateRoutes, publicRoutes, interpolate, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Route>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -484,14 +484,14 @@ public class RoutingApi {
     }
     /**
      * Build call for updateRoutingFile
-     * @param id4n id4n (required)
      * @param rfr rfr (required)
+     * @param id4n id4n (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateRoutingFileCall(String id4n, RoutingFileRequest rfr, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call updateRoutingFileCall(RoutingFileRequest rfr, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = rfr;
 
         // create path and map variables
@@ -534,20 +534,20 @@ public class RoutingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateRoutingFileValidateBeforeCall(String id4n, RoutingFileRequest rfr, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'id4n' is set
-        if (id4n == null) {
-            throw new ApiException("Missing the required parameter 'id4n' when calling updateRoutingFile(Async)");
-        }
+    private com.squareup.okhttp.Call updateRoutingFileValidateBeforeCall(RoutingFileRequest rfr, String id4n, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'rfr' is set
         if (rfr == null) {
             throw new ApiException("Missing the required parameter 'rfr' when calling updateRoutingFile(Async)");
         }
         
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling updateRoutingFile(Async)");
+        }
+        
 
-        com.squareup.okhttp.Call call = updateRoutingFileCall(id4n, rfr, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateRoutingFileCall(rfr, id4n, progressListener, progressRequestListener);
         return call;
 
     }
@@ -555,37 +555,37 @@ public class RoutingApi {
     /**
      * Store routing file
      * 
-     * @param id4n id4n (required)
      * @param rfr rfr (required)
+     * @param id4n id4n (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void updateRoutingFile(String id4n, RoutingFileRequest rfr) throws ApiException {
-        updateRoutingFileWithHttpInfo(id4n, rfr);
+    public void updateRoutingFile(RoutingFileRequest rfr, String id4n) throws ApiException {
+        updateRoutingFileWithHttpInfo(rfr, id4n);
     }
 
     /**
      * Store routing file
      * 
-     * @param id4n id4n (required)
      * @param rfr rfr (required)
+     * @param id4n id4n (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> updateRoutingFileWithHttpInfo(String id4n, RoutingFileRequest rfr) throws ApiException {
-        com.squareup.okhttp.Call call = updateRoutingFileValidateBeforeCall(id4n, rfr, null, null);
+    public ApiResponse<Void> updateRoutingFileWithHttpInfo(RoutingFileRequest rfr, String id4n) throws ApiException {
+        com.squareup.okhttp.Call call = updateRoutingFileValidateBeforeCall(rfr, id4n, null, null);
         return apiClient.execute(call);
     }
 
     /**
      * Store routing file (asynchronously)
      * 
-     * @param id4n id4n (required)
      * @param rfr rfr (required)
+     * @param id4n id4n (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateRoutingFileAsync(String id4n, RoutingFileRequest rfr, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateRoutingFileAsync(RoutingFileRequest rfr, String id4n, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -606,7 +606,7 @@ public class RoutingApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateRoutingFileValidateBeforeCall(id4n, rfr, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateRoutingFileValidateBeforeCall(rfr, id4n, progressListener, progressRequestListener);
         apiClient.executeAsync(call, callback);
         return call;
     }

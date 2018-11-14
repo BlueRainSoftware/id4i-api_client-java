@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 <a name="addApiKeyPrivilege"></a>
 # **addApiKeyPrivilege**
-> addApiKeyPrivilege(addApiKeyPrivilegeRequest, key)
+> addApiKeyPrivilege(key, addApiKeyPrivilegeRequest)
 
 Add privilege
 
@@ -42,10 +42,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest = new AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
 String key = "key_example"; // String | key
+AddApiKeyPrivilegeRequest addApiKeyPrivilegeRequest = new AddApiKeyPrivilegeRequest(); // AddApiKeyPrivilegeRequest | addApiKeyPrivilegeRequest
 try {
-    apiInstance.addApiKeyPrivilege(addApiKeyPrivilegeRequest, key);
+    apiInstance.addApiKeyPrivilege(key, addApiKeyPrivilegeRequest);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#addApiKeyPrivilege");
     e.printStackTrace();
@@ -56,8 +56,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **addApiKeyPrivilegeRequest** | [**AddApiKeyPrivilegeRequest**](AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest |
  **key** | **String**| key |
+ **addApiKeyPrivilegeRequest** | [**AddApiKeyPrivilegeRequest**](AddApiKeyPrivilegeRequest.md)| addApiKeyPrivilegeRequest |
 
 ### Return type
 
@@ -74,7 +74,7 @@ null (empty response body)
 
 <a name="addApiKeyPrivilegeForId4ns"></a>
 # **addApiKeyPrivilegeForId4ns**
-> addApiKeyPrivilegeForId4ns(id4ns, key, privilege)
+> addApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Add ID4ns of a privilege
 
@@ -96,11 +96,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
 String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
+ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
 try {
-    apiInstance.addApiKeyPrivilegeForId4ns(id4ns, key, privilege);
+    apiInstance.addApiKeyPrivilegeForId4ns(key, privilege, id4ns);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#addApiKeyPrivilegeForId4ns");
     e.printStackTrace();
@@ -111,9 +111,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns |
  **key** | **String**| key |
  **privilege** | **String**| privilege |
+ **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns |
 
 ### Return type
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllApiKeyPrivileges"></a>
 # **listAllApiKeyPrivileges**
-> ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(id4nConcerning, limit, offset)
+> ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(id4nConcerning, offset, limit)
 
 List all privileges
 
@@ -319,10 +319,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 Boolean id4nConcerning = true; // Boolean | id4nConcerning
-Integer limit = 100; // Integer | The maximum count of returned elements
-Integer offset = 0; // Integer | Start with the n-th element
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    ApiKeyPrivilegeInfoResponse result = apiInstance.listAllApiKeyPrivileges(id4nConcerning, limit, offset);
+    ApiKeyPrivilegeInfoResponse result = apiInstance.listAllApiKeyPrivileges(id4nConcerning, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listAllApiKeyPrivileges");
@@ -335,8 +335,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4nConcerning** | **Boolean**| id4nConcerning | [optional]
- **limit** | **Integer**| The maximum count of returned elements | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllApiKeysOfOrganization"></a>
 # **listAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse listAllApiKeysOfOrganization(limit, offset, organizationId)
+> PaginatedApiKeyResponse listAllApiKeysOfOrganization(organizationId, offset, limit)
 
 Find API key by organization
 
@@ -377,11 +377,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-Integer limit = 100; // Integer | The maximum count of returned elements
-Integer offset = 0; // Integer | Start with the n-th element
 String organizationId = "organizationId_example"; // String | The namespace of the organization to search in.
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedApiKeyResponse result = apiInstance.listAllApiKeysOfOrganization(limit, offset, organizationId);
+    PaginatedApiKeyResponse result = apiInstance.listAllApiKeysOfOrganization(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listAllApiKeysOfOrganization");
@@ -393,9 +393,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **limit** | **Integer**| The maximum count of returned elements | [optional]
- **offset** | **Integer**| Start with the n-th element | [optional]
  **organizationId** | **String**| The namespace of the organization to search in. | [optional]
+ **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 <a name="listApiKeyPrivileges"></a>
 # **listApiKeyPrivileges**
-> ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(key, limit, offset)
+> ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(key, offset, limit)
 
 List privileges
 
@@ -435,10 +435,10 @@ Authorization.setApiKey("YOUR API KEY");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
-Integer limit = 100; // Integer | The maximum count of returned elements
-Integer offset = 0; // Integer | Start with the n-th element
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    ApiKeyPrivilegePaginatedResponse result = apiInstance.listApiKeyPrivileges(key, limit, offset);
+    ApiKeyPrivilegePaginatedResponse result = apiInstance.listApiKeyPrivileges(key, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listApiKeyPrivileges");
@@ -451,8 +451,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
- **limit** | **Integer**| The maximum count of returned elements | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 <a name="listId4ns"></a>
 # **listId4ns**
-> Id4nPresentationPaginatedResponse listId4ns(key, privilege, limit, offset)
+> Id4nPresentationPaginatedResponse listId4ns(key, privilege, offset, limit)
 
 ID4ns of a privilege
 
@@ -495,10 +495,10 @@ Authorization.setApiKey("YOUR API KEY");
 ApiKeysApi apiInstance = new ApiKeysApi();
 String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
-Integer limit = 100; // Integer | The maximum count of returned elements
-Integer offset = 0; // Integer | Start with the n-th element
+Integer offset = 56; // Integer | Start with the n-th element
+Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    Id4nPresentationPaginatedResponse result = apiInstance.listId4ns(key, privilege, limit, offset);
+    Id4nPresentationPaginatedResponse result = apiInstance.listId4ns(key, privilege, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listId4ns");
@@ -512,8 +512,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**| key |
  **privilege** | **String**| privilege |
- **limit** | **Integer**| The maximum count of returned elements | [optional]
  **offset** | **Integer**| Start with the n-th element | [optional]
+ **limit** | **Integer**| The maximum count of returned elements | [optional]
 
 ### Return type
 
@@ -584,7 +584,7 @@ null (empty response body)
 
 <a name="removeApiKeyPrivilegeForId4ns"></a>
 # **removeApiKeyPrivilegeForId4ns**
-> removeApiKeyPrivilegeForId4ns(id4ns, key, privilege)
+> removeApiKeyPrivilegeForId4ns(key, privilege, id4ns)
 
 Remove id4ns of a privilege
 
@@ -606,11 +606,11 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
 String key = "key_example"; // String | key
 String privilege = "privilege_example"; // String | privilege
+ListOfId4ns id4ns = new ListOfId4ns(); // ListOfId4ns | id4ns
 try {
-    apiInstance.removeApiKeyPrivilegeForId4ns(id4ns, key, privilege);
+    apiInstance.removeApiKeyPrivilegeForId4ns(key, privilege, id4ns);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#removeApiKeyPrivilegeForId4ns");
     e.printStackTrace();
@@ -621,9 +621,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns |
  **key** | **String**| key |
  **privilege** | **String**| privilege |
+ **id4ns** | [**ListOfId4ns**](ListOfId4ns.md)| id4ns |
 
 ### Return type
 
@@ -640,7 +640,7 @@ null (empty response body)
 
 <a name="updateApiKey"></a>
 # **updateApiKey**
-> updateApiKey(apiKeyChange, key)
+> updateApiKey(key, apiKeyChange)
 
 Update API keys
 
@@ -664,10 +664,10 @@ Authorization.setApiKey("YOUR API KEY");
 //Authorization.setApiKeyPrefix("Token");
 
 ApiKeysApi apiInstance = new ApiKeysApi();
-ApiKeyChangeRequest apiKeyChange = new ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
 String key = "key_example"; // String | The API key to be updated.
+ApiKeyChangeRequest apiKeyChange = new ApiKeyChangeRequest(); // ApiKeyChangeRequest | The new values to apply.
 try {
-    apiInstance.updateApiKey(apiKeyChange, key);
+    apiInstance.updateApiKey(key, apiKeyChange);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#updateApiKey");
     e.printStackTrace();
@@ -678,8 +678,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. |
  **key** | **String**| The API key to be updated. |
+ **apiKeyChange** | [**ApiKeyChangeRequest**](ApiKeyChangeRequest.md)| The new values to apply. |
 
 ### Return type
 

@@ -555,17 +555,17 @@ public class CollectionsApi {
     /**
      * Build call for getAllCollectionsOfOrganization
      * @param organizationId The namespace of the organization (required)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
+     * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
-     * @param limit The maximum count of returned elements (optional)
-     * @param offset Start with the n-th element (optional)
-     * @param type Filter by this type (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationCall(String organizationId, String label, String labelPrefix, Integer limit, Integer offset, String type, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationCall(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -574,16 +574,16 @@ public class CollectionsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (offset != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
+        if (type != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("type", type));
         if (label != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("label", label));
         if (labelPrefix != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("labelPrefix", labelPrefix));
-        if (limit != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
-        if (offset != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
-        if (type != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("type", type));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -618,7 +618,7 @@ public class CollectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllCollectionsOfOrganizationValidateBeforeCall(String organizationId, String label, String labelPrefix, Integer limit, Integer offset, String type, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllCollectionsOfOrganizationValidateBeforeCall(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -626,7 +626,7 @@ public class CollectionsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationCall(organizationId, label, labelPrefix, limit, offset, type, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationCall(organizationId, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
         return call;
 
     }
@@ -635,16 +635,16 @@ public class CollectionsApi {
      * Get collections of organization
      * Retrieving all collections of an organization in a paginated manner.
      * @param organizationId The namespace of the organization (required)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
+     * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
-     * @param limit The maximum count of returned elements (optional)
-     * @param offset Start with the n-th element (optional)
-     * @param type Filter by this type (optional)
      * @return PaginatedGuidCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedGuidCollection getAllCollectionsOfOrganization(String organizationId, String label, String labelPrefix, Integer limit, Integer offset, String type) throws ApiException {
-        ApiResponse<PaginatedGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, label, labelPrefix, limit, offset, type);
+    public PaginatedGuidCollection getAllCollectionsOfOrganization(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
+        ApiResponse<PaginatedGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
         return resp.getData();
     }
 
@@ -652,16 +652,16 @@ public class CollectionsApi {
      * Get collections of organization
      * Retrieving all collections of an organization in a paginated manner.
      * @param organizationId The namespace of the organization (required)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
+     * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
-     * @param limit The maximum count of returned elements (optional)
-     * @param offset Start with the n-th element (optional)
-     * @param type Filter by this type (optional)
      * @return ApiResponse&lt;PaginatedGuidCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(String organizationId, String label, String labelPrefix, Integer limit, Integer offset, String type) throws ApiException {
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, label, labelPrefix, limit, offset, type, null, null);
+    public ApiResponse<PaginatedGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, offset, limit, type, label, labelPrefix, null, null);
         Type localVarReturnType = new TypeToken<PaginatedGuidCollection>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -670,16 +670,16 @@ public class CollectionsApi {
      * Get collections of organization (asynchronously)
      * Retrieving all collections of an organization in a paginated manner.
      * @param organizationId The namespace of the organization (required)
+     * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
+     * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
-     * @param limit The maximum count of returned elements (optional)
-     * @param offset Start with the n-th element (optional)
-     * @param type Filter by this type (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(String organizationId, String label, String labelPrefix, Integer limit, Integer offset, String type, final ApiCallback<PaginatedGuidCollection> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, final ApiCallback<PaginatedGuidCollection> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -700,7 +700,7 @@ public class CollectionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, label, labelPrefix, limit, offset, type, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedGuidCollection>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -708,14 +708,14 @@ public class CollectionsApi {
     /**
      * Build call for listElementsOfCollection
      * @param id4n id4n (required)
-     * @param limit The maximum count of returned elements (optional)
      * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call listElementsOfCollectionCall(String id4n, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call listElementsOfCollectionCall(String id4n, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -724,10 +724,10 @@ public class CollectionsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        if (limit != null)
-        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
         if (offset != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("offset", offset));
+        if (limit != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("limit", limit));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -762,7 +762,7 @@ public class CollectionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call listElementsOfCollectionValidateBeforeCall(String id4n, Integer limit, Integer offset, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call listElementsOfCollectionValidateBeforeCall(String id4n, Integer offset, Integer limit, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'id4n' is set
         if (id4n == null) {
@@ -770,7 +770,7 @@ public class CollectionsApi {
         }
         
 
-        com.squareup.okhttp.Call call = listElementsOfCollectionCall(id4n, limit, offset, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listElementsOfCollectionCall(id4n, offset, limit, progressListener, progressRequestListener);
         return call;
 
     }
@@ -779,13 +779,13 @@ public class CollectionsApi {
      * List contents of the collection
      * 
      * @param id4n id4n (required)
-     * @param limit The maximum count of returned elements (optional)
      * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return PaginatedGuidResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedGuidResponse listElementsOfCollection(String id4n, Integer limit, Integer offset) throws ApiException {
-        ApiResponse<PaginatedGuidResponse> resp = listElementsOfCollectionWithHttpInfo(id4n, limit, offset);
+    public PaginatedGuidResponse listElementsOfCollection(String id4n, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedGuidResponse> resp = listElementsOfCollectionWithHttpInfo(id4n, offset, limit);
         return resp.getData();
     }
 
@@ -793,13 +793,13 @@ public class CollectionsApi {
      * List contents of the collection
      * 
      * @param id4n id4n (required)
-     * @param limit The maximum count of returned elements (optional)
      * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @return ApiResponse&lt;PaginatedGuidResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedGuidResponse> listElementsOfCollectionWithHttpInfo(String id4n, Integer limit, Integer offset) throws ApiException {
-        com.squareup.okhttp.Call call = listElementsOfCollectionValidateBeforeCall(id4n, limit, offset, null, null);
+    public ApiResponse<PaginatedGuidResponse> listElementsOfCollectionWithHttpInfo(String id4n, Integer offset, Integer limit) throws ApiException {
+        com.squareup.okhttp.Call call = listElementsOfCollectionValidateBeforeCall(id4n, offset, limit, null, null);
         Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -808,13 +808,13 @@ public class CollectionsApi {
      * List contents of the collection (asynchronously)
      * 
      * @param id4n id4n (required)
-     * @param limit The maximum count of returned elements (optional)
      * @param offset Start with the n-th element (optional)
+     * @param limit The maximum count of returned elements (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listElementsOfCollectionAsync(String id4n, Integer limit, Integer offset, final ApiCallback<PaginatedGuidResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listElementsOfCollectionAsync(String id4n, Integer offset, Integer limit, final ApiCallback<PaginatedGuidResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -835,7 +835,7 @@ public class CollectionsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = listElementsOfCollectionValidateBeforeCall(id4n, limit, offset, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = listElementsOfCollectionValidateBeforeCall(id4n, offset, limit, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedGuidResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
