@@ -15,9 +15,9 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.3
+- API version: 0.9.5-SNAPSHOT
 - Package version: 
-    - Build date: 2018-11-26T10:49:10.196Z
+    - Build date: 2018-11-26T11:08:09.934Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -32,7 +32,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.9.3</version>
+    <version>0.9.5-SNAPSHOT</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.9.3"
+compile "de.id4i.api:id4i-api-client:0.9.5-SNAPSHOT"
 ```
 
 ### Others
@@ -222,7 +222,6 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**readPublicDocument**](docs/StorageApi.md#readPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName} | Read public document contents
 *StorageApi* | [**updateDocumentMetadata**](docs/StorageApi.md#updateDocumentMetadata) | **PATCH** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Update a document
 *StorageApi* | [**writeToMicrostorage**](docs/StorageApi.md#writeToMicrostorage) | **PUT** /api/v1/microstorage/{id4n}/{organization} | Write data to microstorage
-*TransferApi* | [**getReceiveInfo**](docs/TransferApi.md#getReceiveInfo) | **GET** /api/v1/transfers/{id4n}/receiveInfo | Show transfer information
 *TransferApi* | [**getSendInfo**](docs/TransferApi.md#getSendInfo) | **GET** /api/v1/transfers/{id4n}/sendInfo | Show transfer preparation information
 *TransferApi* | [**prepare**](docs/TransferApi.md#prepare) | **PUT** /api/v1/transfers/{id4n}/sendInfo | Prepare an object for transfer
 *TransferApi* | [**receive**](docs/TransferApi.md#receive) | **PUT** /api/v1/transfers/{id4n}/receiveInfo | Transfer a GUID or collection, obtaining it (i.e. becoming the holder) and if allowed also taking ownership
@@ -260,8 +259,6 @@ Class | Method | HTTP request | Description
  - [Id4n](docs/Id4n.md)
  - [Id4nPresentation](docs/Id4nPresentation.md)
  - [Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
- - [InputStream](docs/InputStream.md)
- - [InputStreamResource](docs/InputStreamResource.md)
  - [ListOfId4ns](docs/ListOfId4ns.md)
  - [Organization](docs/Organization.md)
  - [OrganizationAddress](docs/OrganizationAddress.md)
@@ -277,22 +274,22 @@ Class | Method | HTTP request | Description
  - [PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
  - [PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
  - [PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
- - [PaginatedResponseApiKeyPresentation](docs/PaginatedResponseApiKeyPresentation.md)
- - [PaginatedResponseApiKeyPrivilege](docs/PaginatedResponseApiKeyPrivilege.md)
- - [PaginatedResponseApiKeyPrivilegeInfo](docs/PaginatedResponseApiKeyPrivilegeInfo.md)
- - [PaginatedResponseChangeLogEntry](docs/PaginatedResponseChangeLogEntry.md)
- - [PaginatedResponseCountry](docs/PaginatedResponseCountry.md)
- - [PaginatedResponseDocument](docs/PaginatedResponseDocument.md)
- - [PaginatedResponseGuid](docs/PaginatedResponseGuid.md)
- - [PaginatedResponseGuidCollection](docs/PaginatedResponseGuidCollection.md)
- - [PaginatedResponseHistoryItem](docs/PaginatedResponseHistoryItem.md)
- - [PaginatedResponseId4nPresentation](docs/PaginatedResponseId4nPresentation.md)
- - [PaginatedResponseOrganization](docs/PaginatedResponseOrganization.md)
- - [PaginatedResponsePartnerOrganization](docs/PaginatedResponsePartnerOrganization.md)
- - [PaginatedResponseRole](docs/PaginatedResponseRole.md)
- - [PaginatedResponseUserPresentation](docs/PaginatedResponseUserPresentation.md)
- - [PaginatedResponseUserRoles](docs/PaginatedResponseUserRoles.md)
- - [PaginatedResponsestring](docs/PaginatedResponsestring.md)
+ - [PaginatedResponseOfApiKeyPresentation](docs/PaginatedResponseOfApiKeyPresentation.md)
+ - [PaginatedResponseOfApiKeyPrivilege](docs/PaginatedResponseOfApiKeyPrivilege.md)
+ - [PaginatedResponseOfApiKeyPrivilegeInfo](docs/PaginatedResponseOfApiKeyPrivilegeInfo.md)
+ - [PaginatedResponseOfChangeLogEntry](docs/PaginatedResponseOfChangeLogEntry.md)
+ - [PaginatedResponseOfCountry](docs/PaginatedResponseOfCountry.md)
+ - [PaginatedResponseOfDocument](docs/PaginatedResponseOfDocument.md)
+ - [PaginatedResponseOfGuid](docs/PaginatedResponseOfGuid.md)
+ - [PaginatedResponseOfGuidCollection](docs/PaginatedResponseOfGuidCollection.md)
+ - [PaginatedResponseOfHistoryItem](docs/PaginatedResponseOfHistoryItem.md)
+ - [PaginatedResponseOfId4nPresentation](docs/PaginatedResponseOfId4nPresentation.md)
+ - [PaginatedResponseOfOrganization](docs/PaginatedResponseOfOrganization.md)
+ - [PaginatedResponseOfPartnerOrganization](docs/PaginatedResponseOfPartnerOrganization.md)
+ - [PaginatedResponseOfRole](docs/PaginatedResponseOfRole.md)
+ - [PaginatedResponseOfUserPresentation](docs/PaginatedResponseOfUserPresentation.md)
+ - [PaginatedResponseOfUserRoles](docs/PaginatedResponseOfUserRoles.md)
+ - [PaginatedResponseOfstring](docs/PaginatedResponseOfstring.md)
  - [PaginatedStringResponse](docs/PaginatedStringResponse.md)
  - [PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
  - [PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
@@ -303,7 +300,6 @@ Class | Method | HTTP request | Description
  - [RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
  - [RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
  - [RemovePartnerRequest](docs/RemovePartnerRequest.md)
- - [ResponseEntity](docs/ResponseEntity.md)
  - [Role](docs/Role.md)
  - [RoleResponse](docs/RoleResponse.md)
  - [Route](docs/Route.md)
@@ -314,8 +310,6 @@ Class | Method | HTTP request | Description
  - [SimpleMessageResponse](docs/SimpleMessageResponse.md)
  - [TransferReceiveInfo](docs/TransferReceiveInfo.md)
  - [TransferSendInfo](docs/TransferSendInfo.md)
- - [URI](docs/URI.md)
- - [URL](docs/URL.md)
  - [UserPresentation](docs/UserPresentation.md)
  - [UserRegistrationRequest](docs/UserRegistrationRequest.md)
  - [UserRegistrationResponse](docs/UserRegistrationResponse.md)
