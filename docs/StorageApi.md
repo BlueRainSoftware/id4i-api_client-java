@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteDocument"></a>
 # **deleteDocument**
-> deleteDocument(organizationId, id4n, fileName)
+> ResponseEntity deleteDocument(organizationId, id4n, fileName)
 
 Delete a document
 
@@ -105,7 +105,8 @@ String organizationId = "organizationId_example"; // String | organizationId
 String id4n = "id4n_example"; // String | id4n
 String fileName = "fileName_example"; // String | fileName
 try {
-    apiInstance.deleteDocument(organizationId, id4n, fileName);
+    ResponseEntity result = apiInstance.deleteDocument(organizationId, id4n, fileName);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#deleteDocument");
     e.printStackTrace();
@@ -122,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**ResponseEntity**](ResponseEntity.md)
 
 ### Authorization
 

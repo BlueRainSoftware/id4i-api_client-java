@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 <a name="getGuidsWithoutCollection"></a>
 # **getGuidsWithoutCollection**
-> PaginatedResponseOfGuid getGuidsWithoutCollection(organizationId, offset, limit)
+> PaginatedResponseGuid getGuidsWithoutCollection(organizationId, offset, limit)
 
 Retrieve GUIDs not in any collection
 
@@ -325,7 +325,7 @@ String organizationId = "organizationId_example"; // String | The namespace of t
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedResponseOfGuid result = apiInstance.getGuidsWithoutCollection(organizationId, offset, limit);
+    PaginatedResponseGuid result = apiInstance.getGuidsWithoutCollection(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#getGuidsWithoutCollection");
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
+[**PaginatedResponseGuid**](PaginatedResponseGuid.md)
 
 ### Authorization
 

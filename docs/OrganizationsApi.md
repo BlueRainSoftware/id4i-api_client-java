@@ -752,7 +752,7 @@ Name | Type | Description  | Notes
 
 <a name="getPartnerOrganizations"></a>
 # **getPartnerOrganizations**
-> PaginatedResponseOfPartnerOrganization getPartnerOrganizations(organizationId, offset, limit)
+> PaginatedResponsePartnerOrganization getPartnerOrganizations(organizationId, offset, limit)
 
 Get partners of an organization
 
@@ -780,7 +780,7 @@ String organizationId = "organizationId_example"; // String | The namespace of t
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedResponseOfPartnerOrganization result = apiInstance.getPartnerOrganizations(organizationId, offset, limit);
+    PaginatedResponsePartnerOrganization result = apiInstance.getPartnerOrganizations(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getPartnerOrganizations");
@@ -798,7 +798,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseOfPartnerOrganization**](PaginatedResponseOfPartnerOrganization.md)
+[**PaginatedResponsePartnerOrganization**](PaginatedResponsePartnerOrganization.md)
 
 ### Authorization
 
