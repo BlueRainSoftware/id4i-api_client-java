@@ -175,7 +175,7 @@ No authorization required
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
-> PaginatedDocumentResponse listAllPublicDocuments(id4n, organizationId, owner, offset, limit)
+> PaginatedResponseOfDocument listAllPublicDocuments(id4n, organizationId, owner, offset, limit)
 
 List public documents
 
@@ -205,7 +205,7 @@ String owner = "owner_example"; // String | Filter by owner organization
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listAllPublicDocuments(id4n, organizationId, owner, offset, limit);
+    PaginatedResponseOfDocument result = apiInstance.listAllPublicDocuments(id4n, organizationId, owner, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicServicesApi#listAllPublicDocuments");
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 
 <a name="listPublicHistory"></a>
 # **listPublicHistory**
-> PaginatedHistoryItemResponse listPublicHistory(id4n, offset, limit)
+> PaginatedResponseOfHistoryItem listPublicHistory(id4n, offset, limit)
 
 Shows the public history of the given GUID
 
@@ -266,7 +266,7 @@ String id4n = "id4n_example"; // String | GUID to retrieve the history for
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedHistoryItemResponse result = apiInstance.listPublicHistory(id4n, offset, limit);
+    PaginatedResponseOfHistoryItem result = apiInstance.listPublicHistory(id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PublicServicesApi#listPublicHistory");
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**PaginatedResponseOfHistoryItem**](PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 

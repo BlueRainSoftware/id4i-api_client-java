@@ -32,11 +32,11 @@ import de.id4i.api.model.ApiError;
 import de.id4i.api.model.ApiKeyChangeRequest;
 import de.id4i.api.model.ApiKeyCreationRequest;
 import de.id4i.api.model.ApiKeyPresentation;
-import de.id4i.api.model.ApiKeyPrivilegeInfoResponse;
-import de.id4i.api.model.ApiKeyPrivilegePaginatedResponse;
-import de.id4i.api.model.Id4nPresentationPaginatedResponse;
 import de.id4i.api.model.ListOfId4ns;
-import de.id4i.api.model.PaginatedApiKeyResponse;
+import de.id4i.api.model.PaginatedResponseOfApiKeyPresentation;
+import de.id4i.api.model.PaginatedResponseOfApiKeyPrivilege;
+import de.id4i.api.model.PaginatedResponseOfApiKeyPrivilegeInfo;
+import de.id4i.api.model.PaginatedResponseOfId4nPresentation;
 import de.id4i.api.model.RemoveApiKeyPrivilegeRequest;
 
 import java.lang.reflect.Type;
@@ -766,11 +766,11 @@ public class ApiKeysApi {
      * @param id4nConcerning id4nConcerning (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiKeyPrivilegeInfoResponse
+     * @return PaginatedResponseOfApiKeyPrivilegeInfo
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(Boolean id4nConcerning, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<ApiKeyPrivilegeInfoResponse> resp = listAllApiKeyPrivilegesWithHttpInfo(id4nConcerning, offset, limit);
+    public PaginatedResponseOfApiKeyPrivilegeInfo listAllApiKeyPrivileges(Boolean id4nConcerning, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfApiKeyPrivilegeInfo> resp = listAllApiKeyPrivilegesWithHttpInfo(id4nConcerning, offset, limit);
         return resp.getData();
     }
 
@@ -780,12 +780,12 @@ public class ApiKeysApi {
      * @param id4nConcerning id4nConcerning (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;ApiKeyPrivilegeInfoResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfApiKeyPrivilegeInfo&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiKeyPrivilegeInfoResponse> listAllApiKeyPrivilegesWithHttpInfo(Boolean id4nConcerning, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfApiKeyPrivilegeInfo> listAllApiKeyPrivilegesWithHttpInfo(Boolean id4nConcerning, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = listAllApiKeyPrivilegesValidateBeforeCall(id4nConcerning, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<ApiKeyPrivilegeInfoResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfApiKeyPrivilegeInfo>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -799,7 +799,7 @@ public class ApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAllApiKeyPrivilegesAsync(Boolean id4nConcerning, Integer offset, Integer limit, final ApiCallback<ApiKeyPrivilegeInfoResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAllApiKeyPrivilegesAsync(Boolean id4nConcerning, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfApiKeyPrivilegeInfo> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -821,7 +821,7 @@ public class ApiKeysApi {
         }
 
         com.squareup.okhttp.Call call = listAllApiKeyPrivilegesValidateBeforeCall(id4nConcerning, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ApiKeyPrivilegeInfoResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfApiKeyPrivilegeInfo>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -897,11 +897,11 @@ public class ApiKeysApi {
      * @param organizationId The namespace of the organization to search in. (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedApiKeyResponse
+     * @return PaginatedResponseOfApiKeyPresentation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedApiKeyResponse listAllApiKeysOfOrganization(String organizationId, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedApiKeyResponse> resp = listAllApiKeysOfOrganizationWithHttpInfo(organizationId, offset, limit);
+    public PaginatedResponseOfApiKeyPresentation listAllApiKeysOfOrganization(String organizationId, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfApiKeyPresentation> resp = listAllApiKeysOfOrganizationWithHttpInfo(organizationId, offset, limit);
         return resp.getData();
     }
 
@@ -911,12 +911,12 @@ public class ApiKeysApi {
      * @param organizationId The namespace of the organization to search in. (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedApiKeyResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfApiKeyPresentation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedApiKeyResponse> listAllApiKeysOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfApiKeyPresentation> listAllApiKeysOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = listAllApiKeysOfOrganizationValidateBeforeCall(organizationId, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedApiKeyResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfApiKeyPresentation>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -930,7 +930,7 @@ public class ApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAllApiKeysOfOrganizationAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedApiKeyResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAllApiKeysOfOrganizationAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfApiKeyPresentation> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -952,7 +952,7 @@ public class ApiKeysApi {
         }
 
         com.squareup.okhttp.Call call = listAllApiKeysOfOrganizationValidateBeforeCall(organizationId, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedApiKeyResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfApiKeyPresentation>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1032,11 +1032,11 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiKeyPrivilegePaginatedResponse
+     * @return PaginatedResponseOfApiKeyPrivilege
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(String key, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<ApiKeyPrivilegePaginatedResponse> resp = listApiKeyPrivilegesWithHttpInfo(key, offset, limit);
+    public PaginatedResponseOfApiKeyPrivilege listApiKeyPrivileges(String key, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfApiKeyPrivilege> resp = listApiKeyPrivilegesWithHttpInfo(key, offset, limit);
         return resp.getData();
     }
 
@@ -1046,12 +1046,12 @@ public class ApiKeysApi {
      * @param key key (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;ApiKeyPrivilegePaginatedResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfApiKeyPrivilege&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ApiKeyPrivilegePaginatedResponse> listApiKeyPrivilegesWithHttpInfo(String key, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfApiKeyPrivilege> listApiKeyPrivilegesWithHttpInfo(String key, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = listApiKeyPrivilegesValidateBeforeCall(key, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<ApiKeyPrivilegePaginatedResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfApiKeyPrivilege>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1065,7 +1065,7 @@ public class ApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listApiKeyPrivilegesAsync(String key, Integer offset, Integer limit, final ApiCallback<ApiKeyPrivilegePaginatedResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listApiKeyPrivilegesAsync(String key, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfApiKeyPrivilege> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1087,7 +1087,7 @@ public class ApiKeysApi {
         }
 
         com.squareup.okhttp.Call call = listApiKeyPrivilegesValidateBeforeCall(key, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<ApiKeyPrivilegePaginatedResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfApiKeyPrivilege>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1175,11 +1175,11 @@ public class ApiKeysApi {
      * @param privilege privilege (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return Id4nPresentationPaginatedResponse
+     * @return PaginatedResponseOfId4nPresentation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Id4nPresentationPaginatedResponse listId4ns(String key, String privilege, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<Id4nPresentationPaginatedResponse> resp = listId4nsWithHttpInfo(key, privilege, offset, limit);
+    public PaginatedResponseOfId4nPresentation listId4ns(String key, String privilege, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfId4nPresentation> resp = listId4nsWithHttpInfo(key, privilege, offset, limit);
         return resp.getData();
     }
 
@@ -1190,12 +1190,12 @@ public class ApiKeysApi {
      * @param privilege privilege (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;Id4nPresentationPaginatedResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfId4nPresentation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Id4nPresentationPaginatedResponse> listId4nsWithHttpInfo(String key, String privilege, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfId4nPresentation> listId4nsWithHttpInfo(String key, String privilege, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = listId4nsValidateBeforeCall(key, privilege, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<Id4nPresentationPaginatedResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfId4nPresentation>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1210,7 +1210,7 @@ public class ApiKeysApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listId4nsAsync(String key, String privilege, Integer offset, Integer limit, final ApiCallback<Id4nPresentationPaginatedResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listId4nsAsync(String key, String privilege, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfId4nPresentation> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1232,7 +1232,7 @@ public class ApiKeysApi {
         }
 
         com.squareup.okhttp.Call call = listId4nsValidateBeforeCall(key, privilege, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Id4nPresentationPaginatedResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfId4nPresentation>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

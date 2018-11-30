@@ -35,13 +35,13 @@ import de.id4i.api.model.Organization;
 import de.id4i.api.model.OrganizationAddress;
 import de.id4i.api.model.OrganizationUpdate;
 import de.id4i.api.model.OrganizationUserInvitationListRequest;
-import de.id4i.api.model.PaginatedCountryResponse;
-import de.id4i.api.model.PaginatedGuidCollection;
-import de.id4i.api.model.PaginatedOrganizationResponse;
+import de.id4i.api.model.PaginatedResponseOfCountry;
+import de.id4i.api.model.PaginatedResponseOfGuidCollection;
+import de.id4i.api.model.PaginatedResponseOfOrganization;
 import de.id4i.api.model.PaginatedResponseOfPartnerOrganization;
-import de.id4i.api.model.PaginatedStringResponse;
-import de.id4i.api.model.PaginatedUserPresentationResponse;
-import de.id4i.api.model.PaginatedUserRolesResponse;
+import de.id4i.api.model.PaginatedResponseOfUserPresentation;
+import de.id4i.api.model.PaginatedResponseOfUserRoles;
+import de.id4i.api.model.PaginatedResponseOfstring;
 import de.id4i.api.model.PublicImagePresentation;
 import de.id4i.api.model.RemovePartnerRequest;
 
@@ -1272,11 +1272,11 @@ public class OrganizationsApi {
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
-     * @return PaginatedGuidCollection
+     * @return PaginatedResponseOfGuidCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedGuidCollection getAllCollectionsOfOrganization(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
-        ApiResponse<PaginatedGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+    public PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
+        ApiResponse<PaginatedResponseOfGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
         return resp.getData();
     }
 
@@ -1289,12 +1289,12 @@ public class OrganizationsApi {
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
-     * @return ApiResponse&lt;PaginatedGuidCollection&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfGuidCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
+    public ApiResponse<PaginatedResponseOfGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
         com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, offset, limit, type, label, labelPrefix, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedGuidCollection>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfGuidCollection>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1311,7 +1311,7 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, final ApiCallback<PaginatedGuidCollection> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, final ApiCallback<PaginatedResponseOfGuidCollection> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1333,7 +1333,7 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedGuidCollection>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfGuidCollection>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1413,11 +1413,11 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedUserRolesResponse
+     * @return PaginatedResponseOfUserRoles
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedUserRolesResponse getAllOrganizationRoles(String organizationId, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedUserRolesResponse> resp = getAllOrganizationRolesWithHttpInfo(organizationId, offset, limit);
+    public PaginatedResponseOfUserRoles getAllOrganizationRoles(String organizationId, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfUserRoles> resp = getAllOrganizationRolesWithHttpInfo(organizationId, offset, limit);
         return resp.getData();
     }
 
@@ -1427,12 +1427,12 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedUserRolesResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfUserRoles&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedUserRolesResponse> getAllOrganizationRolesWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfUserRoles> getAllOrganizationRolesWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getAllOrganizationRolesValidateBeforeCall(organizationId, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedUserRolesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfUserRoles>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1446,7 +1446,7 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllOrganizationRolesAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedUserRolesResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllOrganizationRolesAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfUserRoles> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1468,7 +1468,7 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = getAllOrganizationRolesValidateBeforeCall(organizationId, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedUserRolesResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfUserRoles>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1667,11 +1667,11 @@ public class OrganizationsApi {
      * @param role role (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedOrganizationResponse
+     * @return PaginatedResponseOfOrganization
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedOrganizationResponse getOrganizationsOfUser(String role, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedOrganizationResponse> resp = getOrganizationsOfUserWithHttpInfo(role, offset, limit);
+    public PaginatedResponseOfOrganization getOrganizationsOfUser(String role, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfOrganization> resp = getOrganizationsOfUserWithHttpInfo(role, offset, limit);
         return resp.getData();
     }
 
@@ -1681,12 +1681,12 @@ public class OrganizationsApi {
      * @param role role (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedOrganizationResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfOrganization&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedOrganizationResponse> getOrganizationsOfUserWithHttpInfo(String role, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfOrganization> getOrganizationsOfUserWithHttpInfo(String role, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getOrganizationsOfUserValidateBeforeCall(role, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedOrganizationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfOrganization>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1700,7 +1700,7 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getOrganizationsOfUserAsync(String role, Integer offset, Integer limit, final ApiCallback<PaginatedOrganizationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getOrganizationsOfUserAsync(String role, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfOrganization> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1722,7 +1722,7 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = getOrganizationsOfUserValidateBeforeCall(role, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedOrganizationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfOrganization>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1945,11 +1945,11 @@ public class OrganizationsApi {
      * @param username username (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedStringResponse
+     * @return PaginatedResponseOfstring
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedStringResponse getUserRoles(String organizationId, String username, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedStringResponse> resp = getUserRolesWithHttpInfo(organizationId, username, offset, limit);
+    public PaginatedResponseOfstring getUserRoles(String organizationId, String username, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfstring> resp = getUserRolesWithHttpInfo(organizationId, username, offset, limit);
         return resp.getData();
     }
 
@@ -1960,12 +1960,12 @@ public class OrganizationsApi {
      * @param username username (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedStringResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfstring&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedStringResponse> getUserRolesWithHttpInfo(String organizationId, String username, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfstring> getUserRolesWithHttpInfo(String organizationId, String username, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedStringResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfstring>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1980,7 +1980,7 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUserRolesAsync(String organizationId, String username, Integer offset, Integer limit, final ApiCallback<PaginatedStringResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUserRolesAsync(String organizationId, String username, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfstring> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2002,7 +2002,7 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = getUserRolesValidateBeforeCall(organizationId, username, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedStringResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfstring>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2082,11 +2082,11 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedUserPresentationResponse
+     * @return PaginatedResponseOfUserPresentation
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedUserPresentationResponse getUsersOfOrganization(String organizationId, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedUserPresentationResponse> resp = getUsersOfOrganizationWithHttpInfo(organizationId, offset, limit);
+    public PaginatedResponseOfUserPresentation getUsersOfOrganization(String organizationId, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfUserPresentation> resp = getUsersOfOrganizationWithHttpInfo(organizationId, offset, limit);
         return resp.getData();
     }
 
@@ -2096,12 +2096,12 @@ public class OrganizationsApi {
      * @param organizationId organizationId (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedUserPresentationResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfUserPresentation&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedUserPresentationResponse> getUsersOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfUserPresentation> getUsersOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getUsersOfOrganizationValidateBeforeCall(organizationId, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedUserPresentationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfUserPresentation>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2115,7 +2115,7 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getUsersOfOrganizationAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedUserPresentationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getUsersOfOrganizationAsync(String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfUserPresentation> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2137,7 +2137,7 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = getUsersOfOrganizationValidateBeforeCall(organizationId, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedUserPresentationResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfUserPresentation>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -2337,11 +2337,11 @@ public class OrganizationsApi {
      * 
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedCountryResponse
+     * @return PaginatedResponseOfCountry
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedCountryResponse listCountries(Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedCountryResponse> resp = listCountriesWithHttpInfo(offset, limit);
+    public PaginatedResponseOfCountry listCountries(Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfCountry> resp = listCountriesWithHttpInfo(offset, limit);
         return resp.getData();
     }
 
@@ -2350,12 +2350,12 @@ public class OrganizationsApi {
      * 
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedCountryResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfCountry&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedCountryResponse> listCountriesWithHttpInfo(Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfCountry> listCountriesWithHttpInfo(Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = listCountriesValidateBeforeCall(offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedCountryResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfCountry>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -2368,7 +2368,7 @@ public class OrganizationsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listCountriesAsync(Integer offset, Integer limit, final ApiCallback<PaginatedCountryResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listCountriesAsync(Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfCountry> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2390,7 +2390,7 @@ public class OrganizationsApi {
         }
 
         com.squareup.okhttp.Call call = listCountriesValidateBeforeCall(offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedCountryResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfCountry>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

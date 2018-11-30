@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.9.5
 - Package version: 
-    - Build date: 2018-11-30T07:31:10.019Z
+    - Build date: 2018-11-30T14:32:46.857Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -239,8 +239,6 @@ Class | Method | HTTP request | Description
  - [ApiKeyPresentation](docs/ApiKeyPresentation.md)
  - [ApiKeyPrivilege](docs/ApiKeyPrivilege.md)
  - [ApiKeyPrivilegeInfo](docs/ApiKeyPrivilegeInfo.md)
- - [ApiKeyPrivilegeInfoResponse](docs/ApiKeyPrivilegeInfoResponse.md)
- - [ApiKeyPrivilegePaginatedResponse](docs/ApiKeyPrivilegePaginatedResponse.md)
  - [AppInfoPresentation](docs/AppInfoPresentation.md)
  - [BillingPosition](docs/BillingPosition.md)
  - [ChangeLogEntry](docs/ChangeLogEntry.md)
@@ -258,22 +256,12 @@ Class | Method | HTTP request | Description
  - [HistoryItemUpdate](docs/HistoryItemUpdate.md)
  - [Id4n](docs/Id4n.md)
  - [Id4nPresentation](docs/Id4nPresentation.md)
- - [Id4nPresentationPaginatedResponse](docs/Id4nPresentationPaginatedResponse.md)
  - [ListOfId4ns](docs/ListOfId4ns.md)
  - [Organization](docs/Organization.md)
  - [OrganizationAddress](docs/OrganizationAddress.md)
  - [OrganizationUpdate](docs/OrganizationUpdate.md)
  - [OrganizationUserInvitation](docs/OrganizationUserInvitation.md)
  - [OrganizationUserInvitationListRequest](docs/OrganizationUserInvitationListRequest.md)
- - [PaginatedApiKeyResponse](docs/PaginatedApiKeyResponse.md)
- - [PaginatedChangeLogEntryResponse](docs/PaginatedChangeLogEntryResponse.md)
- - [PaginatedCountryResponse](docs/PaginatedCountryResponse.md)
- - [PaginatedDocumentResponse](docs/PaginatedDocumentResponse.md)
- - [PaginatedGuidCollection](docs/PaginatedGuidCollection.md)
- - [PaginatedGuidCollectionResponse](docs/PaginatedGuidCollectionResponse.md)
- - [PaginatedGuidResponse](docs/PaginatedGuidResponse.md)
- - [PaginatedHistoryItemResponse](docs/PaginatedHistoryItemResponse.md)
- - [PaginatedOrganizationResponse](docs/PaginatedOrganizationResponse.md)
  - [PaginatedResponseOfApiKeyPresentation](docs/PaginatedResponseOfApiKeyPresentation.md)
  - [PaginatedResponseOfApiKeyPrivilege](docs/PaginatedResponseOfApiKeyPrivilege.md)
  - [PaginatedResponseOfApiKeyPrivilegeInfo](docs/PaginatedResponseOfApiKeyPrivilegeInfo.md)
@@ -290,9 +278,6 @@ Class | Method | HTTP request | Description
  - [PaginatedResponseOfUserPresentation](docs/PaginatedResponseOfUserPresentation.md)
  - [PaginatedResponseOfUserRoles](docs/PaginatedResponseOfUserRoles.md)
  - [PaginatedResponseOfstring](docs/PaginatedResponseOfstring.md)
- - [PaginatedStringResponse](docs/PaginatedStringResponse.md)
- - [PaginatedUserPresentationResponse](docs/PaginatedUserPresentationResponse.md)
- - [PaginatedUserRolesResponse](docs/PaginatedUserRolesResponse.md)
  - [PartnerOrganization](docs/PartnerOrganization.md)
  - [PasswordResetRequest](docs/PasswordResetRequest.md)
  - [PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
@@ -301,7 +286,6 @@ Class | Method | HTTP request | Description
  - [RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
  - [RemovePartnerRequest](docs/RemovePartnerRequest.md)
  - [Role](docs/Role.md)
- - [RoleResponse](docs/RoleResponse.md)
  - [Route](docs/Route.md)
  - [RoutingFile](docs/RoutingFile.md)
  - [RoutingFileRequest](docs/RoutingFileRequest.md)

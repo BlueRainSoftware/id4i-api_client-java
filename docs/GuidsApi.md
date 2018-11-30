@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 <a name="getCollections"></a>
 # **getCollections**
-> PaginatedGuidCollectionResponse getCollections(id4n, organizationId, offset, limit)
+> PaginatedResponseOfGuidCollection getCollections(id4n, organizationId, offset, limit)
 
 Retrieve collections of an ID
 
@@ -159,7 +159,7 @@ String organizationId = "organizationId_example"; // String | The organization h
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedGuidCollectionResponse result = apiInstance.getCollections(id4n, organizationId, offset, limit);
+    PaginatedResponseOfGuidCollection result = apiInstance.getCollections(id4n, organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#getCollections");
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollectionResponse**](PaginatedGuidCollectionResponse.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 

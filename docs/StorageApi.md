@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllDocuments"></a>
 # **listAllDocuments**
-> PaginatedDocumentResponse listAllDocuments(id4n, owner, offset, limit)
+> PaginatedResponseOfDocument listAllDocuments(id4n, owner, offset, limit)
 
 List documents
 
@@ -278,7 +278,7 @@ String owner = "owner_example"; // String | Filter by owner organization
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listAllDocuments(id4n, owner, offset, limit);
+    PaginatedResponseOfDocument result = apiInstance.listAllDocuments(id4n, owner, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listAllDocuments");
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllPublicDocuments"></a>
 # **listAllPublicDocuments**
-> PaginatedDocumentResponse listAllPublicDocuments(id4n, organizationId, owner, offset, limit)
+> PaginatedResponseOfDocument listAllPublicDocuments(id4n, organizationId, owner, offset, limit)
 
 List public documents
 
@@ -340,7 +340,7 @@ String owner = "owner_example"; // String | Filter by owner organization
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listAllPublicDocuments(id4n, organizationId, owner, offset, limit);
+    PaginatedResponseOfDocument result = apiInstance.listAllPublicDocuments(id4n, organizationId, owner, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listAllPublicDocuments");
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 <a name="listDocuments"></a>
 # **listDocuments**
-> PaginatedDocumentResponse listDocuments(organizationId, id4n, owner, offset, limit)
+> PaginatedResponseOfDocument listDocuments(organizationId, id4n, owner, offset, limit)
 
 List organization specific documents
 
@@ -403,7 +403,7 @@ String owner = "owner_example"; // String | Filter by owner organization
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedDocumentResponse result = apiInstance.listDocuments(organizationId, id4n, owner, offset, limit);
+    PaginatedResponseOfDocument result = apiInstance.listDocuments(organizationId, id4n, owner, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling StorageApi#listDocuments");
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedDocumentResponse**](PaginatedDocumentResponse.md)
+[**PaginatedResponseOfDocument**](PaginatedResponseOfDocument.md)
 
 ### Authorization
 

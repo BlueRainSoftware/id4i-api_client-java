@@ -31,7 +31,7 @@ import de.id4i.api.model.ApiError;
 import de.id4i.api.model.Document;
 import de.id4i.api.model.DocumentUpdate;
 import java.io.File;
-import de.id4i.api.model.PaginatedDocumentResponse;
+import de.id4i.api.model.PaginatedResponseOfDocument;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -707,11 +707,11 @@ public class StorageApi {
      * @param owner Filter by owner organization (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedDocumentResponse
+     * @return PaginatedResponseOfDocument
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedDocumentResponse listAllDocuments(String id4n, String owner, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedDocumentResponse> resp = listAllDocumentsWithHttpInfo(id4n, owner, offset, limit);
+    public PaginatedResponseOfDocument listAllDocuments(String id4n, String owner, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfDocument> resp = listAllDocumentsWithHttpInfo(id4n, owner, offset, limit);
         return resp.getData();
     }
 
@@ -722,12 +722,12 @@ public class StorageApi {
      * @param owner Filter by owner organization (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedDocumentResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfDocument&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedDocumentResponse> listAllDocumentsWithHttpInfo(String id4n, String owner, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfDocument> listAllDocumentsWithHttpInfo(String id4n, String owner, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = listAllDocumentsValidateBeforeCall(id4n, owner, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedDocumentResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfDocument>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -742,7 +742,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAllDocumentsAsync(String id4n, String owner, Integer offset, Integer limit, final ApiCallback<PaginatedDocumentResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAllDocumentsAsync(String id4n, String owner, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfDocument> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -764,7 +764,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = listAllDocumentsValidateBeforeCall(id4n, owner, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedDocumentResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfDocument>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -852,11 +852,11 @@ public class StorageApi {
      * @param owner Filter by owner organization (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedDocumentResponse
+     * @return PaginatedResponseOfDocument
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedDocumentResponse listAllPublicDocuments(String id4n, String organizationId, String owner, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedDocumentResponse> resp = listAllPublicDocumentsWithHttpInfo(id4n, organizationId, owner, offset, limit);
+    public PaginatedResponseOfDocument listAllPublicDocuments(String id4n, String organizationId, String owner, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfDocument> resp = listAllPublicDocumentsWithHttpInfo(id4n, organizationId, owner, offset, limit);
         return resp.getData();
     }
 
@@ -868,12 +868,12 @@ public class StorageApi {
      * @param owner Filter by owner organization (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedDocumentResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfDocument&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedDocumentResponse> listAllPublicDocumentsWithHttpInfo(String id4n, String organizationId, String owner, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfDocument> listAllPublicDocumentsWithHttpInfo(String id4n, String organizationId, String owner, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = listAllPublicDocumentsValidateBeforeCall(id4n, organizationId, owner, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedDocumentResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfDocument>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -889,7 +889,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listAllPublicDocumentsAsync(String id4n, String organizationId, String owner, Integer offset, Integer limit, final ApiCallback<PaginatedDocumentResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listAllPublicDocumentsAsync(String id4n, String organizationId, String owner, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfDocument> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -911,7 +911,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = listAllPublicDocumentsValidateBeforeCall(id4n, organizationId, owner, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedDocumentResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfDocument>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -1003,11 +1003,11 @@ public class StorageApi {
      * @param owner Filter by owner organization (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedDocumentResponse
+     * @return PaginatedResponseOfDocument
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedDocumentResponse listDocuments(String organizationId, String id4n, String owner, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedDocumentResponse> resp = listDocumentsWithHttpInfo(organizationId, id4n, owner, offset, limit);
+    public PaginatedResponseOfDocument listDocuments(String organizationId, String id4n, String owner, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfDocument> resp = listDocumentsWithHttpInfo(organizationId, id4n, owner, offset, limit);
         return resp.getData();
     }
 
@@ -1019,12 +1019,12 @@ public class StorageApi {
      * @param owner Filter by owner organization (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedDocumentResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfDocument&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedDocumentResponse> listDocumentsWithHttpInfo(String organizationId, String id4n, String owner, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfDocument> listDocumentsWithHttpInfo(String organizationId, String id4n, String owner, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = listDocumentsValidateBeforeCall(organizationId, id4n, owner, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedDocumentResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfDocument>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -1040,7 +1040,7 @@ public class StorageApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call listDocumentsAsync(String organizationId, String id4n, String owner, Integer offset, Integer limit, final ApiCallback<PaginatedDocumentResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call listDocumentsAsync(String organizationId, String id4n, String owner, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfDocument> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1062,7 +1062,7 @@ public class StorageApi {
         }
 
         com.squareup.okhttp.Call call = listDocumentsValidateBeforeCall(organizationId, id4n, owner, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedDocumentResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfDocument>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

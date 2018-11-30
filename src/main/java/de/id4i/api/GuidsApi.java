@@ -33,8 +33,8 @@ import de.id4i.api.model.Guid;
 import de.id4i.api.model.GuidAlias;
 import de.id4i.api.model.Id4nPresentation;
 import de.id4i.api.model.ListOfId4ns;
-import de.id4i.api.model.PaginatedGuidCollectionResponse;
 import de.id4i.api.model.PaginatedResponseOfGuid;
+import de.id4i.api.model.PaginatedResponseOfGuidCollection;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -401,11 +401,11 @@ public class GuidsApi {
      * @param organizationId The organization holding the collections. (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return PaginatedGuidCollectionResponse
+     * @return PaginatedResponseOfGuidCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedGuidCollectionResponse getCollections(String id4n, String organizationId, Integer offset, Integer limit) throws ApiException {
-        ApiResponse<PaginatedGuidCollectionResponse> resp = getCollectionsWithHttpInfo(id4n, organizationId, offset, limit);
+    public PaginatedResponseOfGuidCollection getCollections(String id4n, String organizationId, Integer offset, Integer limit) throws ApiException {
+        ApiResponse<PaginatedResponseOfGuidCollection> resp = getCollectionsWithHttpInfo(id4n, organizationId, offset, limit);
         return resp.getData();
     }
 
@@ -416,12 +416,12 @@ public class GuidsApi {
      * @param organizationId The organization holding the collections. (optional)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
-     * @return ApiResponse&lt;PaginatedGuidCollectionResponse&gt;
+     * @return ApiResponse&lt;PaginatedResponseOfGuidCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedGuidCollectionResponse> getCollectionsWithHttpInfo(String id4n, String organizationId, Integer offset, Integer limit) throws ApiException {
+    public ApiResponse<PaginatedResponseOfGuidCollection> getCollectionsWithHttpInfo(String id4n, String organizationId, Integer offset, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = getCollectionsValidateBeforeCall(id4n, organizationId, offset, limit, null, null);
-        Type localVarReturnType = new TypeToken<PaginatedGuidCollectionResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfGuidCollection>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -436,7 +436,7 @@ public class GuidsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getCollectionsAsync(String id4n, String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedGuidCollectionResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call getCollectionsAsync(String id4n, String organizationId, Integer offset, Integer limit, final ApiCallback<PaginatedResponseOfGuidCollection> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -458,7 +458,7 @@ public class GuidsApi {
         }
 
         com.squareup.okhttp.Call call = getCollectionsValidateBeforeCall(id4n, organizationId, offset, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<PaginatedGuidCollectionResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<PaginatedResponseOfGuidCollection>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

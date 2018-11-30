@@ -516,7 +516,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix)
+> PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix)
 
 Get collections of organization
 
@@ -547,7 +547,7 @@ String type = "type_example"; // String | Filter by this type
 String label = "label_example"; // String | Filter by this label
 String labelPrefix = "labelPrefix_example"; // String | Filter by this label prefix
 try {
-    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
+    PaginatedResponseOfGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getAllCollectionsOfOrganization");
@@ -568,7 +568,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollection**](PaginatedGuidCollection.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -581,7 +581,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllOrganizationRoles"></a>
 # **getAllOrganizationRoles**
-> PaginatedUserRolesResponse getAllOrganizationRoles(organizationId, offset, limit)
+> PaginatedResponseOfUserRoles getAllOrganizationRoles(organizationId, offset, limit)
 
 List users and their roles
 
@@ -609,7 +609,7 @@ String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedUserRolesResponse result = apiInstance.getAllOrganizationRoles(organizationId, offset, limit);
+    PaginatedResponseOfUserRoles result = apiInstance.getAllOrganizationRoles(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getAllOrganizationRoles");
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserRolesResponse**](PaginatedUserRolesResponse.md)
+[**PaginatedResponseOfUserRoles**](PaginatedResponseOfUserRoles.md)
 
 ### Authorization
 
@@ -695,7 +695,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationsOfUser"></a>
 # **getOrganizationsOfUser**
-> PaginatedOrganizationResponse getOrganizationsOfUser(role, offset, limit)
+> PaginatedResponseOfOrganization getOrganizationsOfUser(role, offset, limit)
 
 Retrieve organizations of user
 
@@ -721,7 +721,7 @@ String role = "role_example"; // String | role
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedOrganizationResponse result = apiInstance.getOrganizationsOfUser(role, offset, limit);
+    PaginatedResponseOfOrganization result = apiInstance.getOrganizationsOfUser(role, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getOrganizationsOfUser");
@@ -739,7 +739,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedOrganizationResponse**](PaginatedOrganizationResponse.md)
+[**PaginatedResponseOfOrganization**](PaginatedResponseOfOrganization.md)
 
 ### Authorization
 
@@ -811,7 +811,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
-> PaginatedStringResponse getUserRoles(organizationId, username, offset, limit)
+> PaginatedResponseOfstring getUserRoles(organizationId, username, offset, limit)
 
 Get user roles by username
 
@@ -838,7 +838,7 @@ String username = "username_example"; // String | username
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedStringResponse result = apiInstance.getUserRoles(organizationId, username, offset, limit);
+    PaginatedResponseOfstring result = apiInstance.getUserRoles(organizationId, username, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getUserRoles");
@@ -857,7 +857,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedStringResponse**](PaginatedStringResponse.md)
+[**PaginatedResponseOfstring**](PaginatedResponseOfstring.md)
 
 ### Authorization
 
@@ -870,7 +870,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsersOfOrganization"></a>
 # **getUsersOfOrganization**
-> PaginatedUserPresentationResponse getUsersOfOrganization(organizationId, offset, limit)
+> PaginatedResponseOfUserPresentation getUsersOfOrganization(organizationId, offset, limit)
 
 Find users in organization
 
@@ -898,7 +898,7 @@ String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedUserPresentationResponse result = apiInstance.getUsersOfOrganization(organizationId, offset, limit);
+    PaginatedResponseOfUserPresentation result = apiInstance.getUsersOfOrganization(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#getUsersOfOrganization");
@@ -916,7 +916,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
+[**PaginatedResponseOfUserPresentation**](PaginatedResponseOfUserPresentation.md)
 
 ### Authorization
 
@@ -983,7 +983,7 @@ null (empty response body)
 
 <a name="listCountries"></a>
 # **listCountries**
-> PaginatedCountryResponse listCountries(offset, limit)
+> PaginatedResponseOfCountry listCountries(offset, limit)
 
 List countries
 
@@ -1008,7 +1008,7 @@ OrganizationsApi apiInstance = new OrganizationsApi();
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedCountryResponse result = apiInstance.listCountries(offset, limit);
+    PaginatedResponseOfCountry result = apiInstance.listCountries(offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OrganizationsApi#listCountries");
@@ -1025,7 +1025,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedCountryResponse**](PaginatedCountryResponse.md)
+[**PaginatedResponseOfCountry**](PaginatedResponseOfCountry.md)
 
 ### Authorization
 
