@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additionalProperties** | **Map&lt;String, String&gt;** | History items custom additional properties |  [optional]
 **organizationId** | **String** | Originator of the history item | 
+**ownerOrganizationId** | **String** | Owner of the history item |  [optional]
 **sequenceId** | **Integer** | Forms the primary key of the history item together with the GUID and the organizationId |  [optional]
 **timestamp** | **Long** | History item timestamp |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) | Type of the history item | 

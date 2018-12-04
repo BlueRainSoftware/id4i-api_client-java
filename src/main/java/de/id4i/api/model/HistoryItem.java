@@ -31,13 +31,16 @@ import java.util.Map;
  * GUID history item
  */
 @ApiModel(description = "GUID history item")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-04T13:09:03.678Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-04T17:15:20.807Z")
 public class HistoryItem {
   @SerializedName("additionalProperties")
   private Map<String, String> additionalProperties = null;
 
   @SerializedName("organizationId")
   private String organizationId = null;
+
+  @SerializedName("ownerOrganizationId")
+  private String ownerOrganizationId = null;
 
   @SerializedName("sequenceId")
   private Integer sequenceId = null;
@@ -197,6 +200,15 @@ public class HistoryItem {
   }
 
    /**
+   * Owner of the history item
+   * @return ownerOrganizationId
+  **/
+  @ApiModelProperty(example = "de.bluerain", value = "Owner of the history item")
+  public String getOwnerOrganizationId() {
+    return ownerOrganizationId;
+  }
+
+   /**
    * Forms the primary key of the history item together with the GUID and the organizationId
    * @return sequenceId
   **/
@@ -262,6 +274,7 @@ public class HistoryItem {
     HistoryItem historyItem = (HistoryItem) o;
     return Objects.equals(this.additionalProperties, historyItem.additionalProperties) &&
         Objects.equals(this.organizationId, historyItem.organizationId) &&
+        Objects.equals(this.ownerOrganizationId, historyItem.ownerOrganizationId) &&
         Objects.equals(this.sequenceId, historyItem.sequenceId) &&
         Objects.equals(this.timestamp, historyItem.timestamp) &&
         Objects.equals(this.type, historyItem.type) &&
@@ -270,7 +283,7 @@ public class HistoryItem {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalProperties, organizationId, sequenceId, timestamp, type, visibility);
+    return Objects.hash(additionalProperties, organizationId, ownerOrganizationId, sequenceId, timestamp, type, visibility);
   }
 
 
@@ -281,6 +294,7 @@ public class HistoryItem {
     
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
+    sb.append("    ownerOrganizationId: ").append(toIndentedString(ownerOrganizationId)).append("\n");
     sb.append("    sequenceId: ").append(toIndentedString(sequenceId)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
