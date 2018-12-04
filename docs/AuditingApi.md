@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listOrganizationChangeLog"></a>
 # **listOrganizationChangeLog**
-> PaginatedChangeLogEntryResponse listOrganizationChangeLog(organizationId, messageMimeType, fromDate, toDate, offset, limit)
+> PaginatedResponseOfChangeLogEntry listOrganizationChangeLog(organizationId, messageMimeType, fromDate, toDate, offset, limit)
 
 List change log entries of an organization
 
@@ -40,7 +40,7 @@ LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | To date time as U
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedChangeLogEntryResponse result = apiInstance.listOrganizationChangeLog(organizationId, messageMimeType, fromDate, toDate, offset, limit);
+    PaginatedResponseOfChangeLogEntry result = apiInstance.listOrganizationChangeLog(organizationId, messageMimeType, fromDate, toDate, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuditingApi#listOrganizationChangeLog");
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedChangeLogEntryResponse**](PaginatedChangeLogEntryResponse.md)
+[**PaginatedResponseOfChangeLogEntry**](PaginatedResponseOfChangeLogEntry.md)
 
 ### Authorization
 
