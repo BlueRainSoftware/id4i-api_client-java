@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 <a name="getCollections"></a>
 # **getCollections**
-> PaginatedGuidCollectionResponse getCollections(id4n, organizationId, offset, limit)
+> PaginatedResponseOfGuidCollection getCollections(id4n, organizationId, offset, limit)
 
 Retrieve collections of an ID
 
@@ -159,7 +159,7 @@ String organizationId = "organizationId_example"; // String | The organization h
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedGuidCollectionResponse result = apiInstance.getCollections(id4n, organizationId, offset, limit);
+    PaginatedResponseOfGuidCollection result = apiInstance.getCollections(id4n, organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#getCollections");
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollectionResponse**](PaginatedGuidCollectionResponse.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 <a name="getGuidsWithoutCollection"></a>
 # **getGuidsWithoutCollection**
-> PaginatedResponseGuid getGuidsWithoutCollection(organizationId, offset, limit)
+> PaginatedResponseOfGuid getGuidsWithoutCollection(organizationId, offset, limit)
 
 Retrieve GUIDs not in any collection
 
@@ -325,7 +325,7 @@ String organizationId = "organizationId_example"; // String | The namespace of t
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedResponseGuid result = apiInstance.getGuidsWithoutCollection(organizationId, offset, limit);
+    PaginatedResponseOfGuid result = apiInstance.getGuidsWithoutCollection(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#getGuidsWithoutCollection");
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedResponseGuid**](PaginatedResponseGuid.md)
+[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
 
 ### Authorization
 

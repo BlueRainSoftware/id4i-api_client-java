@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="findUsers"></a>
 # **findUsers**
-> PaginatedUserPresentationResponse findUsers(usernamePrefix, offset, limit)
+> PaginatedResponseOfUserPresentation findUsers(usernamePrefix, offset, limit)
 
 Find users
 
@@ -203,7 +203,7 @@ String usernamePrefix = "usernamePrefix_example"; // String |
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedUserPresentationResponse result = apiInstance.findUsers(usernamePrefix, offset, limit);
+    PaginatedResponseOfUserPresentation result = apiInstance.findUsers(usernamePrefix, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#findUsers");
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
+[**PaginatedResponseOfUserPresentation**](PaginatedResponseOfUserPresentation.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllOrganizationRoles"></a>
 # **getAllOrganizationRoles**
-> PaginatedUserRolesResponse getAllOrganizationRoles(organizationId, offset, limit)
+> PaginatedResponseOfUserRoles getAllOrganizationRoles(organizationId, offset, limit)
 
 List users and their roles
 
@@ -262,7 +262,7 @@ String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedUserRolesResponse result = apiInstance.getAllOrganizationRoles(organizationId, offset, limit);
+    PaginatedResponseOfUserRoles result = apiInstance.getAllOrganizationRoles(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getAllOrganizationRoles");
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserRolesResponse**](PaginatedUserRolesResponse.md)
+[**PaginatedResponseOfUserRoles**](PaginatedResponseOfUserRoles.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 <a name="getOrganizationsOfUser"></a>
 # **getOrganizationsOfUser**
-> PaginatedOrganizationResponse getOrganizationsOfUser(role, offset, limit)
+> PaginatedResponseOfOrganization getOrganizationsOfUser(role, offset, limit)
 
 Retrieve organizations of user
 
@@ -319,7 +319,7 @@ String role = "role_example"; // String | role
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedOrganizationResponse result = apiInstance.getOrganizationsOfUser(role, offset, limit);
+    PaginatedResponseOfOrganization result = apiInstance.getOrganizationsOfUser(role, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getOrganizationsOfUser");
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedOrganizationResponse**](PaginatedOrganizationResponse.md)
+[**PaginatedResponseOfOrganization**](PaginatedResponseOfOrganization.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 <a name="getUserRoles"></a>
 # **getUserRoles**
-> PaginatedStringResponse getUserRoles(organizationId, username, offset, limit)
+> PaginatedResponseOfstring getUserRoles(organizationId, username, offset, limit)
 
 Get user roles by username
 
@@ -377,7 +377,7 @@ String username = "username_example"; // String | username
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedStringResponse result = apiInstance.getUserRoles(organizationId, username, offset, limit);
+    PaginatedResponseOfstring result = apiInstance.getUserRoles(organizationId, username, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getUserRoles");
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedStringResponse**](PaginatedStringResponse.md)
+[**PaginatedResponseOfstring**](PaginatedResponseOfstring.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 <a name="getUsersOfOrganization"></a>
 # **getUsersOfOrganization**
-> PaginatedUserPresentationResponse getUsersOfOrganization(organizationId, offset, limit)
+> PaginatedResponseOfUserPresentation getUsersOfOrganization(organizationId, offset, limit)
 
 Find users in organization
 
@@ -437,7 +437,7 @@ String organizationId = "organizationId_example"; // String | organizationId
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedUserPresentationResponse result = apiInstance.getUsersOfOrganization(organizationId, offset, limit);
+    PaginatedResponseOfUserPresentation result = apiInstance.getUsersOfOrganization(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#getUsersOfOrganization");
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedUserPresentationResponse**](PaginatedUserPresentationResponse.md)
+[**PaginatedResponseOfUserPresentation**](PaginatedResponseOfUserPresentation.md)
 
 ### Authorization
 
@@ -522,7 +522,7 @@ null (empty response body)
 
 <a name="listAllRoles"></a>
 # **listAllRoles**
-> RoleResponse listAllRoles(privilege, offset, limit)
+> PaginatedResponseOfRole listAllRoles(privilege, offset, limit)
 
 List roles
 
@@ -550,7 +550,7 @@ String privilege = "privilege_example"; // String | If specified the roles will 
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    RoleResponse result = apiInstance.listAllRoles(privilege, offset, limit);
+    PaginatedResponseOfRole result = apiInstance.listAllRoles(privilege, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AccountsApi#listAllRoles");
@@ -568,7 +568,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoleResponse**](RoleResponse.md)
+[**PaginatedResponseOfRole**](PaginatedResponseOfRole.md)
 
 ### Authorization
 

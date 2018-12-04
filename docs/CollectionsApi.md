@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 <a name="getAllCollectionsOfOrganization"></a>
 # **getAllCollectionsOfOrganization**
-> PaginatedGuidCollection getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix)
+> PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix)
 
 Get collections of organization
 
@@ -259,7 +259,7 @@ String type = "type_example"; // String | Filter by this type
 String label = "label_example"; // String | Filter by this label
 String labelPrefix = "labelPrefix_example"; // String | Filter by this label prefix
 try {
-    PaginatedGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
+    PaginatedResponseOfGuidCollection result = apiInstance.getAllCollectionsOfOrganization(organizationId, offset, limit, type, label, labelPrefix);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#getAllCollectionsOfOrganization");
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidCollection**](PaginatedGuidCollection.md)
+[**PaginatedResponseOfGuidCollection**](PaginatedResponseOfGuidCollection.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 <a name="listElementsOfCollection"></a>
 # **listElementsOfCollection**
-> PaginatedGuidResponse listElementsOfCollection(id4n, offset, limit)
+> PaginatedResponseOfGuid listElementsOfCollection(id4n, offset, limit)
 
 List contents of the collection
 
@@ -319,7 +319,7 @@ String id4n = "id4n_example"; // String | id4n
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedGuidResponse result = apiInstance.listElementsOfCollection(id4n, offset, limit);
+    PaginatedResponseOfGuid result = apiInstance.listElementsOfCollection(id4n, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#listElementsOfCollection");
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
+[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
 
 ### Authorization
 
