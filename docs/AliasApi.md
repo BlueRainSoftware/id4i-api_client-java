@@ -233,7 +233,7 @@ null (empty response body)
 
 <a name="searchByAlias"></a>
 # **searchByAlias**
-> PaginatedGuidResponse searchByAlias(alias, aliasType, offset, limit)
+> PaginatedResponseOfGuid searchByAlias(alias, aliasType, offset, limit)
 
 Search for GUIDs by alias
 
@@ -260,7 +260,7 @@ String aliasType = "aliasType_example"; // String | Alias type type to search fo
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedGuidResponse result = apiInstance.searchByAlias(alias, aliasType, offset, limit);
+    PaginatedResponseOfGuid result = apiInstance.searchByAlias(alias, aliasType, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AliasApi#searchByAlias");
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedGuidResponse**](PaginatedGuidResponse.md)
+[**PaginatedResponseOfGuid**](PaginatedResponseOfGuid.md)
 
 ### Authorization
 

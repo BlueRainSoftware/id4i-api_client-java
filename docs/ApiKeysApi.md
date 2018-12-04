@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllApiKeyPrivileges"></a>
 # **listAllApiKeyPrivileges**
-> ApiKeyPrivilegeInfoResponse listAllApiKeyPrivileges(id4nConcerning, offset, limit)
+> PaginatedResponseOfApiKeyPrivilegeInfo listAllApiKeyPrivileges(id4nConcerning, offset, limit)
 
 List all privileges
 
@@ -322,7 +322,7 @@ Boolean id4nConcerning = true; // Boolean | id4nConcerning
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    ApiKeyPrivilegeInfoResponse result = apiInstance.listAllApiKeyPrivileges(id4nConcerning, offset, limit);
+    PaginatedResponseOfApiKeyPrivilegeInfo result = apiInstance.listAllApiKeyPrivileges(id4nConcerning, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listAllApiKeyPrivileges");
@@ -340,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyPrivilegeInfoResponse**](ApiKeyPrivilegeInfoResponse.md)
+[**PaginatedResponseOfApiKeyPrivilegeInfo**](PaginatedResponseOfApiKeyPrivilegeInfo.md)
 
 ### Authorization
 
@@ -353,7 +353,7 @@ Name | Type | Description  | Notes
 
 <a name="listAllApiKeysOfOrganization"></a>
 # **listAllApiKeysOfOrganization**
-> PaginatedApiKeyResponse listAllApiKeysOfOrganization(organizationId, offset, limit)
+> PaginatedResponseOfApiKeyPresentation listAllApiKeysOfOrganization(organizationId, offset, limit)
 
 Find API key by organization
 
@@ -381,7 +381,7 @@ String organizationId = "organizationId_example"; // String | The namespace of t
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedApiKeyResponse result = apiInstance.listAllApiKeysOfOrganization(organizationId, offset, limit);
+    PaginatedResponseOfApiKeyPresentation result = apiInstance.listAllApiKeysOfOrganization(organizationId, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listAllApiKeysOfOrganization");
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedApiKeyResponse**](PaginatedApiKeyResponse.md)
+[**PaginatedResponseOfApiKeyPresentation**](PaginatedResponseOfApiKeyPresentation.md)
 
 ### Authorization
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 <a name="listApiKeyPrivileges"></a>
 # **listApiKeyPrivileges**
-> ApiKeyPrivilegePaginatedResponse listApiKeyPrivileges(key, offset, limit)
+> PaginatedResponseOfApiKeyPrivilege listApiKeyPrivileges(key, offset, limit)
 
 List privileges
 
@@ -438,7 +438,7 @@ String key = "key_example"; // String | key
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    ApiKeyPrivilegePaginatedResponse result = apiInstance.listApiKeyPrivileges(key, offset, limit);
+    PaginatedResponseOfApiKeyPrivilege result = apiInstance.listApiKeyPrivileges(key, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listApiKeyPrivileges");
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiKeyPrivilegePaginatedResponse**](ApiKeyPrivilegePaginatedResponse.md)
+[**PaginatedResponseOfApiKeyPrivilege**](PaginatedResponseOfApiKeyPrivilege.md)
 
 ### Authorization
 
@@ -469,7 +469,7 @@ Name | Type | Description  | Notes
 
 <a name="listId4ns"></a>
 # **listId4ns**
-> Id4nPresentationPaginatedResponse listId4ns(key, privilege, offset, limit)
+> PaginatedResponseOfId4nPresentation listId4ns(key, privilege, offset, limit)
 
 ID4ns of a privilege
 
@@ -498,7 +498,7 @@ String privilege = "privilege_example"; // String | privilege
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    Id4nPresentationPaginatedResponse result = apiInstance.listId4ns(key, privilege, offset, limit);
+    PaginatedResponseOfId4nPresentation result = apiInstance.listId4ns(key, privilege, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ApiKeysApi#listId4ns");
@@ -517,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Id4nPresentationPaginatedResponse**](Id4nPresentationPaginatedResponse.md)
+[**PaginatedResponseOfId4nPresentation**](PaginatedResponseOfId4nPresentation.md)
 
 ### Authorization
 

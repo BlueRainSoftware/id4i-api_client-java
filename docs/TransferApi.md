@@ -4,64 +4,10 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getReceiveInfo**](TransferApi.md#getReceiveInfo) | **GET** /api/v1/transfers/{id4n}/receiveInfo | Show transfer information
 [**getSendInfo**](TransferApi.md#getSendInfo) | **GET** /api/v1/transfers/{id4n}/sendInfo | Show transfer preparation information
 [**prepare**](TransferApi.md#prepare) | **PUT** /api/v1/transfers/{id4n}/sendInfo | Prepare an object for transfer
 [**receive**](TransferApi.md#receive) | **PUT** /api/v1/transfers/{id4n}/receiveInfo | Transfer a GUID or collection, obtaining it (i.e. becoming the holder) and if allowed also taking ownership
 
-
-<a name="getReceiveInfo"></a>
-# **getReceiveInfo**
-> TransferReceiveInfo getReceiveInfo(id4n)
-
-Show transfer information
-
-### Example
-```java
-// Import classes:
-//import de.id4i.ApiClient;
-//import de.id4i.ApiException;
-//import de.id4i.Configuration;
-//import de.id4i.auth.*;
-//import de.id4i.api.TransferApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Authorization
-ApiKeyAuth Authorization = (ApiKeyAuth) defaultClient.getAuthentication("Authorization");
-Authorization.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Authorization.setApiKeyPrefix("Token");
-
-TransferApi apiInstance = new TransferApi();
-String id4n = "id4n_example"; // String | The ID4N to retrieve information about
-try {
-    TransferReceiveInfo result = apiInstance.getReceiveInfo(id4n);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling TransferApi#getReceiveInfo");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id4n** | **String**| The ID4N to retrieve information about |
-
-### Return type
-
-[**TransferReceiveInfo**](TransferReceiveInfo.md)
-
-### Authorization
-
-[Authorization](../README.md#Authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/xml, application/json
- - **Accept**: application/xml, application/json
 
 <a name="getSendInfo"></a>
 # **getSendInfo**

@@ -70,7 +70,7 @@ null (empty response body)
 
 <a name="filteredList"></a>
 # **filteredList**
-> PaginatedHistoryItemResponse filteredList(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit)
+> PaginatedResponseOfHistoryItem filteredList(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit)
 
 List history
 
@@ -104,7 +104,7 @@ LocalDateTime toDate = new LocalDateTime(); // LocalDateTime | To date time as U
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedHistoryItemResponse result = apiInstance.filteredList(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit);
+    PaginatedResponseOfHistoryItem result = apiInstance.filteredList(id4n, includePrivate, organization, type, qualifier, fromDate, toDate, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HistoryApi#filteredList");
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**PaginatedResponseOfHistoryItem**](PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 <a name="list"></a>
 # **list**
-> PaginatedHistoryItemResponse list(id4n, organizationId, includePrivate, offset, limit)
+> PaginatedResponseOfHistoryItem list(id4n, organizationId, includePrivate, offset, limit)
 
 DEPRECATED - List history
 
@@ -171,7 +171,7 @@ Boolean includePrivate = true; // Boolean | Also return private history entries
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
 try {
-    PaginatedHistoryItemResponse result = apiInstance.list(id4n, organizationId, includePrivate, offset, limit);
+    PaginatedResponseOfHistoryItem result = apiInstance.list(id4n, organizationId, includePrivate, offset, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HistoryApi#list");
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**PaginatedResponseOfHistoryItem**](PaginatedResponseOfHistoryItem.md)
 
 ### Authorization
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 <a name="retrieveItem"></a>
 # **retrieveItem**
-> PaginatedHistoryItemResponse retrieveItem(id4n, organizationId, sequenceId)
+> HistoryItem retrieveItem(id4n, organizationId, sequenceId)
 
 Get history item
 
@@ -230,7 +230,7 @@ String id4n = "id4n_example"; // String | GUID to retrieve the history for
 String organizationId = "organizationId_example"; // String | organizationId
 Integer sequenceId = 56; // Integer | sequenceId
 try {
-    PaginatedHistoryItemResponse result = apiInstance.retrieveItem(id4n, organizationId, sequenceId);
+    HistoryItem result = apiInstance.retrieveItem(id4n, organizationId, sequenceId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling HistoryApi#retrieveItem");
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaginatedHistoryItemResponse**](PaginatedHistoryItemResponse.md)
+[**HistoryItem**](HistoryItem.md)
 
 ### Authorization
 
