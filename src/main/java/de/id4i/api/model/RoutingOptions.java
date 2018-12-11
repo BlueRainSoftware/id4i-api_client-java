@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * RoutingOptions
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-11T11:26:10.320Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-12-11T11:26:55.864Z")
 public class RoutingOptions {
   @SerializedName("deleteOutdatedRoutes")
   private Boolean deleteOutdatedRoutes = null;
