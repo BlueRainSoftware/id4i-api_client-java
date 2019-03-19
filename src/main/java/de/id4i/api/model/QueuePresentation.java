@@ -24,17 +24,20 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ApiKeyChangeRequest
+ * QueuePresentation
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-19T17:47:43.254Z")
-public class ApiKeyChangeRequest {
+public class QueuePresentation {
   @SerializedName("active")
   private Boolean active = null;
 
-  @SerializedName("newLabel")
-  private String newLabel = null;
+  @SerializedName("id")
+  private String id = null;
 
-  public ApiKeyChangeRequest active(Boolean active) {
+  @SerializedName("waitingMessages")
+  private Long waitingMessages = null;
+
+  public QueuePresentation active(Boolean active) {
     this.active = active;
     return this;
   }
@@ -43,7 +46,7 @@ public class ApiKeyChangeRequest {
    * Get active
    * @return active
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "true", required = true, value = "")
   public Boolean isActive() {
     return active;
   }
@@ -52,22 +55,40 @@ public class ApiKeyChangeRequest {
     this.active = active;
   }
 
-  public ApiKeyChangeRequest newLabel(String newLabel) {
-    this.newLabel = newLabel;
+  public QueuePresentation id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get newLabel
-   * @return newLabel
+   * Get id
+   * @return id
   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getNewLabel() {
-    return newLabel;
+  @ApiModelProperty(example = "<default>", required = true, value = "")
+  public String getId() {
+    return id;
   }
 
-  public void setNewLabel(String newLabel) {
-    this.newLabel = newLabel;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public QueuePresentation waitingMessages(Long waitingMessages) {
+    this.waitingMessages = waitingMessages;
+    return this;
+  }
+
+   /**
+   * The count of queued messages
+   * @return waitingMessages
+  **/
+  @ApiModelProperty(example = "true", value = "The count of queued messages")
+  public Long getWaitingMessages() {
+    return waitingMessages;
+  }
+
+  public void setWaitingMessages(Long waitingMessages) {
+    this.waitingMessages = waitingMessages;
   }
 
 
@@ -79,24 +100,26 @@ public class ApiKeyChangeRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiKeyChangeRequest apiKeyChangeRequest = (ApiKeyChangeRequest) o;
-    return Objects.equals(this.active, apiKeyChangeRequest.active) &&
-        Objects.equals(this.newLabel, apiKeyChangeRequest.newLabel);
+    QueuePresentation queuePresentation = (QueuePresentation) o;
+    return Objects.equals(this.active, queuePresentation.active) &&
+        Objects.equals(this.id, queuePresentation.id) &&
+        Objects.equals(this.waitingMessages, queuePresentation.waitingMessages);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, newLabel);
+    return Objects.hash(active, id, waitingMessages);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiKeyChangeRequest {\n");
+    sb.append("class QueuePresentation {\n");
     
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    newLabel: ").append(toIndentedString(newLabel)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    waitingMessages: ").append(toIndentedString(waitingMessages)).append("\n");
     sb.append("}");
     return sb.toString();
   }

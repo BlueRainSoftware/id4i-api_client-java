@@ -24,26 +24,29 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * ApiKeyChangeRequest
+ * QueueUpdateRequest
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-19T17:47:43.254Z")
-public class ApiKeyChangeRequest {
+public class QueueUpdateRequest {
   @SerializedName("active")
   private Boolean active = null;
 
-  @SerializedName("newLabel")
-  private String newLabel = null;
+  @SerializedName("id")
+  private String id = null;
 
-  public ApiKeyChangeRequest active(Boolean active) {
+  @SerializedName("purgeQueue")
+  private Boolean purgeQueue = null;
+
+  public QueueUpdateRequest active(Boolean active) {
     this.active = active;
     return this;
   }
 
    /**
-   * Get active
+   * If this value is set to false the queue will be deleted.
    * @return active
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "true", value = "If this value is set to false the queue will be deleted.")
   public Boolean isActive() {
     return active;
   }
@@ -52,22 +55,40 @@ public class ApiKeyChangeRequest {
     this.active = active;
   }
 
-  public ApiKeyChangeRequest newLabel(String newLabel) {
-    this.newLabel = newLabel;
+  public QueueUpdateRequest id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get newLabel
-   * @return newLabel
+   * Get id
+   * @return id
   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getNewLabel() {
-    return newLabel;
+  @ApiModelProperty(example = "<default>", value = "")
+  public String getId() {
+    return id;
   }
 
-  public void setNewLabel(String newLabel) {
-    this.newLabel = newLabel;
+  public void setId(String id) {
+    this.id = id;
+  }
+
+  public QueueUpdateRequest purgeQueue(Boolean purgeQueue) {
+    this.purgeQueue = purgeQueue;
+    return this;
+  }
+
+   /**
+   * Set this value to true if you want to purge the queue.
+   * @return purgeQueue
+  **/
+  @ApiModelProperty(example = "false", value = "Set this value to true if you want to purge the queue.")
+  public Boolean isPurgeQueue() {
+    return purgeQueue;
+  }
+
+  public void setPurgeQueue(Boolean purgeQueue) {
+    this.purgeQueue = purgeQueue;
   }
 
 
@@ -79,24 +100,26 @@ public class ApiKeyChangeRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ApiKeyChangeRequest apiKeyChangeRequest = (ApiKeyChangeRequest) o;
-    return Objects.equals(this.active, apiKeyChangeRequest.active) &&
-        Objects.equals(this.newLabel, apiKeyChangeRequest.newLabel);
+    QueueUpdateRequest queueUpdateRequest = (QueueUpdateRequest) o;
+    return Objects.equals(this.active, queueUpdateRequest.active) &&
+        Objects.equals(this.id, queueUpdateRequest.id) &&
+        Objects.equals(this.purgeQueue, queueUpdateRequest.purgeQueue);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, newLabel);
+    return Objects.hash(active, id, purgeQueue);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ApiKeyChangeRequest {\n");
+    sb.append("class QueueUpdateRequest {\n");
     
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
-    sb.append("    newLabel: ").append(toIndentedString(newLabel)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    purgeQueue: ").append(toIndentedString(purgeQueue)).append("\n");
     sb.append("}");
     return sb.toString();
   }
