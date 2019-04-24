@@ -29,7 +29,7 @@ import java.util.List;
  * A list of id4ns
  */
 @ApiModel(description = "A list of id4ns")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-23T22:02:56.659Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T22:03:13.454Z")
 public class ListOfId4ns {
   @SerializedName("id4ns")
   private List<String> id4ns = null;
