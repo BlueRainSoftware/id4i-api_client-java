@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TransferReceiveInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-27T22:05:16.503Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-28T22:07:29.847Z")
 public class TransferReceiveInfo {
   @SerializedName("organizationId")
   private String organizationId = null;
