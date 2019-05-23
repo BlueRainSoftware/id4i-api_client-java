@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.9.5
 - Package version: 
-    - Build date: 2018-12-04T18:42:49.291Z
+    - Build date: 2019-05-23T15:53:50.115Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -172,6 +172,8 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**updateItem**](docs/HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *HistoryApi* | [**updateItemVisibility**](docs/HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
+*MessagingApi* | [**getDefaultQueue**](docs/MessagingApi.md#getDefaultQueue) | **GET** /api/v1/organizations/{organizationId}/messaging | 
+*MessagingApi* | [**patchDefaultQueue**](docs/MessagingApi.md#patchDefaultQueue) | **PATCH** /api/v1/organizations/{organizationId}/messaging | 
 *MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
 *OrganizationsApi* | [**addPartnerOrganization**](docs/OrganizationsApi.md#addPartnerOrganization) | **PUT** /api/v1/organizations/{organizationId}/partner | Add partner
 *OrganizationsApi* | [**addUserRoles**](docs/OrganizationsApi.md#addUserRoles) | **POST** /api/v1/organizations/{organizationId}/users/{username}/roles | Add role(s) to user
@@ -282,6 +284,8 @@ Class | Method | HTTP request | Description
  - [PasswordResetRequest](docs/PasswordResetRequest.md)
  - [PasswordResetVerificationRequest](docs/PasswordResetVerificationRequest.md)
  - [PublicImagePresentation](docs/PublicImagePresentation.md)
+ - [QueuePresentation](docs/QueuePresentation.md)
+ - [QueueUpdateRequest](docs/QueueUpdateRequest.md)
  - [RegistrationVerificationTokenPresentation](docs/RegistrationVerificationTokenPresentation.md)
  - [RemoveApiKeyPrivilegeRequest](docs/RemoveApiKeyPrivilegeRequest.md)
  - [RemovePartnerRequest](docs/RemovePartnerRequest.md)
