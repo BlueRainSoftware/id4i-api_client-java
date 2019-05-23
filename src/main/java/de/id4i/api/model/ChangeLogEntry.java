@@ -30,7 +30,7 @@ import java.util.Map;
  * A changelog entry
  */
 @ApiModel(description = "A changelog entry")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-22T22:02:57.490Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-23T22:02:46.739Z")
 public class ChangeLogEntry {
   @SerializedName("id")
   private String id = null;
