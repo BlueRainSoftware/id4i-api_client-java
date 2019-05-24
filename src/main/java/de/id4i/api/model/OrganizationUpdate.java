@@ -27,7 +27,7 @@ import java.io.IOException;
  * An organization
  */
 @ApiModel(description = "An organization")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-23T22:02:46.739Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-24T21:35:53.485Z")
 public class OrganizationUpdate {
   @SerializedName("name")
   private String name = null;

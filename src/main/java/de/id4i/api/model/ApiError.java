@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-23T22:02:46.739Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-24T21:35:53.485Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -130,7 +130,17 @@ public class ApiError {
     
     INVALID_HISTORY_PROPERTY_VALUE("ERR_INVALID_HISTORY_PROPERTY_VALUE"),
     
-    ORGA_CANNOT_BE_OWN_PARTNER("ERR_ORGA_CANNOT_BE_OWN_PARTNER");
+    ORGA_CANNOT_BE_OWN_PARTNER("ERR_ORGA_CANNOT_BE_OWN_PARTNER"),
+    
+    INVALID_GS1_CODE("ERR_INVALID_GS1_CODE"),
+    
+    INVALID_GS1_CHAR_IN_CODE("ERR_INVALID_GS1_CHAR_IN_CODE"),
+    
+    INVALID_GS1_CODE_NOT_UNIQUE("ERR_INVALID_GS1_CODE_NOT_UNIQUE"),
+    
+    INVALID_GS1_GTIN("ERR_INVALID_GS1_GTIN"),
+    
+    GS1_CODE_CURRENTLY_UNSUPPORTED("ERR_GS1_CODE_CURRENTLY_UNSUPPORTED");
 
     private String value;
 

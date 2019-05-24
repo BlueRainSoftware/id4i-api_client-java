@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.9.5
 - Package version: 
-    - Build date: 2019-05-23T22:02:46.739Z
+    - Build date: 2019-05-24T21:35:53.485Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -163,6 +163,7 @@ Class | Method | HTTP request | Description
 *GuidsApi* | [**getGuidAliases**](docs/GuidsApi.md#getGuidAliases) | **GET** /api/v1/id4ns/{id4n}/alias | Get all aliases for the given GUID or Collection.
 *GuidsApi* | [**getGuidsWithoutCollection**](docs/GuidsApi.md#getGuidsWithoutCollection) | **GET** /api/v1/guids/withoutCollection | Retrieve GUIDs not in any collection
 *GuidsApi* | [**getId4n**](docs/GuidsApi.md#getId4n) | **GET** /api/v1/id4ns/{id4n} | Retrieve ID4n information
+*GuidsApi* | [**importGS1Codes**](docs/GuidsApi.md#importGS1Codes) | **POST** /api/v1/import/gs1 | Import GS1/MAPP codes
 *GuidsApi* | [**removeGuidAlias**](docs/GuidsApi.md#removeGuidAlias) | **DELETE** /api/v1/id4ns/{id4n}/alias/{aliasType} | Remove aliases from GUID or Collection
 *GuidsApi* | [**updateGuid**](docs/GuidsApi.md#updateGuid) | **PATCH** /api/v1/guids/{id4n} | Change GUID information.
 *HistoryApi* | [**addItem**](docs/HistoryApi.md#addItem) | **POST** /api/v1/history/{id4n} | Add history item
@@ -258,6 +259,8 @@ Class | Method | HTTP request | Description
  - [HistoryItemUpdate](docs/HistoryItemUpdate.md)
  - [Id4n](docs/Id4n.md)
  - [Id4nPresentation](docs/Id4nPresentation.md)
+ - [ImportGS1CodesRequest](docs/ImportGS1CodesRequest.md)
+ - [ListOfGS1s](docs/ListOfGS1s.md)
  - [ListOfId4ns](docs/ListOfId4ns.md)
  - [Organization](docs/Organization.md)
  - [OrganizationAddress](docs/OrganizationAddress.md)

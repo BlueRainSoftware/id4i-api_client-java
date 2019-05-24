@@ -22,31 +22,42 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * SimpleMessageResponse
+ * A list of GS1/MAPP codes
  */
+@ApiModel(description = "A list of GS1/MAPP codes")
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-24T21:35:53.485Z")
-public class SimpleMessageResponse {
-  @SerializedName("message")
-  private String message = null;
+public class ListOfGS1s {
+  @SerializedName("codes")
+  private List<String> codes = null;
 
-  public SimpleMessageResponse message(String message) {
-    this.message = message;
+  public ListOfGS1s codes(List<String> codes) {
+    this.codes = codes;
+    return this;
+  }
+
+  public ListOfGS1s addCodesItem(String codesItem) {
+    if (this.codes == null) {
+      this.codes = new ArrayList<>();
+    }
+    this.codes.add(codesItem);
     return this;
   }
 
    /**
-   * Get message
-   * @return message
+   * A list of GS1/MAPP codes.
+   * @return codes
   **/
-  @ApiModelProperty(required = true, value = "")
-  public String getMessage() {
-    return message;
+  @ApiModelProperty(value = "A list of GS1/MAPP codes.")
+  public List<String> getCodes() {
+    return codes;
   }
 
-  public void setMessage(String message) {
-    this.message = message;
+  public void setCodes(List<String> codes) {
+    this.codes = codes;
   }
 
 
@@ -58,22 +69,22 @@ public class SimpleMessageResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SimpleMessageResponse simpleMessageResponse = (SimpleMessageResponse) o;
-    return Objects.equals(this.message, simpleMessageResponse.message);
+    ListOfGS1s listOfGS1s = (ListOfGS1s) o;
+    return Objects.equals(this.codes, listOfGS1s.codes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message);
+    return Objects.hash(codes);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SimpleMessageResponse {\n");
+    sb.append("class ListOfGS1s {\n");
     
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("    codes: ").append(toIndentedString(codes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
