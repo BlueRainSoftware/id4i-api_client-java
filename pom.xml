@@ -5,7 +5,7 @@
     <artifactId>id4i-api-client</artifactId>
     <packaging>jar</packaging>
     <name>id4i-api-client</name>
-    <version>0.9.6</version>
+    <version>0.9.7-SNAPSHOT</version>
     <description>The ID4i API is an HTTP API that allows developer to implement applications on top of http://id4i.de. This provides for automating GUID creation and object registration, working with Collections of GUIDs and Routing.</description>
     <url>https://id4i.de</url>
 
