@@ -4,7 +4,7 @@ All URIs are relative to *https://backend.id4i.de*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an empty document for an id4n
+[**createDocument**](StorageApi.md#createDocument) | **PUT** /api/v1/documents/{id4n}/{organizationId} | Create an document for an id4n
 [**deleteDocument**](StorageApi.md#deleteDocument) | **DELETE** /api/v1/documents/{id4n}/{organizationId}/{fileName} | Delete a document
 [**getDocument**](StorageApi.md#getDocument) | **GET** /api/v1/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a document (meta-data only, no content)
 [**getPublicDocument**](StorageApi.md#getPublicDocument) | **GET** /api/v1/public/documents/{id4n}/{organizationId}/{fileName}/metadata | Retrieve a public document (meta-data only, no content)
@@ -22,9 +22,9 @@ Method | HTTP request | Description
 # **createDocument**
 > Document createDocument(organizationId, id4n, content)
 
-Create an empty document for an id4n
+Create an document for an id4n
 
-The document is created empty, mime-type defaults to text/plain
+The documents&#39; mime type is suggested on octet-stream data. Otherwise the specified content mime type is used.
 
 ### Example
 ```java
