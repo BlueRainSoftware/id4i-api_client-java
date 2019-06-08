@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * ApiKeyPrivilegeInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-07T22:03:47.462Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-06-08T22:02:59.237Z")
 public class ApiKeyPrivilegeInfo {
   @SerializedName("allowsBillableOperations")
   private Boolean allowsBillableOperations = null;
