@@ -31,7 +31,7 @@ import java.util.Map;
  * GUID history item
  */
 @ApiModel(description = "GUID history item")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-25T22:05:43.054Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-07-26T12:46:30.994Z")
 public class HistoryItem {
   @SerializedName("additionalProperties")
   private Map<String, String> additionalProperties = null;
@@ -70,6 +70,8 @@ public class HistoryItem {
     DISPATCHED("DISPATCHED"),
     
     RECEIVED("RECEIVED"),
+    
+    DELIVERY_REFUSED("DELIVERY_REFUSED"),
     
     REPROCESSING_STARTED("REPROCESSING_STARTED"),
     
