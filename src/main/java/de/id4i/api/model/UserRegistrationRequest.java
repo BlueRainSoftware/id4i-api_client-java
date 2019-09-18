@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * UserRegistrationRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-17T22:04:51.728Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-09-18T22:05:38.757Z")
 public class UserRegistrationRequest {
   @SerializedName("username")
   private String username = null;
