@@ -17,7 +17,7 @@ For additional information, please refer to
 
 - API version: 0.9.7-SNAPSHOT
 - Package version: 
-    - Build date: 2019-09-30T22:04:36.646Z
+    - Build date: 2019-10-01T22:05:07.168Z
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
