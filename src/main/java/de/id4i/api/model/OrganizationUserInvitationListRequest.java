@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * OrganizationUserInvitationListRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-11T22:06:22.819Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-12T22:05:45.912Z")
 public class OrganizationUserInvitationListRequest {
   @SerializedName("invitations")
   private List<OrganizationUserInvitation> invitations = new ArrayList<>();
