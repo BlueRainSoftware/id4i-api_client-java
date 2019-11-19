@@ -430,6 +430,145 @@ public class CollectionsApi {
         return call;
     }
     /**
+     * Build call for deleteProperties
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace to work on while deleting the properties. (required)
+     * @param properties A set of property keys to delete. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call deletePropertiesCall(String id4n, String organizationId, List<String> properties, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = properties;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/id4ns/{id4n}/properties"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Authorization" };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call deletePropertiesValidateBeforeCall(String id4n, String organizationId, List<String> properties, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling deleteProperties(Async)");
+        }
+        
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling deleteProperties(Async)");
+        }
+        
+        // verify the required parameter 'properties' is set
+        if (properties == null) {
+            throw new ApiException("Missing the required parameter 'properties' when calling deleteProperties(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = deletePropertiesCall(id4n, organizationId, properties, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Delete ID4n properties
+     * Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace to work on while deleting the properties. (required)
+     * @param properties A set of property keys to delete. (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void deleteProperties(String id4n, String organizationId, List<String> properties) throws ApiException {
+        deletePropertiesWithHttpInfo(id4n, organizationId, properties);
+    }
+
+    /**
+     * Delete ID4n properties
+     * Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace to work on while deleting the properties. (required)
+     * @param properties A set of property keys to delete. (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> deletePropertiesWithHttpInfo(String id4n, String organizationId, List<String> properties) throws ApiException {
+        com.squareup.okhttp.Call call = deletePropertiesValidateBeforeCall(id4n, organizationId, properties, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Delete ID4n properties (asynchronously)
+     * Partial deletion of id4n properties. If the property does not exist, it will be ignored.
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace to work on while deleting the properties. (required)
+     * @param properties A set of property keys to delete. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call deletePropertiesAsync(String id4n, String organizationId, List<String> properties, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = deletePropertiesValidateBeforeCall(id4n, organizationId, properties, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
      * Build call for findCollection
      * @param id4n id4n (required)
      * @param progressListener Progress listener
@@ -633,7 +772,7 @@ public class CollectionsApi {
 
     /**
      * Get collections of organization
-     * Retrieving all collections of an organization in a paginated manner.
+     * Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. &#x60;com.yourcompany.orderId.eq&#x3D;1234&#x60;  
      * @param organizationId The namespace of the organization (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
@@ -650,7 +789,7 @@ public class CollectionsApi {
 
     /**
      * Get collections of organization
-     * Retrieving all collections of an organization in a paginated manner.
+     * Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. &#x60;com.yourcompany.orderId.eq&#x3D;1234&#x60;  
      * @param organizationId The namespace of the organization (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
@@ -668,7 +807,7 @@ public class CollectionsApi {
 
     /**
      * Get collections of organization (asynchronously)
-     * Retrieving all collections of an organization in a paginated manner.
+     * Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. &#x60;com.yourcompany.orderId.eq&#x3D;1234&#x60;  
      * @param organizationId The namespace of the organization (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
@@ -702,6 +841,135 @@ public class CollectionsApi {
 
         com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedResponseOfGuidCollection>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for getProperties
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace. (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call getPropertiesCall(String id4n, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/id4ns/{id4n}/properties"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Authorization" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getPropertiesValidateBeforeCall(String id4n, String organizationId, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling getProperties(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = getPropertiesCall(id4n, organizationId, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Retrieve ID4n properties
+     * List all properties of an id4n.
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace. (optional)
+     * @return Map&lt;String, String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Map<String, String> getProperties(String id4n, String organizationId) throws ApiException {
+        ApiResponse<Map<String, String>> resp = getPropertiesWithHttpInfo(id4n, organizationId);
+        return resp.getData();
+    }
+
+    /**
+     * Retrieve ID4n properties
+     * List all properties of an id4n.
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace. (optional)
+     * @return ApiResponse&lt;Map&lt;String, String&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Map<String, String>> getPropertiesWithHttpInfo(String id4n, String organizationId) throws ApiException {
+        com.squareup.okhttp.Call call = getPropertiesValidateBeforeCall(id4n, organizationId, null, null);
+        Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Retrieve ID4n properties (asynchronously)
+     * List all properties of an id4n.
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace. (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getPropertiesAsync(String id4n, String organizationId, final ApiCallback<Map<String, String>> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getPropertiesValidateBeforeCall(id4n, organizationId, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Map<String, String>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
@@ -838,6 +1106,145 @@ public class CollectionsApi {
         com.squareup.okhttp.Call call = listElementsOfCollectionValidateBeforeCall(id4n, offset, limit, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedResponseOfGuid>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for patchProperties
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace to work on while patching the properties. (required)
+     * @param properties The properties to update. (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call patchPropertiesCall(String id4n, String organizationId, Object properties, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = properties;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/id4ns/{id4n}/properties"
+            .replaceAll("\\{" + "id4n" + "\\}", apiClient.escapeString(id4n.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (organizationId != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("organizationId", organizationId));
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/xml", "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/xml", "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "Authorization" };
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call patchPropertiesValidateBeforeCall(String id4n, String organizationId, Object properties, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'id4n' is set
+        if (id4n == null) {
+            throw new ApiException("Missing the required parameter 'id4n' when calling patchProperties(Async)");
+        }
+        
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling patchProperties(Async)");
+        }
+        
+        // verify the required parameter 'properties' is set
+        if (properties == null) {
+            throw new ApiException("Missing the required parameter 'properties' when calling patchProperties(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = patchPropertiesCall(id4n, organizationId, properties, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Patch ID4n properties
+     * Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace to work on while patching the properties. (required)
+     * @param properties The properties to update. (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void patchProperties(String id4n, String organizationId, Object properties) throws ApiException {
+        patchPropertiesWithHttpInfo(id4n, organizationId, properties);
+    }
+
+    /**
+     * Patch ID4n properties
+     * Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace to work on while patching the properties. (required)
+     * @param properties The properties to update. (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> patchPropertiesWithHttpInfo(String id4n, String organizationId, Object properties) throws ApiException {
+        com.squareup.okhttp.Call call = patchPropertiesValidateBeforeCall(id4n, organizationId, properties, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Patch ID4n properties (asynchronously)
+     * Partial updating of id4n properties. If a property contains a null value the property will be deleted other values will be saved and overwritten if they already exist.
+     * @param id4n The id4n (required)
+     * @param organizationId The organization namespace to work on while patching the properties. (required)
+     * @param properties The properties to update. (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call patchPropertiesAsync(String id4n, String organizationId, Object properties, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = patchPropertiesValidateBeforeCall(id4n, organizationId, properties, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
         return call;
     }
     /**

@@ -1265,7 +1265,7 @@ public class OrganizationsApi {
 
     /**
      * Get collections of organization
-     * Retrieving all collections of an organization in a paginated manner.
+     * Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. &#x60;com.yourcompany.orderId.eq&#x3D;1234&#x60;  
      * @param organizationId The namespace of the organization (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
@@ -1282,7 +1282,7 @@ public class OrganizationsApi {
 
     /**
      * Get collections of organization
-     * Retrieving all collections of an organization in a paginated manner.
+     * Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. &#x60;com.yourcompany.orderId.eq&#x3D;1234&#x60;  
      * @param organizationId The namespace of the organization (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)
@@ -1300,7 +1300,7 @@ public class OrganizationsApi {
 
     /**
      * Get collections of organization (asynchronously)
-     * Retrieving all collections of an organization in a paginated manner.
+     * Retrieving all collections of an organization in a paginated manner. You may filter the results by specifying id4n properties with filter operations (eq, in, ne) in the query parameters. e.g. &#x60;com.yourcompany.orderId.eq&#x3D;1234&#x60;  
      * @param organizationId The namespace of the organization (required)
      * @param offset Start with the n-th element (optional)
      * @param limit The maximum count of returned elements (optional)

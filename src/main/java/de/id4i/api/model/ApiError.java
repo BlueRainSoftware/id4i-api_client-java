@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ApiError
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-18T22:10:17.815Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T10:24:44.997Z")
 public class ApiError {
   /**
    * Gets or Sets code
@@ -117,6 +117,8 @@ public class ApiError {
     INVALID_URI_TEMPLATE_VARIABLE("ERR_INVALID_URI_TEMPLATE_VARIABLE"),
     
     INVALID_NAMESPACE("ERR_INVALID_NAMESPACE"),
+    
+    INVALID_PROPERTY_KEY("ERR_INVALID_PROPERTY_KEY"),
     
     NAMESPACE_ALREADY_EXISTS("ERR_NAMESPACE_ALREADY_EXISTS"),
     
