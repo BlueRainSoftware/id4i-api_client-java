@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "de.id4i.api",
     name := "id4i-api-client",
-    version := "0.9.6",
+    version := "0.9.7",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),
