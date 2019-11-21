@@ -1192,12 +1192,13 @@ public class OrganizationsApi {
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
+     * @param property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationCall(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationCall(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, List<String> property, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1216,6 +1217,8 @@ public class OrganizationsApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("label", label));
         if (labelPrefix != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("labelPrefix", labelPrefix));
+        if (property != null)
+        localVarCollectionQueryParams.addAll(apiClient.parameterToPairs("multi", "property", property));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
 
@@ -1250,7 +1253,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call getAllCollectionsOfOrganizationValidateBeforeCall(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getAllCollectionsOfOrganizationValidateBeforeCall(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, List<String> property, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
@@ -1258,7 +1261,7 @@ public class OrganizationsApi {
         }
         
 
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationCall(organizationId, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationCall(organizationId, offset, limit, type, label, labelPrefix, property, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1272,11 +1275,12 @@ public class OrganizationsApi {
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
+     * @param property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)
      * @return PaginatedResponseOfGuidCollection
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
-        ApiResponse<PaginatedResponseOfGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix);
+    public PaginatedResponseOfGuidCollection getAllCollectionsOfOrganization(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, List<String> property) throws ApiException {
+        ApiResponse<PaginatedResponseOfGuidCollection> resp = getAllCollectionsOfOrganizationWithHttpInfo(organizationId, offset, limit, type, label, labelPrefix, property);
         return resp.getData();
     }
 
@@ -1289,11 +1293,12 @@ public class OrganizationsApi {
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
+     * @param property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)
      * @return ApiResponse&lt;PaginatedResponseOfGuidCollection&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<PaginatedResponseOfGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix) throws ApiException {
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, offset, limit, type, label, labelPrefix, null, null);
+    public ApiResponse<PaginatedResponseOfGuidCollection> getAllCollectionsOfOrganizationWithHttpInfo(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, List<String> property) throws ApiException {
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, offset, limit, type, label, labelPrefix, property, null, null);
         Type localVarReturnType = new TypeToken<PaginatedResponseOfGuidCollection>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1307,11 +1312,12 @@ public class OrganizationsApi {
      * @param type Filter by this type (optional)
      * @param label Filter by this label (optional)
      * @param labelPrefix Filter by this label prefix (optional)
+     * @param property List of i4dn property filter. e.g. \&quot;com.myorga.state:IN:waiting|processing\&quot; or \&quot;com.myorga.orderId:EQ:SAP001\&quot; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, final ApiCallback<PaginatedResponseOfGuidCollection> callback) throws ApiException {
+    public com.squareup.okhttp.Call getAllCollectionsOfOrganizationAsync(String organizationId, Integer offset, Integer limit, String type, String label, String labelPrefix, List<String> property, final ApiCallback<PaginatedResponseOfGuidCollection> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1332,7 +1338,7 @@ public class OrganizationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, offset, limit, type, label, labelPrefix, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getAllCollectionsOfOrganizationValidateBeforeCall(organizationId, offset, limit, type, label, labelPrefix, property, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<PaginatedResponseOfGuidCollection>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
