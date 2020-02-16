@@ -18,7 +18,7 @@ import de.id4i.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-13T22:07:39.883Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-16T22:07:14.737Z")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;
