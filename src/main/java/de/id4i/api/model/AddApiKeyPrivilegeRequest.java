@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * AddApiKeyPrivilegeRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-16T22:07:14.737Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-02-17T22:08:25.622Z")
 public class AddApiKeyPrivilegeRequest {
   @SerializedName("privilege")
   private String privilege = null;
