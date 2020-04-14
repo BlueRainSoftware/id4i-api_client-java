@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * RemovePartnerRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-13T22:07:46.595Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-14T22:08:56.938Z")
 public class RemovePartnerRequest {
   @SerializedName("organizationId")
   private String organizationId = null;
