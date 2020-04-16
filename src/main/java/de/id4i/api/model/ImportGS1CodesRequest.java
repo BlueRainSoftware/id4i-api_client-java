@@ -28,7 +28,7 @@ import java.io.IOException;
  * GS1/MAPP codes import information
  */
 @ApiModel(description = "GS1/MAPP codes import information")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-15T22:08:00.345Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-16T22:09:22.089Z")
 public class ImportGS1CodesRequest {
   @SerializedName("listOfGS1s")
   private ListOfGS1s listOfGS1s = null;
