@@ -13,7 +13,7 @@
 
 package de.id4i;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-22T22:07:48.552Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-04-23T22:07:43.642Z")
 public class Pair {
     private String name = "";
     private String value = "";
