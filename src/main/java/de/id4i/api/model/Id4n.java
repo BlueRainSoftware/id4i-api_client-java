@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * Id4n
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-24T22:08:27.195Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-05-25T22:08:05.025Z")
 public class Id4n {
   @SerializedName("id4n")
   private String id4n = null;
