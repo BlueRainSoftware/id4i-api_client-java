@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * QueueUpdateRequest
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-17T22:08:19.338Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-18T22:09:10.233Z")
 public class QueueUpdateRequest {
   @SerializedName("active")
   private Boolean active = null;
