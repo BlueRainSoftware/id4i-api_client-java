@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * ServiceCosts
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-21T22:10:06.929Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-06-22T22:07:20.956Z")
 public class ServiceCosts {
   @SerializedName("listing")
   private Map<String, BigDecimal> listing = new HashMap<>();
