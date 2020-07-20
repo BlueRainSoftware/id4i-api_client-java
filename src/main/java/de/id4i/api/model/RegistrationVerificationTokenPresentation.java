@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * RegistrationVerificationTokenPresentation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-19T22:11:20.197Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-07-20T22:08:11.571Z")
 public class RegistrationVerificationTokenPresentation {
   @SerializedName("token")
   private String token = null;
