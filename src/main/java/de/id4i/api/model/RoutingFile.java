@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * RoutingFile
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-19T22:07:24.523Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-20T22:08:00.083Z")
 public class RoutingFile {
   @SerializedName("options")
   private RoutingOptions options = null;
