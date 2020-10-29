@@ -29,7 +29,7 @@ import java.util.List;
  * A list of GS1/MAPP codes
  */
 @ApiModel(description = "A list of GS1/MAPP codes")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-28T22:08:34.732Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2020-10-29T22:06:50.454Z")
 public class ListOfGS1s {
   @SerializedName("codes")
   private List<String> codes = null;
