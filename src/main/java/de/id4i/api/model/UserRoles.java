@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * UserRoles
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-11T22:06:52.180Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-12T22:08:18.532Z")
 public class UserRoles {
   @SerializedName("roles")
   private List<String> roles = null;
