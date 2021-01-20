@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 /**
  * BillingPosition
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-19T22:06:53.360Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2021-01-20T22:07:31.301Z")
 public class BillingPosition {
   @SerializedName("amount")
   private Long amount = null;
