@@ -15,9 +15,9 @@ For additional information, please refer to
 * https://backend.id4i.de/docs/redoc/index.html for API documentation
 * https://github.com/BlueRainSoftware/support for getting additional support
 
-- API version: 0.9.7
+- API version: 1.0.0
 - Package version: 
-    - Build date: 2019-11-21T14:03:07.356Z
+    - Build date: 2022-01-03T14:52:13.099+01:00
 - Build package: io.swagger.codegen.languages.JavaClientCodegen
 
     For more information, please visit [http://bluerain.de](http://bluerain.de)
@@ -32,7 +32,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>de.id4i.api</groupId>
     <artifactId>id4i-api-client</artifactId>
-    <version>0.9.7</version>
+    <version>1.0.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "de.id4i.api:id4i-api-client:0.9.7"
+compile "de.id4i.api:id4i-api-client:1.0.0"
 ```
 
 ### Others
@@ -179,6 +179,7 @@ Class | Method | HTTP request | Description
 *HistoryApi* | [**updateItem**](docs/HistoryApi.md#updateItem) | **PATCH** /api/v1/history/{id4n}/{organizationId}/{sequenceId} | Update history item
 *HistoryApi* | [**updateItemVisibility**](docs/HistoryApi.md#updateItemVisibility) | **PUT** /api/v1/history/{id4n}/{organizationId}/{sequenceId}/visibility | Set history item visibility
 *ImagesApi* | [**resolveImageUsingGET**](docs/ImagesApi.md#resolveImageUsingGET) | **GET** /api/v1/public/image/{imageID} | Resolve image
+*MessagingApi* | [**enqueueCustomMessage**](docs/MessagingApi.md#enqueueCustomMessage) | **POST** /api/v1/organizations/{organizationId}/messaging/enqueueCustomMessage | Enqueue a custom message
 *MessagingApi* | [**getDefaultQueue**](docs/MessagingApi.md#getDefaultQueue) | **GET** /api/v1/organizations/{organizationId}/messaging | 
 *MessagingApi* | [**patchDefaultQueue**](docs/MessagingApi.md#patchDefaultQueue) | **PATCH** /api/v1/organizations/{organizationId}/messaging | 
 *MetaInformationApi* | [**applicationInfo**](docs/MetaInformationApi.md#applicationInfo) | **GET** /api/v1/info | Retrieve version information about ID4i
@@ -304,6 +305,7 @@ Class | Method | HTTP request | Description
  - [RoutingFile](docs/RoutingFile.md)
  - [RoutingFileRequest](docs/RoutingFileRequest.md)
  - [RoutingOptions](docs/RoutingOptions.md)
+ - [SendCustomMessage](docs/SendCustomMessage.md)
  - [ServiceCosts](docs/ServiceCosts.md)
  - [SimpleMessageResponse](docs/SimpleMessageResponse.md)
  - [TransferReceiveInfo](docs/TransferReceiveInfo.md)

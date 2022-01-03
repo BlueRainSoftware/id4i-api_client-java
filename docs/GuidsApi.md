@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 <a name="getGuid"></a>
 # **getGuid**
-> Guid getGuid(id4n)
+> Guid getGuid(id4n, organizationId)
 
 Retrieve GUID information
 
@@ -276,8 +276,9 @@ Authorization.setApiKey("YOUR API KEY");
 
 GuidsApi apiInstance = new GuidsApi();
 String id4n = "id4n_example"; // String | The GUID number
+String organizationId = "organizationId_example"; // String | The organization namespace to resolve.
 try {
-    Guid result = apiInstance.getGuid(id4n);
+    Guid result = apiInstance.getGuid(id4n, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#getGuid");
@@ -290,6 +291,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The GUID number |
+ **organizationId** | **String**| The organization namespace to resolve. | [optional]
 
 ### Return type
 
@@ -418,7 +420,7 @@ Name | Type | Description  | Notes
 
 <a name="getId4n"></a>
 # **getId4n**
-> Id4nPresentation getId4n(id4n)
+> Id4nPresentation getId4n(id4n, organizationId)
 
 Retrieve ID4n information
 
@@ -443,8 +445,9 @@ Authorization.setApiKey("YOUR API KEY");
 
 GuidsApi apiInstance = new GuidsApi();
 String id4n = "id4n_example"; // String | The ID to resolve to
+String organizationId = "organizationId_example"; // String | The organization namespace to resolve.
 try {
-    Id4nPresentation result = apiInstance.getId4n(id4n);
+    Id4nPresentation result = apiInstance.getId4n(id4n, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling GuidsApi#getId4n");
@@ -457,6 +460,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id4n** | **String**| The ID to resolve to |
+ **organizationId** | **String**| The organization namespace to resolve. | [optional]
 
 ### Return type
 

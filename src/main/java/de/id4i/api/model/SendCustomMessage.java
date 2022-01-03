@@ -22,40 +22,60 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
- * ServiceCosts
+ * SendCustomMessage
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-01-03T14:52:13.099+01:00")
-public class ServiceCosts {
-  @SerializedName("listing")
-  private Map<String, BigDecimal> listing = new HashMap<>();
+public class SendCustomMessage {
+  @SerializedName("data")
+  private Map<String, String> data = new HashMap<>();
 
-  public ServiceCosts listing(Map<String, BigDecimal> listing) {
-    this.listing = listing;
+  @SerializedName("name")
+  private String name = null;
+
+  public SendCustomMessage data(Map<String, String> data) {
+    this.data = data;
     return this;
   }
 
-  public ServiceCosts putListingItem(String key, BigDecimal listingItem) {
-    this.listing.put(key, listingItem);
+  public SendCustomMessage putDataItem(String key, String dataItem) {
+    this.data.put(key, dataItem);
     return this;
   }
 
    /**
-   * Get listing
-   * @return listing
+   * Custom data in a map. You may use JSON content
+   * @return data
   **/
-  @ApiModelProperty(required = true, value = "")
-  public Map<String, BigDecimal> getListing() {
-    return listing;
+  @ApiModelProperty(example = "\"x = y\"", required = true, value = "Custom data in a map. You may use JSON content")
+  public Map<String, String> getData() {
+    return data;
   }
 
-  public void setListing(Map<String, BigDecimal> listing) {
-    this.listing = listing;
+  public void setData(Map<String, String> data) {
+    this.data = data;
+  }
+
+  public SendCustomMessage name(String name) {
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * The name of the message (organisation specific)
+   * @return name
+  **/
+  @ApiModelProperty(example = "<event name>", required = true, value = "The name of the message (organisation specific)")
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -67,22 +87,24 @@ public class ServiceCosts {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ServiceCosts serviceCosts = (ServiceCosts) o;
-    return Objects.equals(this.listing, serviceCosts.listing);
+    SendCustomMessage sendCustomMessage = (SendCustomMessage) o;
+    return Objects.equals(this.data, sendCustomMessage.data) &&
+        Objects.equals(this.name, sendCustomMessage.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(listing);
+    return Objects.hash(data, name);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ServiceCosts {\n");
+    sb.append("class SendCustomMessage {\n");
     
-    sb.append("    listing: ").append(toIndentedString(listing)).append("\n");
+    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **id4n** | **String** | The ID |  [optional]
 **label** | **String** |  |  [optional]
 **ownerOrganizationId** | **String** | Organization namespace of the ID owner |  [optional]
+**properties** | **Map&lt;String, String&gt;** | The properties of the organization |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) | The type of ID |  [optional]
 
 

@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 
 <a name="listElementsOfCollection"></a>
 # **listElementsOfCollection**
-> PaginatedResponseOfGuid listElementsOfCollection(id4n, offset, limit)
+> PaginatedResponseOfGuid listElementsOfCollection(id4n, offset, limit, organizationId)
 
 List contents of the collection
 
@@ -438,8 +438,9 @@ CollectionsApi apiInstance = new CollectionsApi();
 String id4n = "id4n_example"; // String | id4n
 Integer offset = 56; // Integer | Start with the n-th element
 Integer limit = 56; // Integer | The maximum count of returned elements
+String organizationId = "organizationId_example"; // String | The organization namespace.
 try {
-    PaginatedResponseOfGuid result = apiInstance.listElementsOfCollection(id4n, offset, limit);
+    PaginatedResponseOfGuid result = apiInstance.listElementsOfCollection(id4n, offset, limit, organizationId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CollectionsApi#listElementsOfCollection");
@@ -454,6 +455,7 @@ Name | Type | Description  | Notes
  **id4n** | **String**| id4n |
  **offset** | **Integer**| Start with the n-th element | [optional]
  **limit** | **Integer**| The maximum count of returned elements | [optional]
+ **organizationId** | **String**| The organization namespace. | [optional]
 
 ### Return type
 
